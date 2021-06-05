@@ -20,14 +20,15 @@ body{
 .formu{
     border: 1px solid #000;
     box-shadow: 14px 14px 14px #000 ;
-    margin-top: 4%;
+    margin-top: 15%;
+    margin-left: 65%;
     width: 28%;
     border-radius: 4%;
     color: #fff;
 }
 
 .formu label{
-    margin-left: 16%;
+    margin-left: 24%;
 }
 
 .formu h2{
@@ -36,9 +37,9 @@ body{
 
 .formu input{
     text-align: justify;
-    margin-left: 16%;
+    margin-left: 24%;
     background-color: transparent;
-    width: 55%;
+    width: 45%;
     color: #fff;
     border: unset;
     border-bottom: 1px solid #fff;
@@ -56,7 +57,7 @@ body{
 }
 
 .formu input:focus{
-    width: 75%;
+    width: 50%;
 }
 
 .formu input[type=radio]{

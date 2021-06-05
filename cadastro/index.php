@@ -9,7 +9,6 @@
         <link href="../css/cadastro.css" rel="stylesheet">
         <link href="../css/button.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
         <title>Cadastro de Usuários</title>
     </head>
 
@@ -17,7 +16,6 @@
         <div class="formu">
             <h2>Cadastro de Usuários</h2>
             <form name="cadastraU" action="../class/classU.php" method='POST'>
-           
                 <label>Nome Completo</label><br>
                 <input type="text" name="nomecompleto" maxlenght="50"  placeholder="" class="txtF" autocomplete="off" required>
                 
@@ -42,14 +40,15 @@
                 <!-- <input type="submit" class="botaoEnviar" id="btn">
                     <img src="../img/seta.png" width="20%">
                 </input> -->
-
+                <center>
                 <button>
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
-                    CADASTRAR
+                    ENTRAR
                 </button>
+</center>
 
             </form>
         </div>
