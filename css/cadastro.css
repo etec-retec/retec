@@ -1,0 +1,65 @@
+body{
+    background: linear-gradient(90deg, #85b6d6, #316588,#093c69, #0A1D85 );
+    font-family: 'Montserrat', sans-serif;
+}
+
+@keyframes colors {
+    0% {
+    background-position: 0% 50%;
+    }
+    50% {
+    background-position: 100% 50%;
+    }
+    100% {
+    background-position: 0% 50%;
+    }
+}
+
+.formu{
+    border: 1px solid #000;
+    box-shadow: 14px 14px 14px #000 ;
+    text-align: justify;
+    margin-top: 4%;
+    width: 28%;
+    border-radius: 4%;
+    margin-left: 70%;
+    color: #fff;
+}
+
+.formu label{
+    margin-left: 16%;
+
+}
+
+.formu h2{
+    text-align: center;
+}
+
+.formu input{
+    text-align: justify;
+    margin-left: 16%;
+    background-color: transparent;
+    width: 55%;
+    color: #fff;
+    border: unset;
+    border-bottom: 1px solid #fff;
+    font-size: 100%;
+    opacity: 0.5;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+}
+
+.formu input:hover, .formu input:focus {
+    outline: none;
+}
+
+.formu input:focus{
+    width: 75%;
+}
+
+.formu input[type=radio]{
+    width: 5%;
+}

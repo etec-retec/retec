@@ -3,12 +3,10 @@
 
 
             <center><br><br><br><br><br><br><br>
-            As duas senhas são diferentes!
             <div class='loader'></div>
             </center>
            
 <?php
-    //Faz com que os usuario não faça merda 
     $nomecompleto = filter_input(INPUT_POST, 'nomecompleto', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -18,8 +16,6 @@
     if($senha != $rsenha)
         {
             header("location: ../cadastro/index.php");
-            
-            
         }
 
     $objeto = new usuario();
@@ -30,7 +26,6 @@
     $objeto->atualizaBD_U();    
 
 class usuario{
-    
     public $nome;
     public $email;
     public $senha;
@@ -57,20 +52,7 @@ class usuario{
 
     //SENHA
     public function setSenha($senha,$rsenha){
-        // $this->senha = $senha;
-        // $this->rsenha = $rsenha;
-        // if($senha != $rsenha)
-        // {
-        //     echo "<script>alert('teste')</script>";
-        //     sleep(5);
-        //     header("location: ../cadastro/index.php");
-            
-            
-        // }
-        // else{
-            $this->senha = md5($senha);
-        // }
-
+        $this->senha = md5($senha);
     }
     public function getSenha(){
         return $this->senha;
@@ -97,17 +79,4 @@ class usuario{
             header("Location:../cadastro/index.php?alert=1");
         }
 }
-
-/*
-    public function deletaBD_U(){
-        include 'conexao/conexao.inc';
-
-        $query_insert_usuario = "DELETE FROM usuario WHERE codigo_u = '1'";
-        $res = mysqli_query($conexao, $query_insert_usuario);
-        echo mysqli_error($conexao);
-        mysqli_close($conexao);
-    }
-
-}
-*/
 ?>
