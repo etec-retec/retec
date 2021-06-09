@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
         <link href="css/login.css" rel="stylesheet">
         <link href="css/button.css" rel="stylesheet">
-        <title>RDETEC</title>
+        <title>RETEC</title>
     </head>
 
         <body>
