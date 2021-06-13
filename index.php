@@ -8,7 +8,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
         <link href="css/login.css" rel="stylesheet">
         <link href="css/button.css" rel="stylesheet">
-        <img src="/img/img-login.png" alt="img-login" width="120" height="120" id="log-img" >
         <title>RETEC</title>
     </head>
 
