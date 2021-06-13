@@ -20,6 +20,8 @@ body {
 }
 
 .formu {
+    display:flex;
+    flex-direction: column;
     border: 1px solid #000;
     box-shadow: 14px 14px 14px #000;
     margin-top: 4%;
@@ -67,6 +69,11 @@ body {
 
 .formu input[type=radio] {
     width: 5%;
+}
+
+.area-cadastro{
+    display:flex;
+    justify-content: space-evenly;
 }
 
 ::placeholder {

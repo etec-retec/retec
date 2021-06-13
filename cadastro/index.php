@@ -9,6 +9,7 @@
         <link href="../css/cadastro.css" rel="stylesheet">
         <link href="../css/button.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
         <title>Cadastro de Usuários</title>
     </head>
 
@@ -36,20 +37,19 @@
                 <input type="radio" name="tipo" value="professor"/> Professor
                 <input type="radio" name="tipo" value="aluno"/> Aluno
                 <br><br>
-
-                <!-- <input type="submit" class="botaoEnviar" id="btn">
-                    <img src="../img/seta.png" width="20%">
-                </input> -->
-                <center>
-                <button>
+                <div class="area-cadastro">
+                <button>   
+                       CADASTRAR
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
-                    ENTRAR
                 </button>
-</center>
-
+            <button class="login">
+             login
+            </button>
+                </div>
+        
             </form>
         </div>
         <script src="../js/senha.js"></script>
