@@ -71,10 +71,11 @@ body {
     width: 5%;
 }
 
-.login{
+.area-cadastro{
     display:flex;
     justify-content: space-evenly;
 }
+
 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #fff;

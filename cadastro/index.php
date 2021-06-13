@@ -37,7 +37,7 @@
                 <input type="radio" name="tipo" value="professor"/> Professor
                 <input type="radio" name="tipo" value="aluno"/> Aluno
                 <br><br>
-                <div class="login">
+                <div class="area-cadastro">
                 <button>   
                        CADASTRAR
                     <span></span>
@@ -45,8 +45,8 @@
                     <span></span>
                     <span></span>
                 </button>
-            <button mat-mini-fab (click)="onClick">
-                <mat-icon class="mat-18">login</mat-icon>
+            <button class="login">
+             login
             </button>
                 </div>
         
