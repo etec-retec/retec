@@ -16,7 +16,7 @@ body{
     background-position: 0% 50%;
     }
 }
-
+/*
 .formu{
     border: 1px solid #000;
     box-shadow: 14px 14px 14px #000 ;
@@ -45,7 +45,7 @@ body{
     border-bottom: 1px solid #fff;
     font-size: 100%;
     opacity: 0.5;
-}
+}*/
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #fff;
