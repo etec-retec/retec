@@ -1,5 +1,6 @@
 .formu form button {
-
+  position: relative;
+  display: inline-block;
   padding: 10px 20px;
   color: #fff;
   font-size: 16px;
@@ -7,7 +8,7 @@
   text-transform: uppercase;
   overflow: hidden;
   transition: .5s;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   text-align: center;
   background: transparent;
   margin-bottom: 10px;
