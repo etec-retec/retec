@@ -29,13 +29,13 @@
         
                 <label>Digite a senha novamente</label><br>
                 <input type="password" name="rsenha" id="rsenha" minlenght="5" maxlenght="42" placeholder="" class="txtF" required>
-                <p id="msg"></p><br><br>
+                <p id="msg"></p><br><br><br>
         
                 <label>Escolha o seu tipo de usuário:</label><br>
                 <input type="radio" name="tipo" value="professor"/> Professor
                 <input type="radio" name="tipo" value="aluno"/> Aluno
                 <br><br>
-                <div>
+                <div class="btns-login">
                 <button>   
                        CADASTRAR
                     <span></span>
