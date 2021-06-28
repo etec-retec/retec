@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    header{
+        background: black;
+        padding: 25px;
+        
+    }
+    .btn-abrir{
+        color: white;
+        font-size: 30px;
+    }
+    
+    nav{
+        display: block;
+        font-size: 30px;
+        background: black;
+        position: fixed;
+        height: 100%;
+        width: 0px;
+        z-index: 1;
+        overflow: hidden;
+        position: fixed;
+        transition: width 0.3s;
+        top: 0;
+        left: 0;
+
+    }
+    a{
+        text-decoration: none;
+    }
+     nav a{
+        font-size: 25px;
+        display: block;
+        padding: 12px 10px 10px 32px;
+        color: white;
+
+    
+  
+    }
+    nav a:hover{
+        color: black;
+        background: white;
+    }
+    main{
+        padding: 10px;
+        transition: margin-left 0.5s;
+}
+    
+    
+    
+    
+</style>
+
+<body>
+    <header >
+        <a href="#" class="btn-abrir" onclick="abrirMenu()"> &#9776; Menu</a> 
+    </header>
+    <nav id="itens">
+            <a href="#" onclick="fecharMenu()">&times;Fechar</a>
+            <a href="#">Home</a>
+            <a href="#">Editar</a>
+            <a href="#">Apagar</a>
+            <a href="#">Cadastrar</a>
+    </nav>
+    <main id="conteudo">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro veritatis quasi laborum? Harum maiores molestias debitis quam, iste voluptas, culpa maxime natus nostrum rerum ipsa eaque exercitationem illum vitae sunt.</p>
+    </main>
+    <script>
+        function abrirMenu(){
+            document.getElementById('itens').style.width="250px";
+            document.getElementById('conteudo').style.marginLeft="250px";
+        }
+        function fecharMenu(){
+            document.getElementById('itens').style.width="0px";
+            document.getElementById('conteudo').style.marginLeft="0px";
+        }
+    </script>
+</body>
+</html>
