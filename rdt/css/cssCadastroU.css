@@ -1,0 +1,81 @@
+
+body{
+  margin-top:-10%;
+  background: linear-gradient(45deg, #85b6d6, #316588,#093c69, #0A1D85 );
+  background-size: 300% 300%;
+  animation: colors 10s infinite linear;
+
+}
+/*
+    @keyframes colors {
+    0% {
+    background-position: 0% 50%;
+    }
+    50% {
+    background-position: 100% 50%;
+    }
+    100% {
+    background-position: 0% 50%;
+    }
+  }
+*/
+
+.formu{
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  height: 78%;
+  width: auto;
+  margin-left: 69%; 
+  background-color:rgb(255, 255, 255);
+  padding: 0 20px 20px 20px;
+  border: 4px solid rgba(0, 0, 0, 0.658);
+  justify-content: right;
+  border-radius: 6%;
+  
+}
+
+.botaoEnviar{                                                     
+  cursor: pointer;
+  margin-left: 65%;
+  margin-top: 20%;
+  height: 5%;
+  width:  5%;
+  background-color:transparent;
+  border: transparent;
+
+}
+
+.imgseta{
+  height: 40px;
+  width:  40px;
+}
+
+.txtF,textarea:focus,.txtF:focus{
+
+  box-shadow: 0 0 0 0;
+  outline: 0;
+  width: 75%;
+  height: 5%;
+  border-right:none;
+  border-left: none;
+  border-top:none;
+}
+
+
+@media (max-width: 48em){
+  .formu{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    height:200%;
+    width: auto;
+    margin-left: 69%; 
+    background-color:rgb(255, 255, 255);
+    padding: 0 20px 20px 20px;
+    border: 4px solid rgba(0, 0, 0, 0.658);
+    justify-content: right;
+    border-radius: 6%;
+
+    
+  }
+
+}

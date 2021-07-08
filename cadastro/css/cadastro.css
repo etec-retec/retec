@@ -1,0 +1,101 @@
+body {
+    background: linear-gradient(90deg, #85b6d6, #316588, #093c69, #0A1D85);
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes colors {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.formu {
+    border: 1px solid #000;
+    box-shadow: 14px 14px 14px #000;
+    margin-top: 4%;
+    width: 28%;
+    border-radius: 4%;
+    color: #fff;
+}
+
+.formu label {
+    margin-left: 16%;
+}
+
+.formu h2 {
+    text-align: center;
+}
+
+.formu input {
+    text-align: justify;
+    margin-left: 16%;
+    background-color: transparent;
+    width: 200PX;
+    color: #fff;
+    border: unset;
+    border-bottom: 1px solid #fff;
+    font-size: 100%;
+    opacity: 0.5;
+}
+
+.formu input[type="text"]:focus,
+.formu input[type="email"]:focus,
+.formu input[type="password"]:focus {
+    text-align: justify;
+    margin-left: 16%;
+    background-color: transparent;
+    width: 235px;
+    color: #fff;
+    border: unset;
+    border-bottom: 1px solid #fff;
+    font-size: 100%;
+    opacity: 0.5;
+    transition: 0.3s;
+    outline: none;
+
+}
+
+.formu input[type=radio] {
+    width: 5%;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1;
+    /* Firefox */
+}
+
+@media (max-width: 48em) {
+    .formu {
+        margin-top: 25%;
+        width: 80%;
+    }
+
+}
+
+@media only screen and (max-device-width: 828px) {
+    .formu {
+        margin-top: 25%;
+        width: 80%;
+    }
+
+}
+
+@media only screen and (max-device-width: 480px) {
+    .formu {
+        margin-top: 5%;
+        width: 96%;
+    }
+
+}
