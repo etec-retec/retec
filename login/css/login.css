@@ -1,34 +1,52 @@
 body{
-    background: linear-gradient(90deg, #85b6d6, #316588,#093c69, #0A1D85 );
-    font-family: 'Montserrat', sans-serif;
+    background-color:#dee7ee;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
 }
+.botao{
+    font-size:105%;
+    width: 43%;
+    height: 28px;
+    background-color: #6253f2;
+    color: white;
+    border: 1px #6253f2;
+    border-radius: 4px;
+    cursor: pointer;
 
-@keyframes colors {
-    0% {
-    background-position: 0% 50%;
-    }
-    50% {
-    background-position: 100% 50%;
-    }
-    100% {
-    background-position: 0% 50%;
-    }
+}    
+.botaoVoltar{
+    text-align: center;
+    font-size:110%;
+    width: 8%;
+    height: 28px;
+    background-color: white;
+    color: #6253f2;
+    border: solid #6253f2 1px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.botaoVoltar:hover{
+    background-color: #6253f2;
+    color: #f4f4f4;
 }
 
 .formu{
+    color: #2a3641;
+    text-align: center;
     border: 1px solid #000;
-    box-shadow: 14px 14px 14px #000 ;
-    margin-top: 15%;
-    margin-left: 65%;
-    width: 28%;
-    border-radius: 4%;
-    color: #fff;
-}
+    margin: 0 auto ;
+    margin-top: 13%;
+    margin-left: 25%;
+    width: 35%;
+    height: 10%;
+    background-color: white;
+    border: solid #709bb3 1px;
 
+}
 .formu label{
-    margin-left: 24%;
+    margin-right: 75%;
 }
 
 .formu h2{
@@ -37,45 +55,77 @@ body{
 
 .formu input{
     text-align: justify;
-    margin-left: 24%;
+    margin-right: 3%;
+    width: 80%;
+    height: 27px;
+    color:solid #a7b5bc;
+    border-radius: 4px;
+    border: solid #709bb3 1px;
+}
+
+.formu input :focus{
     background-color: transparent;
-    width: 45%;
-    color: #fff;
-    border: unset;
-    border-bottom: 1px solid #fff;
-    font-size: 100%;
-    opacity: 0.5;
-}
-
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #fff;
-    opacity: 1; /* Firefox */
-}
-
-.formu input:hover, .formu input:focus {
     outline: none;
+    border: none;
 }
 
-.formu input:focus{
-    width: 50%;
+.botao:hover{
+    background-color: #b6b2eb;
 }
 
-.formu input[type=radio]{
-    width: 5%;
+
+::placeholder {
+    color: #709bb3;
 }
+
+#TxTmobile{
+    display: block;
+}
+
+
 
 @media (max-width: 48em){
-.formu{
-  margin-top: 25%;  
-  width: 80%;
-}
-  
+
+.botaoVoltar{
+    display: none;
 }
 
-@media only screen and (max-device-width: 480px) {
 .formu{
-  margin-top: 5%;  
-  width: 96%;
+    margin: 0 auto ;
+    width: 100%;
+    margin-top: 25%;
+    border: none;
 }
 
+.formu label{
+    margin-left: 30px;
 }
+
+.botao{
+    height: 40px;
+    width: 90%;
+}
+
+#btnN{
+    display: none;
+}
+
+#TxTmobile{
+    display: none;
+    margin-top: 150%;    
+    margin-right: 25%;
+}
+
+#btnEsqueci{
+    background-color: white;
+    border: solid #709bb3 1px;
+    font-size: 100%;
+    color: #709bb3;
+    height: 30px;
+    width: 55%;
+    margin: 2%;
+    
+}
+
+
+ }

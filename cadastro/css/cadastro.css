@@ -1,101 +1,97 @@
-body {
-    background: linear-gradient(90deg, #85b6d6, #316588, #093c69, #0A1D85);
-    font-family: 'Montserrat', sans-serif;
+body{
+    background-color:#dee7ee;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
+    color: #2a3641;
 }
 
-@keyframes colors {
-    0% {
-        background-position: 0% 50%;
-    }
+.botao{
+    font-size:105%;
+    width: 200px;
+    height: 28px;
+    background-color: #6253f2;
+    color: white;
+    border: 1px #6253f2;
+    border-radius: 4px;
+    cursor: pointer;
+}    
 
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+.botaoVoltar{
+    text-align: center;
+    font-size:110%;
+    width: 8%;
+    height: 28px;
+    background-color: white;
+    color: #6253f2;
+    border: solid #6253f2 1px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-.formu {
+.botaoVoltar:hover{
+    background-color: #6253f2;
+    color: #f4f4f4;
+}
+
+.formu{
+    text-align: center;
     border: 1px solid #000;
-    box-shadow: 14px 14px 14px #000;
-    margin-top: 4%;
-    width: 28%;
-    border-radius: 4%;
-    color: #fff;
+    margin: 0 auto ;
+    margin-top: 5%;
+    margin-left: 25%;
+    width: 35%;
+    height: 10%;
+    background-color: white;
+    border: solid #709bb3 1px;
 }
 
-.formu label {
-    margin-left: 16%;
-}
-
-.formu h2 {
+.formu h2{
     text-align: center;
 }
 
-.formu input {
-    text-align: justify;
-    margin-left: 16%;
-    background-color: transparent;
-    width: 200PX;
-    color: #fff;
-    border: unset;
-    border-bottom: 1px solid #fff;
-    font-size: 100%;
-    opacity: 0.5;
+.formu label{
+    display: table;
+    margin-left: 70px;
+    margin-bottom: -10px;
+    margin-top: 35px;
 }
 
-.formu input[type="text"]:focus,
-.formu input[type="email"]:focus,
-.formu input[type="password"]:focus {
-    text-align: justify;
-    margin-left: 16%;
+.formu input{
+    width: 80%;
+    height: 27px;
+    color: solid #a7b5bc;
+    border-radius: 4px;
+    border: solid #709bb3 1px;
+}
+
+.formu input :focus{
     background-color: transparent;
-    width: 235px;
-    color: #fff;
-    border: unset;
-    border-bottom: 1px solid #fff;
-    font-size: 100%;
-    opacity: 0.5;
-    transition: 0.3s;
     outline: none;
-
+    border: none;
 }
 
-.formu input[type=radio] {
-    width: 5%;
+.botao:hover{
+    background-color: #b6b2eb;
 }
 
 ::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #fff;
-    opacity: 1;
-    /* Firefox */
+    color: #709bb3;
 }
 
-@media (max-width: 48em) {
-    .formu {
-        margin-top: 25%;
-        width: 80%;
-    }
-
+@media (max-width: 48em){
+.botaoVoltar{
+    display: none;
 }
 
-@media only screen and (max-device-width: 828px) {
-    .formu {
-        margin-top: 25%;
-        width: 80%;
-    }
-
+.formu{
+    margin: 0 auto ;
+    width: 90%;
+    margin-top: 15px;
 }
 
-@media only screen and (max-device-width: 480px) {
-    .formu {
-        margin-top: 5%;
-        width: 96%;
-    }
-
+.formu label{
+    margin-left: 30px;
+}
+    
 }

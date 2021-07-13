@@ -21,21 +21,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../css/verticalBar.css" rel="stylesheet">
         <link href="../css/cadastrarRepositorio.css" rel="stylesheet">
+
         <title>Retec - Cadastrar</title>
     </head>
     <body>
-
-    <div class="banner">
-    
-    </div>
-
-    <div class="info esquerda">
-        <div class="img">
-            <img>
-        </div>
-
-    </div>
-
+    <ul>
+    <li><a class="active" href="../index.php?access=<?php echo $_SESSION["numLogin"];?>" title="Ínicio"><img src="../img/home.png"></a></li>
+    <li><a class="active" href="../rotas/novoRepositorio.php?access=<?php echo $_SESSION["numLogin"];?>" title="Cadastrar"><img src="../img/adc.png" style="opacity:0.5"></a></li>
+    <li><a class="active" href="#edit" title="Editar"><img src="../img/edit.png"></a></li>
+    <li><a class="active" href="#trash" title="Apagar"><img src="../img/trash.png"></a></li>
+    </ul>
     <form action="../../rotas/validacaoRepositorio.php?<?php echo $_SESSION["numLogin"];?>" method="POST">
         <label for="turma">Turma</label>
         <br>
