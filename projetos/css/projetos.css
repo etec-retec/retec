@@ -60,7 +60,7 @@ body{
 .fltrs{
     font-weight: 900;
     margin-top: 40px;
-    margin-left: 128px;
+    margin-left: 64px;
 }
 
 .checkbox-round {
@@ -97,6 +97,18 @@ body{
 
 .btn_filtrar:hover{
     background-color: #b6b2eb;
+}
+
+.btn_pesquisar{
+    margin-top: 40px;
+    float: right;
+    margin-right: 64px;
+    height: 30px;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    border-bottom: #2a3641 1px solid;
+    outline: none;
 }
 
 

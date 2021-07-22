@@ -18,10 +18,8 @@
     </div>
 
     <div class="grid-container">
-        <h1 class="fltrs">Filtros</h1>
-        <!-- <input type="text" placeholder="Pesquisar"/> -->
-        <br>
         <div class="info_esquerda">
+            <h1 class="fltrs">Filtros</h1>
             <form action="../rotes/order.php?access">
                 <h3>Curso - ETIM</h3>
                 &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="ds"> DS<br>
@@ -40,13 +38,13 @@
                 <br><br>
                 <input type="submit" class="btn_filtrar" value="Filtrar">
             </form>
-
-
         </div>
-    
 
         <div class="info_direita">
-        <input type="text" placeholder="Pesquisar"/>
+            <input type="text"  class="btn_pesquisar" placeholder="Pesquisar"/>
+            <div class="blocos">
+                
+            </div>
 
             
         </div>
