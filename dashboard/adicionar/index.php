@@ -31,8 +31,8 @@
             <button class="voltar">❮ Voltar</button>
             <div class="bts">
                 <a id="add">Adicionar</a>
-                <a id="rem"href="remover.php">Remover</a>
-                <a id="ed"href="editar.php">Editar</a>
+                <a id="rem" href="../remover/index.php">Remover</a>
+                <a id="ed" href="../editar/index.php">Editar</a>
             </div>
             <h1 class="logo">RETEC</h1>
         </div>
@@ -104,12 +104,12 @@
 
                 <label for="resumo"><b>Palavras-chave</b></label>
                 <br>
-                <textarea type="text" class="area_txt" name="pa_ch" placeholder="Trecho do PDF (Abstract)" required></textarea>
+                <textarea type="text" class="area_txt" name="pa_ch" placeholder="Trecho do PDF (Palavras-chave)" required></textarea>
                 <br><br>
 
                 <label for="resumo"><b>Key Words</b></label>
                 <br>
-                <textarea type="text" class="area_txt" name="key_words" placeholder="Trecho do PDF (Abstract)" required></textarea>
+                <textarea type="text" class="area_txt" name="key_words" placeholder="Trecho do PDF (Key Words)" required></textarea>
                 <br><br>
 
 

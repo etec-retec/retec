@@ -35,19 +35,19 @@ body{
 
 #add{
     font-weight: 900;
-    color: #c2d1d9;
+    color: #6253f2;
     border-right: #c2d1d9 solid 1px;
+}
+
+#add:hover{
+    cursor: pointer;
+    color: #c2d1d9;
 }
 
 #rem{
     font-weight: 900;
-    color: #ff0000;
-    border-right: #c2d1d9 solid 1px;
-}
-
-#rem:hover{
-    cursor: pointer;
     color: #c2d1d9;
+    border-right: #c2d1d9 solid 1px;
 }
 
 #ed{
