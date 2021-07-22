@@ -7,6 +7,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="css/projetos.css" rel="stylesheet">
         <title>Retec - Projetos</title>
     </head>
@@ -20,7 +21,7 @@
     <div class="grid-container">
         <div class="info_esquerda">
             <h1 class="fltrs">Filtros</h1>
-            <form action="../rotes/order.php?access">
+            <form action="../rotas/order.php?access">
                 <h3>Curso - ETIM</h3>
                 &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="ds"> DS<br>
                 &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="nutricao"> Nutrição<br>
@@ -41,8 +42,100 @@
         </div>
 
         <div class="info_direita">
-            <input type="text"  class="btn_pesquisar" placeholder="Pesquisar"/>
+            <button class="btn_pesquisar" id="ico" type="submit"><i class="fa fa-search"></i></button><input type="text" class="btn_pesquisar" id="btn" placeholder="Pesquisar"/>
+            <br><br><br>
             <div class="blocos">
+                <!-- ATENÇÃO - A PARTIR DAS PRÓXIMAS LINHAS, O CÓDIGO SERÁ GERADO PELO PHP 
+                     OS CÓDIGOS ABAIXO SÃO APENAS EXEMPLARES ESTÁTICOS DO HTML  -->
+                    <a href="../rotas/" class="link">    
+                        <div class="bloco">
+                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
+                            <h3>TCC Exemplo 1</h3>
+                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
+                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="../rotas/" class="link">    
+                        <div class="bloco">
+                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
+                            <h3>TCC Exemplo 2</h3>
+                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
+                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="../rotas/" class="link">    
+                        <div class="bloco">
+                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
+                            <h3>TCC Exemplo 3</h3>
+                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
+                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="../rotas/" class="link">    
+                        <div class="bloco">
+                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
+                            <h3>TCC Exemplo 4</h3>
+                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
+                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="../rotas/" class="link">    
+                        <div class="bloco">
+                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
+                            <h3>TCC Exemplo 5</h3>
+                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
+                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="../rotas/" class="link">    
+                        <div class="bloco">
+                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
+                            <h3>TCC Exemplo 6</h3>
+                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
+                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="../rotas/" class="link">    
+                        <div class="bloco">
+                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
+                            <h3>TCC Exemplo 7</h3>
+                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
+                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="../rotas/" class="link">    
+                        <div class="bloco">
+                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
+                            <h3>TCC Exemplo 8</h3>
+                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
+                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="../rotas/" class="link">    
+                        <div class="bloco">
+                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
+                            <h3>TCC Exemplo 9</h3>
+                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
+                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
+                            </p>
+                        </div>
+                    </a>
                 
             </div>
 

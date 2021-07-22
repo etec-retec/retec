@@ -48,13 +48,13 @@ body{
     width: 320px;
     margin-left: 64px;
     margin-top: 0;
-    /* border: 1px solid #a7b5bc; */
+    /* border-right: 1px solid #a7b5bc; */
 }
 
 .info_direita{
     margin-left: -532px;
     display: inline;
-    border-left: #2a3641 1px solid;
+    /* border-left: #2a3641 1px solid; */
 }
 
 .fltrs{
@@ -102,7 +102,7 @@ body{
 .btn_pesquisar{
     margin-top: 40px;
     float: right;
-    margin-right: 64px;
+    margin-right: 128px;
     height: 30px;
     font-size: 16px;
     background-color: transparent;
@@ -111,6 +111,58 @@ body{
     outline: none;
 }
 
+.link{
+    text-decoration: none;
+    color: #2a3641;
+    display: inline-flex;
+}
+
+.img_set{
+    max-width: 300px;
+}
+
+.blocos{
+    padding: 25px;
+}
+
+.blocos a{
+    padding: 25px;
+}
+
+.bloco{
+    text-decoration: none;
+    height: 400px;
+    width: 300px;
+    border: 1px solid #2a3641;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bloco h3{
+    margin-top: 0;
+    padding: 15px;
+}
+
+.bloco p{
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: justify;
+    text-indent: 20px;
+}
+
+#btn{
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+#ico{
+    cursor: pointer;
+}
+
+#ico:hover{
+    background-color: #6253f2;
+    color: #f4f4f4;
+}
 
 @media (max-width: 48em){
 .grid-container{
