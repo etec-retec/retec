@@ -16,7 +16,7 @@
     <div class="cabecalho"> 
         <button class="voltar">❮ Voltar</button>
         <h1 class="logo">RETEC</h1>
-    </div>
+    </div>                          
 
     <div class="grid-container">
         <div class="info_esquerda">
