@@ -44,6 +44,13 @@ body{
     color: #6253f2
 }
 
+.info_esquerda{
+    width: 320px;
+    margin-left: 64px;
+    margin-top: 0;
+    /* border: 1px solid #a7b5bc; */
+}
+
 .info_direita{
     margin-top: 100px;
     display: inline;
@@ -52,9 +59,27 @@ body{
 
 .fltrs{
     font-weight: 900;
-    margin-top: 0;
-    margin-left: 60px;
-    padding: 40px;
+    margin-top: 40px;
+    margin-left: 128px;
+}
+
+
+
+
+.checkbox-round {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox-round:checked {
+    background-color: #6253f2;
 }
 
 

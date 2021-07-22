@@ -18,12 +18,20 @@
     </div>
 
     <div class="grid-container">
-        <h2 class="fltrs">Filtros</h2>
+        <h1 class="fltrs">Filtros</h1>
+        <br>
         <div class="info_esquerda">
-            
+            <h3>Curso ETIM</h3>
+            <form action="../rotes/order.php?access">
+                &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="ds"> DS<br>
+                &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="nutricao"> Nutrição<br>
+                &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="meioambiente"> Meio Ambiente<br>
+                &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="quimica"> Química
+            </form>
 
 
         </div>
+    
 
         <div class="info_direita">
 
