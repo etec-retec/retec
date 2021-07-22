@@ -55,7 +55,7 @@
                     <label><b>Escola: </b></label> {{escola}}
                 </p>
                 <p>
-                    <label><b>Turma: </b></label> {{Turma}}
+                    <label><b>Curso: </b></label> {{curso}}
                 </p>
                 <p>
                     <label><b>Data de Apresentação: </b></label> {{data}}
@@ -65,9 +65,6 @@
                 </p>
                 <p>
                     <label><b>Menção: </b></label> {{mencao}}
-                </p>
-                <p>
-                    <label><b>Curso: </b></label> {{curso}}
                 </p>
             </div>
         <br><br>

@@ -68,9 +68,8 @@ body{
 
 .center {
     margin: auto;
-    width: 50%;
-    border: 3px solid green;
-    padding: 10px;
+    width: 20%;
+    padding: 40px;
 }
 
 .center h2{
@@ -78,12 +77,70 @@ body{
 }
 
 .inp_txt{
-    width: 250px;
+    width: 350px;
     font-size: 15px;
     padding: 5px;
     border-radius: 4px;
     border: 2px solid #353839;
     outline: none;
+}
+
+.area_txt{
+    width: 350px;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 2px solid #353839;
+    outline: none;
+}
+
+#slct{
+    color: #808080
+}
+
+#slct:hover{
+    cursor: pointer;
+}
+
+#dt_ap{
+    font-family: 'Poppins', sans-serif;
+    width: 180px;
+}
+
+#dt_ap:hover{
+    cursor: pointer;
+}
+
+.arquivos input{
+    background-color: #6253f2;
+    color: #f4f4f4;
+    border-radius: 10px;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.cadastrar{
+    background-color: #6253f2;
+    color: #f4f4f4;
+    border-radius: 10px;
+    border: none;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cadastrar:hover{
+    cursor: pointer;
+    background-color: #c2d1d9;
+    color: #000;
+    position: relative;
+}
+
+#lbl{
+    padding: 30px;
+    width: auto;
+    margin-left: 32px;
 }
 
 .voltar{
@@ -103,6 +160,11 @@ body{
 .voltar:hover{
     background-color: #6253f2;
     color: #f4f4f4;
+}
+
+#sub_box{
+    margin-left: 80px;
+    /* margin: 0 auto; */
 }
 
 @media (max-width: 48em){

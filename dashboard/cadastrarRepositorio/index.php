@@ -38,53 +38,105 @@
         </div>
 
         <div class="center">
-            <h2 class="center">Adicionar Projeto</h2>
+            <h2 class="center" id="lbl">Adicionar Projeto</h2>
             <form action="../../rotas/ .php?<?php echo $_SESSION["numLogin"];?>" method="POST">
 
-                <label for=""><b>Professor Orientador</b></label>
+                <label for="nome"><b>Nome</b></label>
                 <br>
-                <input type="text" name="prof_orientador" class="inp_txt" placeholder="Nome"/>
+                <input type="text" class="inp_txt" name="nome" placeholder="Nome do TCC" min="3" max="64" required>
                 <br><br>
 
-                <label for="curso">Curso</label>
+                <label for="prof_orientador"><b>Professor Orientador</b></label>
                 <br>
-                <select name="curso">
-                    <option>Desenvolvimento de Sistemas</option>
-                    <option>Química</option>
-                    <option>Nutrição</option>
-                    <option>Meio Ambiente</option>
+                <input type="text" name="prof_orientador" class="inp_txt" placeholder="Nome" required/>
+                <br><br>
+
+                <label for="prof_coorientador"><b>Professor Co-orientador</b></label>
+                <br>
+                <input type="text" name="prof_coorientador" class="inp_txt" placeholder="Nome" required/>
+                <br><br>
+
+                <label for="membros"><b>Membros</b></label>
+                <p style="font-size:12px; margin-top:0">Separe os integrantes por vírgulas ","</p>
+                <input type="text" name="membros" class="inp_txt" placeholder="Ex: Alexandre Lima, Luiz Henrique, Carlos Alberto" required/>
+                <br><br>
+
+                <label for="curso"><b>Curso</b></label>
+                <br>
+                <select class="inp_txt" name="curso" id="slct">    
+                <h3>Curso - ETIM</h3>
+                    <option value="ds">ETIM - Desenvolvimento de Sistemas</option>
+                    <option value="nutricao">ETIM - Nutrição</option>
+                    <option value="meioambiente">ETIM - Meio Ambiente</option>
+                    <option value="quimica">ETIM - Química</option>
+                    <option value="contabilidade">Modular - Contabilidade</option>
+                    <option value="seg_trab">Modular - Segurança do Trabalho</option>
+                    <option value="nutr_diet">Modular - Nutrição e Dietética</option>
+                    <option value="quimica_mod">Modular - Química</option>
                 </select>
                 <br><br>
-                <label for="ano">Ano</label>
-                <br>
-                <input type="number" name="ano" placeholder="Ano" min="2000" max="2099" required>
-                <br><br>
-                <label for="nome">Nome</label>
-                <br>
-                <input type="text" name="nome" placeholder="Nome" min="3" max="64" required>
-                <br><br>
-                <label for="resumo">Resumo</label>
-                <br>
-                <textarea type="text" name="resumo" placeholder="Resumo" required></textarea>
-                <br><br>
-                <label for="autores">Autores</label>
-                <br>
-                <input type="text" name="autores" placeholder="Autores" min="4" max="256" required>
-                <br><br>
-                <label for="turma">Orientadores</label>
-                <br>
-                <input type="text" name="orientadores" placeholder="Orientadores" min="4" max="128" required>
-                <br><br>
-                <label for="turma">Nota</label>
-                <br>
-                <input type="text" name="nota" placeholder="Nota" min="1" max="2" required>
-                <br><br>
-                <label for="arquivos">Arquivos</label>
-                <br>
-                <input type="file" name="arquivos" placeholder="Arquivos" enctype="multipart/form-data">
-                <br><br>
-                <input type="submit" value="Cadastrar">
 
+                <label for="ano"><b>Ano de Conclusão</b></label>
+                <br>
+                <input type="number" class="inp_txt" name="ano" placeholder="Ano" min="2021" max="2022" required>
+                <br><br>
+
+                <label for="mencao"><b>Menção</b></label>
+                <br>
+                <select class="inp_txt" name="mencao" id="slct">    
+                <h3>Curso - ETIM</h3>
+                    <option value="mb">MB</option>
+                    <option value="b">B</option>
+                    <option value="r">R</option>
+                    <option value="i">I</option>
+                </select>
+                <br><br>
+
+                <label for="resumo"><b>Resumo</b></label>
+                <br>
+                <textarea type="text" class="area_txt" name="resumo" placeholder="Trecho do PDF (Resumo)" required></textarea>
+                <br><br>
+
+                <label for="resumo"><b>Abstract</b></label>
+                <br>
+                <textarea type="text" class="area_txt" name="abstract" placeholder="Trecho do PDF (Abstract)" required></textarea>
+                <br><br>
+
+                <label for="resumo"><b>Palavras-chave</b></label>
+                <br>
+                <textarea type="text" class="area_txt" name="pa_ch" placeholder="Trecho do PDF (Abstract)" required></textarea>
+                <br><br>
+
+                <label for="resumo"><b>Key Words</b></label>
+                <br>
+                <textarea type="text" class="area_txt" name="key_words" placeholder="Trecho do PDF (Abstract)" required></textarea>
+                <br><br>
+
+
+                <label for="data_ap"><b>Data de Apresentação</b></label>
+                <br>
+                <input type="date" class="inp_txt" name="data_ap" placeholder="Autores" min="4" max="256" id="dt_ap" required>
+                <br><br>
+
+                
+                <div class="arquivos">
+                <h3>Arquivos</h3>
+                    <p>
+                        <label>Upload PDF: </label><input type="file" name="pdf" value=""/>
+                    </p>
+                    <p>    
+                        <label>Upload Projeto Completo(.zip): </label><input type="file" name="zip" value=""/>
+                    </p>
+                    <p>    
+                        <label>Upload Foto Principal: </label><input type="file" name="foto" value=""/>
+                    </p>
+                    <p>    
+                        <label>Upload Foto de Capa: </label><input type="file" name="capa" value=""/>
+                    </p>
+                </div>
+                <br>
+
+                <input type="submit" class="cadastrar" id="sub_box" value="Adicionar Projeto"/>
             </form>
         </div>
     </body>
