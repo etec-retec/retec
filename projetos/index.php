@@ -19,14 +19,26 @@
 
     <div class="grid-container">
         <h1 class="fltrs">Filtros</h1>
+        <!-- <input type="text" placeholder="Pesquisar"/> -->
         <br>
         <div class="info_esquerda">
-            <h3>Curso ETIM</h3>
             <form action="../rotes/order.php?access">
+                <h3>Curso - ETIM</h3>
                 &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="ds"> DS<br>
                 &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="nutricao"> Nutrição<br>
                 &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="meioambiente"> Meio Ambiente<br>
                 &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="quimica"> Química
+                <br><br>
+                <h3>Curso - Modular</h3>
+                &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="contabilidade"> Contabilidade<br>
+                &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="seg_trab"> Segurança do Trabalho<br>
+                &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="nutr_diet"> Nutrição e Dietética<br>
+                &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="quimica_mod"> Química
+                <br><br>
+                <h3>Data da Postagem</h3>
+                De <input type="number" class="ano_inp" min="2021" max="2022"> até <input type="number" class="ano_inp" min="2021" max="2022">
+                <br><br>
+                <input type="submit" class="btn_filtrar" value="Filtrar">
             </form>
 
 
@@ -34,6 +46,7 @@
     
 
         <div class="info_direita">
+        <input type="text" placeholder="Pesquisar"/>
 
             
         </div>

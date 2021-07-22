@@ -4,6 +4,7 @@ body{
     display: flex;
     justify-content: center;
 }
+
 .botao{
     font-size:105%;
     width: 43%;
@@ -13,8 +14,8 @@ body{
     border: 1px #6253f2;
     border-radius: 4px;
     cursor: pointer;
-
 }    
+
 .botaoVoltar{
     text-align: center;
     font-size:110%;
@@ -43,8 +44,8 @@ body{
     height: 10%;
     background-color: white;
     border: solid #709bb3 1px;
-
 }
+
 .formu label{
     margin-right: 75%;
 }
@@ -73,7 +74,6 @@ body{
     background-color: #b6b2eb;
 }
 
-
 ::placeholder {
     color: #709bb3;
 }
@@ -81,8 +81,6 @@ body{
 #TxTmobile{
     display: block;
 }
-
-
 
 @media (max-width: 48em){
 
@@ -124,8 +122,5 @@ body{
     height: 30px;
     width: 55%;
     margin: 2%;
-    
 }
-
-
- }
+}

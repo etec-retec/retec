@@ -52,7 +52,7 @@ body{
 }
 
 .info_direita{
-    margin-top: 100px;
+    margin-left: -532px;
     display: inline;
     border-left: #2a3641 1px solid;
 }
@@ -62,9 +62,6 @@ body{
     margin-top: 40px;
     margin-left: 128px;
 }
-
-
-
 
 .checkbox-round {
     width: 1.3em;
@@ -80,6 +77,26 @@ body{
 
 .checkbox-round:checked {
     background-color: #6253f2;
+}
+
+.ano_inp{
+    width: 50px;
+}
+
+.btn_filtrar{
+    font-size: 16px;
+    width: 128px;
+    height: 32px;
+    background-color: #6253f2;
+    color: white;
+    border: 1px #6253f2;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.btn_filtrar:hover{
+    background-color: #b6b2eb;
 }
 
 
