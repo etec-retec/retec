@@ -23,6 +23,7 @@
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
             <link href="css/remover.css" rel="stylesheet">
+            <link href="css/table.css" rel="stylesheet">
             <title>Retec - Remover</title>
         </head> 
     
@@ -38,11 +39,57 @@
             </div>
     
             <div class="center">
-                <h1>Remover Projeto</h1>
-                    <h3>Em construção...</h3>
-    
-                    <input type="submit" class="cadastrar" value="Remover Projeto"/>
-                </form>
+                <h2>Remover Projeto</h2>
+
+                <table id="customers">
+                    <tr id="especial">
+                      <th>Projeto</th>
+                      <th>Excluir</th>
+                    </tr> 
+
+                    <!-- GERADO PELO PHP -->
+                    <tr>
+                        <td class="table-column">
+                            <div class="item" onclick="window.open('projetoI');">{{ Título do TCC I}}</div>
+                        </td>
+                        
+                        <td class="table-column_ex">
+                            <div class="item" id="center">
+                                <form action="/routes/delete.php?projeto=$id}}" method="POST">
+                                    <button type="submit" class="fr">Excluir</button>
+                                  </form>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="table-column">
+                            <div class="item" onclick="window.open('projetoII');">{{ Título do TCC II}}</div>
+                        </td>
+
+                        <td class="table-column_ex">
+                            <div class="item" id="center">
+                                <form action="/routes/delete.php?projeto=$id}}" method="POST">
+                                    <button type="submit" class="fr">Excluir</button>
+                                  </form>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="table-column">
+                            <div class="item" onclick="window.open('projetoIII');">{{ Título do TCC III}}</div>
+                        </td>
+
+                        <td class="table-column_ex">
+                            <div class="item" id="center">
+                                <form action="/routes/delete.php?projeto=$id}}" method="POST">
+                                    <button type="submit" class="fr">Excluir</button>
+                                  </form>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </body>
     </html>

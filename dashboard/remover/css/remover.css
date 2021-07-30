@@ -61,13 +61,15 @@ body{
 }
 
 .center {
-    margin: auto;
-    width: 20%;
-    padding: 40px;
+    /* border: 1px solid #2a3641; */
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 64px;
 }
 
 .center h2{
-    text-align: center;   
+    text-align: center;
+    color: #800000;
 }
 
 .inp_txt{
@@ -79,42 +81,7 @@ body{
     outline: none;
 }
 
-.area_txt{
-    width: 350px;
-    font-size: 15px;
-    padding: 5px;
-    border-radius: 4px;
-    border: 2px solid #353839;
-    outline: none;
-}
-
-#slct{
-    color: #808080
-}
-
-#slct:hover{
-    cursor: pointer;
-}
-
-#dt_ap{
-    font-family: 'Poppins', sans-serif;
-    width: 180px;
-}
-
-#dt_ap:hover{
-    cursor: pointer;
-}
-
-.arquivos input{
-    background-color: #6253f2;
-    color: #f4f4f4;
-    border-radius: 10px;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
-}
-
-.cadastrar{
+.remover{
     background-color: #6253f2;
     color: #f4f4f4;
     border-radius: 10px;
@@ -124,17 +91,11 @@ body{
     cursor: pointer;
 }
 
-.cadastrar:hover{
+.remover:hover{
     cursor: pointer;
     background-color: #c2d1d9;
     color: #000;
     position: relative;
-}
-
-#lbl{
-    padding: 30px;
-    width: auto;
-    margin-left: 32px;
 }
 
 .voltar{
