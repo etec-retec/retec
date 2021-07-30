@@ -41,28 +41,26 @@ body{
 
 #add:hover{
     cursor: pointer;
-    color: #c2d1d9;
+    color: #6253f2;
 }
 
 #rem{
     font-weight: 900;
-    color: #c2d1d9;
+    color: #800;
     border-right: #c2d1d9 solid 1px;
-    cursor: auto;
+}
+
+#rem:hover{
+    cursor: pointer;
+    color: #6253f2;
 }
 
 #ed{
     font-weight: 900;
-    color: #6253f2;
-}
-
-#ed:hover{
-    cursor: pointer;
     color: #c2d1d9;
 }
 
 .center {
-    /* border: 1px solid #2a3641; */
     width: 90%;
     margin: 0 auto;
     margin-top: 64px;
