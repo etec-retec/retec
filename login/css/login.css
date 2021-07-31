@@ -1,8 +1,9 @@
 body{
-    background-color:#dee7ee;
+    margin: 0;
+    padding: 0;
+    background-color: #dee7ee;
     font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
+    color: #2a3641;
 }
 
 .botao{
@@ -16,10 +17,12 @@ body{
     cursor: pointer;
 }    
 
-.botaoVoltar{
+.voltar{
+    margin-left: 10px;
+    margin-top: 10px;
     text-align: center;
     font-size:110%;
-    width: 8%;
+    width: 100px;
     height: 28px;
     background-color: white;
     color: #6253f2;
@@ -28,7 +31,7 @@ body{
     cursor: pointer;
 }
 
-.botaoVoltar:hover{
+.voltar:hover{
     background-color: #6253f2;
     color: #f4f4f4;
 }
@@ -39,7 +42,6 @@ body{
     border: 1px solid #000;
     margin: 0 auto ;
     margin-top: 13%;
-    margin-left: 25%;
     width: 35%;
     height: 10%;
     background-color: white;
@@ -78,8 +80,8 @@ body{
     color: #709bb3;
 }
 
-#TxTmobile{
-    display: block;
+.TxTmobile{
+    display: none;
 }
 
 @media (max-width: 48em){
@@ -108,10 +110,16 @@ body{
     display: none;
 }
 
-#TxTmobile{
-    display: none;
-    margin-top: 150%;    
-    margin-right: 25%;
+.TxTmobile{
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+}
+
+.TxTmobile a{
+    font-weight: 900;
+    color: #6253f2;
 }
 
 #btnEsqueci{

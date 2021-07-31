@@ -1,8 +1,6 @@
 body{
     background-color:#dee7ee;
     font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
     color: #2a3641;
 }
 
@@ -17,10 +15,12 @@ body{
     cursor: pointer;
 }    
 
-.botaoVoltar{
+.voltar{
+    margin-left: 10px;
+    margin-top: 10px;
     text-align: center;
     font-size:110%;
-    width: 8%;
+    width: 100px;
     height: 28px;
     background-color: white;
     color: #6253f2;
@@ -29,21 +29,22 @@ body{
     cursor: pointer;
 }
 
-.botaoVoltar:hover{
+.voltar:hover{
     background-color: #6253f2;
     color: #f4f4f4;
 }
 
 .formu{
+    
     text-align: center;
     border: 1px solid #000;
-    margin: 0 auto ;
-    margin-top: 5%;
-    margin-left: 25%;
+    margin: 0 auto;
     width: 35%;
     height: 10%;
     background-color: white;
     border: solid #709bb3 1px;
+    margin-top: 64px;
+    margin-bottom: 64px;
 }
 
 .formu h2{

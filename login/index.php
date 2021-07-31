@@ -10,36 +10,33 @@
         <link href="./css/login.css" rel="stylesheet">
         <title>RETEC</title>
     </head>
-
         <body>
-            
-        <button class = "botaoVoltar">❮ Voltar</button> 
-        <div class="formu">
-            
-            <h2>Login</h2>
-            <form name="cadastraU" action="../rotas/login.php" method='POST'>
-                <label>Email</label><br>
-                <input type="email" name="email" maxlenght="50" placeholder="exemplo@email.com" class = "txtF" autocomplete="off" required>
+            <button class="voltar" onclick="window.open('../index.html', '_self')">❮ Voltar</button> 
+            <div class="formu">
+
+                <h2>Login</h2>
+                <form name="cadastraU" action="../rotas/login.php" method='POST'>
+                    <label>Email</label><br>
+                    <input type="email" name="email" maxlenght="50" placeholder="exemplo@email.com" class = "txtF" autocomplete="off" required>
+                    <br><br>
+
+                    <label>Senha</label><br>
+                    <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="txtF" required>
+                    <br><br>
+                    <button class ="botao">Entrar</button>
+                </form>
+
+                <br>
+                <button class="botao" id = "btnEsqueci">Esqueci minha senha</button>
+                <button class="botao" id = "btnN">Não tenho cadastro</button>
                 <br><br>
-                
-                <label>Senha</label><br>
-                <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="txtF" required>
-                <br><br>
-                <button class ="botao">Entrar</button>
-            </form>
 
-            <br><br>
-            <button class ="botao" id = "btnEsqueci">Esqueci minha senha</button>
-            <button class ="botao" id = "btnN">Não tenho cadastro</button>
-            <br><br>
+            </div>
 
-        </div>
+            <div class="TxTmobile">
 
-        <div id = "TxTmobile">
-         <hr/> 
-         Não tem uma conta? <a href="../cadastro/index.php"><u>Cadastre-se</u></a>    
-        </div>
-
+                <label>Não tem uma conta?</label><br>
+                <a href="../cadastro/index.php"><u>Cadastre-se</u></a>    
+            </div>
         </body>
-        
     </html>

@@ -12,7 +12,8 @@
     </head>
 
     <body>
-        <button class = "botaoVoltar">❮ Voltar</button> 
+        <button class="voltar" onclick="window.open('../index.html', '_self')">❮ Voltar</button>
+        
         <div class="formu">
             <h2>Cadastre-se</h2>
             <form name="cadastraU" action="../rotas/login.php" method='POST'>
