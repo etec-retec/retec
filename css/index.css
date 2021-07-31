@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    font-family: 'Poppins', sans-serif;
+    color: #2a3641;
+}
+
+.banner{
+    width: 100%;
+    height: 400px;
+    background-color: #dee7ee;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.nome{
+    margin-right: 0;
+    padding-top: 100px;
+    font-size: 64px;
+}
+
+.nome h1{
+    color: #6253f2;
+    float: right;
+    padding-right: 20px;
+}
+
+.logo{
+    margin-top: 64px;
+    float: right;
+    padding-left: 20px;
+}
+
+.tec{
+    display: table;
+    margin: 0 auto;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #6253f2;
+  border-radius: 16px;
+}
