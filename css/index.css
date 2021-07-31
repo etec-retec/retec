@@ -41,7 +41,6 @@
     background-color: #f4f4f4;
     color: #6253f2;
     border: solid #f4f4f4 1px;
-
 }
 
 .banner{
@@ -94,9 +93,7 @@
 }
 
 .col{
-    
     padding: 16px;
-   
 }
 
 .col h3{
@@ -141,6 +138,13 @@
     cursor: pointer;
 }
 
+.enviar:hover{
+    cursor: pointer;
+    background-color: #c2d1d9;
+    color: #6253f2;
+    position: relative;
+}
+
 .contato textarea{
     border: #2a3641 2px solid;
     border-radius: 5px;
@@ -157,4 +161,50 @@
 ::-webkit-scrollbar-thumb {
   background: #6253f2;
   border-radius: 16px;
+}
+
+@media (max-width: 48em){
+.banner{
+    height: 248px;
+}
+
+.logo{
+    float: right;
+    padding-top: 16px;
+}
+
+.logo img{
+    width: 96px;
+}
+
+.nome h1{
+    font-size: 48px;
+
+}
+
+.bts{
+    margin-right: 64px;
+}
+
+.center{
+    margin: 0;
+    padding: 20px;
+    width: auto;
+}
+
+.cadastrar{
+    margin: 0 auto;
+}
+
+.tec img{
+    width: 100%;
+}
+
+.grid{
+    display: block;
+    /* grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px; */
+    padding: 0;
+}
+
 }
