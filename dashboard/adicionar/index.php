@@ -1,17 +1,17 @@
-<!-- <?php
-    // session_start();
-    // if($_SESSION["numLogin"] != $_GET["access"]){
-    //     echo "
-    //     <center>
-    //     <br><br><br><br><br><br>
-    //         <h1>Acesso negado!</h1>
-    //         <br>
-    //         <a href='../login/index.php'>Entrar</a>
-    //     </center>
-    //     ";
-    //     exit;
-    // }
-?> -->
+<?php
+    session_start();
+    if($_SESSION["numLogin"] != $_GET["access"]){
+        echo "
+        <center>
+        <br><br><br><br><br><br>
+            <h1>Acesso negado!</h1>
+            <br>
+            <a href='../login/index.php'>Entrar</a>
+        </center>
+        ";
+        exit;
+    }
+?>
 
 <!DOCTYPE html>
     <html lang="pt-br">
@@ -28,11 +28,11 @@
 
     <body>
         <div class="cabecalho"> 
-            <button class="voltar">❮ Voltar</button>
+            <button class="voltar" onclick="window.open('../index.php?access=<?php echo $_SESSION["numLogin"]; ?>', '_self')">❮ Voltar</button>
             <div class="bts">
                 <a id="add">Adicionar</a>
-                <a id="rem" href="../remover/index.php">Remover</a>
-                <a id="ed" href="../editar/index.php">Editar</a>
+                <a id="rem" href="../remover/index.php?access=<?php echo $_SESSION['numLogin'];?>">Remover</a>
+                <a id="ed" href="../editar/index.php?access=<?php echo $_SESSION["numLogin"];?>">Editar</a>
             </div>
             <h1 class="logo">RETEC</h1>
         </div>

@@ -11,7 +11,7 @@
         <title>RETEC</title>
     </head>
         <body>
-            <button class="voltar" onclick="window.open('../index.html', '_self')">❮ Voltar</button> 
+            <button class="voltar" onclick="window.open('../index.php', '_self')">❮ Voltar</button> 
             <div class="formu">
 
                 <h2>Login</h2>

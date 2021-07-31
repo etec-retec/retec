@@ -1,3 +1,9 @@
+<?php
+    if(session_id() != ''){
+        session_destroy();
+    }
+?>
+
 <!DOCTYPE html>
     <html lang="pt-br">
     <head>
@@ -19,7 +25,7 @@
         </div>
         <div class="banner">
             <div class="nome">
-                <h1>Retec</h1>
+                <h1>RETEC</h1>
             </div>
             <div class="logo">
                 <img src="assets/img/logo.png" width="175px"/>
