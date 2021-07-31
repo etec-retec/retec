@@ -166,4 +166,25 @@ body{
     height: 150px;
 }
 
+.logo{
+    float: right;
+    font-size: 30px;
+    margin-top: -124px;
+    margin-right: 12px;
+}
+
+.bts{
+    margin-right: 64px;
+}
+
+.center{
+    margin: 0;
+    padding: 20px;
+    width: auto;
+}
+
+.cadastrar{
+    margin: 0 auto;
+}
+
 }

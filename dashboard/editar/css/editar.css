@@ -100,4 +100,11 @@ body{
     height: 150px;
 }
 
+.logo{
+    float: right;
+    font-size: 30px;
+    margin-top: -124px;
+    margin-right: 12px;
+}
+
 }

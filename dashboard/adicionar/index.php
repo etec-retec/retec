@@ -41,8 +41,7 @@
             <h2 class="center" id="lbl">Adicionar Projeto</h2>
             <form action="../../rotas/ .php?<?php echo $_SESSION["numLogin"];?>" method="POST">
 
-                <label for="nome"><b>Nome</b></label>
-                <br>
+                <p for="nome"><b>Nome</b></p>
                 <input type="text" class="inp_txt" name="nome" placeholder="Nome do TCC" min="3" max="64" required>
                 <br><br>
 
