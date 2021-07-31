@@ -8,6 +8,42 @@
     color: #2a3641;
 }
 
+.actions{
+    background-color: #dee7ee;
+    padding: 32px;
+}
+
+.btn{
+    float: right;
+    text-align: center;
+    margin-left: 16px;
+    font-size:110%;
+    width: 120px;
+    height: 28px;
+    background-color: white;
+    color: #6253f2;
+    border: solid #6253f2 1px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #6253f2;
+    color: #f4f4f4;
+}
+
+#cad{
+    background-color: #6253f2;
+    color:#f4f4f4;
+}
+
+#cad:hover{
+    background-color: #f4f4f4;
+    color: #6253f2;
+    border: solid #f4f4f4 1px;
+
+}
+
 .banner{
     width: 100%;
     height: 350px;

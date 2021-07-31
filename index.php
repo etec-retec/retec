@@ -12,7 +12,11 @@
         <title>Retec</title>
     </head>
     <body>
-        <div class="banner"> 
+        <div class="actions">
+                <button class="btn" onclick="window.open('login/index.php', '_self')">Login</button>
+                <button class="btn" id="cad" onclick="window.open('cadastro/index.php', '_self')">Cadastrar</button>
+        </div>
+        <div class="banner">
             <div class="nome">
                 <h1>Retec</h1>
             </div>
