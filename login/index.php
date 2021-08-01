@@ -44,7 +44,6 @@
             </div>
             <script>
                 var currentLocation = window.location;
-                console.log(currentLocation.search.slice(0,7))
                 if(currentLocation.search.slice(0,9) == "?denied=1"){
                     document.getElementById("lbl_aviso").style.display = "block";
                     document.getElementById("email").value = "<?php echo $_GET["email"];?>"

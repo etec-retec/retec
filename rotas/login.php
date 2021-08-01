@@ -11,7 +11,7 @@
         $dados = mysqli_query($conexao, $query);
         
 
-        $query = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha''";
+        $query = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha'";
         $result = mysqli_query($conexao, $query);
         $retorno = mysqli_affected_rows($conexao);
         $dados = mysqli_query($conexao, $query);
@@ -30,7 +30,7 @@
             }
 
             header("location: ../dashboard/index.php?access=$num");
-        }else if($retorno_email){
+        }else if($retorno_email & $retorno != 1){
             header("location: ../login/index.php?denied=1&email=$email");
         }else{
             header("location: ../login/index.php?denied=2");
