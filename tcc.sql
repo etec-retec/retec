@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Jul-2021 às 22:26
+-- Tempo de geração: 01-Ago-2021 às 17:33
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 8.0.7
 
@@ -48,23 +48,19 @@ CREATE TABLE `repositorio` (
 CREATE TABLE `usuario` (
   `codigo_u` int(11) NOT NULL,
   `nome` varchar(64) NOT NULL,
+  `instituicao` varchar(64) NOT NULL,
   `email` varchar(64) NOT NULL,
-  `senha` varchar(42) NOT NULL,
-  `tipo` varchar(32) NOT NULL
+  `email_rec` varchar(64) NOT NULL,
+  `senha` varchar(42) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`codigo_u`, `nome`, `email`, `senha`, `tipo`) VALUES
-(14, 'leocom', 'leo@hotmail.com', '25575', 'aluno'),
-(15, 'leocom', 'leo@hotmail.com', '12545', 'aluno'),
-(16, 'leocom', 'leo@hotmail.com', '&#039;1414413', 'professor'),
-(17, 'leocom', 'leo@hotmail.com', 'c5a43905546da8e87163c5ad28c5f68d', 'professor'),
-(18, 'leocom', 'leo@hotmail.com', 'ecd4232a467c3085d7fa1302a827caa9', 'professor'),
-(19, 'leocom', 'leo@hotmail.com', 'd4924c2f1902351aaf7664a53a32d0c5', 'professor'),
-(20, 'Max', 'max@gmail.com', 'a722c63db8ec8625af6cf71cb8c2d939', 'aluno');
+INSERT INTO `usuario` (`codigo_u`, `nome`, `instituicao`, `email`, `email_rec`, `senha`) VALUES
+(16, 'Leonardo Vasconcelos', 'ETEC Doutor Celso Giglio', 'leo@hotmail.com', 'leo2@hotmail.com', 'e10adc3949ba59abbe56e057f20f883e'),
+(20, 'Max', 'ETEC Doutor Celso Giglio', 'max@gmail.com', 'max2@hotmail.com', 'a722c63db8ec8625af6cf71cb8c2d939');
 
 --
 -- Índices para tabelas despejadas
