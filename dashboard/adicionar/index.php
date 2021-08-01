@@ -63,7 +63,6 @@
                 <label for="curso"><b>Curso</b></label>
                 <br>
                 <select class="inp_txt" name="curso" id="slct">    
-                <h3>Curso - ETIM</h3>
                     <option value="ds">ETIM - Desenvolvimento de Sistemas</option>
                     <option value="nutricao">ETIM - Nutrição</option>
                     <option value="meioambiente">ETIM - Meio Ambiente</option>

@@ -50,7 +50,7 @@
                 var currentLocation = window.location;
                 if(currentLocation.search.slice(0,9) == "?denied=1"){
                     document.getElementById("lbl_aviso").style.display = "block";
-                    document.getElementById("email").value = "<?php echo $_GET["email"];?>"
+                    document.getElementById("email").value = "<?php $_GET["email"];?>"
                 }else if(currentLocation.search.slice(0,9) == "?denied=2"){
                     document.getElementById("lbl_inc").style.display = "block";
                 }

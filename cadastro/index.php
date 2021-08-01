@@ -16,27 +16,32 @@
         
         <div class="formu">
             <h2>Cadastre-se</h2>
-            <form name="cadastraU" action="../rotas/usuario.php" method='POST'>
-                <label><b>Nome</b></label><br>
-                <input type="text" name="nome" maxlenght="20" placeholder="Nome" class="txtF" autocomplete="off" required>
+            <form name="cadastraU" action="../rotas/usuario.php?create=1" method='POST'>
+                <label id="lbl_aviso" style="display:none;margin:0 auto;"></label>
+                <label for="nome"><b>Nome</b></label><br>
+                <input type="text" name="nome" id="nome" maxlenght="20" placeholder="Nome" class="txtF" autocomplete="off" required>
 
-                <label><b>Sobrenome</b></label><br>
-                <input type="text" name="sobrenome" maxlenght="43" placeholder="Sobrenome" class="txtF" autocomplete="off" required>
+                <label for="sobrenome"><b>Sobrenome</b></label><br>
+                <input type="text" name="sobrenome" id="sobrenome" maxlenght="43" placeholder="Sobrenome" class="txtF" autocomplete="off" required>
                 
-                <label><b>Instituição</b></label><br>
-                <input type="text" name="instituicao" maxlenght="64" placeholder="Ex: ETEC Dr. Celso Giglio" class="txtF" autocomplete="off" required>
-
-                <label><b>E-mail</b></label><br>
+                <label for="instituicao"><b>Instituição</b></label>
+                <br>
+                <select class="inp_txt" name="instituicao" id="slct" style="color:#000;">
+                    <option disabled selected>Escolha</option>
+                    <option value="ETEC Doutor Celso Giglio">ETEC - Dr. Celso Giglio</option>
+                </select>
+            
+                <label for="email"><b>E-mail</b></label><br>
                 <input type="email" name="email" maxlenght="64" placeholder="exemplo@email.com" class="txtF" autocomplete="off" required>
 
-                <label><b>E-mail de recuperação</b></label><br>
+                <label for="email2"><b>E-mail de recuperação</b></label><br>
                 <input type="email" name="email2" maxlenght="64" placeholder="exemplo2@email.com" class="txtF" autocomplete="off" required>
                 
-                <label><b>Senha</b></label><br>
-                <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="txtF" required>
+                <label for="senha"><b>Senha</b></label><br>
+                <input type="password" name="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="txtF" required>
 
-                <label><b>Digite a senha novamente</b></label><br>
-                <input type="password" name="senha2" id="senha" minlenght="5" maxlenght="42" placeholder="Senha novamente" class="txtF" required>
+                <label for="rsenha"><b>Digite a senha novamente</b></label><br>
+                <input type="password" name="rsenha" minlenght="5" maxlenght="42" placeholder="Senha novamente" class="txtF" required>
                 <br><br>
 
                 <button class="botao">Cadastrar</button>
@@ -45,6 +50,20 @@
             <button class ="botao">Já tenho uma conta</button>
             <br><br>
         </div>
+        <script>
+            var currentLocation = window.location;
+            if(currentLocation.search.slice(0,6) == "?email"){
+                document.getElementById("lbl_aviso").style.display = "block";
+                document.getElementById("lbl_aviso").style.color = "#800";
+                document.getElementById("lbl_aviso").style.textDecoration = "underline";
+                document.getElementById("lbl_aviso").textContent = "O E-mail já está em uso";
+            }else if(currentLocation.search.slice(0,6) == "?senha"){
+                document.getElementById("lbl_aviso").style.display = "block";
+                document.getElementById("lbl_aviso").style.color = "#800";
+                document.getElementById("lbl_aviso").style.textDecoration = "underline";
+                document.getElementById("lbl_aviso").textContent = "As senhas não são iguais";
+            }
+        </script>
     </body>
         
 </html>

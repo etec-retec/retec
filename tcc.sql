@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Ago-2021 às 17:33
+-- Tempo de geração: 01-Ago-2021 às 23:00
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 8.0.7
 
@@ -51,16 +51,18 @@ CREATE TABLE `usuario` (
   `instituicao` varchar(64) NOT NULL,
   `email` varchar(64) NOT NULL,
   `email_rec` varchar(64) NOT NULL,
-  `senha` varchar(42) NOT NULL
+  `senha` varchar(42) NOT NULL,
+  `tipo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`codigo_u`, `nome`, `instituicao`, `email`, `email_rec`, `senha`) VALUES
-(16, 'Leonardo Vasconcelos', 'ETEC Doutor Celso Giglio', 'leo@hotmail.com', 'leo2@hotmail.com', 'e10adc3949ba59abbe56e057f20f883e'),
-(20, 'Max', 'ETEC Doutor Celso Giglio', 'max@gmail.com', 'max2@hotmail.com', 'a722c63db8ec8625af6cf71cb8c2d939');
+INSERT INTO `usuario` (`codigo_u`, `nome`, `instituicao`, `email`, `email_rec`, `senha`, `tipo`) VALUES
+(16, 'Leonardo Vasconcelos', 'ETEC Doutor Celso Giglio', 'leo@hotmail.com', 'leo2@hotmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1),
+(23, 'Maxwell Alves', 'ETEC Doutor Celso Giglio', 'max@gmail.com', 'max2@gmail.com', 'd41d8cd98f00b204e9800998ecf8427e', 1),
+(35, 'Jo&atilde;o Little Head', 'ETEC Doutor Celso Giglio', 'cabecinha@hotmail.com', 'cabecinha2@hotmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0);
 
 --
 -- Índices para tabelas despejadas
@@ -92,7 +94,7 @@ ALTER TABLE `repositorio`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `codigo_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `codigo_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

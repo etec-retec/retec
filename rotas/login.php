@@ -9,7 +9,6 @@
         $result = mysqli_query($conexao, $query);
         $retorno_email = mysqli_affected_rows($conexao);
         $dados = mysqli_query($conexao, $query);
-        
 
         $query = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha'";
         $result = mysqli_query($conexao, $query);
