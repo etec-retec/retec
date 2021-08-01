@@ -13,7 +13,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
         <link href="./css/login.css" rel="stylesheet">
-        <title>RETEC</title>
+        <title>RETEC - Login</title>
     </head>
         <body>
             <button class="voltar" onclick="window.open('../index.php', '_self')">❮ Voltar</button> 
@@ -21,17 +21,17 @@
 
                 <h2>Login</h2>
                 <form name="cadastraU" action="../rotas/login.php" method='POST'>
-                    <label>Email</label><br>
+                    <label><b>E-mail</b></label><br>
                     <input type="email" name="email" id="email" maxlenght="50" placeholder="exemplo@email.com" class="txtF" autocomplete="off" required>
                     <br><br>
 
-                    <label>Senha</label><br>
+                    <label><b>Senha</b></label><br>
                     <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="txtF" required>
                     <br>
                     <p id="lbl_aviso" style="color:#800;display:none;">A senha está incorreta!</p>
                     <p id="lbl_inc" style="color:#800;display:none;">O e-mail não está vinculado a nenhuma conta!</p>
                     <br>
-                    <button class ="botao">Entrar</button>
+                    <button class="botao">Entrar</button>
                 </form>
 
                 <br>

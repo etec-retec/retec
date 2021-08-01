@@ -1,14 +1,9 @@
-<link href="../css/loading.css" rel="stylesheet">
-<title>Validando...</title>
-
-
-            <center><br><br><br><br><br><br><br>
-            <div class='loader'></div>
-            </center>
-           
 <?php
-    $nomecompleto = filter_input(INPUT_POST, 'nomecompleto', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $sobrenome = filter_input(INPUT_POST, 'sobrenome', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $instituicao = filter_input(INPUT_POST, 'instituicao', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $email_rec = filter_input(INPUT_POST, 'email2', FILTER_SANITIZE_EMAIL);
     $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $rsenha = filter_input(INPUT_POST, 'rsenha', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $tipo = filter_input(INPUT_POST, 'tipo', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -65,7 +60,6 @@ class usuario{
 
     public function getTipo(){
         return $this->tipo;
-
     }
     
     

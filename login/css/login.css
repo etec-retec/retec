@@ -39,13 +39,12 @@ body{
 .formu{
     color: #2a3641;
     text-align: center;
-    border: 1px solid #000;
     margin: 0 auto ;
     margin-top: 13%;
     width: 35%;
     height: 10%;
-    background-color: white;
-    border: solid #709bb3 1px;
+    border: solid #6253f2 1px;
+    border-radius: 6px;
 }
 
 .formu label{
@@ -63,7 +62,8 @@ body{
     height: 27px;
     color:solid #a7b5bc;
     border-radius: 4px;
-    border: solid #709bb3 1px;
+    border: 2px solid #353839;
+    background-color: transparent;
 }
 
 .formu input :focus{
