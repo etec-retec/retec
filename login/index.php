@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -17,18 +18,21 @@
                 <h2>Login</h2>
                 <form name="cadastraU" action="../rotas/login.php" method='POST'>
                     <label>Email</label><br>
-                    <input type="email" name="email" maxlenght="50" placeholder="exemplo@email.com" class = "txtF" autocomplete="off" required>
+                    <input type="email" name="email" id="email" maxlenght="50" placeholder="exemplo@email.com" class="txtF" autocomplete="off" required>
                     <br><br>
 
                     <label>Senha</label><br>
                     <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="txtF" required>
-                    <br><br>
+                    <br>
+                    <p id="lbl_aviso" style="color:#800;display:none;">A senha está incorreta!</p>
+                    <p id="lbl_inc" style="color:#800;display:none;">O e-mail não está vinculado a nenhuma conta!</p>
+                    <br>
                     <button class ="botao">Entrar</button>
                 </form>
 
                 <br>
-                <button class="botao" id = "btnEsqueci">Esqueci minha senha</button>
-                <button class="botao" id = "btnN">Não tenho cadastro</button>
+                <button class="botao" id="btnEsqueci">Esqueci minha senha</button>
+                <button class="botao" id="btnN">Não tenho cadastro</button>
                 <br><br>
 
             </div>
@@ -38,5 +42,15 @@
                 <label>Não tem uma conta?</label><br>
                 <a href="../cadastro/index.php"><u>Cadastre-se</u></a>    
             </div>
+            <script>
+                var currentLocation = window.location;
+                console.log(currentLocation.search.slice(0,7))
+                if(currentLocation.search.slice(0,9) == "?denied=1"){
+                    document.getElementById("lbl_aviso").style.display = "block";
+                    document.getElementById("email").value = "<?php echo $_GET["email"];?>"
+                }else if(currentLocation.search == "?denied=2"){
+                    document.getElementById("lbl_inc").style.display = "block";
+                }
+            </script>
         </body>
     </html>

@@ -5,10 +5,15 @@
         $senha = md5($senha);
 
         include "../conexao/conexao.inc";
-        $query = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha'";
+        $query = "SELECT * FROM usuario WHERE email = '$email'";
         $result = mysqli_query($conexao, $query);
-        echo $retorno = mysqli_affected_rows($conexao);
-        echo mysqli_error($conexao);
+        $retorno_email = mysqli_affected_rows($conexao);
+        $dados = mysqli_query($conexao, $query);
+        
+
+        $query = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha''";
+        $result = mysqli_query($conexao, $query);
+        $retorno = mysqli_affected_rows($conexao);
         $dados = mysqli_query($conexao, $query);
         mysqli_close($conexao);
 
@@ -25,11 +30,13 @@
             }
 
             header("location: ../dashboard/index.php?access=$num");
+        }else if($retorno_email){
+            header("location: ../login/index.php?denied=1&email=$email");
         }else{
-            // header("location: ../index.html");
+            header("location: ../login/index.php?denied=2");
         }
     }else{
-        // header("location: ../index.html");
+        echo "Ocorreu um erro inesperado. Contate o desenvolvedor!";
     }
 
 ?>
