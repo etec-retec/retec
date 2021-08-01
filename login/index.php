@@ -1,4 +1,8 @@
-
+<?php
+    if(!isset($_GET["email"])){
+        $_GET["email"] = "null";
+    }
+?>
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -47,7 +51,7 @@
                 if(currentLocation.search.slice(0,9) == "?denied=1"){
                     document.getElementById("lbl_aviso").style.display = "block";
                     document.getElementById("email").value = "<?php echo $_GET["email"];?>"
-                }else if(currentLocation.search == "?denied=2"){
+                }else if(currentLocation.search.slice(0,9) == "?denied=2"){
                     document.getElementById("lbl_inc").style.display = "block";
                 }
             </script>

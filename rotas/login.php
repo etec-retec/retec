@@ -30,7 +30,7 @@
             }
 
             header("location: ../dashboard/index.php?access=$num");
-        }else if($retorno_email & $retorno != 1){
+        }else if($retorno_email == True & $retorno != 1){
             header("location: ../login/index.php?denied=1&email=$email");
         }else{
             header("location: ../login/index.php?denied=2");
