@@ -22,29 +22,29 @@
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-            <link href="css/editar.css" rel="stylesheet">
+            <link href="css/remover.css" rel="stylesheet">
             <link href="css/table.css" rel="stylesheet">
-            <title>Retec - Editar</title>
+            <title>Retec - Remover</title>
         </head> 
     
         <body>
             <div class="cabecalho"> 
                 <button class="voltar" onclick="window.open('../index.php?access=<?php echo $_SESSION["numLogin"]; ?>', '_self')">❮ Voltar</button>
                 <div class="bts">
-                    <a id="add" href="../adicionar/index.php?access=<?php echo $_SESSION["numLogin"];?>" >Adicionar</a>
-                    <a id="rem" href="../remover/index.php?access=<?php echo $_SESSION["numLogin"];?>">Remover</a>
-                    <a id="ed">Editar</a>
+                    <a id="add" href="../adicionar/index.php?access=<?php echo $_SESSION["numLogin"];?>">Adicionar</a>
+                    <a id="rem">Remover</a>
+                    <a id="ed" href="../editar/index.php?access=<?php echo $_SESSION["numLogin"];?>">Editar</a>
                 </div>
                 <h1 class="logo">RETEC</h1>
             </div>
     
             <div class="center">
-                <h2>Editar Projeto</h2>
+                <h2>Remover Projeto</h2>
 
                 <table id="customers">
                     <tr id="especial">
                       <th>Projeto</th>
-                      <th>Editar</th>
+                      <th>Excluir</th>
                     </tr> 
 
                     <!-- GERADO PELO PHP -->
@@ -56,7 +56,7 @@
                         <td class="table-column_ex">
                             <div class="item" id="center">
                                 <form action="/routes/delete.php?projeto=$id}}" method="POST">
-                                    <button type="submit" class="fr">Editar</button>
+                                    <button type="submit" class="fr">Excluir</button>
                                   </form>
                             </div>
                         </td>
@@ -70,7 +70,7 @@
                         <td class="table-column_ex">
                             <div class="item" id="center">
                                 <form action="/routes/delete.php?projeto=$id}}" method="POST">
-                                    <button type="submit" class="fr">Editar</button>
+                                    <button type="submit" class="fr">Excluir</button>
                                   </form>
                             </div>
                         </td>
@@ -84,7 +84,7 @@
                         <td class="table-column_ex">
                             <div class="item" id="center">
                                 <form action="/routes/delete.php?projeto=$id}}" method="POST">
-                                    <button type="submit" class="fr">Editar</button>
+                                    <button type="submit" class="fr">Excluir</button>
                                   </form>
                             </div>
                         </td>

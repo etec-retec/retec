@@ -1,0 +1,191 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    color: #2a3641;
+}
+
+.cabecalho{
+    width: 100%;
+    height: 150px;
+    background-color: #dee7ee;
+}
+
+.logo{
+    margin-left: 188px;
+    margin-top: -30px;
+    font-size: 64px;
+    color: #6253f2
+}
+
+.bts{
+    float: right;
+    padding: 10px;
+    margin-top: 45px;
+    margin-right: 45px;
+    background-color: #fff;
+}
+
+.bts a{
+    padding: 10px;
+    text-decoration: none;
+    color: #2a3641
+}
+
+#add{
+    font-weight: 900;
+    color: #c2d1d9;
+    border-right: #c2d1d9 solid 1px;
+}
+
+#rem{
+    font-weight: 900;
+    color: #ff0000;
+    border-right: #c2d1d9 solid 1px;
+}
+
+#rem:hover{
+    cursor: pointer;
+    color: #c2d1d9;
+}
+
+#ed{
+    font-weight: 900;
+    color: #6253f2;
+}
+
+#ed:hover{
+    cursor: pointer;
+    color: #c2d1d9;
+}
+
+.center {
+    margin: auto;
+    width: 20%;
+    padding: 40px;
+}
+
+.center h2{
+    text-align: center;   
+}
+
+.inp_txt{
+    width: 350px;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 2px solid #353839;
+    outline: none;
+}
+
+.area_txt{
+    width: 350px;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 2px solid #353839;
+    outline: none;
+}
+
+#slct{
+    color: #808080
+}
+
+#slct:hover{
+    cursor: pointer;
+}
+
+#dt_ap{
+    font-family: 'Poppins', sans-serif;
+    width: 180px;
+}
+
+#dt_ap:hover{
+    cursor: pointer;
+}
+
+.arquivos input{
+    background-color: #6253f2;
+    color: #f4f4f4;
+    border-radius: 10px;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.cadastrar{
+    background-color: #6253f2;
+    color: #f4f4f4;
+    border-radius: 10px;
+    border: none;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cadastrar:hover{
+    cursor: pointer;
+    background-color: #c2d1d9;
+    color: #6253f2;
+    position: relative;
+}
+
+#lbl{
+    padding: 30px;
+    width: auto;
+    margin-left: 32px;
+}
+
+.voltar{
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-size:110%;
+    width: 100px;
+    height: 28px;
+    background-color: white;
+    color: #6253f2;
+    border: solid #6253f2 1px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.voltar:hover{
+    background-color: #6253f2;
+    color: #f4f4f4;
+}
+
+#sub_box{
+    margin-left: 80px;
+    /* margin: 0 auto; */
+}
+
+
+@media (max-width: 48em){
+.banner{
+    height: 150px;
+}
+
+.logo{
+    float: right;
+    font-size: 30px;
+    margin-top: -124px;
+    margin-right: 12px;
+}
+
+.bts{
+    margin-right: 64px;
+}
+
+.center{
+    margin: 0;
+    padding: 20px;
+    width: auto;
+}
+
+.cadastrar{
+    margin: 0 auto;
+}
+
+}
