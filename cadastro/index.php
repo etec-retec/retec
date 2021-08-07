@@ -42,6 +42,12 @@
 
                 <label for="rsenha"><b>Digite a senha novamente</b></label><br>
                 <input type="password" name="rsenha" minlenght="5" maxlenght="42" placeholder="Senha novamente" class="txtF" required>
+                
+                <label for="rsenha"><b>Matrícula:</b></label><br>
+                <input type="password" name="matricula" minlenght="5" maxlenght="42" placeholder="Digite a matrícula" class="txtF" required>
+                
+                <label for="rsenha"><b>RG:</b></label><br>
+                <input type="password" name="rg" minlenght="5" maxlenght="42" placeholder="Digite o RG" class="txtF" required>
                 <br><br>
 
                 <button class="botao">Cadastrar</button>

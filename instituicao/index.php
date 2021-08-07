@@ -22,7 +22,6 @@
         ";
         exit;
     }
-    $_SESSION['not'] = 1;
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +40,7 @@
         <div class="cabecalho" id="teste"> 
             <button class="voltar" onclick="window.open('../index.php', '_self')">❮ Sair</button>
             <?php
-                if($_SESSION['not'] > 0){
+                if((isset($_SESSION['not']) && $_SESSION['not'] > 0)){
             ?>
                 <img src="../assets/img/notTrue.png" class="notificacao" id="notificacao"/>
                 <div class="boxNot" id="boxNot">
@@ -49,20 +48,28 @@
                     <hr>
                     <p><b>Nome: </b><?php echo $_SESSION["notNome"];?></p>
                     <p><b>Matrícula: </b><?php echo $_SESSION["notMatricula"];?></p>
+                    <p><b>RG: </b><?php echo $_SESSION["notRg"];?></p>
                     <p><b>E-mail: </b><?php echo $_SESSION["notEmail"];?></p>
-                    <form action="..rotas/verificarProfessor?access=<?php echo $_SESSION["numLogin"];?>" method="POST">
-                        <input type="text" style="display:none" value="1">
-                        <button class="btnBox">Verificar</button>
+                    <form action="../rotas/verificacao.php?access=<?php echo $_SESSION["numLogin"];?>" method="POST">
+                    <input type="text" name="rg" style="display:none" value="<?php echo $_SESSION["notRg"];?>"/>
+                        <input type="text" name="matricula" style="display:none" value="<?php echo $_SESSION["notMatricula"];?>"/>
+                        <input type="text" name="conf" style="display:none;" value="1"/>
+                        <button class="btnBox" id="ver">Verificar</button>
                     </form>
-                    <form action="..rotas/verificarProfessor?access=<?php echo $_SESSION["numLogin"];?>" method="POST">
-                        <input type="text" style="display:none" value="1">
-                        <button class="btnBox">Negar</button>
+                    <form action="../rotas/verificacao.php?access=<?php echo $_SESSION["numLogin"];?>" method="POST">
+                        <input type="text" name="rg" style="display:none" value="<?php echo $_SESSION["notRg"];?>"/>
+                        <input type="text" name="matricula" style="display:none" value="<?php echo $_SESSION["notMatricula"];?>"/>
+                        <input type="text" name="conf" style="display:none" value="0"/>
+                        <button class="btnBox" id="neg">Negar</button>
                     </form>
                 </div>
             <?php
                 }else{
             ?>
-                    <img src="../assets/img/not.png" class="notificacao" id="notificacao"/>
+                <img src="../assets/img/not.png" class="notificacao" id="notificacao"/>
+                <div class="boxNot" id="boxNot">
+                    <h4>Não há nenhuma notificação!</h4>
+                </div>
             <?php
                 }
             ?>
@@ -87,7 +94,17 @@
             var box = document.getElementById("boxNot");
             var vezes = 0
             imgm = 0
+            <?php 
+                if(isset($_SESSION['not'])){
+            ?>
             verificacao = <?php echo $_SESSION['not'];?>
+            <?php
+                }else{
+            ?>
+            verificacao = 0;
+            <?php
+                }
+            ?>
 
             if(verificacao == 1){
                 imgm = '../assets/img/notTrue.png'

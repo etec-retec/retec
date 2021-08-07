@@ -8,6 +8,8 @@
     $email_rec = filter_input(INPUT_POST, 'email2', FILTER_SANITIZE_EMAIL);
     $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $rsenha = filter_input(INPUT_POST, 'rsenha', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $matricula = filter_input(INPUT_POST, 'matricula', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $rg = filter_input(INPUT_POST, 'rg', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     if($senha != $rsenha){
         header("location: ../cadastro/index.php?senha");
@@ -22,14 +24,15 @@
         header("location: ../cadastro/index.php?email");
     }
 
-    function addUsuario($nome, $sobrenome, $instituicao, $email, $email_rec, $senha){
+    function addUsuario($nome, $sobrenome, $instituicao, $email, $email_rec, $senha, $matricula, $rg){
         $objeto = new Usuario();
         $objeto->setNome($nome, $sobrenome);
         $objeto->setInstituicao($instituicao);
         $objeto->setEmail($email);
         $objeto->setEmail_rec($email_rec);
         $objeto->setSenha($senha);
-        $objeto->setTipo();
+        $objeto->setMatricula($matricula);
+        $objeto->setRG($rg);
         $objeto->atualizaBD_U();
     }
 
@@ -42,7 +45,8 @@
         public $email_rec;
         public $senha;
         public $rsenha;
-        public $tipo;
+        public $matricula;
+        public $rg;
 
         public function setNome($nome, $sobrenome){
             $this->nome = $nome;
@@ -85,17 +89,25 @@
             return $this->senha;
         }
 
-        public function setTipo(){
-            $this->tipo = 2;
+        public function setMatricula($matricula){
+            $this->matricula = $matricula;
         }
 
         public function getTipo(){
-            return $this->tipo;
+            return $this->matricula;
+        }
+
+        public function setRG($rg){
+            $this->rg = $rg;
+        }
+
+        public function getRG(){
+            return $this->rg;
         }
 
         public function atualizaBD_U(){
             include '../conexao/conexao.inc';
-            $query_insert_usuario = "INSERT INTO usuario VALUES (NULL, '$this->nome_completo', '$this->instituicao','$this->email', '$this->email_rec', '$this->senha', '$this->tipo')";
+            $query_insert_usuario = "INSERT INTO solicitacoes VALUES (NULL, '$this->nome_completo', '$this->email','$this->email_rec', '$this->matricula', '$this->rg', '$this->senha', '$this->instituicao')";
             $res = mysqli_query($conexao, $query_insert_usuario);
             echo mysqli_error($conexao);
             mysqli_close($conexao);
@@ -104,6 +116,6 @@
     }
 
     if(isset($_GET["create"]) and $retorno == 0){
-        addUsuario($nome, $sobrenome, $instituicao, $email, $email_rec, $senha);
+        addUsuario($nome, $sobrenome, $instituicao, $email, $email_rec, $senha, $matricula, $rg);
     }
 ?>

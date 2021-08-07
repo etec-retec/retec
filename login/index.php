@@ -30,6 +30,7 @@
                     <br>
                     <p id="lbl_aviso" style="color:#800;display:none;">A senha está incorreta!</p>
                     <p id="lbl_inc" style="color:#800;display:none;">O e-mail não está vinculado a nenhuma conta!</p>
+                    <p id="lbl_ver" style="color:#800;display:none;">Aguarde sua conta ser verificada por sua instituição!</p>
                     <br>
                     <button class="botao">Entrar</button>
                 </form>
@@ -53,6 +54,9 @@
                     document.getElementById("email").value = "<?php $_GET["email"];?>"
                 }else if(currentLocation.search.slice(0,9) == "?denied=2"){
                     document.getElementById("lbl_inc").style.display = "block";
+                }else if(currentLocation.search.slice(0,9) == "?denied=3"){
+                    document.getElementById("lbl_ver").style.display = "block";
+                    document.getElementById("email").value = "<?php $_GET["email"];?>"
                 }
             </script>
         </body>

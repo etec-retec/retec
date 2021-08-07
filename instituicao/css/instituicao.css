@@ -71,9 +71,9 @@ body{
 
 .cap{
     font-size: 64px;
-    padding-top: 160px;
     display: table;
     margin: 0 auto;
+    margin-top: 196px;
     text-transform: capitalize;
 }
 
@@ -109,9 +109,44 @@ body{
     border-right: 1px solid #6253f2;
 }
 
+.boxNot{
+    padding: 10px 30px 20px 30px;
+}
+
+.boxNot button{
+    display: block;
+    border: none;
+    padding: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
 .btnBox{
-    display:inline-block;
-    /* float: left; */
+    float: left;
+    padding: 5px;
+    border-radius: 0px;
+    display: table;
+    margin: 0 auto;
+}
+
+#ver{
+    background-color: #008000;
+    color:#f4f4f4;
+}
+
+#ver:hover{
+    cursor: pointer;
+    background-color: #a6f19b;
+}
+
+#neg{
+    background-color: #800;
+    color:#f4f4f4;
+}
+
+#neg:hover{
+    cursor: pointer;
+    background-color: #ff6961;
 }
 
 @media (max-width: 48em){

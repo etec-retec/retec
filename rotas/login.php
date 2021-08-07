@@ -10,6 +10,10 @@
         $retorno_email = mysqli_affected_rows($conexao);
         $dados = mysqli_query($conexao, $query);
 
+        $query = "SELECT * FROM solicitacoes WHERE email = '$email'";
+        $result = mysqli_query($conexao, $query);
+        $retorno_verificacao = mysqli_affected_rows($conexao);
+
         $query = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha'";
         $result = mysqli_query($conexao, $query);
         $retorno = mysqli_affected_rows($conexao);
@@ -26,8 +30,9 @@
                 $_SESSION['instituicao'] = $elemento[2];
                 $_SESSION['email'] = $elemento[3];
                 $_SESSION['email_rec'] = $elemento[4];
-                $_SESSION['tipo'] = $elemento[6];
-                $_SESSION['validado'] = $elemento[7];
+                $_SESSION['matricula'] = $elemento[6];
+                $_SESSION['rg'] = $elemento[7];
+                $_SESSION['tipo'] = $elemento[8];
             }
             
             if($_SESSION['tipo'] == 1){
@@ -49,8 +54,9 @@
                         $_SESSION['notEmail'] = $not[2];
                         $_SESSION['notEmailRec'] = $not[3];
                         $_SESSION['notMatricula'] = $not[4];
+                        $_SESSION['notRg'] = $not[5];
                     }
-                    echo "TO FICANO LOCO";
+                    header("location: ../instituicao/index.php?access=$num");
                 }
                 
             }else{
@@ -59,6 +65,8 @@
             
         }else if($retorno_email == True & $retorno != 1){
             header("location: ../login/index.php?denied=1&email=$email");
+        }else if($retorno_verificacao == True & $retorno != 1){
+            header("location: ../login/index.php?denied=3&email=$email");
         }else{
             header("location: ../login/index.php?denied=2");
         }
