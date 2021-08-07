@@ -86,7 +86,7 @@
         }
 
         public function setTipo(){
-            $this->tipo = 0;
+            $this->tipo = 2;
         }
 
         public function getTipo(){

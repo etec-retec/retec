@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
     <html lang="pt-br">
     <head>
@@ -14,7 +18,17 @@
 
     <div class="banner"> 
     <!-- <div class="banner" backgroud-image: {{php}}> -->
-        <button class="voltar">❮ Voltar</button>
+        <?php
+            if(isset($_GET["access"])){
+                ?>
+                <button class="voltar" onclick="window.open('../projetos/index.php?access=<?php echo $_SESSION["numLogin"]; ?>', '_self')">❮ Voltar</button>
+        <?php
+            }else{
+        ?>
+                <button class="voltar" style="width:200px" onclick="window.open('../projetos/index.php', '_self')">❮ Cadastre-se</button>
+        <?php
+            }
+        ?> 
         <!-- <img src="___php___"> -->
     </div>
 

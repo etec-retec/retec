@@ -62,7 +62,7 @@
             <div class="blocos">
                 <!-- ATENÇÃO - A PARTIR DAS PRÓXIMAS LINHAS, O CÓDIGO SERÁ GERADO PELO PHP 
                      OS CÓDIGOS ABAIXO SÃO APENAS EXEMPLARES ESTÁTICOS DO HTML  -->
-                    <a href="../rotas/" class="link">    
+                    <a href="../projeto/index.php?access=<?php echo $_SESSION["numLogin"];?>" class="link">    
                         <div class="bloco">
                             <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
                             <h3>TCC Exemplo 1</h3>
@@ -72,7 +72,7 @@
                         </div>
                     </a>
 
-                    <a href="../rotas/" class="link">    
+                    <a href="../projeto/" class="link">    
                         <div class="bloco">
                             <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
                             <h3>TCC Exemplo 2</h3>
@@ -82,7 +82,7 @@
                         </div>
                     </a>
 
-                    <a href="../rotas/" class="link">    
+                    <a href="../projeto/" class="link">    
                         <div class="bloco">
                             <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
                             <h3>TCC Exemplo 3</h3>
@@ -92,7 +92,7 @@
                         </div>
                     </a>
 
-                    <a href="../rotas/" class="link">    
+                    <a href="../projeto/" class="link">    
                         <div class="bloco">
                             <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
                             <h3>TCC Exemplo 4</h3>
@@ -102,7 +102,7 @@
                         </div>
                     </a>
 
-                    <a href="../rotas/" class="link">    
+                    <a href="../projeto/" class="link">    
                         <div class="bloco">
                             <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
                             <h3>TCC Exemplo 5</h3>
@@ -112,7 +112,7 @@
                         </div>
                     </a>
 
-                    <a href="../rotas/" class="link">    
+                    <a href="../projeto/" class="link">    
                         <div class="bloco">
                             <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
                             <h3>TCC Exemplo 6</h3>
@@ -122,7 +122,7 @@
                         </div>
                     </a>
 
-                    <a href="../rotas/" class="link">    
+                    <a href="../projeto/" class="link">    
                         <div class="bloco">
                             <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
                             <h3>TCC Exemplo 7</h3>
@@ -132,7 +132,7 @@
                         </div>
                     </a>
 
-                    <a href="../rotas/" class="link">    
+                    <a href="../projeto/" class="link">    
                         <div class="bloco">
                             <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
                             <h3>TCC Exemplo 8</h3>
@@ -142,7 +142,7 @@
                         </div>
                     </a>
 
-                    <a href="../rotas/" class="link">    
+                    <a href="../projeto/" class="link">    
                         <div class="bloco">
                             <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
                             <h3>TCC Exemplo 9</h3>
