@@ -40,7 +40,6 @@
                 <a id="p" href="../projetos/index.php?access=<?php echo $_SESSION["numLogin"];?>">Projetos</a>
                 <a id="a" href="adicionar/index.php?access=<?php echo $_SESSION["numLogin"];?>">Adicionar Projeto</a>
                 <a id="e" href="editar/index.php?access=<?php echo $_SESSION["numLogin"];?>"">Editar Projeto</a>
-                <a id="r" href="remover/index.php?access=<?php echo $_SESSION["numLogin"];?>"">Excluir Projeto</a>
                 <a id="m" href="">Meu Perfil</a>
             </div>
         </div>

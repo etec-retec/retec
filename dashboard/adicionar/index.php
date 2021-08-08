@@ -31,7 +31,6 @@
             <button class="voltar" onclick="window.open('../index.php?access=<?php echo $_SESSION["numLogin"]; ?>', '_self')">❮ Voltar</button>
             <div class="bts">
                 <a id="add">Adicionar</a>
-                <a id="rem" href="../remover/index.php?access=<?php echo $_SESSION['numLogin'];?>">Remover</a>
                 <a id="ed" href="../editar/index.php?access=<?php echo $_SESSION["numLogin"];?>">Editar</a>
             </div>
             <h1 class="logo">RETEC</h1>
@@ -42,6 +41,7 @@
             <form action="../../rotas/ .php?<?php echo $_SESSION["numLogin"];?>" method="POST">
 
                 <label for="nome"><b>Nome</b></label>
+                <br>
                 <input type="text" class="inp_txt" name="nome" placeholder="Nome do TCC" min="3" max="64" required>
                 <br><br>
 

@@ -32,7 +32,6 @@
                 <button class="voltar" onclick="window.open('../index.php?access=<?php echo $_SESSION["numLogin"]; ?>', '_self')">❮ Voltar</button>
                 <div class="bts">
                     <a id="add" href="../adicionar/index.php?access=<?php echo $_SESSION["numLogin"];?>" >Adicionar</a>
-                    <a id="rem" href="../remover/index.php?access=<?php echo $_SESSION["numLogin"];?>">Remover</a>
                     <a id="ed">Editar</a>
                 </div>
                 <h1 class="logo">RETEC</h1>

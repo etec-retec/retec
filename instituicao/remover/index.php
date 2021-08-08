@@ -11,6 +11,18 @@
         ";
         exit;
     }
+    if($_SESSION["tipo"] == "1"){
+        echo "
+        <center>
+        <br><br><br><br><br><br>
+            <h1>Acesso negado!</h1>
+            <br>
+            <a href='../login/index.php'>Entrar</a>
+        </center>
+        ";
+        exit;
+    }
+
 ?>
 
     <!DOCTYPE html>
