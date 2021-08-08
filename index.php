@@ -33,7 +33,7 @@
         </div>
 
         <div class="tec">
-            <img src="assets/img/bnr3.png"/>
+            <img id="bnr_img" src="assets/img/bnr3.png"/>
         </div>
 
         <div class="sobre">
@@ -96,5 +96,12 @@
                 <input type="submit" class="enviar" value="Enviar"/>
             </form>
         </div>
+        <script>
+            // var bnr = document.getElementById("bnr_img");
+            // if(( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 )){
+            //     alert("TESTE");
+            //     brn.src="assets/img/bnr4.png";
+            // }
+        </script>
     </body>
 </html>

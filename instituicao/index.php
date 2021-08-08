@@ -78,7 +78,7 @@
 
         <div class="corpo">
             <h1 class="cap"><?php echo $_SESSION["instituicao"]; ?></h1>
-            <h2 class="access">O que você deseja acessar?</h2>
+            <!-- <h2 class="access">O que você deseja acessar?</h2> -->
 
             <div class="opcoes">
                 <a id="p" href="../projetos/index.php?access=<?php echo $_SESSION["numLogin"];?>">Projetos</a>

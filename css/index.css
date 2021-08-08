@@ -179,6 +179,13 @@
     width: 96px;
 }
 
+#bnr_img{
+    max-width: 90%;
+    display: block;
+    margin: 0 auto;
+    content: url(../assets/img/bnr4.png) !important;
+}
+
 .nome h1{
     font-size: 48px;
 
