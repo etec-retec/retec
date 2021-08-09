@@ -18,103 +18,105 @@
         $retorno = mysqli_affected_rows($conexao);
         $dados = mysqli_query($conexao, $query);
 
-        if($retorno == 0){
-            $query_especial = "SELECT * FROM instituicao WHERE email = '$email' AND senha = '$senha'";
-            $dados_especiais = mysqli_query($conexao, $query_especial);
-            $retorno_especial = mysqli_affected_rows($conexao);
-            $retorno = 0;
-            if(session_id() != ''){
-                session_unset();
-            }
-        }
+        echo $retorno;
 
-        if($retorno > 0){
-            $num = rand(100000,900000);
+    //     if($retorno == 0){
+    //         $query_especial = "SELECT * FROM instituicao WHERE email = '$email' AND senha = '$senha'";
+    //         $dados_especiais = mysqli_query($conexao, $query_especial);
+    //         $retorno_especial = mysqli_affected_rows($conexao);
+    //         $retorno = 0;
+    //         if(session_id() != ''){
+    //             session_unset();
+    //         }
+    //     }
 
-            session_start();
-            $_SESSION['numLogin'] = $num;
-            while($elemento = mysqli_fetch_row($dados)){
-                $_SESSION['codigo_u'] = $elemento[0];
-                $_SESSION['nome'] = $elemento[1];
-                $_SESSION['instituicao'] = $elemento[2];
-                $_SESSION['email'] = $elemento[3];
-                $_SESSION['email_rec'] = $elemento[4];
-                $_SESSION['matricula'] = $elemento[6];
-                $_SESSION['rg'] = $elemento[7];
-                $_SESSION['tipo'] = $elemento[8];
-            }
+    //     if($retorno > 0){
+    //         $num = rand(100000,900000);
+
+    //         session_start();
+    //         $_SESSION['numLogin'] = $num;
+    //         while($elemento = mysqli_fetch_row($dados)){
+    //             $_SESSION['codigo_u'] = $elemento[0];
+    //             $_SESSION['nome'] = $elemento[1];
+    //             $_SESSION['instituicao'] = $elemento[2];
+    //             $_SESSION['email'] = $elemento[3];
+    //             $_SESSION['email_rec'] = $elemento[4];
+    //             $_SESSION['matricula'] = $elemento[6];
+    //             $_SESSION['rg'] = $elemento[7];
+    //             $_SESSION['tipo'] = $elemento[8];
+    //         }
             
-            if($_SESSION['tipo'] == 1){
-                mysqli_close($conexao);
-                header("location: ../dashboard/index.php?access=$num");
-            }elseif($_SESSION['tipo'] == 0){
-                $query = "SELECT * FROM solicitacoes WHERE instituicao = '".$_SESSION['instituicao']."'";
-                $result = mysqli_query($conexao, $query);
-                $retorno = mysqli_affected_rows($conexao);
-                $dados = mysqli_query($conexao, $query);
+    //         if($_SESSION['tipo'] == 1){
+    //             mysqli_close($conexao);
+    //             header("location: ../dashboard/index.php?access=$num");
+    //         }elseif($_SESSION['tipo'] == 0){
+    //             $query = "SELECT * FROM solicitacoes WHERE instituicao = '".$_SESSION['instituicao']."'";
+    //             $result = mysqli_query($conexao, $query);
+    //             $retorno = mysqli_affected_rows($conexao);
+    //             $dados = mysqli_query($conexao, $query);
 
-                if($retorno == 0){
-                    header("location: ../instituicao/index.php?access=$num");
-                }else{
-                    while($not = mysqli_fetch_row($dados)){
-                        $_SESSION['not'] = TRUE;
-                        $_SESSION['notID'] = $not[0];
-                        $_SESSION['notNome'] = $not[1];
-                        $_SESSION['notEmail'] = $not[2];
-                        $_SESSION['notEmailRec'] = $not[3];
-                        $_SESSION['notMatricula'] = $not[4];
-                        $_SESSION['notRg'] = $not[5];
-                    }
-                    header("location: ../instituicao/index.php?access=$num");
-                }
+    //             if($retorno == 0){
+    //                 header("location: ../instituicao/index.php?access=$num");
+    //             }else{
+    //                 while($not = mysqli_fetch_row($dados)){
+    //                     $_SESSION['not'] = TRUE;
+    //                     $_SESSION['notID'] = $not[0];
+    //                     $_SESSION['notNome'] = $not[1];
+    //                     $_SESSION['notEmail'] = $not[2];
+    //                     $_SESSION['notEmailRec'] = $not[3];
+    //                     $_SESSION['notMatricula'] = $not[4];
+    //                     $_SESSION['notRg'] = $not[5];
+    //                 }
+    //                 header("location: ../instituicao/index.php?access=$num");
+    //             }
                 
-            }else{
-                echo "Erro!";
-            }
+    //         }else{
+    //             echo "Erro!";
+    //         }
             
-        }else if($retorno_especial == 1){
-            $num = rand(100000,900000);
+    //     }else if($retorno_especial == 1){
+    //         $num = rand(100000,900000);
 
-            session_start();
-            $_SESSION['numLogin'] = $num;
-            while($esp = mysqli_fetch_row($dados_especiais)){
-                $_SESSION['id_etec'] = $esp[0];
-                $_SESSION['instituicao'] = $esp[1];
-                $_SESSION['materias'] = $esp[2];
-                $_SESSION['email'] = $esp[3];
-                $_SESSION['email_rec'] = $esp[4];
-                $_SESSION['tipo'] = $esp[6];
-            }
+    //         session_start();
+    //         $_SESSION['numLogin'] = $num;
+    //         while($esp = mysqli_fetch_row($dados_especiais)){
+    //             $_SESSION['id_etec'] = $esp[0];
+    //             $_SESSION['instituicao'] = $esp[1];
+    //             $_SESSION['materias'] = $esp[2];
+    //             $_SESSION['email'] = $esp[3];
+    //             $_SESSION['email_rec'] = $esp[4];
+    //             $_SESSION['tipo'] = $esp[6];
+    //         }
 
-            $query = "SELECT * FROM solicitacoes WHERE instituicao = '".$_SESSION['instituicao']."'";
-            $result = mysqli_query($conexao, $query);
-            $retorno = mysqli_affected_rows($conexao);
-            $dados = mysqli_query($conexao, $query);
+    //         $query = "SELECT * FROM solicitacoes WHERE instituicao = '".$_SESSION['instituicao']."'";
+    //         $result = mysqli_query($conexao, $query);
+    //         $retorno = mysqli_affected_rows($conexao);
+    //         $dados = mysqli_query($conexao, $query);
 
-            if($retorno == 0){
-                header("location: ../instituicao/index.php?access=$num");
-            }else{
-                while($not = mysqli_fetch_row($dados)){
-                    $_SESSION['not'] = TRUE;
-                    $_SESSION['notID'] = $not[0];
-                    $_SESSION['notNome'] = $not[1];
-                    $_SESSION['notEmail'] = $not[2];
-                    $_SESSION['notEmailRec'] = $not[3];
-                    $_SESSION['notMatricula'] = $not[4];
-                    $_SESSION['notRg'] = $not[5];
-                }
-                header("location: ../instituicao/index.php?access=$num");
-            }
+    //         if($retorno == 0){
+    //             header("location: ../instituicao/index.php?access=$num");
+    //         }else{
+    //             while($not = mysqli_fetch_row($dados)){
+    //                 $_SESSION['not'] = TRUE;
+    //                 $_SESSION['notID'] = $not[0];
+    //                 $_SESSION['notNome'] = $not[1];
+    //                 $_SESSION['notEmail'] = $not[2];
+    //                 $_SESSION['notEmailRec'] = $not[3];
+    //                 $_SESSION['notMatricula'] = $not[4];
+    //                 $_SESSION['notRg'] = $not[5];
+    //             }
+    //             header("location: ../instituicao/index.php?access=$num");
+    //         }
         
-        }else if($retorno_email == True & $retorno != 1){
-            header("location: ../login/index.php?denied=1&email=$email");
-        }else if($retorno_verificacao == True & $retorno != 1){
-            header("location: ../login/index.php?denied=3&email=$email");
-        }else{
-            header("location: ../login/index.php?denied=2");
-        }
-    }else{
-        echo "Ocorreu um erro inesperado. Contate o desenvolvedor!";
+    //     }else if($retorno_email == True & $retorno != 1){
+    //         header("location: ../login/index.php?denied=1&email=$email");
+    //     }else if($retorno_verificacao == True & $retorno != 1){
+    //         header("location: ../login/index.php?denied=3&email=$email");
+    //     }else{
+    //         header("location: ../login/index.php?denied=2");
+    //     }
+    // }else{
+    //     echo "Ocorreu um erro inesperado. Contate o desenvolvedor!";
     }
 
 ?>

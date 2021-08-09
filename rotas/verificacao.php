@@ -28,8 +28,60 @@
         $retorno2 = mysqli_affected_rows($conexao);
         
         if($retorno2 >= 1){
-            //Puxar dados
-            echo "Deu bom, finalmente!";
+            while($user = mysqli_fetch_row($result)){
+                $codigo = $user[0];
+                $nome = $user[1];
+                $string = $user[2];
+                $email = $user[3];
+                $email_rec = $user[4];
+                $senha = $user[5];
+                $matricula = $user[6];
+                $rg = $user[7];
+                $tipo = $user[8];
+            }
+            
+            $novo = $string.','.$_SESSION['instituicao'];
+            
+            $query = "UPDATE usuario SET instituicao = '$novo' WHERE codigo_u = '$codigo'";
+            $result = mysqli_query($conexao, $query);
+            $inst = $_SESSION['instituicao'];
+            $query = "DELETE FROM solicitacoes WHERE rg = '$rg' AND matricula = '$matricula' AND instituicao = '$inst'";
+            $result = mysqli_query($conexao, $query);
+
+            $query = "SELECT * FROM solicitacoes WHERE instituicao = '$inst'";
+            $result = mysqli_query($conexao, $query);
+            $retorno = mysqli_affected_rows($conexao);
+
+            if($retorno == 0){
+                mysqli_close($conexao);
+    
+                unset($_SESSION['not']);
+                unset($_SESSION['notID']);
+                unset($_SESSION['notNome']);
+                unset($_SESSION['notEmail']);
+                unset($_SESSION['notEmailRec']);
+                unset($_SESSION['notMatricula']);
+                unset($_SESSION['notRg']);
+                $nl = $_SESSION['numLogin'];
+                header("location: ../instituicao/index.php?access=$nl");
+            }else{
+                while($not = mysqli_fetch_row($dados)){
+                    $_SESSION['not'] = TRUE;
+                    $_SESSION['notID'] = $not[0];
+                    $_SESSION['notNome'] = $not[1];
+                    $_SESSION['notEmail'] = $not[2];
+                    $_SESSION['notEmailRec'] = $not[3];
+                    $_SESSION['notMatricula'] = $not[4];
+                    $_SESSION['notRg'] = $not[5];
+                }
+                mysqli_close($conexao);
+                $nl = $_SESSION['numLogin'];
+                header("location: ../instituicao/index.php?access=$nl");
+            }
+
+            $nl = $_SESSION['numLogin'];
+            header("location: ../instituicao/index.php?access=$nl");
+
         }else{
             $inst = $_SESSION["instituicao"];
             $query = "SELECT * FROM solicitacoes WHERE rg = '$rg' AND matricula ='$matricula' AND instituicao = '$inst'";
