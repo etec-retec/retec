@@ -12,11 +12,18 @@ body{
     background-color: #dee7ee;
 }
 
-.logo{
+.logo h1{
     margin-left: 188px;
     margin-top: -20px;
     font-size: 64px;
-    color: #6253f2
+    color: #6253f2;
+}
+.logo label{
+    margin-left: 192px;
+    margin-top: -56px;
+    font-size: 16px;
+    color: #2a3641;
+    float:left;
 }
 
 .center {
@@ -77,13 +84,6 @@ body{
     text-transform: capitalize;
 }
 
-.access{
-    padding-top: 16px;
-    font-size: 32px;
-    display: table;
-    margin: 0 auto;
-}
-
 .opcoes{
     display: table;
     margin: 0 auto;
@@ -103,6 +103,10 @@ body{
 
 .opcoes a:hover{
     font-weight:normal;
+}
+
+.lblNome{
+    float: left;
 }
 
 #p, #a, #e, #r{
@@ -154,10 +158,6 @@ body{
     padding-top: 64px;
     text-align: center;
     font-size: 32px;
-}
-
-.access{
-    font-size: 20px;
 }
 
 .opcoes{

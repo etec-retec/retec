@@ -80,6 +80,27 @@ body{
     border: none;
 }
 
+.checkbox-round {
+    margin-left: 48px;
+    position: absolute;
+    display: block;
+    width: 1.3em !important;
+    height: 1.3em !important;
+    background-color: white !important;
+    border-radius: 50% !important;
+    border: 1px solid #ddd !important;
+    outline: none !important;
+    cursor: pointer !important;
+}
+
+p{
+    display: block;
+    float: left;
+    margin-top:0px !important;
+    margin-bottom: 0px !important;
+    margin-left: 72px !important;
+}
+
 .botao:hover{
     background-color: #b6b2eb;
 }

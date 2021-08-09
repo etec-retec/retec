@@ -25,12 +25,13 @@
                 <input type="text" name="sobrenome" id="sobrenome" maxlenght="43" placeholder="Sobrenome" class="txtF" autocomplete="off" required>
                 
                 <label for="instituicao"><b>Instituição</b></label>
+                <p style="margin-top:8px !important; margin-left:48px !important; font-size:12px;">Escolha as instituições nas quais você trabalha.</p>
                 <br>
-                <select class="inp_txt" name="instituicao" id="slct" style="color:#000;">
-                    <option disabled selected>Escolha</option>
-                    <option value="ETEC Doutor Celso Giglio">ETEC - Dr. Celso Giglio</option>
-                </select>
-            
+                <input type="checkbox" class="checkbox-round" name="instituicao[]" value="ETEC Doutor Celso Giglio"/><p class="inst">ETEC Doutor Celso Giglio</p><br>
+                <input type="checkbox" class="checkbox-round" name="instituicao[]" value="ETEC Professor André Bogasian"/><p class="inst">ETEC Professor André Bogasian</p><br>
+                <input type="checkbox" class="checkbox-round" name="instituicao[]" value="ETEC Professor Basílides de Godoy"/><p class="inst">ETEC Professor Basílides de Godoy</p>
+                <br>
+
                 <label for="email"><b>E-mail</b></label><br>
                 <input type="email" name="email" maxlenght="64" placeholder="exemplo@email.com" class="txtF" autocomplete="off" required>
 
@@ -44,10 +45,10 @@
                 <input type="password" name="rsenha" minlenght="5" maxlenght="42" placeholder="Senha novamente" class="txtF" required>
                 
                 <label for="rsenha"><b>Matrícula:</b></label><br>
-                <input type="password" name="matricula" minlenght="5" maxlenght="42" placeholder="Digite a matrícula" class="txtF" required>
+                <input type="text" name="matricula" minlenght="5" maxlenght="42" placeholder="Digite a matrícula" class="txtF" required>
                 
                 <label for="rsenha"><b>RG:</b></label><br>
-                <input type="password" name="rg" minlenght="5" maxlenght="42" placeholder="Digite o RG" class="txtF" required>
+                <input type="text" name="rg" minlenght="5" maxlenght="42" placeholder="Digite o RG" class="txtF" required>
                 <br><br>
 
                 <button class="botao">Cadastrar</button>

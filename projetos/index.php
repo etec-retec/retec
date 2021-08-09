@@ -1,18 +1,3 @@
-<?php
-    session_start();
-    if($_SESSION["numLogin"] != $_GET["access"]){
-        echo "
-        <center>
-        <br><br><br><br><br><br>
-            <h1>Acesso negado!</h1>
-            <br>
-            <a href='../login/index.php'>Entrar</a>
-        </center>
-        ";
-        exit;
-    }
-?>
-
 <!DOCTYPE html>
     <html lang="pt-br">
     <head>
@@ -28,10 +13,24 @@
     </head>
     <body>
 
+    <?php
+        $ver = session_id();
+        if($ver != ""){
+    ?>
     <div class="cabecalho"> 
         <button class="voltar" onclick="window.open('../dashboard/index.php?access=<?php echo $_SESSION["numLogin"]; ?>', '_self')">❮ Voltar</button>
         <h1 class="logo">RETEC</h1>
-    </div>                          
+    </div>       
+    <?php
+        }else{
+    ?>
+    <div class="cabecalho"> 
+        <button class="voltar" onclick="window.open('../index.php', '_self')">❮ Início</button>
+        <h1 class="logo">RETEC</h1>
+    </div>    
+    <?php       
+        }
+    ?>                      
 
     <div class="grid-container">
         <div class="info_esquerda">

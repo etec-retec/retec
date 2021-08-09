@@ -47,6 +47,7 @@
         public $rsenha;
         public $matricula;
         public $rg;
+        public $unico;
 
         public function setNome($nome, $sobrenome){
             $this->nome = $nome;
@@ -59,7 +60,15 @@
         }
 
         public function setInstituicao($instituicao){
-            $this->instituicao = $instituicao;
+            $array = [];
+            $array = explode(',', $instituicao);
+            if(sizeof($array) == 1){
+                $this->instiuicao = $array[0];
+                $this->unico = TRUE;
+            }else{
+                $this->instituicao = $instituicao;
+                $this->unico = FALSE;
+            }
         }
 
         public function getInstituicao(){
@@ -107,13 +116,26 @@
 
         public function atualizaBD_U(){
             include '../conexao/conexao.inc';
-            $query_insert_usuario = "INSERT INTO solicitacoes VALUES (NULL, '$this->nome_completo', '$this->email','$this->email_rec', '$this->matricula', '$this->rg', '$this->senha', '$this->instituicao')";
-            $res = mysqli_query($conexao, $query_insert_usuario);
-            echo mysqli_error($conexao);
-            mysqli_close($conexao);
-            header("Location: ../login/index.php");
+            if ($this->unico == True){
+                $query_insert_usuario = "INSERT INTO solicitacoes VALUES (NULL, '$this->nome_completo', '$this->email','$this->email_rec', '$this->matricula', '$this->rg', '$this->senha', '$this->instituicao')";
+                $res = mysqli_query($conexao, $query_insert_usuario);
+                echo mysqli_error($conexao);
+                mysqli_close($conexao);
+                header("Location: ../login/index.php?alert1");
+            }else{
+                $array = explode(',', $this->instituicao);
+                foreach($array as $inst){
+                    $query_insert_usuario = "INSERT INTO solicitacoes VALUES (NULL, '$this->nome_completo', '$this->email','$this->email_rec', '$this->matricula', '$this->rg', '$this->senha', '$inst')";
+                    $res = mysqli_query($conexao, $query_insert_usuario);
+                    echo mysqli_error($conexao);
+                }
+                mysqli_close($conexao);
+                header("Location: ../login/index.php?alert2");
+            }
         }
     }
+
+    $instituicao = implode(',', $_POST["instituicao"]);
 
     if(isset($_GET["create"]) and $retorno == 0){
         addUsuario($nome, $sobrenome, $instituicao, $email, $email_rec, $senha, $matricula, $rg);

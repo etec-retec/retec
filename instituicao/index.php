@@ -1,5 +1,19 @@
 <?php
     session_start();
+
+    //PREVENÇÃO DE ERROS E FALHA DE SEGURANÇA POR BUG DE SESSION_DESTROY
+    if(isset($_SESSION["codigo_u"])){
+        unset($_SESSION["codigo_u"]);
+    }else if(isset($_SESSION["nome"])){
+        unset($_SESSION["nome"]);
+    }else if(isset($_SESSION["validado"])){
+        unset($_SESSION["validado"]);
+    }else if(isset($_SESSION["rg"])){
+        unset($_SESSION["rg"]);
+    }else if(isset($_SESSION["matricula"])){
+        unset($_SESSION["matricula"]);
+    }
+
     if($_SESSION["numLogin"] != $_GET["access"]){
         echo "
         <center>
@@ -73,12 +87,14 @@
             <?php
                 }
             ?>
-            <h1 class="logo">RETEC</h1>
+            <div class="logo">
+                <h1>RETEC</h1>
+                <label class="lblNome"><?php echo $_SESSION["instituicao"];?></label>
+            </div>
         </div>
 
         <div class="corpo">
             <h1 class="cap"><?php echo $_SESSION["instituicao"]; ?></h1>
-            <!-- <h2 class="access">O que você deseja acessar?</h2> -->
 
             <div class="opcoes">
                 <a id="p" href="../projetos/index.php?access=<?php echo $_SESSION["numLogin"];?>">Projetos</a>
