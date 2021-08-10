@@ -29,9 +29,12 @@
         <div class="cabecalho" id="teste"> 
             <button class="voltar" onclick="window.open('../index.php', '_self')">❮ Sair</button>
             
-            <h1 class="logo">RETEC</h1>
+            <div class="logo">
+                <h1 class="logo" id="texto">RETEC</h1>
+                <label><?php echo $_SESSION["instituicao"];?></label>
+            </div>
         </div>
-
+        <br>
         <div class="corpo">
             <h1 class="cap">Olá, <?php echo $_SESSION["nome"]; ?>!</h1>
             <h2 class="access">O que você deseja acessar?</h2>

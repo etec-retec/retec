@@ -15,10 +15,11 @@
     $rg = filter_input(INPUT_POST, 'rg', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $matricula = filter_input(INPUT_POST, 'matricula', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $tipo = filter_input(INPUT_POST, 'conf', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $inst = $_SESSION['instituicao'];
 
     // INICIANDO TRATAMENTO PARA VERIFICAR SE O USUÁRIO JÁ PARTICIPA DE ALGUMA INST
     include '../conexao/conexao.inc';
-    $query = "SELECT * FROM solicitacoes WHERE rg = '$rg'";
+    $query = "SELECT * FROM solicitacoes WHERE rg = '$rg' AND instituicao = '$inst'";
     $result = mysqli_query($conexao, $query);
     $retorno = mysqli_affected_rows($conexao);
     
@@ -121,7 +122,7 @@
                 $nl = $_SESSION['numLogin'];
                 header("location: ../instituicao/index.php?access=$nl");
             }else{
-                while($not = mysqli_fetch_row($dados)){
+                while($not = mysqli_fetch_row($result)){
                     $_SESSION['not'] = TRUE;
                     $_SESSION['notID'] = $not[0];
                     $_SESSION['notNome'] = $not[1];
@@ -135,12 +136,6 @@
                 header("location: ../instituicao/index.php?access=$nl");
             }
         }
-
-
-
-
-
-
 
     // if($tipo == 0){
         // include '../conexao/conexao.inc';
@@ -237,7 +232,6 @@
 // 
     }else{
         echo "Ocorreu um erro inesperado";
-        echo $retorno2;
     }
     
 ?>

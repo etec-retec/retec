@@ -3,7 +3,7 @@
 <?php
     $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $sobrenome = filter_input(INPUT_POST, 'sobrenome', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $instituicao = filter_input(INPUT_POST, 'instituicao', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $instituicao = $_POST["instituicao"];
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $email_rec = filter_input(INPUT_POST, 'email2', FILTER_SANITIZE_EMAIL);
     $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -60,14 +60,15 @@
         }
 
         public function setInstituicao($instituicao){
-            $array = [];
-            $array = explode(',', $instituicao);
-            if(sizeof($array) == 1){
-                $this->instiuicao = $array[0];
-                $this->unico = TRUE;
-            }else{
-                $this->instituicao = $instituicao;
+            $array = $instituicao;
+            if(isset($array[1])){
+                $this->instiuicao = $instituicao;
                 $this->unico = FALSE;
+                $_GLOBALS["instituicao"] = $instituicao;
+                var_dump($GLOBALS["instituicao"]);
+            }else{
+                $this->instituicao = $instituicao[0];
+                $this->unico = TRUE;
             }
         }
 
@@ -116,7 +117,7 @@
 
         public function atualizaBD_U(){
             include '../conexao/conexao.inc';
-            if ($this->unico == True){
+            if ($this->unico == TRUE){
                 $query_insert_usuario = "INSERT INTO solicitacoes VALUES (NULL, '$this->nome_completo', '$this->email','$this->email_rec', '$this->matricula', '$this->rg', '$this->senha', '$this->instituicao')";
                 $res = mysqli_query($conexao, $query_insert_usuario);
                 echo mysqli_error($conexao);
@@ -124,7 +125,8 @@
                 header("Location: ../login/index.php?alert1");
             }else{
                 $array = explode(',', $this->instituicao);
-                foreach($array as $inst){
+                var_dump($GLOBALS["instituicao"]);
+                foreach($GLOBALS["instituicao"] as $inst){
                     $query_insert_usuario = "INSERT INTO solicitacoes VALUES (NULL, '$this->nome_completo', '$this->email','$this->email_rec', '$this->matricula', '$this->rg', '$this->senha', '$inst')";
                     $res = mysqli_query($conexao, $query_insert_usuario);
                     echo mysqli_error($conexao);
@@ -134,8 +136,6 @@
             }
         }
     }
-
-    $instituicao = implode(',', $_POST["instituicao"]);
 
     if(isset($_GET["create"]) and $retorno == 0){
         addUsuario($nome, $sobrenome, $instituicao, $email, $email_rec, $senha, $matricula, $rg);
