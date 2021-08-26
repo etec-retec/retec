@@ -120,7 +120,6 @@
             if ($this->unico == TRUE){
                 $query_insert_usuario = "INSERT INTO solicitacoes VALUES (NULL, '$this->nome_completo', '$this->email','$this->email_rec', '$this->matricula', '$this->rg', '$this->senha', '$this->instituicao')";
                 $res = mysqli_query($conexao, $query_insert_usuario);
-                echo mysqli_error($conexao);
                 mysqli_close($conexao);
                 header("Location: ../login/index.php?alert1");
             }else{
@@ -129,7 +128,6 @@
                 foreach($GLOBALS["instituicao"] as $inst){
                     $query_insert_usuario = "INSERT INTO solicitacoes VALUES (NULL, '$this->nome_completo', '$this->email','$this->email_rec', '$this->matricula', '$this->rg', '$this->senha', '$inst')";
                     $res = mysqli_query($conexao, $query_insert_usuario);
-                    echo mysqli_error($conexao);
                 }
                 mysqli_close($conexao);
                 header("Location: ../login/index.php?alert2");

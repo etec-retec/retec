@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregando...</title>
+</head>
+<body>
 <?php
     session_start();
     if($_SESSION["numLogin"] != $_GET["access"]){
@@ -19,7 +28,16 @@
     $_SESSION["instituicao"] = $inst1;
     $_SESSION["instituicoes"] = $inst_geral;
 
+    include "../conexao/conexao.inc";
+    $query = "SELECT materias FROM instituicao WHERE nome = '$inst1'";
+    $result = mysqli_query($conexao, $query);
+    $print = mysqli_fetch_assoc($result);
+    $_SESSION["materias"] = $print["materias"];
+    echo $_SESSION["materias"];
+
+    mysqli_close($conexao);
     $num = $_SESSION["numLogin"];
-    echo $inst_geral;
     header("location: ../dashboard/index.php?access=$num");
 ?>
+</body>
+</html>

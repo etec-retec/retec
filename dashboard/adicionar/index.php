@@ -62,15 +62,7 @@
 
                 <label for="curso"><b>Curso</b></label>
                 <br>
-                <select class="inp_txt" name="curso" id="slct">    
-                    <option value="ds">ETIM - Desenvolvimento de Sistemas</option>
-                    <option value="nutricao">ETIM - Nutrição</option>
-                    <option value="meioambiente">ETIM - Meio Ambiente</option>
-                    <option value="quimica">ETIM - Química</option>
-                    <option value="contabilidade">Modular - Contabilidade</option>
-                    <option value="seg_trab">Modular - Segurança do Trabalho</option>
-                    <option value="nutr_diet">Modular - Nutrição e Dietética</option>
-                    <option value="quimica_mod">Modular - Química</option>
+                <select class="inp_txt" name="curso" id="slct">
                 </select>
                 <br><br>
 
@@ -127,14 +119,25 @@
                     <p>    
                         <label>Upload Foto Principal: </label><input type="file" name="foto" value=""/>
                     </p>
-                    <p>    
-                        <label>Upload Foto de Capa: </label><input type="file" name="capa" value=""/>
-                    </p>
                 </div>
                 <br>
 
                 <input type="submit" class="cadastrar" id="sub_box" value="Adicionar Projeto"/>
             </form>
         </div>
+        <script>
+            materias = `<?php echo $_SESSION['materias'];?>`;
+            materias = materias.split(";");
+
+            slct = document.getElementById("slct");
+
+            for(i=0; i<=(materias.length-1); i++){
+                option = document.createElement("option");
+                option.text = materias[i];
+                option.value = materias[i];
+                slct.appendChild(option);
+                console.log(materias[i]);
+            }
+        </script>
     </body>
 </html>

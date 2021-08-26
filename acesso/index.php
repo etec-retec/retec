@@ -68,7 +68,16 @@
                         echo "
                         slct = document.getElementById('slct');
                         var option = document.createElement('option');
-                        option.text = '$inst';
+                        if('$inst' == 'ETEC Professor Andre Bogasian'){
+                            option.text = 'ETEC Professor André Bogasian';
+                            option.value = 'ETEC Professor Andre Bogasian';
+                        }else if('$inst' == 'ETEC Basilides de Godoy'){
+                            option.text = 'ETEC Basílides de Godoy';
+                            option.value = 'ETEC Basilides de Godoy';
+                        }else{
+                            option.text = '$inst';
+                            option.value = '$inst';
+                        }
                         slct.add(option);
                         ";
                     }
