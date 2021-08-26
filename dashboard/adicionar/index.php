@@ -38,7 +38,7 @@
 
         <div class="center">
             <h2 class="center" id="lbl">Adicionar Projeto</h2>
-            <form action="../../rotas/ .php?<?php echo $_SESSION["numLogin"];?>" method="POST">
+            <form action="../../rotas/validacaoRepositorio.php?<?php echo $_SESSION["numLogin"];?>" method="POST" enctype="multipart/form-data">
 
                 <label for="nome"><b>Nome</b></label>
                 <br>
@@ -52,7 +52,7 @@
 
                 <label for="prof_coorientador"><b>Professor Co-orientador</b></label>
                 <br>
-                <input type="text" name="prof_coorientador" class="inp_txt" placeholder="Nome" required/>
+                <input type="text" name="prof_corientador" class="inp_txt" placeholder="Nome" required/>
                 <br><br>
 
                 <label for="membros"><b>Membros</b></label>
@@ -104,20 +104,20 @@
 
                 <label for="data_ap"><b>Data de Apresentação</b></label>
                 <br>
-                <input type="date" class="inp_txt" name="data_ap" placeholder="Autores" min="4" max="256" id="dt_ap" required>
+                <input type="date" class="inp_txt" name="data_ap" min="4" max="256" id="dt_ap" required>
                 <br><br>
 
                 
                 <div class="arquivos">
                 <h3>Arquivos</h3>
                     <p>
-                        <label>Upload PDF: </label><input type="file" name="pdf" value=""/>
+                        <label>Upload PDF: </label><input type="file" name="pdf" value="" accept="application/pdf"/>
                     </p>
                     <p>    
                         <label>Upload Projeto Completo(.zip): </label><input type="file" name="zip" value=""/>
                     </p>
                     <p>    
-                        <label>Upload Foto Principal: </label><input type="file" name="foto" value=""/>
+                        <label>Upload Foto Principal: </label><input type="file" name="foto" value="image/jpeg,image/jpg,image/gif,image/png"/>
                     </p>
                 </div>
                 <br>
