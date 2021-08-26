@@ -47,22 +47,22 @@
 
                 <label for="prof_orientador"><b>Professor Orientador</b></label>
                 <br>
-                <input type="text" name="prof_orientador" class="inp_txt" placeholder="Nome" required/>
+                <input type="text" name="prof_orientador" class="inp_txt" min="8" max="64" placeholder="Nome" required/>
                 <br><br>
 
                 <label for="prof_coorientador"><b>Professor Co-orientador</b></label>
                 <br>
-                <input type="text" name="prof_corientador" class="inp_txt" placeholder="Nome" required/>
+                <input type="text" name="prof_corientador" class="inp_txt" min="8" max="64" placeholder="Nome" required/>
                 <br><br>
 
                 <label for="membros"><b>Membros</b></label>
                 <p style="font-size:12px; margin-top:0">Separe os integrantes por vírgulas ","</p>
-                <input type="text" name="membros" class="inp_txt" placeholder="Ex: Alexandre Lima, Luiz Henrique, Carlos Alberto" required/>
+                <input type="text" name="membros" class="inp_txt" min="8" max="564" placeholder="Ex: Alexandre Lima, Luiz Henrique, Carlos Alberto" required/>
                 <br><br>
 
                 <label for="curso"><b>Curso</b></label>
                 <br>
-                <select class="inp_txt" name="curso" id="slct">
+                <select class="inp_txt" name="curso" min="8" max="64" id="slct">
                 </select>
                 <br><br>
 
@@ -87,17 +87,17 @@
                 <textarea type="text" class="area_txt" name="resumo" placeholder="Trecho do PDF (Resumo)" required></textarea>
                 <br><br>
 
-                <label for="resumo"><b>Abstract</b></label>
+                <label for="abstract"><b>Abstract</b></label>
                 <br>
                 <textarea type="text" class="area_txt" name="abstract" placeholder="Trecho do PDF (Abstract)" required></textarea>
                 <br><br>
 
-                <label for="resumo"><b>Palavras-chave</b></label>
+                <label for="pa_ch"><b>Palavras-chave</b></label>
                 <br>
                 <textarea type="text" class="area_txt" name="pa_ch" placeholder="Trecho do PDF (Palavras-chave)" required></textarea>
                 <br><br>
 
-                <label for="resumo"><b>Key Words</b></label>
+                <label for="key_words"><b>Key Words</b></label>
                 <br>
                 <textarea type="text" class="area_txt" name="key_words" placeholder="Trecho do PDF (Key Words)" required></textarea>
                 <br><br>
@@ -120,6 +120,7 @@
                         <label>Upload Foto Principal: </label><input type="file" name="foto" value="image/jpeg,image/jpg,image/gif,image/png"/>
                     </p>
                 </div>
+                <input type="text" name="instituicao" value="<?php echo $_SESSION['instituicao']; ?>" hidden/>
                 <br>
 
                 <input type="submit" class="cadastrar" id="sub_box" value="Adicionar Projeto"/>

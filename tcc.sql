@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Ago-2021 às 02:02
+-- Tempo de geração: 26-Ago-2021 às 23:15
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 8.0.7
 
@@ -42,9 +42,9 @@ CREATE TABLE `instituicao` (
 --
 
 INSERT INTO `instituicao` (`ID`, `nome`, `materias`, `email`, `email_rec`, `senha`, `tipo`) VALUES
-(1, 'ETEC Doutor Celso Giglio', 'ETIM - Desenvolvimento de Sistemas; ETIM - Meio Ambiente; ETIM - Nutrição; ETIM - Química; Modular - Contabilidade; Modular - Nutrição e Dietética; Modular - Química; Modular - Segurança do Trabalho', 'etec242@etec.sp.gov.br', 'adm.etec242@etec.sp.gov.br', 'e10adc3949ba59abbe56e057f20f883e', 0),
-(3, 'ETEC Professor André Bogasian', 'ETIM - Administração; ETIM - Logística; ETIM - Marketing; Modular - Administração; Modular - Logística; Modular - Marketing; Modular - Recursos Humanos; Novotec - Administração; Novotec - Logística; Novotec - Recursos Humanos\r\n', 'etec149@etec.sp.gov.br', 'adm.etec149@etec.sp.gov.br', 'e10adc3949ba59abbe56e057f20f883e', 0),
-(5, 'ETEC Professor Basílides de Godoy', 'ETIM - Desenvolvimento de Sistemas; ETIM - Informática; ETIM - Logística; ETIM - Mecatrônica; Modular - Administração; Modular - Desenvolvimento de Sistemas; Modular - Eletrotécnica; Modular - Mecânica; Modular - Mecatrônica; Novotec - Marketing; Novotec - Programação de Jogos Digitais', 'etec041@etec.sp.gov.br', 'adm.etec041@etec.sp.gov.br', 'e10adc3949ba59abbe56e057f20f883e', 0);
+(1, 'ETEC Doutor Celso Giglio', 'ETIM - Desenvolvimento de Sistemas;ETIM - Meio Ambiente;ETIM - Nutrição;ETIM - Química;Modular - Contabilidade;Modular - Nutrição e Dietética;Modular - Química;Modular - Segurança do Trabalho', 'etec242@etec.sp.gov.br', 'adm.etec242@etec.sp.gov.br', 'e10adc3949ba59abbe56e057f20f883e', 0),
+(3, 'ETEC Professor Andre Bogasian', 'ETIM - Administração;ETIM - Logística;ETIM - Marketing;Modular - Administração;Modular - Logística;Modular - Marketing;Modular - Recursos Humanos;Novotec - Administração;Novotec - Logística;Novotec - Recursos Humanos\n', 'etec149@etec.sp.gov.br', 'adm.etec149@etec.sp.gov.br', 'e10adc3949ba59abbe56e057f20f883e', 0),
+(5, 'ETEC Professor Basilides de Godoy', 'ETIM - Desenvolvimento de Sistemas;ETIM - Informática;ETIM - Logística;ETIM - Mecatrônica;Modular - Administração;Modular - Desenvolvimento de Sistemas;Modular - Eletrotécnica;Modular - Mecânica;Modular - Mecatrônica;Novotec - Marketing;Novotec - Programação de Jogos Digitais', 'etec041@etec.sp.gov.br', 'adm.etec041@etec.sp.gov.br', 'e10adc3949ba59abbe56e057f20f883e', 0);
 
 -- --------------------------------------------------------
 
@@ -65,14 +65,22 @@ CREATE TABLE `materias` (
 
 CREATE TABLE `repositorio` (
   `codigo_r` int(11) NOT NULL,
-  `turma` varchar(64) NOT NULL,
-  `curso` varchar(64) NOT NULL,
-  `ano` year(4) NOT NULL,
   `nome` varchar(64) NOT NULL,
+  `prof_orientador` varchar(64) NOT NULL,
+  `prof_corientador` varchar(64) NOT NULL,
+  `membros` varchar(564) NOT NULL,
+  `curso` varchar(64) NOT NULL,
+  `ano` varchar(4) NOT NULL,
+  `mencao` varchar(2) NOT NULL,
   `resumo` text NOT NULL,
-  `autores` varchar(256) NOT NULL,
-  `orientadores` varchar(128) NOT NULL,
-  `arquivos` longblob NOT NULL
+  `abstract` text NOT NULL,
+  `pa_ch` varchar(264) NOT NULL,
+  `key_words` varchar(264) NOT NULL,
+  `data_ap` date NOT NULL,
+  `instituicao` varchar(64) NOT NULL,
+  `foto` mediumblob NOT NULL,
+  `pdf` mediumblob NOT NULL,
+  `zip` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -118,8 +126,9 @@ INSERT INTO `usuario` (`codigo_u`, `nome`, `instituicao`, `email`, `email_rec`, 
 (16, 'Leonardo Vasconcelos', 'ETEC Doutor Celso Giglio', 'leo@hotmail.com', 'leo2@hotmail.com', 'e10adc3949ba59abbe56e057f20f883e', '111111', '111111', 1),
 (23, 'Maxwell Alves', 'ETEC Doutor Celso Giglio', 'max@gmail.com', 'max2@gmail.com', 'd41d8cd98f00b204e9800998ecf8427e', '222222', '33333333', 1),
 (42, 'Alberto Marques', 'ETEC Doutor Celso Giglio', 'alberto@hotmail.com', 'alberto2@hotmail.com', 'e10adc3949ba59abbe56e057f20f883e', '333333', '444444', 1),
-(56, 'Leandro Amaro', 'ETEC Doutor Celso Giglio,ETEC Professor André Bogasian', 'leandro@hotmail.com', 'leandro2@hotmail.com', 'e10adc3949ba59abbe56e057f20f883e', '124412', '214112', 1),
-(57, 'Juliano Henrique', 'ETEC Doutor Celso Giglio', 'juliano@hotmail.com', 'juliano2@hotmail.com', 'e10adc3949ba59abbe56e057f20f883e', '325695', '045896', 1);
+(56, 'Leandro Amaro', 'ETEC Doutor Celso Giglio,ETEC Professor Andre Bogasian', 'leandro@hotmail.com', 'leandro2@hotmail.com', 'e10adc3949ba59abbe56e057f20f883e', '124412', '214112', 1),
+(57, 'Juliano Henrique', 'ETEC Doutor Celso Giglio', 'juliano@hotmail.com', 'juliano2@hotmail.com', 'e10adc3949ba59abbe56e057f20f883e', '325695', '045896', 1),
+(58, 'Jailson Mendes', 'ETEC Professor Andre Bogasian,ETEC Doutor Celso Giglio,ETEC Professor Basilides de Godoy', 'jailson@hotmail.com', 'jailson2@hotmail.com', 'e10adc3949ba59abbe56e057f20f883e', '323232', '333333', 1);
 
 --
 -- Índices para tabelas despejadas
@@ -169,13 +178,13 @@ ALTER TABLE `repositorio`
 -- AUTO_INCREMENT de tabela `solicitacoes`
 --
 ALTER TABLE `solicitacoes`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `codigo_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `codigo_u` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

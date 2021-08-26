@@ -2,7 +2,7 @@
 
     if(isset($_POST['nome']) && isset($_POST['prof_orientador']) && isset($_POST['prof_corientador']) && isset($_POST['membros']) 
     && isset($_POST['curso']) && isset($_POST['ano']) && isset($_POST['mencao']) && isset($_POST['resumo']) && isset($_POST['abstract'])
-    && isset($_POST['pa_ch']) && isset($_POST['key_words']) && isset($_POST['data_ap'])){
+    && isset($_POST['pa_ch']) && isset($_POST['key_words']) && isset($_POST['data_ap']) && isset($_POST['instituicao'])){
         $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $prof_orientador = filter_input(INPUT_POST, 'prof_orientador', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $prof_corientador = filter_input(INPUT_POST, 'prof_corientador', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -15,10 +15,11 @@
         $pa_ch = filter_input(INPUT_POST, 'pa_ch', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $key_words = filter_input(INPUT_POST, 'key_words', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $data_ap = filter_input(INPUT_POST, 'data_ap', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $instituicao = filter_input(INPUT_POST, 'instituicao', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
         var_dump($_FILES);
 
-        #FOTO DE CAPA PDF
+        #FOTO DE PERFIL
         if($imagem = $_FILES['foto']['tmp_name'] != NULL){
             $imagem = $_FILES['foto']['tmp_name'];
             $tamanho = $_FILES['foto']['size'];
@@ -41,6 +42,7 @@
             fclose($fp);        
         }
 
+        #PDF
         if($pdf = $_FILES['pdf']['tmp_name'] != NULL){
             $pdf = $_FILES['pdf']['tmp_name'];
             $pdf_tamanho = $_FILES['pdf']['size'];
@@ -63,6 +65,7 @@
             fclose($fp);        
         }
 
+        #ZIP
         if($zip = $_FILES['zip']['tmp_name'] != NULL){
             $zip = $_FILES['zip']['tmp_name'];
             $zip_tamanho = $_FILES['zip']['size'];
@@ -86,6 +89,6 @@
         }
     }
 
-    
+
 
 ?>
