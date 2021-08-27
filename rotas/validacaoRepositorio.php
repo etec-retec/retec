@@ -1,12 +1,14 @@
+<meta charset="UTF-8">
 <?php 
 
-    if(isset($_POST['nome']) && isset($_POST['prof_orientador']) && isset($_POST['prof_corientador']) && isset($_POST['membros']) 
+    if(isset($_POST['nome']) && isset($_POST['prof_orientador']) && isset($_POST['prof_corientador']) && isset($_POST['membros_banca']) && isset($_POST['membros_grupo']) 
     && isset($_POST['curso']) && isset($_POST['ano']) && isset($_POST['mencao']) && isset($_POST['resumo']) && isset($_POST['abstract'])
     && isset($_POST['pa_ch']) && isset($_POST['key_words']) && isset($_POST['data_ap']) && isset($_POST['instituicao'])){
         $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $prof_orientador = filter_input(INPUT_POST, 'prof_orientador', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $prof_corientador = filter_input(INPUT_POST, 'prof_corientador', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        $membros = filter_input(INPUT_POST, 'membros', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $membros_grupo = filter_input(INPUT_POST, 'membros_grupo', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $membros_banca = filter_input(INPUT_POST, 'membros_banca', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $curso = filter_input(INPUT_POST, 'curso', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $ano = filter_input(INPUT_POST, 'ano', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $mencao = filter_input(INPUT_POST, 'mencao', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -89,12 +91,14 @@
         }
     }
 
-    include "../conexao/conexao.inc";
-    $query = "INSERT INTO repositorio VALUES(NULL, '$nome', '$prof_orientador', '$prof_corientador', '$membros', '$curso', '$ano', '$mencao', '$resumo', '$abstract',
-     '$pa_ch', '$key_words', '$data_ap', '$instituicao', '$foto_conteudo', '$pdf_conteudo', '$zip_conteudo')";
-    mysqli_query($conexao, $query);
-    mysqli_close($conexao);
-    $nl = $_GET['access'];
-    header("Location: ../dashboard/index.php?access=$nl");
+    echo $membros_grupo;
+
+    // include "../conexao/conexao.inc";
+    // $query = "INSERT INTO repositorio VALUES(NULL, '$nome', '$prof_orientador', '$prof_corientador', '$membros_grupo', '$membros_banca', '$curso', '$ano', '$mencao', '$resumo', '$abstract',
+    //  '$pa_ch', '$key_words', '$data_ap', '$instituicao', '$foto_conteudo', '$pdf_conteudo', '$zip_conteudo')";
+    // mysqli_query($conexao, $query);
+    // mysqli_close($conexao);
+    // $nl = $_GET['access'];
+    // header("Location: ../dashboard/index.php?access=$nl");
 
 ?>

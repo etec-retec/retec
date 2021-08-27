@@ -1,5 +1,36 @@
+<meta charset="UTF-8">
 <?php
     session_start();
+
+    $id = $_GET["tcc"];
+    
+    include "../conexao/conexao.inc";
+    $query = "SELECT * FROM repositorio WHERE codigo_r = '$id'";
+    $resultado = mysqli_query($conexao, $query);
+    if(mysqli_affected_rows($conexao) == 0){
+        header("Location: ../erro/index.php?404");
+    }else{
+        while($elemento = mysqli_fetch_row($resultado)){
+            $codigo = $elemento[0];
+            $nome = $elemento[1];
+            $prof_orientador = $elemento[2];
+            $prof_corientador = $elemento[3];
+            $membros_grupo = $elemento[4];
+            $membros_banca = $elemento[5];
+            $curso = $elemento[6];
+            $ano = $elemento[7];
+            $mencao = $elemento[8];
+            $resumo = $elemento[9];
+            $abstract = $elemento[10];
+            $pa_ch = $elemento[11];
+            $key_words = $elemento[12];
+            $data_ap = $elemento[13];
+            $instituicao = $elemento[14];
+            $foto = $elemento[15];
+            $pdf = $elemento[16];
+            $zip = $elemento[17];
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +48,6 @@
     <body>
 
     <div class="banner"> 
-    <!-- <div class="banner" backgroud-image: {{php}}> -->
         <?php
             if(isset($_GET["access"])){
                 ?>
@@ -29,56 +59,50 @@
         <?php
             }
         ?> 
-        <!-- <img src="___php___"> -->
     </div>
 
     <div class="grid-container">
 
-    
         <div class="info_esquerda">
             <div class="foto">
-                <img>
+            <?php
+                echo '<img src="data:image/jpeg;base64,'.base64_encode($foto).'"/>';
+            ?>
             </div>
 
             <div class="caixa">
                 <p>
-                    <label><b>Prof. Orientador: </b></label> {{professor}}
+                    <label><b>Prof. Orientador: </b></label> <?php echo $prof_orientador;?>
                 </p>
                 <p>
-                    <label><b>Prof. Coorientador: </b></label> {{professor}}
+                    <label><b>Prof. Coorientador: </b></label> <?php echo $prof_corientador;?>
                 </p>
                 <p>
                     <label><b>Membros: </b></label>
-                    <ul>
-                        <li>{{Membro A}}</li>
-                        <li>{{Membro B}}</li>
-                        <li>{{Membro C}}</li>
-                        <li>{{Membro D}}</li>
+                    <ul id="list1">
+                
                     </ul>
                 </p>
                 <p>
                     <label><b>Banca: </b></label>
-                    <ul>
-                        <li>{{Professor W}}</li>
-                        <li>{{Professor X}}</li>
-                        <li>{{Professor Y}}</li>
-                        <li>{{Professor Z}}</li>
+                    <ul id="list2">
+
                     </ul>
                 </p>
                 <p>
-                    <label><b>Escola: </b></label> {{escola}}
+                    <label><b>Escola: </b></label><?php echo $instituicao;?>
                 </p>
                 <p>
-                    <label><b>Curso: </b></label> {{curso}}
+                    <label><b>Curso: </b></label><?php echo $curso;?>
                 </p>
                 <p>
-                    <label><b>Data de Apresentação: </b></label> {{data}}
+                    <label><b>Data de Apresentação: </b></label><span id="data">111</span>
                 </p>
                 <p>
-                    <label><b>Ano de Conclusão: </b></label> {{ano}}
+                    <label><b>Ano de Conclusão: </b></label> <?php echo $curso;?>
                 </p>
                 <p>
-                    <label><b>Menção: </b></label> {{mencao}}
+                    <label><b>Menção: </b></label> <span style="text-transform:uppercase;"><?php echo $mencao;?></span>
                 </p>
             </div>
         <br><br>
@@ -88,34 +112,72 @@
 
             <h2>Resumo</h2>
             <div class="abstract">
-                
+                <?php echo $resumo;?>
             </div>
 
             <h2>Abstract</h2>
             <div class="abstract">
-
+                <?php echo $abstract;?>
             </div>
 
             <h2>Palavras-chave</h2>
             <div class="abstract">
-
+                <?php echo $pa_ch;?>
             </div>
 
             <h2>Key Words</h2>
             <div class="abstract">
-
+                <?php echo $key_words;?>
             </div>
 
             <h2>Downloads</h2>
             <div class="downloads">
                 <p>
-                    <label>Artigo: </label><input type="submit" value="PDF"/>
+                    <label>Artigo: </label>
+                    <?php
+                        echo "<a download='artigo.pdf' href='data:application/pdf;base64,".base64_encode($pdf)."'> PDF</a>";
+                    ?>
                 </p>
                 <p>    
-                    <label>Projeto Completo(.zip): </label><input type="submit" value="Baixar"/>
+                    <label>Projeto Completo(.zip): </label>
+                    <?php
+                        echo "<a download='tcc.rar' href='data:application/zip;base64,".base64_encode($zip)."'> ZIP</a>";
+                    ?>
                 </p>
             </div>
         </div>
     </div>
+    <input type="text" value="<?php echo $membros_grupo; ?>" id="lst1" hidden/>
+    <input type="text" value="<?php echo $membros_banca; ?>" id="lst2" hidden/>
+    <script>
+        ul = document.getElementById("list1");
+        ul2 = document.getElementById("list2");
+
+        membros_grupo = document.getElementById("lst1").value;
+        membros_grupo = membros_grupo.split(',');
+
+        membros_banca = document.getElementById("lst2").value;
+        membros_banca = membros_banca.split(',');
+
+        for(i=0; i<=(membros_grupo.length-1); i++){
+            li = document.createElement("li");
+            li.textContent = membros_grupo[i];
+            ul.appendChild(li);
+            console.log(membros_grupo[i])
+        }
+
+        for(i=0; i<=(membros_banca.length-1); i++){
+            li = document.createElement("li");
+            li.textContent = membros_banca[i];
+            ul2.appendChild(li);
+            console.log(membros_banca[i])
+        }
+
+        data = "<?php echo $data_ap;?>"
+        data = data.split("-");
+        nova_data = data[2]+'/'+data[1]+'/'+data[0];
+        document.getElementById("data").textContent = nova_data;
+
+    </script>
     </body>
 </html>

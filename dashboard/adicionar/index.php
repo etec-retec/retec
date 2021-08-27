@@ -55,9 +55,14 @@
                 <input type="text" name="prof_corientador" class="inp_txt" min="8" max="64" placeholder="Nome" required/>
                 <br><br>
 
-                <label for="membros"><b>Membros</b></label>
+                <label for="membros"><b>Membros do Grupo</b></label>
                 <p style="font-size:12px; margin-top:0">Separe os integrantes por vírgulas ","</p>
-                <input type="text" name="membros" class="inp_txt" min="8" max="564" placeholder="Ex: Alexandre Lima, Luiz Henrique, Carlos Alberto" required/>
+                <input type="text" name="membros_grupo" class="inp_txt" min="8" max="564" placeholder="Ex: Alexandre Lima, Luiz Henrique, Carlos Alberto" required/>
+                <br><br>
+
+                <label for="membros"><b>Membros da Banca</b></label>
+                <p style="font-size:12px; margin-top:0">Separe os integrantes por vírgulas ","</p>
+                <input type="text" name="membros_banca" class="inp_txt" min="8" max="564" placeholder="Ex: Regina Santos, Marcello Zanfra, Thiago" required/>
                 <br><br>
 
                 <label for="curso"><b>Curso</b></label>

@@ -21,10 +21,16 @@ body{
 .foto{
     height: 150px;
     width: 340px;
-    border: 1px solid #a7b5bc;
     margin-left: 60px;
     margin-top: -75px;
-    background-color: #f4f4f4;
+    background-color: transparent;
+}
+
+.foto img{
+    display: table;
+    margin: 0 auto;
+    min-height: 150px;
+    max-height: 150px;
 }
 
 .caixa{
@@ -43,10 +49,10 @@ body{
 
 .abstract{
     width: 700px;
-    border: 1px solid #a7b5bc;
     margin-left: -100px;
     background-color: #f4f4f4;
-    padding: 10px
+    padding: 10px;
+    text-indent: 50px;
 }
 
 .downloads{
