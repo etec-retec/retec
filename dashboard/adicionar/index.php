@@ -38,7 +38,7 @@
 
         <div class="center">
             <h2 class="center" id="lbl">Adicionar Projeto</h2>
-            <form action="../../rotas/validacaoRepositorio.php?<?php echo $_SESSION["numLogin"];?>" method="POST" enctype="multipart/form-data">
+            <form action="../../rotas/validacaoRepositorio.php?access=<?php echo $_SESSION["numLogin"];?>" method="POST" enctype="multipart/form-data">
 
                 <label for="nome"><b>Nome</b></label>
                 <br>

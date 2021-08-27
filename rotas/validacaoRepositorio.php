@@ -22,23 +22,23 @@
         #FOTO DE PERFIL
         if($imagem = $_FILES['foto']['tmp_name'] != NULL){
             $imagem = $_FILES['foto']['tmp_name'];
-            $tamanho = $_FILES['foto']['size'];
-            $tipo = $_FILES['foto']['type'];
-            $nome_img = $_FILES['foto']['name'];
+            $foto_tamanho = $_FILES['foto']['size'];
+            $foto_tipo = $_FILES['foto']['type'];
+            $foto_nome_img = $_FILES['foto']['name'];
 
             $fp = fopen($imagem, "rb");
-            $conteudo = fread($fp, $tamanho);
-            $conteudo = addslashes($conteudo);
+            $foto_conteudo = fread($fp, $foto_tamanho);
+            $foto_conteudo = addslashes($foto_conteudo);
             fclose($fp);
         }elseif(!isset($_POST['foto'])){
             $imagem = 'img_padrao.bin';
-            $tipo = 'image/png';
-            $nome_img = 'padrão';
-            $tamanho = filesize('img_padrao.bin');
+            $foto_tipo = 'image/png';
+            $foto_nome_img = 'padrão';
+            $foto_tamanho = filesize('img_padrao.bin');
 
             $fp = fopen($imagem, "rb");
-            $conteudo = fread($fp, $tamanho);
-            $conteudo = addslashes($conteudo);
+            $foto_conteudo = fread($fp, $foto_tamanho);
+            $foto_conteudo = addslashes($foto_conteudo);
             fclose($fp);        
         }
 
@@ -50,8 +50,8 @@
             $pdf_arquivos = $_FILES['pdf']['name'];
 
             $fp = fopen($pdf, "rb");
-            $pdf_conteudo = fread($fp, $tamanho);
-            $pdf_conteudo = addslashes($conteudo);
+            $pdf_conteudo = fread($fp, $pdf_tamanho);
+            $pdf_conteudo = addslashes($pdf_conteudo);
             fclose($fp);
         }elseif(!isset($_POST['pdf'])){
             $pdf = 'img_padrao.bin';
@@ -60,8 +60,8 @@
             $pdf_tamanho = filesize('img_padrao.bin');
 
             $fp = fopen($pdf, "rb");
-            $pdf_conteudo = fread($fp, $tamanho);
-            $pdf_conteudo = addslashes($conteudo);
+            $pdf_conteudo = fread($fp, $pdf_tamanho);
+            $pdf_conteudo = addslashes($pdf_conteudo);
             fclose($fp);        
         }
 
@@ -73,8 +73,8 @@
             $zip_arquivos = $_FILES['zip']['name'];
 
             $fp = fopen($zip, "rb");
-            $zip_conteudo = fread($fp, $tamanho);
-            $zip_conteudo = addslashes($conteudo);
+            $zip_conteudo = fread($fp, $zip_tamanho);
+            $zip_conteudo = addslashes($zip_conteudo);
             fclose($fp);
         }elseif(!isset($_POST['zip'])){
             $zip = 'img_padrao.bin';
@@ -83,12 +83,18 @@
             $zip_tamanho = filesize('img_padrao.bin');
 
             $fp = fopen($zip, "rb");
-            $zip_conteudo = fread($fp, $tamanho);
+            $zip_conteudo = fread($fp, $zip_tamanho);
             $zip_conteudo = addslashes($conteudo);
             fclose($fp);        
         }
     }
 
-
+    include "../conexao/conexao.inc";
+    $query = "INSERT INTO repositorio VALUES(NULL, '$nome', '$prof_orientador', '$prof_corientador', '$membros', '$curso', '$ano', '$mencao', '$resumo', '$abstract',
+     '$pa_ch', '$key_words', '$data_ap', '$instituicao', '$foto_conteudo', '$pdf_conteudo', '$zip_conteudo')";
+    mysqli_query($conexao, $query);
+    mysqli_close($conexao);
+    $nl = $_GET['access'];
+    header("Location: ../dashboard/index.php?access=$nl");
 
 ?>
