@@ -11,6 +11,11 @@
         ";
         exit;
     }
+
+    $inst = $_SESSION['instituicao'];
+    include "../../conexao/conexao.inc";
+    $query = "SELECT * FROM repositorio WHERE instituicao = '$inst'";
+    $result = mysqli_query($conexao, $query);
 ?>
 
     <!DOCTYPE html>
@@ -46,48 +51,26 @@
                       <th>Editar</th>
                     </tr> 
 
-                    <!-- GERADO PELO PHP -->
+                    <?php
+                        foreach($result as $tcc){
+                    ?>
                     <tr>
                         <td class="table-column">
-                            <div class="item" onclick="window.open('projetoI');">{{ Título do TCC I}}</div>
+                            <div class="item" onclick="window.open('tcc/index.php?access=<?php echo $_SESSION['numLogin'];?>&tcc=<?php echo $tcc["codigo_r"];?>');"><?php echo $tcc["nome"];?></div>
                         </td>
                         
                         <td class="table-column_ex">
                             <div class="item" id="center">
-                                <form action="/routes/delete.php?projeto=$id}}" method="POST">
+                                <form action="tcc/index.php?access=<?php echo $_SESSION['numLogin'];?>&tcc=<?php echo $tcc["codigo_r"];?>" method="POST">
                                     <button type="submit" class="fr">Editar</button>
                                   </form>
                             </div>
                         </td>
                     </tr>
+                    <?php
+                        }
+                    ?>
 
-                    <tr>
-                        <td class="table-column">
-                            <div class="item" onclick="window.open('projetoII');">{{ Título do TCC II}}</div>
-                        </td>
-
-                        <td class="table-column_ex">
-                            <div class="item" id="center">
-                                <form action="/routes/delete.php?projeto=$id}}" method="POST">
-                                    <button type="submit" class="fr">Editar</button>
-                                  </form>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="table-column">
-                            <div class="item" onclick="window.open('projetoIII');">{{ Título do TCC III}}</div>
-                        </td>
-
-                        <td class="table-column_ex">
-                            <div class="item" id="center">
-                                <form action="/routes/delete.php?projeto=$id}}" method="POST">
-                                    <button type="submit" class="fr">Editar</button>
-                                  </form>
-                            </div>
-                        </td>
-                    </tr>
                 </table>
             </div>
         </body>
