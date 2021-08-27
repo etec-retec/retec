@@ -1,3 +1,9 @@
+<?php
+    include "../conexao/conexao.inc";
+    $query = "SELECT * FROM repositorio LIMIT 9";
+    $result = mysqli_query($conexao, $query);
+?>
+
 <!DOCTYPE html>
     <html lang="pt-br">
     <head>
@@ -18,14 +24,14 @@
         if($ver != ""){
     ?>
     <div class="cabecalho"> 
-        <button class="voltar" onclick="window.open('../dashboard/index.php?access=<?php echo $_SESSION["numLogin"]; ?>', '_self')">❮ Voltar</button>
+        <button class="voltar" onclick="window.open('../dashboard/index.php?access=<?php echo $_GET["access"]; ?>', '_self')">❮ Voltar</button>
         <h1 class="logo">RETEC</h1>
     </div>       
     <?php
         }else{
     ?>
     <div class="cabecalho"> 
-        <button class="voltar" onclick="window.open('../index.php', '_self')">❮ Início</button>
+        <button class="voltar" onclick="window.open('../dashboard/index.php?access=<?php echo $_GET["access"]; ?>', '_self')">❮ Início</button>
         <h1 class="logo">RETEC</h1>
     </div>    
     <?php       
@@ -59,89 +65,37 @@
             <button class="btn_pesquisar" id="ico" type="submit"><i class="fa fa-search"></i></button><input type="text" class="btn_pesquisar" id="btn" placeholder="Pesquisar"/>
             <br><br><br>
             <div class="blocos">
-                <!-- ATENÇÃO - A PARTIR DAS PRÓXIMAS LINHAS, O CÓDIGO SERÁ GERADO PELO PHP 
-                     OS CÓDIGOS ABAIXO SÃO APENAS EXEMPLARES ESTÁTICOS DO HTML  -->
-                    <a href="../projeto/index.php?access=<?php echo $_SESSION["numLogin"];?>" class="link">    
+                <?php
+                    foreach($result as $tcc){
+                        if(isset($_GET["access"])){
+                            $acesso = $_GET["access"];
+                        ?>
                         <div class="bloco">
-                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
-                            <h3>TCC Exemplo 1</h3>
-                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
-                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
-                            </p>
-                        </div>
-                    </a>
-
-                    <a href="../projeto/" class="link">    
+                            <a href="../projeto/index.php?access=<?php echo $acesso;?>&tcc=<?php echo $tcc["codigo_r"];?>" class="link">
+                            <div class="sizeImg">
+                    <?php
+                        }else{
+                            ?>
                         <div class="bloco">
-                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
-                            <h3>TCC Exemplo 2</h3>
-                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
-                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
-                            </p>
-                        </div>
-                    </a>
+                            <a href="../projeto/index.php?tcc=<?php echo $tcc["codigo_r"];?>" class="link">
+                            <div class="sizaImg">
+                            <?php
+                        } 
+                                echo '<img src="data:image/jpeg;base64,'.base64_encode($tcc['foto']).'"';
+                                echo "/>";
+            ?>
+                            </div>
+                                <h3><?php echo $tcc["nome"];?></h3>
+                                <p><?php echo $tcc["resumo"];?></p>
+                            </div>
+                        </a>
+                <?php
+                    }
+                ?>
 
-                    <a href="../projeto/" class="link">    
-                        <div class="bloco">
-                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
-                            <h3>TCC Exemplo 3</h3>
-                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
-                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
-                            </p>
-                        </div>
-                    </a>
+                     
 
-                    <a href="../projeto/" class="link">    
-                        <div class="bloco">
-                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
-                            <h3>TCC Exemplo 4</h3>
-                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
-                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
-                            </p>
-                        </div>
-                    </a>
-
-                    <a href="../projeto/" class="link">    
-                        <div class="bloco">
-                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
-                            <h3>TCC Exemplo 5</h3>
-                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
-                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
-                            </p>
-                        </div>
-                    </a>
-
-                    <a href="../projeto/" class="link">    
-                        <div class="bloco">
-                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
-                            <h3>TCC Exemplo 6</h3>
-                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
-                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
-                            </p>
-                        </div>
-                    </a>
-
-                    <a href="../projeto/" class="link">    
-                        <div class="bloco">
-                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
-                            <h3>TCC Exemplo 7</h3>
-                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
-                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
-                            </p>
-                        </div>
-                    </a>
-
-                    <a href="../projeto/" class="link">    
-                        <div class="bloco">
-                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
-                            <h3>TCC Exemplo 8</h3>
-                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
-                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
-                            </p>
-                        </div>
-                    </a>
-
-                    <a href="../projeto/" class="link">    
+                    <!-- <a href="../projeto/" class="link">    
                         <div class="bloco">
                             <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
                             <h3>TCC Exemplo 9</h3>
@@ -149,7 +103,7 @@
                                 revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
                             </p>
                         </div>
-                    </a>
+                    </a> -->
                 
             </div>
 

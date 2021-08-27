@@ -47,6 +47,11 @@ body{
     display: inline;
 }
 
+.info_direita h1{
+    margin-left: -50px;
+    /* text-align: center; */
+}
+
 .abstract{
     width: 700px;
     margin-left: -100px;
@@ -97,6 +102,18 @@ body{
 
 .downloads input:hover{
     background-color: #b6b2eb;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #6253f2;
+  border-radius: 16px;
 }
 
 @media (max-width: 48em){

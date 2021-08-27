@@ -55,7 +55,7 @@
         <?php
             }else{
         ?>
-                <button class="voltar" style="width:200px" onclick="window.open('../projetos/index.php', '_self')">❮ Cadastre-se</button>
+                <button class="voltar" style="width:200px" onclick="window.open('../projetos/index.php?access=<?php echo $_SESSION["numLogin"]; ?>', '_self')">❮ Cadastre-se</button>
         <?php
             }
         ?> 
@@ -109,7 +109,7 @@
         </div>
 
         <div class="info_direita">
-
+            <h1 style="text-transform:none"><?php echo $nome;?></h1>
             <h2>Resumo</h2>
             <div class="abstract">
                 <?php echo $resumo;?>

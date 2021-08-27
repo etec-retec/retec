@@ -19,8 +19,6 @@
         $data_ap = filter_input(INPUT_POST, 'data_ap', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $instituicao = filter_input(INPUT_POST, 'instituicao', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-        var_dump($_FILES);
-
         #FOTO DE PERFIL
         if($imagem = $_FILES['foto']['tmp_name'] != NULL){
             $imagem = $_FILES['foto']['tmp_name'];
@@ -91,14 +89,12 @@
         }
     }
 
-    echo $membros_grupo;
-
-    // include "../conexao/conexao.inc";
-    // $query = "INSERT INTO repositorio VALUES(NULL, '$nome', '$prof_orientador', '$prof_corientador', '$membros_grupo', '$membros_banca', '$curso', '$ano', '$mencao', '$resumo', '$abstract',
-    //  '$pa_ch', '$key_words', '$data_ap', '$instituicao', '$foto_conteudo', '$pdf_conteudo', '$zip_conteudo')";
-    // mysqli_query($conexao, $query);
-    // mysqli_close($conexao);
-    // $nl = $_GET['access'];
-    // header("Location: ../dashboard/index.php?access=$nl");
+    include "../conexao/conexao.inc";
+    $query = "INSERT INTO repositorio VALUES(NULL, '$nome', '$prof_orientador', '$prof_corientador', '$membros_grupo', '$membros_banca', '$curso', '$ano', '$mencao', '$resumo', '$abstract',
+     '$pa_ch', '$key_words', '$data_ap', '$instituicao', '$foto_conteudo', '$pdf_conteudo', '$zip_conteudo')";
+    mysqli_query($conexao, $query);
+    mysqli_close($conexao);
+    $nl = $_GET['access'];
+    header("Location: ../dashboard/index.php?access=$nl");
 
 ?>

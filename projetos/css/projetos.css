@@ -114,7 +114,12 @@ body{
 .link{
     text-decoration: none;
     color: #2a3641;
-    display: inline-flex;
+}
+
+.sizeImg{
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .img_set{
@@ -125,10 +130,6 @@ body{
     padding: 25px;
 }
 
-.blocos a{
-    padding: 25px;
-}
-
 .bloco{
     text-decoration: none;
     height: 400px;
@@ -136,6 +137,8 @@ body{
     border: 1px solid #2a3641;
     overflow: hidden;
     text-overflow: ellipsis;
+    float: right;
+    margin: 16px;
 }
 
 .bloco h3{
@@ -162,6 +165,18 @@ body{
 #ico:hover{
     background-color: #6253f2;
     color: #f4f4f4;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #6253f2;
+  border-radius: 16px;
 }
 
 @media (max-width: 48em){
