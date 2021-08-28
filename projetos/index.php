@@ -2,6 +2,12 @@
     include "../conexao/conexao.inc";
     $query = "SELECT * FROM repositorio LIMIT 9";
     $result = mysqli_query($conexao, $query);
+
+    $query2 = "SELECT nome FROM materias";
+    $result2 = mysqli_query($conexao, $query2);
+
+    $query3 = "SELECT nome FROM instituicao";
+    $result3 = mysqli_query($conexao, $query3);
 ?>
 
 <!DOCTYPE html>
@@ -20,10 +26,9 @@
     <body>
 
     <?php
-        $ver = session_id();
-        if($ver != ""){
+        if(isset($_GET["access"])){
     ?>
-    <div class="cabecalho"> 
+    <div class="cabecalho">
         <button class="voltar" onclick="window.open('../dashboard/index.php?access=<?php echo $_GET["access"]; ?>', '_self')">❮ Voltar</button>
         <h1 class="logo">RETEC</h1>
     </div>       
@@ -31,7 +36,7 @@
         }else{
     ?>
     <div class="cabecalho"> 
-        <button class="voltar" onclick="window.open('../dashboard/index.php?access=<?php echo $_GET["access"]; ?>', '_self')">❮ Início</button>
+        <button class="voltar" onclick="window.open('../index.php', '_self')">❮ Início</button>
         <h1 class="logo">RETEC</h1>
     </div>    
     <?php       
@@ -42,19 +47,28 @@
         <div class="info_esquerda">
             <h1 class="fltrs">Filtros</h1>
             <form action="../rotas/order.php?access">
-                <h3>Curso - ETIM</h3>
-                &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="ds"> DS<br>
-                &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="nutricao"> Nutrição<br>
-                &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="meioambiente"> Meio Ambiente<br>
-                &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="quimica"> Química
-                <br><br>
-                <h3>Curso - Modular</h3>
-                &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="contabilidade"> Contabilidade<br>
-                &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="seg_trab"> Segurança do Trabalho<br>
-                &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="nutr_diet"> Nutrição e Dietética<br>
-                &nbsp;<input type="checkbox" class="checkbox-round" name="curso" value="quimica_mod"> Química
-                <br><br>
-                <h3>Data da Postagem</h3>
+                <h3>Cursos</h3>
+                <?php
+                    foreach($result2 as $res2){
+                        echo "&nbsp;<input type='checkbox' class='checkbox-round' name='curso' value='".$res2['nome']."'> ".$res2['nome']."<br>";
+                    }
+                ?>
+                <br>
+                <h3>Instituição</h3>
+                <?php
+                    foreach($result3 as $res3){
+                        echo "&nbsp;<input type='checkbox' class='checkbox-round' name='curso' value='".$res3['nome']."'>";
+                        if($res3['nome'] == "ETEC Professor Andre Bogasian"){
+                            echo " ETEC Professor André Bogasian";
+                        }else{
+                            echo " ".$res3['nome'];
+                        }
+                        echo "<br>";
+                    }
+                ?>
+                
+                <br>
+                <h3>Ano de Publicação</h3>
                 De <input type="number" class="ano_inp" min="2021" max="2022"> até <input type="number" class="ano_inp" min="2021" max="2022">
                 <br><br>
                 <input type="submit" class="btn_filtrar" value="Filtrar">
@@ -78,7 +92,7 @@
                             ?>
                         <div class="bloco">
                             <a href="../projeto/index.php?tcc=<?php echo $tcc["codigo_r"];?>" class="link">
-                            <div class="sizaImg">
+                            <div class="sizeImg">
                             <?php
                         } 
                                 echo '<img src="data:image/jpeg;base64,'.base64_encode($tcc['foto']).'"';
@@ -92,22 +106,7 @@
                 <?php
                     }
                 ?>
-
-                     
-
-                    <!-- <a href="../projeto/" class="link">    
-                        <div class="bloco">
-                            <img src="https://tccagoravai.com//franquias/2/6561561/editor-html/6487905.png" class="img_set">
-                            <h3>TCC Exemplo 9</h3>
-                            <p>Texto de exemplo do TCC, as abelhas conseguem produzir mel pela necessidade da sobrevivência, já que a polonização
-                                revigora a área em que elas vivem e fazem com que elas preservem sua fauna em prol de sua sobrevivência.
-                            </p>
-                        </div>
-                    </a> -->
-                
             </div>
-
-            
         </div>
     </div>
     </body>

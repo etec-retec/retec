@@ -20,6 +20,7 @@
     </head>
     <body>
         <div class="actions">
+                <button class="btn" id="cad" onclick="window.open('projetos', '_self')">Projetos</button>
                 <button class="btn" onclick="window.open('login/index.php', '_self')">Login</button>
                 <button class="btn" id="cad" onclick="window.open('cadastro/index.php', '_self')">Cadastrar</button>
         </div>

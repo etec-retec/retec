@@ -1,5 +1,10 @@
 <meta charset="UTF-8">
 <?php 
+    session_start();
+    if($_SESSION["numLogin"] != $_GET["access"]){
+        header("location: ../erro/401.php");
+        exit;
+    }
 
     if(isset($_POST['nome']) && isset($_POST['prof_orientador']) && isset($_POST['prof_corientador']) && isset($_POST['membros_banca']) && isset($_POST['membros_grupo']) 
     && isset($_POST['curso']) && isset($_POST['ano']) && isset($_POST['mencao']) && isset($_POST['resumo']) && isset($_POST['abstract'])

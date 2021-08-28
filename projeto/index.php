@@ -8,7 +8,7 @@
     $query = "SELECT * FROM repositorio WHERE codigo_r = '$id'";
     $resultado = mysqli_query($conexao, $query);
     if(mysqli_affected_rows($conexao) == 0){
-        header("Location: ../erro/index.php?404");
+        header("Location: ../erro/401.php");
     }else{
         while($elemento = mysqli_fetch_row($resultado)){
             $codigo = $elemento[0];
@@ -55,7 +55,7 @@
         <?php
             }else{
         ?>
-                <button class="voltar" style="width:200px" onclick="window.open('../projetos/index.php?access=<?php echo $_SESSION["numLogin"]; ?>', '_self')">❮ Cadastre-se</button>
+                <button class="voltar" style="width:200px" onclick="window.open('../projetos/', '_self')">❮ Outros Projetos</button>
         <?php
             }
         ?> 
