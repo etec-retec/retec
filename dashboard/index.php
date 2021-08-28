@@ -34,6 +34,17 @@
                 <label><?php echo $_SESSION["instituicao"];?></label>
             </div>
         </div>
+        <?php
+            if(isset($_GET["edit"])){
+        ?>
+            <div class="mark">Projeto editado com sucesso!</div>
+        <?php
+            }elseif(isset($_GET["criado"])){
+        ?>
+                <div class="mark">Projeto criado com sucesso!</div>
+        <?php
+            }
+        ?>
         <br>
         <div class="corpo">
             <h1 class="cap">Olá, <?php echo $_SESSION["nome"]; ?>!</h1>

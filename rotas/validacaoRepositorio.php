@@ -95,6 +95,6 @@
     mysqli_query($conexao, $query);
     mysqli_close($conexao);
     $nl = $_GET['access'];
-    header("Location: ../dashboard/index.php?access=$nl");
+    header("Location: ../dashboard/index.php?access=$nl&criado=TRUE");
 
 ?>
