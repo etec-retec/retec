@@ -1,5 +1,10 @@
 <?php
-    if(session_id() != ''){
+    if(isset($_SESSION['numLogin'])){
+        unset($_SESSION['numLogin']);
+    }
+
+    if(isset($_SESSION)){
+        session_unset();
         session_destroy();
     }
 ?>

@@ -83,7 +83,6 @@
                 <br><br>
 
                 <label for="curso"><b>Curso</b></label>
-                <p style="font-size:12px; margin-top:0; color:#800;">Selecione o curso novamente.</p>
                 <select class="inp_txt" name="curso" min="8" max="64" id="slct">
                 </select>
                 <br><br>
@@ -94,8 +93,7 @@
                 <br><br>
 
                 <label for="mencao"><b>Menção</b></label>
-                <p style="font-size:12px; margin-top:0; color:#800;">Selecione a nota novamente.</p>
-                <select class="inp_txt" name="mencao" id="slct">    
+                <select class="inp_txt" name="mencao" id="slct_menc">    
                 <h3>Curso - ETIM</h3>
                     <option value="mb">MB</option>
                     <option value="b">B</option>
@@ -145,6 +143,8 @@
                     </p>
                 </div>
                 <input type="text" name="instituicao" value="<?php echo $_SESSION['instituicao']; ?>" hidden/>
+                <input type="text" id="to_js1" value="<?php echo $curso;?>" hidden/>
+                <input type="text" id="to_js2" value="<?php echo $mencao;?>" hidden/>
                 <br>
 
                 <input type="submit" class="cadastrar" id="sub_box" value="Editar Projeto"/>
@@ -155,11 +155,21 @@
             materias = materias.split(";");
 
             slct = document.getElementById("slct");
+            input = document.getElementById("to_js1");
+            atual = input.value;
 
+            slct_menc = document.getElementById("slct_menc");
+            input_menc = document.getElementById("to_js2");
+            slct_menc.value = input_menc.value;
+            
             for(i=0; i<=(materias.length-1); i++){
                 option = document.createElement("option");
                 option.text = materias[i];
                 option.value = materias[i];
+                if(materias[i] == atual){
+                    option.selected='selected';
+                }
+
                 slct.appendChild(option);
                 console.log(materias[i]);
             }

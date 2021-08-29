@@ -97,10 +97,6 @@ body{
     outline: none;
 }
 
-#slct{
-    color: #808080
-}
-
 #slct:hover{
     cursor: pointer;
 }

@@ -166,11 +166,11 @@ body{
 
 #ico{
     cursor: pointer;
+    border: none;
 }
 
 #ico:hover{
-    background-color: #6253f2;
-    color: #f4f4f4;
+    color: #6253f2;
 }
 
 ::-webkit-scrollbar-track {
