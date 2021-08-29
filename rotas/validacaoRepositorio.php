@@ -104,6 +104,6 @@
     $row = mysqli_fetch_array($res);
     $cod_r = $row[0];
     mysqli_close($conexao);
-    header("Location: ../projeto/index.php?tcc=$cod_r&criado=TRUE");
+    header("Location: ../projeto/?tcc=$cod_r&criado=TRUE");
 
 ?>

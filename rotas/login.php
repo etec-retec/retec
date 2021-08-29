@@ -117,11 +117,11 @@
             }
         
         }else if($retorno_email == True & $retorno != 1){
-            header("location: ../login/index.php?denied=1&email=$email");
+            header("location: ../login/?denied=1&email=$email");
         }else if($retorno_verificacao == True & $retorno != 1){
-            header("location: ../login/index.php?denied=3&email=$email");
+            header("location: ../login/?denied=3&email=$email");
         }else{
-            header("location: ../login/index.php?denied=2");
+            header("location: ../login/?denied=2");
         }
     }else{
         echo "Ocorreu um erro inesperado. Contate o desenvolvedor!";

@@ -14,7 +14,7 @@ body{
 
 .banner{
     width: 100%;
-    height: 250px;
+    height: 175px;
     background-color: #dee7ee;
 }
 
@@ -34,7 +34,6 @@ body{
 }
 
 .caixa{
-    /* height: 500px; */
     width: 320px;
     border: 1px solid #a7b5bc;
     margin-left: 60px;
@@ -49,7 +48,6 @@ body{
 
 .info_direita h1{
     margin-left: -50px;
-    /* text-align: center; */
 }
 
 .abstract{

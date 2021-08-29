@@ -80,6 +80,7 @@ body{
 }
 
 .area_txt{
+    font-family: 'Poppins', sans-serif;
     width: 350px;
     font-size: 15px;
     padding: 5px;

@@ -105,6 +105,6 @@
     }
     mysqli_query($conexao, $query);
     mysqli_close($conexao);
-    header("Location: ../projeto/index.php?tcc=$id&editado=TRUE");
+    header("Location: ../projeto/?tcc=$id&editado=TRUE");
 
 ?>

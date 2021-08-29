@@ -106,7 +106,6 @@
                 <input type="date" class="inp_txt" name="data_ap" min="4" max="256" id="dt_ap" required>
                 <br><br>
 
-                
                 <div class="arquivos">
                 <h3>Arquivos</h3>
                     <p>
@@ -128,7 +127,6 @@
         <script>
             materias = `<?php echo $_SESSION['materias'];?>`;
             materias = materias.split(";");
-
             slct = document.getElementById("slct");
 
             for(i=0; i<=(materias.length-1); i++){

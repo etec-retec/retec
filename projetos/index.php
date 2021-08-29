@@ -77,17 +77,7 @@
     <div class="grid-container">
         <div class="info_esquerda">
             <h1 class="fltrs">Filtros</h1>
-            <?php
-                if(isset($_SESSION["numLogin"])){
-            ?>
-            <form action="index.php" method="GET">
-            <?php
-                }else{
-            ?>
-            <form action="index.php" method="GET">
-            <?php
-                }
-            ?>
+            <form action="?" method="GET">
                 <h3>Cursos</h3>
                 <?php
                     foreach($result2 as $res2){
@@ -124,7 +114,7 @@
                     foreach($result as $tcc){
                 ?>
                         <div class="bloco">
-                            <a href="../projeto/index.php?tcc=<?php echo $tcc["codigo_r"];?>" class="link">
+                            <a href="../projeto/?tcc=<?php echo $tcc["codigo_r"];?>" class="link">
                             <div class="sizeImg">
                 <?php
                                 echo '<img src="data:image/jpeg;base64,'.base64_encode($tcc['foto']).'"';

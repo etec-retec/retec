@@ -32,38 +32,36 @@
 
         <div class="center">
             <h2 class="center" id="lbl">Adicionar Projeto</h2>
-            <form action="../../rotas/ .php?<?php echo $_SESSION["numLogin"];?>" method="POST">
+            <form action="../../rotas/validacaoRepositorio.php" method="POST" enctype="multipart/form-data">
 
                 <label for="nome"><b>Nome</b></label>
+                <br>
                 <input type="text" class="inp_txt" name="nome" placeholder="Nome do TCC" min="3" max="64" required>
                 <br><br>
 
                 <label for="prof_orientador"><b>Professor Orientador</b></label>
                 <br>
-                <input type="text" name="prof_orientador" class="inp_txt" placeholder="Nome" required/>
+                <input type="text" name="prof_orientador" class="inp_txt" min="8" max="64" placeholder="Nome" required/>
                 <br><br>
 
                 <label for="prof_coorientador"><b>Professor Co-orientador</b></label>
                 <br>
-                <input type="text" name="prof_coorientador" class="inp_txt" placeholder="Nome" required/>
+                <input type="text" name="prof_corientador" class="inp_txt" min="8" max="64" placeholder="Nome" required/>
                 <br><br>
 
-                <label for="membros"><b>Membros</b></label>
+                <label for="membros"><b>Membros do Grupo</b></label>
                 <p style="font-size:12px; margin-top:0">Separe os integrantes por vírgulas ","</p>
-                <input type="text" name="membros" class="inp_txt" placeholder="Ex: Alexandre Lima, Luiz Henrique, Carlos Alberto" required/>
+                <input type="text" name="membros_grupo" class="inp_txt" min="8" max="564" placeholder="Ex: Alexandre Lima, Luiz Henrique, Carlos Alberto" required/>
+                <br><br>
+
+                <label for="membros"><b>Membros da Banca</b></label>
+                <p style="font-size:12px; margin-top:0">Separe os integrantes por vírgulas ","</p>
+                <input type="text" name="membros_banca" class="inp_txt" min="8" max="564" placeholder="Ex: Regina Santos, Marcello Zanfra, Thiago" required/>
                 <br><br>
 
                 <label for="curso"><b>Curso</b></label>
                 <br>
-                <select class="inp_txt" name="curso" id="slct">    
-                    <option value="ds">ETIM - Desenvolvimento de Sistemas</option>
-                    <option value="nutricao">ETIM - Nutrição</option>
-                    <option value="meioambiente">ETIM - Meio Ambiente</option>
-                    <option value="quimica">ETIM - Química</option>
-                    <option value="contabilidade">Modular - Contabilidade</option>
-                    <option value="seg_trab">Modular - Segurança do Trabalho</option>
-                    <option value="nutr_diet">Modular - Nutrição e Dietética</option>
-                    <option value="quimica_mod">Modular - Química</option>
+                <select class="inp_txt" name="curso" min="8" max="64" id="slct">
                 </select>
                 <br><br>
 
@@ -88,46 +86,56 @@
                 <textarea type="text" class="area_txt" name="resumo" placeholder="Trecho do PDF (Resumo)" required></textarea>
                 <br><br>
 
-                <label for="resumo"><b>Abstract</b></label>
+                <label for="abstract"><b>Abstract</b></label>
                 <br>
                 <textarea type="text" class="area_txt" name="abstract" placeholder="Trecho do PDF (Abstract)" required></textarea>
                 <br><br>
 
-                <label for="resumo"><b>Palavras-chave</b></label>
+                <label for="pa_ch"><b>Palavras-chave</b></label>
                 <br>
                 <textarea type="text" class="area_txt" name="pa_ch" placeholder="Trecho do PDF (Palavras-chave)" required></textarea>
                 <br><br>
 
-                <label for="resumo"><b>Key Words</b></label>
+                <label for="key_words"><b>Key Words</b></label>
                 <br>
                 <textarea type="text" class="area_txt" name="key_words" placeholder="Trecho do PDF (Key Words)" required></textarea>
                 <br><br>
 
                 <label for="data_ap"><b>Data de Apresentação</b></label>
                 <br>
-                <input type="date" class="inp_txt" name="data_ap" placeholder="Autores" min="4" max="256" id="dt_ap" required>
+                <input type="date" class="inp_txt" name="data_ap" min="4" max="256" id="dt_ap" required>
                 <br><br>
 
-                
                 <div class="arquivos">
                 <h3>Arquivos</h3>
                     <p>
-                        <label>Upload PDF: </label><input type="file" name="pdf" value=""/>
+                        <label>Upload PDF: </label><input type="file" name="pdf" value="" accept="application/pdf"/>
                     </p>
                     <p>    
-                        <label>Upload Projeto Completo(.zip): </label><input type="file" name="zip" value=""/>
+                        <label>Upload Projeto Completo(.zip): </label><input type="file" name="zip" accept=".zip,.rar,.7zip"/>
                     </p>
                     <p>    
-                        <label>Upload Foto Principal: </label><input type="file" name="foto" value=""/>
-                    </p>
-                    <p>    
-                        <label>Upload Foto de Capa: </label><input type="file" name="capa" value=""/>
+                        <label>Upload Foto Principal: </label><input type="file" name="foto" accept="image/jpeg,image/jpg,image/png,image/img"/>
                     </p>
                 </div>
+                <input type="text" name="instituicao" value="<?php echo $_SESSION['instituicao']; ?>" hidden/>
                 <br>
 
                 <input type="submit" class="cadastrar" id="sub_box" value="Adicionar Projeto"/>
             </form>
         </div>
+        <script>
+            materias = `<?php echo $_SESSION['materias'];?>`;
+            materias = materias.split(";");
+            slct = document.getElementById("slct");
+
+            for(i=0; i<=(materias.length-1); i++){
+                option = document.createElement("option");
+                option.text = materias[i];
+                option.value = materias[i];
+                slct.appendChild(option);
+                console.log(materias[i]);
+            }
+        </script>
     </body>
 </html>

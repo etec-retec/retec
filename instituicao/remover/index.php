@@ -4,11 +4,16 @@
         header("location: ../../erro/401.php");
         exit;
     }
+
     if($_SESSION["tipo"] == "1"){
         header("location: ../../erro/401.php");
         exit;
     }
 
+    $inst = $_SESSION['instituicao'];
+    include "../../conexao/conexao.inc";
+    $query = "SELECT * FROM repositorio WHERE instituicao = '$inst'";
+    $result = mysqli_query($conexao, $query);
 ?>
 
     <!DOCTYPE html>
@@ -26,6 +31,13 @@
         </head> 
     
         <body>
+            <?php
+                if(isset($_GET['deletado'])){
+            ?>
+                    <div class="marker">Projeto removido com sucesso!</div>
+            <?php
+                }
+            ?>
             <div class="cabecalho"> 
                 <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
                 <div class="bts">
@@ -42,51 +54,28 @@
                 <table id="customers">
                     <tr id="especial">
                       <th>Projeto</th>
-                      <th>Excluir</th>
+                      <th>Remover</th>
                     </tr> 
 
-                    <!-- GERADO PELO PHP -->
+                    <?php
+                        foreach($result as $tcc){
+                    ?>
                     <tr>
                         <td class="table-column">
-                            <div class="item" onclick="window.open('projetoI');">{{ Título do TCC I}}</div>
+                            <div class="item" onclick="window.open('../../projeto/?tcc=<?php echo $tcc["codigo_r"];?>', '_self');"><?php echo $tcc["nome"];?></div>
                         </td>
                         
                         <td class="table-column_ex">
                             <div class="item" id="center">
-                                <form action="/routes/delete.php?projeto=$id}}" method="POST">
-                                    <button type="submit" class="fr">Excluir</button>
+                                <form action="../../rotas/removerRepositorio.php?tcc=<?php echo $tcc["codigo_r"];?>" method="POST">
+                                    <button type="submit" class="fr">Remover</button>
                                   </form>
                             </div>
                         </td>
                     </tr>
-
-                    <tr>
-                        <td class="table-column">
-                            <div class="item" onclick="window.open('projetoII');">{{ Título do TCC II}}</div>
-                        </td>
-
-                        <td class="table-column_ex">
-                            <div class="item" id="center">
-                                <form action="/routes/delete.php?projeto=$id}}" method="POST">
-                                    <button type="submit" class="fr">Excluir</button>
-                                  </form>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="table-column">
-                            <div class="item" onclick="window.open('projetoIII');">{{ Título do TCC III}}</div>
-                        </td>
-
-                        <td class="table-column_ex">
-                            <div class="item" id="center">
-                                <form action="/routes/delete.php?projeto=$id}}" method="POST">
-                                    <button type="submit" class="fr">Excluir</button>
-                                  </form>
-                            </div>
-                        </td>
-                    </tr>
+                    <?php
+                        }
+                    ?>
                 </table>
             </div>
         </body>

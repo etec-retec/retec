@@ -50,12 +50,12 @@
                     ?>
                     <tr>
                         <td class="table-column">
-                            <div class="item" onclick="window.open('tcc/index.php?tcc=<?php echo $tcc["codigo_r"];?>', '_self');"><?php echo $tcc["nome"];?></div>
+                            <div class="item" onclick="window.open('tcc/?tcc=<?php echo $tcc['codigo_r'];?>', '_self');"><?php echo $tcc["nome"];?></div>
                         </td>
                         
                         <td class="table-column_ex">
                             <div class="item" id="center">
-                                <form action="tcc/index.php?tcc=<?php echo $tcc["codigo_r"];?>" method="POST">
+                                <form action="tcc/?tcc=<?php echo $tcc['codigo_r'];?>" method="POST">
                                     <button type="submit" class="fr">Editar</button>
                                   </form>
                             </div>

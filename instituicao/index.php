@@ -18,6 +18,7 @@
         header("location: ../erro/401.php");
         exit;
     }
+    
     if($_SESSION['tipo'] != 0){
         header("location: ../erro/401.php");
         exit;
@@ -88,7 +89,7 @@
                 <a id="p" href="../projetos/">Projetos</a>
                 <a id="a" href="adicionar/">Adicionar Projeto</a>
                 <a id="e" href="editar/">Editar Projeto</a>
-                <a id="r" href="remover/">Excluir Projeto</a>
+                <a id="r" href="remover/">Remover Projeto</a>
                 <a id="m" href="">Lista de Professores</a>
             </div>
         </div>

@@ -97,6 +97,15 @@ body{
     /* margin: 0 auto; */
 }
 
+.marker{
+    padding: 20px;
+    font-size: 20px;
+    background-color: #a0bca6;
+    color: #012f00;
+    border-top: 2px solid #012f00;
+    border-bottom: 2px solid #012f00;
+}
+
 @media (max-width: 48em){
 .banner{
     height: 150px;
