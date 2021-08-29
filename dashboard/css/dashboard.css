@@ -104,13 +104,6 @@ body{
     border-right: 1px solid #6253f2;
 }
 
-.mark{
-    background-color: #a0bca6;
-    color: #012f00;
-    border-top: 2px solid #012f00;
-    border-bottom: 2px solid #012f00;
-}
-
 @media (max-width: 48em){
 .cap{
     padding-top: 64px;

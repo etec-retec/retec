@@ -26,6 +26,10 @@
         $data_ap = $elemento[13];
         $instituicao = $elemento[14];
     }
+
+    if($_SESSION['instituicao'] != $instituicao){
+        header("location: ../../../erro/401.php");
+    }
     mysqli_close($conexao);
 ?>
 

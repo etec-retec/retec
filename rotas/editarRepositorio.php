@@ -106,6 +106,6 @@
     mysqli_query($conexao, $query);
     mysqli_close($conexao);
     $nl = $_GET['access'];
-    header("Location: ../dashboard/index.php?access=$nl&edit=TRUE");
+    header("Location: ../projeto/index.php?access=$nl&tcc=$id&editado=TRUE");
 
 ?>

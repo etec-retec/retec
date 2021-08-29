@@ -47,6 +47,18 @@
     </head>
     <body>
 
+    <?php
+        if(isset($_GET['criado'])){
+    ?>
+            <div class="marker">Projeto criado com sucesso!</div>
+    <?php
+        }elseif(isset($_GET['editado'])){
+    ?>
+            <div class="marker">Projeto editado com sucesso!</div>
+    <?php
+        }
+    ?>
+
     <div class="banner"> 
         <?php
             if(isset($_GET["access"])){
