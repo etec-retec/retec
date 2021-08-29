@@ -1,6 +1,5 @@
 <?php
     session_start();
-    echo $_SESSION["numLogin"];
     if(!isset($_SESSION["numLogin"])){
         header("location: ../erro/401.php");
         exit;

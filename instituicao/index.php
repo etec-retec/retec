@@ -14,7 +14,7 @@
         unset($_SESSION["matricula"]);
     }
 
-    if($_SESSION["numLogin"] != $_GET["access"]){
+    if(!isset($_SESSION["numLogin"])){
         header("location: ../erro/401.php");
         exit;
     }
@@ -38,7 +38,7 @@
     </head>
     <body>
         <div class="cabecalho" id="teste"> 
-            <button class="voltar" onclick="window.open('../index.php', '_self')">❮ Sair</button>
+            <button class="voltar" onclick="window.open('../', '_self')">❮ Sair</button>
             <?php
                 if((isset($_SESSION['not']) && $_SESSION['not'] > 0)){
             ?>
@@ -76,6 +76,8 @@
             <div class="logo">
                 <h1>RETEC</h1>
                 <label class="lblNome"><?php echo $_SESSION["instituicao"];?></label>
+                <br>
+                <label class="lblNome"><b>Institucional</b></label>
             </div>
         </div>
 
@@ -83,10 +85,10 @@
             <h1 class="cap"><?php echo $_SESSION["instituicao"]; ?></h1>
 
             <div class="opcoes">
-                <a id="p" href="../projetos/index.php?access=<?php echo $_SESSION["numLogin"];?>">Projetos</a>
-                <a id="a" href="adicionar/index.php?access=<?php echo $_SESSION["numLogin"];?>">Adicionar Projeto</a>
-                <a id="e" href="editar/index.php?access=<?php echo $_SESSION["numLogin"];?>"">Editar Projeto</a>
-                <a id="r" href="remover/index.php?access=<?php echo $_SESSION["numLogin"];?>"">Excluir Projeto</a>
+                <a id="p" href="../projetos/">Projetos</a>
+                <a id="a" href="adicionar/">Adicionar Projeto</a>
+                <a id="e" href="editar/">Editar Projeto</a>
+                <a id="r" href="remover/">Excluir Projeto</a>
                 <a id="m" href="">Lista de Professores</a>
             </div>
         </div>
@@ -134,8 +136,6 @@
                 imgm = '../assets/img/not.png'
                 imgmHover = '../assets/img/notHover.png'
             };
-            
-                
        </script>
     </body>
 </html>

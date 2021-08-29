@@ -1,6 +1,6 @@
 <?php
     session_start();
-
+    // var_dump($_SESSION);
     if(isset($_GET['curso'])){
         var_dump($_GET['curso']);
         echo "<hr>";
@@ -33,7 +33,26 @@
     <body>
 
     <?php
-        if(isset($_SESSION["numLogin"])){
+        if(isset($_SESSION["numLogin"]) && $_SESSION["tipo"] == 0){
+    ?>
+    <div class="cabecalho">
+        <button class="voltar" onclick="window.open('../instituicao/', '_self')">❮ Voltar</button>
+        <h1 class="logo">RETEC</h1>
+        <?php
+            if(isset($_SESSION['instituicao'])){
+        ?>
+                <label><?php echo $_SESSION["instituicao"];?></label>
+        <?php
+            }
+            if($_SESSION['tipo'] == 0){
+        ?>
+                <br><label><b>Institucional</b></label>
+        <?php
+            }
+        ?>
+    </div>       
+    <?php
+        }elseif(isset($_SESSION["numLogin"]) && $_SESSION["tipo"] == 1){
     ?>
     <div class="cabecalho">
         <button class="voltar" onclick="window.open('../dashboard/', '_self')">❮ Voltar</button>
@@ -44,11 +63,9 @@
                 <label><?php echo $_SESSION["instituicao"];?></label>
         <?php
             }
-        ?>
-    </div>       
-    <?php
         }else{
-    ?>
+        ?>
+    </div>
     <div class="cabecalho"> 
         <button class="voltar" onclick="window.open('../', '_self')">❮ Início</button>
         <h1 class="logo">RETEC</h1>

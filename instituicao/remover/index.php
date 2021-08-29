@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if($_SESSION["numLogin"] != $_GET["access"]){
+    if(!isset($_SESSION["numLogin"])){
         header("location: ../../erro/401.php");
         exit;
     }
@@ -27,11 +27,11 @@
     
         <body>
             <div class="cabecalho"> 
-                <button class="voltar" onclick="window.open('../index.php?access=<?php echo $_SESSION["numLogin"]; ?>', '_self')">❮ Voltar</button>
+                <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
                 <div class="bts">
-                    <a id="add" href="../adicionar/index.php?access=<?php echo $_SESSION["numLogin"];?>">Adicionar</a>
+                    <a id="add" href="../adicionar/">Adicionar</a>
                     <a id="rem">Remover</a>
-                    <a id="ed" href="../editar/index.php?access=<?php echo $_SESSION["numLogin"];?>">Editar</a>
+                    <a id="ed" href="../editar/">Editar</a>
                 </div>
                 <h1 class="logo">RETEC</h1>
             </div>

@@ -83,6 +83,7 @@
                 <br><br>
 
                 <label for="curso"><b>Curso</b></label>
+                <br>
                 <select class="inp_txt" name="curso" min="8" max="64" id="slct">
                 </select>
                 <br><br>
@@ -93,6 +94,7 @@
                 <br><br>
 
                 <label for="mencao"><b>Menção</b></label>
+                <br>
                 <select class="inp_txt" name="mencao" id="slct_menc">    
                 <h3>Curso - ETIM</h3>
                     <option value="mb">MB</option>
@@ -133,7 +135,7 @@
                 <h3 style="margin-bottom:0;">Substituir Arquivos</h3>
                 <p style="font-size:12px; margin-top:0; color:#800;">Caso deseje manter os arquivos anteriores, ignore os campos abaixo.</p>
                     <p>
-                        <label><b>Substituir</b> PDF: </label><input type="file" name="pdf" value="" accept="application/pdf"/>
+                        <label><b>Substituir</b> PDF: </label><br><input type="file" name="pdf" value="" accept="application/pdf"/>
                     </p>
                     <p>    
                         <label><b>Substituir</b> Projeto Completo(.zip): </label><input type="file" name="zip" value="" accept=".zip,.rar,.7zip"/>
