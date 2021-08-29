@@ -49,11 +49,8 @@
     <body>
         <div class="cabecalho"> 
             <button class="voltar" onclick="window.open('../index.php?access=<?php echo $_SESSION["numLogin"]; ?>', '_self')">❮ Voltar</button>
-            <div class="bts">
-                <a id="add">Adicionar</a>
-                <a id="ed" href="../editar/index.php?access=<?php echo $_SESSION["numLogin"];?>">Editar</a>
-            </div>
             <h1 class="logo">RETEC</h1>
+            <label><?php echo $_SESSION["instituicao"];?></label>
         </div>
 
         <div class="center">
@@ -141,10 +138,10 @@
                         <label><b>Substituir</b> PDF: </label><input type="file" name="pdf" value="" accept="application/pdf"/>
                     </p>
                     <p>    
-                        <label><b>Substituir</b> Projeto Completo(.zip): </label><input type="file" name="zip" value=""/>
+                        <label><b>Substituir</b> Projeto Completo(.zip): </label><input type="file" name="zip" value="" accept=".zip,.rar,.7zip"/>
                     </p>
                     <p>    
-                        <label><b>Substituir</b> Foto Principal: </label><input type="file" name="foto" value="image/jpeg,image/jpg,image/gif,image/png"/>
+                        <label><b>Substituir</b> Foto Principal: </label><input type="file" name="foto" value="" accept="image/jpeg,image/jpg,image/png,image/img"/>
                     </p>
                 </div>
                 <input type="text" name="instituicao" value="<?php echo $_SESSION['instituicao']; ?>" hidden/>

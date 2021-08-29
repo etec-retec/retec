@@ -12,6 +12,14 @@ body{
     background-color: #dee7ee;
 }
 
+.cabecalho label{
+    margin-left: 188px;
+    margin-top: -56px;
+    font-size: 16px;
+    color: #2a3641;
+    float: left;
+}
+
 .logo{
     margin-left: 188px;
     margin-top: -30px;

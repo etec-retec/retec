@@ -33,6 +33,7 @@
                     <a id="ed">Editar</a>
                 </div>
                 <h1 class="logo">RETEC</h1>
+                <label><?php echo $_SESSION["instituicao"];?></label>
             </div>
     
             <div class="center">

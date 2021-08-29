@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     include "../conexao/conexao.inc";
     $query = "SELECT * FROM repositorio LIMIT 9";
     $result = mysqli_query($conexao, $query);
@@ -31,6 +33,13 @@
     <div class="cabecalho">
         <button class="voltar" onclick="window.open('../dashboard/index.php?access=<?php echo $_GET["access"]; ?>', '_self')">❮ Voltar</button>
         <h1 class="logo">RETEC</h1>
+        <?php
+            if(isset($_SESSION['instituicao'])){
+        ?>
+                <label><?php echo $_SESSION["instituicao"];?></label>
+        <?php
+            }
+        ?>
     </div>       
     <?php
         }else{

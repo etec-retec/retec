@@ -27,6 +27,7 @@
                 <a id="ed" href="../editar/index.php?access=<?php echo $_SESSION["numLogin"];?>">Editar</a>
             </div>
             <h1 class="logo">RETEC</h1>
+            <label><?php echo $_SESSION["instituicao"];?></label>
         </div>
 
         <div class="center">
@@ -112,10 +113,10 @@
                         <label>Upload PDF: </label><input type="file" name="pdf" value="" accept="application/pdf"/>
                     </p>
                     <p>    
-                        <label>Upload Projeto Completo(.zip): </label><input type="file" name="zip" value=""/>
+                        <label>Upload Projeto Completo(.zip): </label><input type="file" name="zip" accept=".zip,.rar,.7zip"/>
                     </p>
                     <p>    
-                        <label>Upload Foto Principal: </label><input type="file" name="foto" value="image/jpeg,image/jpg,image/gif,image/png"/>
+                        <label>Upload Foto Principal: </label><input type="file" name="foto" accept="image/jpeg,image/jpg,image/png,image/img"/>
                     </p>
                 </div>
                 <input type="text" name="instituicao" value="<?php echo $_SESSION['instituicao']; ?>" hidden/>
