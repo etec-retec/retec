@@ -1,8 +1,13 @@
 <?php
     session_start();
 
+    if(isset($_GET['curso'])){
+        var_dump($_GET['curso']);
+        echo "<hr>";
+        var_dump($_GET['instituicao']);
+    }
     include "../conexao/conexao.inc";
-    $query = "SELECT * FROM repositorio LIMIT 9";
+    $query = "SELECT * FROM repositorio LIMIT 15";
     $result = mysqli_query($conexao, $query);
 
     $query2 = "SELECT nome FROM materias";
@@ -28,10 +33,10 @@
     <body>
 
     <?php
-        if(isset($_GET["access"])){
+        if(isset($_SESSION["numLogin"])){
     ?>
     <div class="cabecalho">
-        <button class="voltar" onclick="window.open('../dashboard/index.php?access=<?php echo $_GET["access"]; ?>', '_self')">❮ Voltar</button>
+        <button class="voltar" onclick="window.open('../dashboard/', '_self')">❮ Voltar</button>
         <h1 class="logo">RETEC</h1>
         <?php
             if(isset($_SESSION['instituicao'])){
@@ -45,7 +50,7 @@
         }else{
     ?>
     <div class="cabecalho"> 
-        <button class="voltar" onclick="window.open('../index.php', '_self')">❮ Início</button>
+        <button class="voltar" onclick="window.open('../', '_self')">❮ Início</button>
         <h1 class="logo">RETEC</h1>
     </div>    
     <?php       
@@ -55,18 +60,28 @@
     <div class="grid-container">
         <div class="info_esquerda">
             <h1 class="fltrs">Filtros</h1>
-            <form action="../rotas/order.php?access">
+            <?php
+                if(isset($_SESSION["numLogin"])){
+            ?>
+            <form action="index.php" method="GET">
+            <?php
+                }else{
+            ?>
+            <form action="index.php" method="GET">
+            <?php
+                }
+            ?>
                 <h3>Cursos</h3>
                 <?php
                     foreach($result2 as $res2){
-                        echo "&nbsp;<input type='checkbox' class='checkbox-round' name='curso' value='".$res2['nome']."'> ".$res2['nome']."<br>";
+                        echo "&nbsp;<input type='checkbox' class='checkbox-round' name='curso[]' value='".$res2['nome']."'> ".$res2['nome']."<br>";
                     }
                 ?>
                 <br>
                 <h3>Instituição</h3>
                 <?php
                     foreach($result3 as $res3){
-                        echo "&nbsp;<input type='checkbox' class='checkbox-round' name='curso' value='".$res3['nome']."'>";
+                        echo "&nbsp;<input type='checkbox' class='checkbox-round' name='instituicao[]' value='".$res3['nome']."'>";
                         if($res3['nome'] == "ETEC Professor Andre Bogasian"){
                             echo " ETEC Professor André Bogasian";
                         }else{
@@ -90,23 +105,14 @@
             <div class="blocos">
                 <?php
                     foreach($result as $tcc){
-                        if(isset($_GET["access"])){
-                            $acesso = $_GET["access"];
-                        ?>
-                        <div class="bloco">
-                            <a href="../projeto/index.php?access=<?php echo $acesso;?>&tcc=<?php echo $tcc["codigo_r"];?>" class="link">
-                            <div class="sizeImg">
-                    <?php
-                        }else{
-                            ?>
+                ?>
                         <div class="bloco">
                             <a href="../projeto/index.php?tcc=<?php echo $tcc["codigo_r"];?>" class="link">
                             <div class="sizeImg">
-                            <?php
-                        } 
+                <?php
                                 echo '<img src="data:image/jpeg;base64,'.base64_encode($tcc['foto']).'"';
                                 echo "/>";
-            ?>
+                ?>
                             </div>
                                 <h3><?php echo $tcc["nome"];?></h3>
                                 <p><?php echo $tcc["resumo"];?></p>

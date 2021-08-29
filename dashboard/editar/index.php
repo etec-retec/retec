@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if($_SESSION["numLogin"] != $_GET["access"]){
+    if(!isset($_SESSION["numLogin"])){
         header("location: ../../erro/401.php");
         exit;
     }
@@ -27,9 +27,9 @@
     
         <body>
             <div class="cabecalho"> 
-                <button class="voltar" onclick="window.open('../index.php?access=<?php echo $_SESSION["numLogin"]; ?>', '_self')">❮ Voltar</button>
+                <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
                 <div class="bts">
-                    <a id="add" href="../adicionar/index.php?access=<?php echo $_SESSION["numLogin"];?>" >Adicionar</a>
+                    <a id="add" href="../adicionar/" >Adicionar</a>
                     <a id="ed">Editar</a>
                 </div>
                 <h1 class="logo">RETEC</h1>
@@ -50,12 +50,12 @@
                     ?>
                     <tr>
                         <td class="table-column">
-                            <div class="item" onclick="window.open('tcc/index.php?access=<?php echo $_SESSION['numLogin'];?>&tcc=<?php echo $tcc["codigo_r"];?>');"><?php echo $tcc["nome"];?></div>
+                            <div class="item" onclick="window.open('tcc/index.php?tcc=<?php echo $tcc["codigo_r"];?>', '_self');"><?php echo $tcc["nome"];?></div>
                         </td>
                         
                         <td class="table-column_ex">
                             <div class="item" id="center">
-                                <form action="tcc/index.php?access=<?php echo $_SESSION['numLogin'];?>&tcc=<?php echo $tcc["codigo_r"];?>" method="POST">
+                                <form action="tcc/index.php?tcc=<?php echo $tcc["codigo_r"];?>" method="POST">
                                     <button type="submit" class="fr">Editar</button>
                                   </form>
                             </div>

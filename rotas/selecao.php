@@ -9,7 +9,7 @@
 <body>
 <?php
     session_start();
-    if($_SESSION["numLogin"] != $_GET["access"]){
+    if(!isset($_SESSION["numLogin"])){
         header("location: ../erro/401.php");
         exit;
     }
@@ -30,7 +30,7 @@
 
     mysqli_close($conexao);
     $num = $_SESSION["numLogin"];
-    header("location: ../dashboard/index.php?access=$num");
+    header("location: ../dashboard/");
 ?>
 </body>
 </html>

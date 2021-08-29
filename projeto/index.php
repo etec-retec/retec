@@ -61,9 +61,9 @@
 
     <div class="banner"> 
         <?php
-            if(isset($_GET["access"])){
+            if(isset($_SESSION["numLogin"])){
                 ?>
-                <button class="voltar" onclick="window.open('../projetos/index.php?access=<?php echo $_SESSION["numLogin"]; ?>', '_self')">❮ Voltar</button>
+                <button class="voltar" onclick="window.open('../projetos/', '_self')">❮ Voltar</button>
         <?php
             }else{
         ?>

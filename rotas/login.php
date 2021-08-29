@@ -54,7 +54,7 @@
                     $_SESSION["unico"] = TRUE;
                 }finally{
                     mysqli_close($conexao);
-                    header("location: ../acesso/index.php?access=$num");
+                    header("location: ../acesso/");
                 }
 
             }elseif($_SESSION['tipo'] == 0){
@@ -64,7 +64,7 @@
                 $dados = mysqli_query($conexao, $query);
 
                 if($retorno == 0){
-                    header("location: ../instituicao/index.php?access=$num");
+                    header("location: ../instituicao/");
                 }else{
                     while($not = mysqli_fetch_row($dados)){
                         $_SESSION['not'] = TRUE;
@@ -75,7 +75,7 @@
                         $_SESSION['notMatricula'] = $not[4];
                         $_SESSION['notRg'] = $not[5];
                     }
-                    header("location: ../instituicao/index.php?access=$num");
+                    header("location: ../instituicao/");
                 }
                 
             }else{
@@ -102,7 +102,7 @@
             $dados = mysqli_query($conexao, $query);
 
             if($retorno == 0){
-                header("location: ../instituicao/index.php?access=$num");
+                header("location: ../instituicao/");
             }else{
                 while($not = mysqli_fetch_row($dados)){
                     $_SESSION['not'] = TRUE;
@@ -113,7 +113,7 @@
                     $_SESSION['notMatricula'] = $not[4];
                     $_SESSION['notRg'] = $not[5];
                 }
-                header("location: ../instituicao/index.php?access=$num");
+                header("location: ../instituicao/");
             }
         
         }else if($retorno_email == True & $retorno != 1){

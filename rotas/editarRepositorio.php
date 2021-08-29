@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <?php
     session_start();
-    if($_SESSION["numLogin"] != $_GET["access"]){
+    if(!isset($_SESSION["numLogin"])){
         header("location: ../erro/401.php");
         exit;
     }
@@ -105,7 +105,6 @@
     }
     mysqli_query($conexao, $query);
     mysqli_close($conexao);
-    $nl = $_GET['access'];
-    header("Location: ../projeto/index.php?access=$nl&tcc=$id&editado=TRUE");
+    header("Location: ../projeto/index.php?tcc=$id&editado=TRUE");
 
 ?>

@@ -6,7 +6,7 @@
         unset($_SESSION["id_etec"]);
     }
 
-    if($_SESSION["numLogin"] != $_GET["access"]){
+    if(!isset($_SESSION["numLogin"])){
         header("location: ../erro/401.php");
         exit;
     }
@@ -34,7 +34,7 @@
             <div class="formu">
                 <h1>Olá, <?php echo $_SESSION["nome"];?>!</h1>
                 <h2>Entrar como professor da:</h2>
-                <form name="cadastraU" action="../rotas/selecao.php?access=<?php echo $_SESSION["numLogin"];?>" method='POST'>
+                <form name="cadastraU" action="../rotas/selecao.php" method='POST'>
                     <br>
                     <select class="inp_txt" name="inst" id="slct">    
                         <option value="none" required selected disabled>Escolha</option>

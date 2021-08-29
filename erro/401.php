@@ -24,7 +24,7 @@
 
         <div class="mensagem">
             <h1>Acesso Negado!</h1>
-            <a href="../index.php">Retornar à Página Inicial</a>
+            <a href="../">Retornar à Página Inicial</a>
             <br>
             <a href="../projetos/">Ver Projetos</a>
             <br>

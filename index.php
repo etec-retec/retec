@@ -21,8 +21,8 @@
     <body>
         <div class="actions">
                 <button class="btn" id="cad" onclick="window.open('projetos', '_self')">Projetos</button>
-                <button class="btn" onclick="window.open('login/index.php', '_self')">Login</button>
-                <button class="btn" id="cad" onclick="window.open('cadastro/index.php', '_self')">Cadastrar</button>
+                <button class="btn" onclick="window.open('login/', '_self')">Login</button>
+                <button class="btn" id="cad" onclick="window.open('cadastro/', '_self')">Cadastrar</button>
         </div>
         <div class="banner">
             <div class="nome">
@@ -97,12 +97,5 @@
                 <input type="submit" class="enviar" value="Enviar"/>
             </form>
         </div>
-        <script>
-            // var bnr = document.getElementById("bnr_img");
-            // if(( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 )){
-            //     alert("TESTE");
-            //     brn.src="assets/img/bnr4.png";
-            // }
-        </script>
     </body>
 </html>
