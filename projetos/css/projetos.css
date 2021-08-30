@@ -91,7 +91,7 @@ body{
 }
 
 .ano_inp{
-    width: 50px;
+    width: 60px;
 }
 
 .btn_filtrar{
@@ -188,6 +188,10 @@ body{
 
 #ico:hover{
     color: #6253f2;
+}
+
+#lp_filtros{
+    margin-bottom: 32px;
 }
 
 ::-webkit-scrollbar-track {

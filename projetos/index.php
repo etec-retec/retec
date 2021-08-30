@@ -10,8 +10,9 @@
             $sizeCurso = sizeof($_GET['curso']);
             if($sizeCurso > 1){
                 $curso = $_GET['curso'];
-                for($i = 1; $i >= $sizeCurso; $i++){
-                    $query .= " OR curso LIKE  '%$curso[$i]%'";
+                for($i = 1; $i != $sizeCurso; $i++){
+                    $query .= " OR curso LIKE '%$curso[$i]%'";
+                    
                 }
             }
         }
@@ -131,14 +132,36 @@
                 <h3>Cursos</h3>
                 <?php
                     for($i = 0; $i <= 15; $i++){
-                        echo "&nbsp;<input type='checkbox' class='checkbox-round' name='curso[]' value='".$values[$i]."'> ".$nomes[$i]."<br>";
+                        echo "&nbsp;<input type='checkbox' class='checkbox-round' name='curso[]' value='".$values[$i]."'";
+                        $atual = $values[$i];
+                        if(isset($_GET['curso'])){
+                            for($j = 0; $j <= 15; $j++){
+                                for($k = 0; $k <= (sizeof($_GET['curso'])-1); $k++){
+                                    if($atual == $_GET['curso'][$k]){
+                                        echo " checked ";
+                                    }
+                                }
+                            }
+                        }
+                        echo "> ".$nomes[$i]."<br>";
                     }
                 ?>
                 <br>
                 <h3>Instituição</h3>
                 <?php
                     for($i = 0; $i <= 2; $i++){
-                        echo "&nbsp;<input type='checkbox' class='checkbox-round' name='instituicao[]' value='".$valores[$i]."'>";
+                        echo "&nbsp;<input type='checkbox' class='checkbox-round' name='instituicao[]' value='".$valores[$i]."'";
+                        $atual = $valores[$i];
+                        if(isset($_GET['instituicao'])){
+                            for($j = 0; $j <= 3; $j++){
+                                for($k = 0; $k <= (sizeof($_GET['instituicao'])-1); $k++){
+                                    if($atual == $_GET['instituicao'][$k]){
+                                        echo " checked ";
+                                    }
+                                }
+                            }
+                        }
+                        echo ">";
                         if($instituicoes[$i] == "ETEC Professor Andre Bogasian"){
                             echo " ETEC Professor André Bogasian";
                         }else{
@@ -147,18 +170,38 @@
                         echo "<br>";
                     }
                 ?>
-                
                 <br>
                 <h3>Ano de Publicação</h3>
-                De <input type="number" name="ano1" class="ano_inp" min="2008" max="2021"> até <input type="number" name="ano2" class="ano_inp" min="2009" max="2022">
+                <?php
+                    if(isset($_GET['ano1'])){
+                        if($_GET['ano1'] != ''){
+                ?>
+                    De <input type="number" name="ano1" class="ano_inp" min="2008" max="2021" value="<?php echo $_GET['ano1'];?>">
+                <?php
+                        }
+                    }
+                    if(isset($_GET['ano2'])){
+                        if($_GET['ano2'] != ''){
+                ?>
+                     até <input type="number" name="ano2" class="ano_inp" min="2009" max="2022" value="<?php echo $_GET['ano2'];?>">
+                <?php
+                        }
+                    }else{
+                ?>
+                        De <input type="number" name="ano1" class="ano_inp" min="2008" max="2021"> até <input type="number" name="ano2" class="ano_inp" min="2009" max="2022">
+                <?php
+                    }
+                ?>
                 <br><br>
-                <input type="submit" class="btn_filtrar" value="Filtrar">
+                <input type="submit" class="btn_filtrar" value="Filtrar"/>
+                <br><br>
+                <input type="button" class="btn_filtrar" id="lp_filtros" onclick="window.open('../projetos/', '_self')" value="Limpar Filtros"/>
             </form>
         </div>
 
         <div class="info_direita">
         <form action="?" method="GET">
-            <button class="btn_pesquisar" id="ico" type="submit"><i class="fa fa-search"></i></button><input type="text" class="btn_pesquisar" name="search" id="btn" placeholder="Pesquisar"/>
+            <button class="btn_pesquisar" id="ico" type="submit"><i class="fa fa-search"></i></button><input type="text" class="btn_pesquisar" name="search" id="btn" placeholder="Pesquisar" autocomplete="off"/>
         </form>
             <br><br><br><br>
             <?php
@@ -198,5 +241,9 @@
             </div>
         </div>
     </div>
+    <script>
+        
+    </script>
+
     </body>
 </html>
