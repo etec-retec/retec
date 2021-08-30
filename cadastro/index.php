@@ -8,11 +8,12 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
         <link href="css/cadastro.css" rel="stylesheet">
+        <link href="../assets/img/icon.ico" type="image/x-icon" rel="icon"/>
         <title>RETEC - Cadastro</title>
     </head>
 
     <body>
-        <button class="voltar" onclick="window.open('../index.php', '_self')">❮ Voltar</button>
+        <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
         
         <div class="formu">
             <h2>Cadastre-se</h2>
@@ -26,10 +27,12 @@
                 
                 <label for="instituicao"><b>Instituição</b></label>
                 <p style="margin-top:8px !important; margin-left:48px !important; font-size:12px;">Escolha as instituições nas quais você trabalha.</p>
-                <br>
-                <input type="checkbox" class="checkbox-round" name="instituicao[]" value="ETEC Doutor Celso Giglio"/><p class="inst">ETEC Doutor Celso Giglio</p><br>
-                <input type="checkbox" class="checkbox-round" name="instituicao[]" value="ETEC Professor André Bogasian"/><p class="inst">ETEC Professor André Bogasian</p><br>
-                <input type="checkbox" class="checkbox-round" name="instituicao[]" value="ETEC Professor Basílides de Godoy"/><p class="inst">ETEC Professor Basílides de Godoy</p>
+                <br><br>
+                <div class="check">
+                    <input type="checkbox" class="checkbox-round" name="instituicao[]" value="ETEC Doutor Celso Giglio"/><p class="inst">ETEC Doutor Celso Giglio</p>
+                    <input type="checkbox" class="checkbox-round" name="instituicao[]" value="ETEC Professor André Bogasian"/><p class="inst">ETEC Professor André Bogasian</p>
+                    <input type="checkbox" class="checkbox-round" name="instituicao[]" value="ETEC Professor Basílides de Godoy"/><p class="inst">ETEC Professor Basílides de Godoy</p>
+                </div>
                 <br>
 
                 <label for="email"><b>E-mail</b></label><br>

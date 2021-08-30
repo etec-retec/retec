@@ -17,20 +17,26 @@
     $inst1 = filter_input(INPUT_POST, 'inst', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $inst_geral = filter_input(INPUT_POST, 'instituicoes', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-    unset($_SESSION["instituicoes"]);
-    $_SESSION["instituicao"] = $inst1;
-    $_SESSION["instituicoes"] = $inst_geral;
+    if($inst1 == ''){
+        header("location: ../acesso/");
+    }else{
+        unset($_SESSION["instituicoes"]);
+        $_SESSION["instituicao"] = $inst1;
+        $_SESSION["instituicoes"] = $inst_geral;
 
-    include "../conexao/conexao.inc";
-    $query = "SELECT materias FROM instituicao WHERE nome = '$inst1'";
-    $result = mysqli_query($conexao, $query);
-    $print = mysqli_fetch_assoc($result);
-    $_SESSION["materias"] = $print["materias"];
-    echo $_SESSION["materias"];
+        include "../conexao/conexao.inc";
+        $query = "SELECT materias FROM instituicao WHERE nome = '$inst1'";
+        $result = mysqli_query($conexao, $query);
+        $print = mysqli_fetch_assoc($result);
+        $_SESSION["materias"] = $print["materias"];
 
-    mysqli_close($conexao);
-    $num = $_SESSION["numLogin"];
-    header("location: ../dashboard/");
+        mysqli_close($conexao);
+        $num = $_SESSION["numLogin"];
+        header("location: ../dashboard/");
+
+    }
+
+    
 ?>
 </body>
 </html>

@@ -34,6 +34,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
         <link href="css/instituicao.css" rel="stylesheet">
+        <link href="../assets/img/icon.ico" type="image/x-icon" rel="icon"/>
         <title>Retec - <?php echo $_SESSION["instituicao"]; ?></title>
     </head>
     <body>

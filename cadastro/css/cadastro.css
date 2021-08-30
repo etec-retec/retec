@@ -81,9 +81,8 @@ body{
 }
 
 .checkbox-round {
-    margin-left: 48px;
-    position: absolute;
-    display: block;
+    margin-left: 72px !important;
+    display: block !important;
     width: 1.3em !important;
     height: 1.3em !important;
     background-color: white !important;
@@ -95,10 +94,8 @@ body{
 
 p{
     display: block;
-    float: left;
-    margin-top:0px !important;
-    margin-bottom: 0px !important;
-    margin-left: 72px !important;
+    margin-top: -24px;
+    margin-bottom: 0px;
 }
 
 .botao:hover{

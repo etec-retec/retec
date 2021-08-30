@@ -26,7 +26,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-        <link href="./css/acesso.css" rel="stylesheet">
+        <link href="css/acesso.css" rel="stylesheet">
+        <link href="../assets/img/icon.ico" type="image/x-icon" rel="icon"/>
         <title>RETEC - Login</title>
     </head>
         <body>
@@ -36,8 +37,8 @@
                 <h2>Entrar como professor da:</h2>
                 <form name="cadastraU" action="../rotas/selecao.php" method='POST'>
                     <br>
-                    <select class="inp_txt" name="inst" id="slct">    
-                        <option value="none" required selected disabled>Escolha</option>
+                    <select class="inp_txt" name="inst" id="slct" required>    
+                        <option value="none" selected disabled>Escolha</option>
                     </select>
                     <br><br>
                     <input type="text" name="instituicoes" style="display:none" value="<?php echo $_SESSION["instituicao"];?>"/>

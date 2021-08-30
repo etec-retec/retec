@@ -15,13 +15,13 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-        <link href="css/dashboard.css" rel="stylesheet">
-        <link href="../assets/img/icon.ico" type="image/x-icon" rel="icon"/>
-        <title>Retec - Dashboard</title>
+        <link href="css/perfil.css" rel="stylesheet">
+        <link href="../../assets/img/icon.ico" type="image/x-icon" rel="icon"/>
+        <title>Retec - Perfil</title>
     </head>
     <body>
         <div class="cabecalho" id="teste"> 
-            <button class="voltar" onclick="window.open('../', '_self')">❮ Sair</button>
+            <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
             
             <div class="logo">
                 <h1 class="logo" id="texto">RETEC</h1>
@@ -38,18 +38,9 @@
                 ?>
             </div>
         </div>
-        <br>
-        <div class="corpo">
-            <h1 class="cap">Olá, <?php echo $_SESSION["nome"]; ?>!</h1>
-            <h2 class="access">O que você deseja acessar?</h2>
 
-            <div class="opcoes">
-                <a id="p" href="../projetos/">Projetos</a>
-                <a id="a" href="adicionar/">Adicionar Projeto</a>
-                <a id="e" href="editar/">Editar Projeto</a>
-                <a id="m" href="perfil/">Meu Perfil</a>
-            </div>
-        </div>
+        <div class=""
+            
         
     </body>
 </html>

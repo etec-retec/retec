@@ -24,6 +24,7 @@
             <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
             <link href="css/editar.css" rel="stylesheet">
             <link href="css/table.css" rel="stylesheet">
+            <link href="../../assets/img/icon.ico" type="image/x-icon" rel="icon"/>
             <title>Retec - Editar</title>
         </head> 
     

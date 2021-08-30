@@ -18,10 +18,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
         <link href="./css/login.css" rel="stylesheet">
+        <link href="../assets/img/icon.ico" type="image/x-icon" rel="icon"/>
         <title>RETEC - Login</title>
     </head>
         <body>
-            <button class="voltar" onclick="window.open('../index.php', '_self')">❮ Voltar</button> 
+            <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button> 
             <div class="formu">
                 <h2>Login</h2>
                 <form name="cadastraU" action="../rotas/login.php" method='POST'>
