@@ -1,7 +1,6 @@
 <?php
     session_start();
 
-    //PREVENÇÃO DE ERROS E FALHA DE SEGURANÇA POR BUG DE SESSION_DESTROY
     if(isset($_SESSION["codigo_u"])){
         unset($_SESSION["codigo_u"]);
     }else if(isset($_SESSION["nome"])){
@@ -76,7 +75,17 @@
             ?>
             <div class="logo">
                 <h1>RETEC</h1>
-                <label class="lblNome"><?php echo $_SESSION["instituicao"];?></label>
+                <?php
+                    if($_SESSION['instituicao'] == "ETEC Professor Andre Bogasian"){
+                ?>
+                        <label class="lblNome">ETEC Professor André Bogasian</label>
+                <?php
+                    }else{
+                ?>
+                        <label class="lblNome"><?php echo $_SESSION["instituicao"];?></label>
+                <?php
+                    }
+                ?>
                 <br>
                 <label class="lblNome"><b>Institucional</b></label>
             </div>

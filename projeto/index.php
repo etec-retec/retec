@@ -31,6 +31,8 @@
             $zip = $elemento[17];
         }
     }
+
+    mysqli_close($conexao);
 ?>
 
 <!DOCTYPE html>

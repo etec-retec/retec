@@ -57,6 +57,7 @@
                 unset($_SESSION['notMatricula']);
                 unset($_SESSION['notRg']);
                 $nl = $_SESSION['numLogin'];
+                mysqli_close($conexao);
                 header("location: ../instituicao/");
             }else{
                 while($not = mysqli_fetch_row($dados)){
@@ -74,6 +75,7 @@
             }
 
             $nl = $_SESSION['numLogin'];
+            mysqli_close($conexao);
             header("location: ../instituicao/");
 
         }else{
@@ -130,6 +132,7 @@
             }
         }
     }else{
+        mysqli_close($conexao);
         echo "Ocorreu um erro inesperado";
     }
     

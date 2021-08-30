@@ -14,6 +14,8 @@
     include "../../conexao/conexao.inc";
     $query = "SELECT * FROM repositorio WHERE instituicao = '$inst'";
     $result = mysqli_query($conexao, $query);
+
+    mysqli_close($conexao);
 ?>
 
     <!DOCTYPE html>
@@ -46,6 +48,19 @@
                     <a id="ed" href="../editar/">Editar</a>
                 </div>
                 <h1 class="logo">RETEC</h1>
+                <?php
+                    if($_SESSION['instituicao'] == "ETEC Professor Andre Bogasian"){
+                ?>
+                        <label class="lblNome">ETEC Professor André Bogasian</label>
+                <?php
+                    }else{
+                ?>
+                        <label class="lblNome"><?php echo $_SESSION["instituicao"];?></label>
+                <?php
+                    }
+                ?>
+                <br>
+                <label class="lblNome"><b>Institucional</b></label>
             </div>
     
             <div class="center">

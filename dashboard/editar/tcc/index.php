@@ -50,7 +50,18 @@
         <div class="cabecalho"> 
             <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
             <h1 class="logo">RETEC</h1>
-            <label><?php echo $_SESSION["instituicao"];?></label>
+            <?php 
+                if($_SESSION['instituicao'] == "ETEC Professor Andre Bogasian"){
+            ?>
+                    <label>ETEC Professor André Bogasian</label>
+            <?php
+                }else{
+            ?>
+                    <label><?php echo $_SESSION["instituicao"];?></label>
+            <?php
+                }
+            ?>
+            
         </div>
 
         <div class="center">

@@ -37,6 +37,8 @@ body{
 }
 
 .formu{
+    padding: 32px;
+    background-color: #fff;
     color: #2a3641;
     text-align: center;
     margin: 0 auto ;

@@ -64,6 +64,7 @@
                 $dados = mysqli_query($conexao, $query);
 
                 if($retorno == 0){
+                    mysqli_close($conexao);
                     header("location: ../instituicao/");
                 }else{
                     while($not = mysqli_fetch_row($dados)){
@@ -75,6 +76,7 @@
                         $_SESSION['notMatricula'] = $not[4];
                         $_SESSION['notRg'] = $not[5];
                     }
+                    mysqli_close($conexao);
                     header("location: ../instituicao/");
                 }
                 
@@ -102,6 +104,7 @@
             $dados = mysqli_query($conexao, $query);
 
             if($retorno == 0){
+                mysqli_close($conexao);
                 header("location: ../instituicao/");
             }else{
                 while($not = mysqli_fetch_row($dados)){
@@ -113,17 +116,22 @@
                     $_SESSION['notMatricula'] = $not[4];
                     $_SESSION['notRg'] = $not[5];
                 }
+                mysqli_close($conexao);
                 header("location: ../instituicao/");
             }
         
         }else if($retorno_email == True & $retorno != 1){
+            mysqli_close($conexao);
             header("location: ../login/?denied=1&email=$email");
         }else if($retorno_verificacao == True & $retorno != 1){
+            mysqli_close($conexao);
             header("location: ../login/?denied=3&email=$email");
         }else{
+            mysqli_close($conexao);
             header("location: ../login/?denied=2");
         }
     }else{
+        mysqli_close($conexao);
         echo "Ocorreu um erro inesperado. Contate o desenvolvedor!";
     }
 

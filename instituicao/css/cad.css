@@ -8,15 +8,23 @@ body{
 
 .cabecalho{
     width: 100%;
-    height: 150px;
+    height: 175px;
     background-color: #dee7ee;
 }
 
 .logo{
     margin-left: 188px;
-    margin-top: -30px;
+    margin-top: -20px;
     font-size: 64px;
-    color: #6253f2
+    color: #6253f2;
+}
+
+.lblNome{
+    margin-left: 192px;
+    margin-top: -56px;
+    font-size: 16px;
+    color: #2a3641;
+    float:left;
 }
 
 .bts{
@@ -104,6 +112,10 @@ body{
 
 #dt_ap:hover{
     cursor: pointer;
+}
+
+.lblNome{
+    float: left;
 }
 
 .arquivos input{

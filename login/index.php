@@ -23,7 +23,6 @@
         <body>
             <button class="voltar" onclick="window.open('../index.php', '_self')">❮ Voltar</button> 
             <div class="formu">
-
                 <h2>Login</h2>
                 <form name="cadastraU" action="../rotas/login.php" method='POST'>
                     <label><b>E-mail</b></label><br>

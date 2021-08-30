@@ -16,4 +16,5 @@
     include "../conexao/conexao.inc";
     $query = "DELETE FROM repositorio WHERE instituicao = '$inst' AND codigo_r = '$cod'";
     mysqli_query($conexao, $query);
+    mysqli_close($conexao);
     header("location: ../instituicao/remover/?deletado=TRUE");

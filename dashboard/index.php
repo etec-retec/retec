@@ -24,7 +24,17 @@
             
             <div class="logo">
                 <h1 class="logo" id="texto">RETEC</h1>
-                <label><?php echo $_SESSION["instituicao"];?></label>
+                <?php
+                    if($_SESSION["instituicao"] == "ETEC Professor Andre Bogasian"){
+                ?>
+                        <label>ETEC Professor André Bogasian</label>
+                <?php
+                    }else {
+                ?>
+                    <label><?php echo $_SESSION["instituicao"];?></label>
+                <?php
+                    }
+                ?>
             </div>
         </div>
         <br>

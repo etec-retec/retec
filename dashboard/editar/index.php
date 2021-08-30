@@ -9,6 +9,8 @@
     include "../../conexao/conexao.inc";
     $query = "SELECT * FROM repositorio WHERE instituicao = '$inst'";
     $result = mysqli_query($conexao, $query);
+
+    mysqli_close($conexao);
 ?>
 
     <!DOCTYPE html>
@@ -33,7 +35,17 @@
                     <a id="ed">Editar</a>
                 </div>
                 <h1 class="logo">RETEC</h1>
-                <label><?php echo $_SESSION["instituicao"];?></label>
+                <?php
+                    if($_SESSION["instituicao"] == "ETEC Professor Andre Bogasian"){
+                ?>
+                        <label>ETEC Professor André Bogasian</label>
+                <?php
+                    }else {
+                ?>
+                        <label><?php echo $_SESSION["instituicao"];?></label>
+                <?php
+                    }
+                ?>
             </div>
     
             <div class="center">
@@ -64,7 +76,6 @@
                     <?php
                         }
                     ?>
-
                 </table>
             </div>
         </body>

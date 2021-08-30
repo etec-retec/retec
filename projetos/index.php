@@ -66,6 +66,8 @@
         array_push($instituicoes, $row['nome']);
         array_push($valores, $row['value']);
     }
+
+    mysqli_close($conexao);
 ?>
 
 <!DOCTYPE html>
@@ -91,8 +93,17 @@
         <h1 class="logo">RETEC</h1>
         <?php
             if(isset($_SESSION['instituicao'])){
+                if($_SESSION['instituicao'] == "ETEC Professor Andre Bogasian"){                   
+        ?>
+        
+                <label>ETEC Professor André Bogasian</label>
+        <?php
+            }else{
         ?>
                 <label><?php echo $_SESSION["instituicao"];?></label>
+        <?php
+            }
+        ?>
         <?php
             }
             if($_SESSION['tipo'] == 0){
@@ -110,9 +121,16 @@
         <h1 class="logo">RETEC</h1>
         <?php
             if(isset($_SESSION['instituicao'])){
+                if($_SESSION['instituicao'] == "ETEC Professor Andre Bogasian"){
         ?>
-                <label><?php echo $_SESSION["instituicao"];?></label>
+                    <label>ETEC Professor André Bogasian</label>
+
         <?php
+                }else{
+        ?>
+                    <label><?php echo $_SESSION["instituicao"];?></label>
+        <?php
+                }
             }
         }else{
         ?>
