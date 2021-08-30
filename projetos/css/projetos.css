@@ -63,6 +63,11 @@ body{
     display: inline;
 }
 
+.result h2{
+    text-align: right;
+    margin-right: 64px;
+}
+
 .fltrs{
     font-weight: 900;
     margin-top: 40px;
@@ -108,7 +113,7 @@ body{
 .btn_pesquisar{
     margin-top: 40px;
     float: right;
-    margin-right: 128px;
+    margin-right: 64px;
     height: 30px;
     font-size: 16px;
     background-color: transparent;
@@ -140,11 +145,24 @@ body{
     text-decoration: none;
     height: 400px;
     width: 300px;
-    border: 1px solid #2a3641;
+    border-radius: 24px;
     overflow: hidden;
     text-overflow: ellipsis;
     float: right;
-    margin: 16px;
+    margin: 36px;
+}
+
+.bloco:hover{
+    box-shadow: 10px 10px 5px #c7c2f1;
+
+}
+
+.bloco h3:hover{
+    font-size:1.6em;
+}
+
+.bloco p:hover{
+    font-size:0.5em;
 }
 
 .bloco h3{
@@ -161,7 +179,6 @@ body{
 
 #btn{
     margin-right: 20px;
-    cursor: pointer;
 }
 
 #ico{

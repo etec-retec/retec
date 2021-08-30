@@ -1,20 +1,70 @@
 <?php
     session_start();
-    // var_dump($_SESSION);
-    if(isset($_GET['curso'])){
-        var_dump($_GET['curso']);
-        echo "<hr>";
-        var_dump($_GET['instituicao']);
+    if(isset($_GET['curso']) || isset($_GET['instituicao']) || isset($_GET['ano1']) || isset($_GET['ano2'])){
+        $query  = "SELECT * FROM repositorio WHERE 1";
+
+        if(isset($_GET['curso'])){
+            $first = $_GET['curso'][0];
+            $query .= " AND curso LIKE  '%$first%'";
+
+            $sizeCurso = sizeof($_GET['curso']);
+            if($sizeCurso > 1){
+                $curso = $_GET['curso'];
+                for($i = 1; $i >= $sizeCurso; $i++){
+                    $query .= " OR curso LIKE  '%$curso[$i]%'";
+                }
+            }
+        }
+
+        if(isset($_GET['instituicao'])){
+            $first = $_GET['instituicao'][0];
+            $query .= " AND instituicao LIKE  '%$first%'";
+
+            $sizeInsti = sizeof($_GET['instituicao']);
+            if($sizeInsti >1){
+                $insti = $_GET['instituicao'];
+                for($i = 1; $i >= $sizeInsti; $i++){
+                    $query .= " AND instituicao LIKE  '%$insti%'";
+                }
+            }
+        }
+
+        if($_GET['ano1'] && $_GET['ano2'] != ''){
+            $ano1 = $_GET['ano1'];
+            $ano2 = $_GET['ano2'];
+
+            if($ano1 <= $ano2){
+                $query .= " AND ano >= $ano1 AND ano <= $ano2";
+            }
+        }
+    }elseif(isset($_GET['search'])){
+        $search = $_GET['search'];
+        $query = "SELECT * FROM repositorio WHERE nome LIKE '%$search%' OR prof_orientador LIKE '%$search%' OR prof_corientador LIKE '%$search%' OR membros_grupo LIKE '%$search%'";
+    }else{
+        $query = "SELECT * FROM repositorio LIMIT 24";
     }
+    
     include "../conexao/conexao.inc";
-    $query = "SELECT * FROM repositorio LIMIT 15";
     $result = mysqli_query($conexao, $query);
+    $encontrados = mysqli_affected_rows($conexao);
 
-    $query2 = "SELECT nome FROM materias";
+    $query2 = "SELECT * FROM materias";
     $result2 = mysqli_query($conexao, $query2);
+    $values = [];
+    $nomes = [];
+    while($row = mysqli_fetch_array($result2)){
+        array_push($values, $row['value']);
+        array_push($nomes, $row['nome']);
+    }
 
-    $query3 = "SELECT nome FROM instituicao";
+    $query3 = "SELECT nome, value FROM instituicao";
     $result3 = mysqli_query($conexao, $query3);
+    $instituicoes = [];
+    $valores = [];
+    while($row = mysqli_fetch_array($result3)){
+        array_push($instituicoes, $row['nome']);
+        array_push($valores, $row['value']);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -80,19 +130,19 @@
             <form action="?" method="GET">
                 <h3>Cursos</h3>
                 <?php
-                    foreach($result2 as $res2){
-                        echo "&nbsp;<input type='checkbox' class='checkbox-round' name='curso[]' value='".$res2['nome']."'> ".$res2['nome']."<br>";
+                    for($i = 0; $i <= 15; $i++){
+                        echo "&nbsp;<input type='checkbox' class='checkbox-round' name='curso[]' value='".$values[$i]."'> ".$nomes[$i]."<br>";
                     }
                 ?>
                 <br>
                 <h3>Instituição</h3>
                 <?php
-                    foreach($result3 as $res3){
-                        echo "&nbsp;<input type='checkbox' class='checkbox-round' name='instituicao[]' value='".$res3['nome']."'>";
-                        if($res3['nome'] == "ETEC Professor Andre Bogasian"){
+                    for($i = 0; $i <= 2; $i++){
+                        echo "&nbsp;<input type='checkbox' class='checkbox-round' name='instituicao[]' value='".$valores[$i]."'>";
+                        if($instituicoes[$i] == "ETEC Professor Andre Bogasian"){
                             echo " ETEC Professor André Bogasian";
                         }else{
-                            echo " ".$res3['nome'];
+                            echo " ".$instituicoes[$i];
                         }
                         echo "<br>";
                     }
@@ -100,15 +150,32 @@
                 
                 <br>
                 <h3>Ano de Publicação</h3>
-                De <input type="number" class="ano_inp" min="2021" max="2022"> até <input type="number" class="ano_inp" min="2021" max="2022">
+                De <input type="number" name="ano1" class="ano_inp" min="2008" max="2021"> até <input type="number" name="ano2" class="ano_inp" min="2009" max="2022">
                 <br><br>
                 <input type="submit" class="btn_filtrar" value="Filtrar">
             </form>
         </div>
 
         <div class="info_direita">
-            <button class="btn_pesquisar" id="ico" type="submit"><i class="fa fa-search"></i></button><input type="text" class="btn_pesquisar" id="btn" placeholder="Pesquisar"/>
-            <br><br><br>
+        <form action="?" method="GET">
+            <button class="btn_pesquisar" id="ico" type="submit"><i class="fa fa-search"></i></button><input type="text" class="btn_pesquisar" name="search" id="btn" placeholder="Pesquisar"/>
+        </form>
+            <br><br><br><br>
+            <?php
+                if($encontrados == 1){
+            ?>
+                    <div class="result"><h2>Encontramos <?php echo $encontrados;?> projetos...</h2></div>
+            <?php
+                }elseif($encontrados > 1){
+            ?>
+                    <div class="result"><h2>Encontramos <?php echo $encontrados;?> projetos...</h2></div>
+            <?php
+                }else{
+            ?>
+                    <div class="result"><h2>Não foi encontrado nenhum projeto com a sua pesquisa...</h2></div>
+            <?php
+                }
+            ?>
             <div class="blocos">
                 <?php
                     foreach($result as $tcc){

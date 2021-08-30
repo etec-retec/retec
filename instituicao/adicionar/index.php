@@ -67,7 +67,7 @@
 
                 <label for="ano"><b>Ano de Conclusão</b></label>
                 <br>
-                <input type="number" class="inp_txt" name="ano" placeholder="Ano" min="2021" max="2022" required>
+                <input type="number" class="inp_txt" name="ano" placeholder="Ano" min="2008" max="2021" required>
                 <br><br>
 
                 <label for="mencao"><b>Menção</b></label>
