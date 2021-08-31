@@ -65,7 +65,6 @@
                 $this->instiuicao = $instituicao;
                 $this->unico = FALSE;
                 $_GLOBALS["instituicao"] = $instituicao;
-                var_dump($GLOBALS["instituicao"]);
             }else{
                 $this->instituicao = $instituicao[0];
                 $this->unico = TRUE;

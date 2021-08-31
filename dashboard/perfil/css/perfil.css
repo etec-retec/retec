@@ -60,75 +60,89 @@ body{
     color: #f4f4f4;
 }
 
-.cap{
-    font-size: 64px;
-    padding-top: 160px;
-    display: table;
-    margin: 0 auto;
-    text-transform: capitalize;
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
 }
 
-.access{
-    padding-top: 16px;
-    font-size: 32px;
-    display: table;
-    margin: 0 auto;
+.info_esquerda{
+    margin-top: 32px;
+    margin-left: 360px;
 }
 
-.opcoes{
-    display: table;
-    margin: 0 auto;
-    padding: 32px;
-    padding-top: 64px;
+.info_direita{
+    margin-top: 32px;
+    margin-right: 360px;
+    text-align: right;
 }
 
-.opcoes a{
-    padding-top: 0px;
-    padding-left: 16px;
-    padding-right: 16px;
-    text-decoration: none;
-    color: #6253f2;
-    font-size: 18px;
-    font-weight: 600;
+.formu input{
+    width: 40%;
+    height: 27px;
+    color: solid #a7b5bc;
+    border-radius: 4px;
+    border: 2px solid #353839;
 }
 
-.opcoes a:hover{
-    font-weight:normal;
+.formu input[type=submit]{
+    width: 25%;
+    color: #fff;
+    background-color: #6253f2;
+    border: #6253f2;
+    cursor: pointer;
+    margin-left: 40px;
 }
 
-.lblNome{
-    float: left;
+.formu input[type=submit]:hover{
+    background-color: #b6b2eb;
 }
 
-#p, #a, #e, #r{
-    border-right: 1px solid #6253f2;
+.acoes{
+    padding: 16px;
+    margin-top: 32px;
+    color: #fff;
+    border-radius: 4px;
+    background-color: #6253f2;
+    border: #6253f2;
+    width: 256px;
+    cursor: pointer;
+}
+
+.acoes:hover{
+    background-color: #b6b2eb;
+}
+
+.marker{
+    padding: 20px;
+    font-size: 20px;
+    background-color: #a0bca6;
+    color: #012f00;
+    border-top: 2px solid #012f00;
+    border-bottom: 2px solid #012f00;
+}
+
+.markerRed{
+    padding: 20px;
+    font-size: 20px;
+    background-color: #d98695;
+    color: #800;
+    border-top: 2px solid #800;
+    border-bottom: 2px solid #800;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #6253f2;
+  border-radius: 16px;
 }
 
 @media (max-width: 48em){
-.cap{
-    padding-top: 64px;
-    text-align: center;
-    font-size: 32px;
-}
 
-.access{
-    font-size: 20px;
-}
-
-.opcoes{
-    display: grid;
-    text-align: center;
-    padding-top: 12px;
-}
-
-.opcoes a{
-    padding-bottom: 12px;
-}
-
-#p{
-    padding-top: 16px;
-}
-#p, #a, #e, #r{
-    border-right: none;
-}
 }

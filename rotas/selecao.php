@@ -33,10 +33,7 @@
         mysqli_close($conexao);
         $num = $_SESSION["numLogin"];
         header("location: ../dashboard/");
-
     }
-
-    
 ?>
 </body>
 </html>

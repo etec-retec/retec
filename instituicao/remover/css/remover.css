@@ -70,10 +70,10 @@ body{
 }
 
 .center {
-    /* border: 1px solid #2a3641; */
     width: 90%;
     margin: 0 auto;
     margin-top: 64px;
+    margin-bottom: 64px;
 }
 
 .center h2{
@@ -102,7 +102,6 @@ body{
 
 #sub_box{
     margin-left: 80px;
-    /* margin: 0 auto; */
 }
 
 .marker{
