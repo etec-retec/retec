@@ -62,6 +62,7 @@
         $cod = $_SESSION['codigo_u'];
         $query = "UPDATE usuario SET nome = '$nome', email = '$email', email_rec = '$email_rec', rg = '$rg', matricula = '$matricula' WHERE codigo_u = '$cod'";
         mysqli_query($conexao, $query);
+        mysqli_close($conexao);
         $_SESSION['nome'] = $nome;
         $_SESSION['email'] = $email;
         $_SESSION['email_rec'] = $email_rec;

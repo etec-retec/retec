@@ -75,9 +75,9 @@
 
             <div class="info_direita">
                 <h1>Ações</h1>
-                <button class="acoes" onclick="window.open('/vincular/', '_self')">Vincular-se à alguma instituição</button>
+                <button class="acoes" onclick="window.open('vincular-se/', '_self')">Vincular-se à alguma instituição</button>
                 <br>
-                <button class="acoes" onclick="window.open('/desvincular/', '_self')">Desvincular-se de alguma instituição</button>
+                <button class="acoes" onclick="window.open('desvincular-se/', '_self')">Desvincular-se de alguma instituição</button>
                 <br>
                 <button class="acoes" onclick="window.open('?senha', '_self')">Solicitar Mudança de Senha</button>
             </div>
