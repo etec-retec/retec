@@ -19,12 +19,19 @@
         <title>Retec - Desvincular</title>
     </head>
     <body>
-        <div class="marker" style="display:none;" id="senhaMsg">Um e-mail foi enviado ao endereço <?php echo $_SESSION['email'];?> <br>Por favor, verifique.</div>
-        <div class="marker" style="display:none;" id="dadosMsg">Os dados foram alterados com sucesso!</div>
-        <div class="markerRed" style="display:none;" id="emailMsg">O e-mail já está em uso!</div>
-        <div class="markerRed" style="display:none;" id="emailRecMsg">O e-mail de recuperação já está em uso!</div>
-        <div class="markerRed" style="display:none;" id="rgMsg">O RG já está em uso!</div>
-        <div class="markerRed" style="display:none;" id="matriculaMsg">A matrícula já está em uso!</div>
+    <?php
+        if(isset($_SESSION['deletada'])){
+            if($_SESSION['deletada'] == "ETEC Professor Andre Bogasian"){
+    ?>
+                <div class="marker" style="display:none;" id="sucessoMsg">Sua conta foi desvinculada com sucesso da ETEC Professor André Bogasian!</div>
+    <?php
+            }else{
+    ?>
+                <div class="marker" style="display:none;" id="sucessoMsg">Sua conta foi desvinculada com sucesso da <?php echo $_SESSION['deletada'];?></div>
+    <?php
+            }
+        }
+    ?>
         <div class="cabecalho" id="teste">
             <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
             
@@ -82,6 +89,11 @@
                     option.value = insts;                
                 }
                 select.appendChild(option);
+            }
+
+            var currentLocation = window.location;
+            if(currentLocation.search.slice(0,8) == "?sucesso"){
+                document.getElementById("sucessoMsg").style.display = "block";
             }
         </script>
         </body>

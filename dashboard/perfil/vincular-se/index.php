@@ -44,7 +44,7 @@
                 }
             }
         ?>
-        
+        <div class="cabecalho">
             <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
             
             <div class="logo">
@@ -61,6 +61,7 @@
                     }
                 ?>
             </div>
+        </div>
         </div>
             
         <input type="text" value="<?php echo $_SESSION["instituicoes"];?>" id="insts" hidden />
@@ -130,7 +131,6 @@
             if(currentLocation.search.slice(0,8) == "?sucesso"){
                 document.getElementById("sucessoMsg").style.display = "block";
             }
-
         </script>
         </body>
 </html>

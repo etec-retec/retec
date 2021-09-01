@@ -74,6 +74,15 @@ body{
     background-color: #b6b2eb;
 }
 
+.marker{
+    padding: 20px;
+    font-size: 20px;
+    background-color: #a0bca6;
+    color: #012f00;
+    border-top: 2px solid #012f00;
+    border-bottom: 2px solid #012f00;
+}
+
 ::placeholder {
     color: #709bb3;
 }

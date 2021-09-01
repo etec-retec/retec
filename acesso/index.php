@@ -31,6 +31,19 @@
         <title>RETEC - Login</title>
     </head>
         <body>
+        <?php
+            if(isset($_SESSION['deletada'])){
+                if($_SESSION['deletada'] == "ETEC Professor Andre Bogasian"){
+        ?>
+                    <div class="marker" style="display:none;" id="sucessoMsg">Sua conta foi desvinculada com sucesso da ETEC Professor André Bogasian!</div>
+        <?php
+            }else{
+        ?>
+                <div class="marker" style="display:none;" id="sucessoMsg">Sua conta foi desvinculada com sucesso da <?php echo $_SESSION['deletada'];?></div>
+        <?php
+                }
+            }
+        ?>
             <button class="voltar" onclick="window.open('../index.php', '_self')">❮ Voltar</button> 
             <div class="formu">
                 <h1>Olá, <?php echo $_SESSION["nome"];?>!</h1>
@@ -70,6 +83,11 @@
                         ";
                     }
                 ?>
+
+            var currentLocation = window.location;
+            if(currentLocation.search.slice(0,8) == "?sucesso"){
+                document.getElementById("sucessoMsg").style.display = "block";
+            }
             </script>
         </body>
     </html>

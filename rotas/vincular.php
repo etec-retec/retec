@@ -1,9 +1,11 @@
 <?php
     session_start();
-    var_dump($_SESSION);
-    echo '<hr>';
-    // var_dump($_POST);
 
+    if(!isset($_SESSION["numLogin"])){
+        header("location: ../erro/401.php");
+        exit;
+    }
+    
     if(sizeof($_POST) == 0){
         header("Location: ../dashboard/perfil/vincular-se/");
     }
@@ -19,7 +21,6 @@
     mysqli_query($conexao, $verifica);
     $linhas = mysqli_affected_rows($conexao);
     if($linhas != 0){
-        // echo "<script>window.location.href='../dashboard/perfil/vincular-se/?negado';</script>";
         header("Location: ../dashboard/perfil/vincular-se/?negado");
     }
 
