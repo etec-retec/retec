@@ -12,6 +12,7 @@
 
     $instituicoes = explode(',', $_SESSION['instituicoes']);
     if(sizeof($instituicoes) == 1){
+        $_SESSION['delete'] = $instituicoes;
         header("Location: ../dashboard/perfil/deletar/");
     }else{
         include "../conexao/conexao.inc";
