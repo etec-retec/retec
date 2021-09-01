@@ -29,13 +29,20 @@
         <title>Retec - Vincular</title>
     </head>
     <body>
-        <div class="marker" style="display:none;" id="senhaMsg">Um e-mail foi enviado ao endereço <?php echo $_SESSION['email'];?> <br>Por favor, verifique.</div>
-        <div class="marker" style="display:none;" id="dadosMsg">Os dados foram alterados com sucesso!</div>
-        <div class="markerRed" style="display:none;" id="emailMsg">O e-mail já está em uso!</div>
-        <div class="markerRed" style="display:none;" id="emailRecMsg">O e-mail de recuperação já está em uso!</div>
-        <div class="markerRed" style="display:none;" id="rgMsg">O RG já está em uso!</div>
-        <div class="markerRed" style="display:none;" id="matriculaMsg">A matrícula já está em uso!</div>
-        <div class="cabecalho" id="teste">
+        <?php
+            if($_SESSION['novaInst'] == "ETEC Professor Andre Bogasian"){
+        ?>
+        <div class="marker" style="display:none;" id="sucessoMsg">Seu pedido foi enviado à ETEC Professor André Bogasian!<br>Por favor, aguarde ser verificado.</div>
+        <div class="markerRed" style="display:none;" id="negadoMsg">Seu pedido à ETEC Professor André Bogasian foi negado pois ele já está na lista de solicitações.</div>
+        <?php
+            }else{
+        ?>
+        <div class="marker" style="display:none;" id="sucessoMsg">Seu pedido foi enviado à <?php echo $_SESSION['novaInst'];?>!<br>Por favor, aguarde ser verificado.</div>
+        <div class="markerRed" style="display:none;" id="negadoMsg">Seu pedido à <?php echo $_SESSION['novaInst'];?> foi negado pois ele já está na lista de solicitações.</div>
+        <?php        
+            }
+        ?>
+        
             <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
             
             <div class="logo">
@@ -64,21 +71,23 @@
             <?php
                 if($linhas > 0){
             ?>
-            <select class="inp_txt" name="inst" id="slct" required>    
-                <option value="none" selected disabled>Escolha</option>
-                <?php
-                        foreach($result as $instNova){
-                            $i = $instNova['nome'];
-                            if($i == "ETEC Professor Andre Bogasian")
-                                echo "<option value='$i'>ETEC Professor André Bogasian</option>";
-                            else{
-                                echo "<option value='$i'>$i</option>";
+            <form action="../../../rotas/vincular.php" method="POST">
+                <select class="inp_txt" name="inst" id="slct" required>    
+                    <option value="none" selected disabled>Escolha</option>
+                    <?php
+                            foreach($result as $instNova){
+                                $i = $instNova['nome'];
+                                if($i == "ETEC Professor Andre Bogasian")
+                                    echo "<option value='$i'>ETEC Professor André Bogasian</option>";
+                                else{
+                                    echo "<option value='$i'>$i</option>";
+                                }
                             }
-                        }
-                ?>
-            </select>
-            <br><br>
-            <input type="submit" value="Prosseguir"/>
+                    ?>
+                </select>
+                <br><br>
+                <input type="submit" value="Prosseguir"/>
+            </form>
             <?php
                 }else{
             ?>
@@ -111,6 +120,14 @@
                 ul.appendChild(li);
             }
 
+            var currentLocation = window.location;
+            if(currentLocation.search.slice(0,7) == "?negado"){
+                document.getElementById("negadoMsg").style.display = "block";
+            }
+
+            if(currentLocation.search.slice(0,8) == "?sucesso"){
+                document.getElementById("sucessoMsg").style.display = "block";
+            }
 
         </script>
         </body>

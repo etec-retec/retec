@@ -47,12 +47,14 @@
         <input type="text" value="<?php echo $_SESSION["instituicoes"];?>" id="insts" hidden />
         <div class="center">
             <h1>Desvincular-se de:</h1>
-            <select class="inp_txt" name="inst" id="slct" required>    
-                <option value="none" selected disabled>Escolha</option>
+            <form action="../../../rotas/desvincular.php" method="POST">
+                <select class="inp_txt" name="inst" id="slct" required>    
+                    <option value="none" selected disabled>Escolha</option>
 
-            </select>
-            <br><br>
-            <input type="submit" value="Prosseguir"/>
+                </select>
+                <br><br>
+                <input type="submit" value="Prosseguir"/>
+            </form>
         </div>
         <script>
             insts = document.getElementById("insts").value;
@@ -68,7 +70,7 @@
                         option.textContent = array[i];
                         option.value = array[i];
                     }
-                    option.appendChild(select);
+                    select.appendChild(option);
                 }
             }else{
                 option=document.createElement('option');

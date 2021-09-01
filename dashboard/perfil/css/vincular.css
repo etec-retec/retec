@@ -89,3 +89,21 @@ input[type=submit]:hover{
     background-color: #6253f2;
     color: #f4f4f4;
 }
+
+.marker{
+    padding: 20px;
+    font-size: 20px;
+    background-color: #a0bca6;
+    color: #012f00;
+    border-top: 2px solid #012f00;
+    border-bottom: 2px solid #012f00;
+}
+
+.markerRed{
+    padding: 20px;
+    font-size: 20px;
+    background-color: #d98695;
+    color: #800;
+    border-top: 2px solid #800;
+    border-bottom: 2px solid #800;
+}

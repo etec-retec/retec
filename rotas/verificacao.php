@@ -46,9 +46,7 @@
             $result = mysqli_query($conexao, $query);
             $retorno = mysqli_affected_rows($conexao);
 
-            if($retorno == 0){
-                mysqli_close($conexao);
-    
+            if($retorno == 0){   
                 unset($_SESSION['not']);
                 unset($_SESSION['notID']);
                 unset($_SESSION['notNome']);
@@ -133,7 +131,7 @@
         }
     }else{
         mysqli_close($conexao);
-        echo "Ocorreu um erro inesperado";
+        header("location: ../instituicao/");
     }
     
 ?>
