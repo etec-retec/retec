@@ -19,14 +19,14 @@
     mysqli_query($conexao, $verifica);
     $linhas = mysqli_affected_rows($conexao);
     if($linhas != 0){
-        echo "<script>window.location.href='../dashboard/perfil/vincular-se/?negado';</script>";
+        // echo "<script>window.location.href='../dashboard/perfil/vincular-se/?negado';</script>";
         header("Location: ../dashboard/perfil/vincular-se/?negado");
     }
 
     $query = "INSERT INTO solicitacoes (nome, email, matricula, rg, instituicao) VALUES ('$nome', '$email', '$matricula', '$rg', '$novaInst')";
     $_SESSION['novaInst'] = $novaInst;
-    mysqli_query($conexao, $query);
     if($linhas == 0){
+        mysqli_query($conexao, $query);
         header("Location: ../dashboard/perfil/vincular-se/?sucesso");
     }
 ?>

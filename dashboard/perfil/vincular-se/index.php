@@ -30,16 +30,18 @@
     </head>
     <body>
         <?php
-            if($_SESSION['novaInst'] == "ETEC Professor Andre Bogasian"){
+            if(isset($_SESSION['novaInst'])){
+                if($_SESSION['novaInst'] == "ETEC Professor Andre Bogasian"){
         ?>
         <div class="marker" style="display:none;" id="sucessoMsg">Seu pedido foi enviado à ETEC Professor André Bogasian!<br>Por favor, aguarde ser verificado.</div>
         <div class="markerRed" style="display:none;" id="negadoMsg">Seu pedido à ETEC Professor André Bogasian foi negado pois ele já está na lista de solicitações.</div>
         <?php
-            }else{
+                }else{
         ?>
         <div class="marker" style="display:none;" id="sucessoMsg">Seu pedido foi enviado à <?php echo $_SESSION['novaInst'];?>!<br>Por favor, aguarde ser verificado.</div>
         <div class="markerRed" style="display:none;" id="negadoMsg">Seu pedido à <?php echo $_SESSION['novaInst'];?> foi negado pois ele já está na lista de solicitações.</div>
         <?php        
+                }
             }
         ?>
         

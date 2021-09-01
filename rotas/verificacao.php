@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if($_SESSION["numLogin"] != $_GET["access"]){
+    if(!isset($_SESSION["numLogin"])){
         header("location: ../erro/401.php");
         exit;
     }
@@ -9,6 +9,22 @@
     $matricula = filter_input(INPUT_POST, 'matricula', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $tipo = filter_input(INPUT_POST, 'conf', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $inst = $_SESSION['instituicao'];
+
+    if($tipo == 0){
+        include '../conexao/conexao.inc';
+        $query = "DELETE FROM solicitacoes WHERE rg = '$rg' AND matricula = '$matricula' AND instituicao = '$inst'";
+        mysqli_query($conexao, $query);
+        unset($_SESSION['not']);
+        unset($_SESSION['notID']);
+        unset($_SESSION['notNome']);
+        unset($_SESSION['notEmail']);
+        unset($_SESSION['notEmailRec']);
+        unset($_SESSION['notMatricula']);
+        unset($_SESSION['notRg']);
+        $nl = $_SESSION['numLogin'];
+        mysqli_close($conexao);
+        header("location: ../instituicao/neg");
+    }
 
     // INICIANDO TRATAMENTO PARA VERIFICAR SE O USUÁRIO JÁ PARTICIPA DE ALGUMA INST
     include '../conexao/conexao.inc';
