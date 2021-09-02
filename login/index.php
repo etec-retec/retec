@@ -79,6 +79,8 @@
                     document.getElementById("email").value = "<?php $_GET["email"];?>"
                 }else if(currentLocation.search.slice(0,7) == "?alert2"){
                     document.getElementById("lbl_alert1").style.display = "block";
+                }else if(currentLocation.search.slice(0,7) == "?alert1"){
+                    document.getElementById("lbl_alert1").style.display = "block";
                 }else if(currentLocation.search.slice(0,8) == "?enviado"){
                     document.getElementById("enviadoMsg").style.display = "block";
                 }else if(currentLocation.search.slice(0,13) == "?solicitacoes"){

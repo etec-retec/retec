@@ -25,13 +25,20 @@
                 <label for="sobrenome"><b>Sobrenome</b></label><br>
                 <input type="text" name="sobrenome" id="sobrenome" maxlenght="43" placeholder="Sobrenome" class="txtF" autocomplete="off" required>
                 
-                <label for="instituicao"><b>Instituição</b></label>
-                <p style="margin-top:8px !important; margin-left:48px !important; font-size:12px;">Escolha as instituições nas quais você trabalha.</p>
-                <br><br>
-                <div class="check">
-                    <input type="checkbox" class="checkbox-round" name="instituicao[]" value="ETEC Doutor Celso Giglio"/><p class="inst">ETEC Doutor Celso Giglio</p>
-                    <input type="checkbox" class="checkbox-round" name="instituicao[]" value="ETEC Professor André Bogasian"/><p class="inst">ETEC Professor André Bogasian</p>
-                    <input type="checkbox" class="checkbox-round" name="instituicao[]" value="ETEC Professor Basílides de Godoy"/><p class="inst">ETEC Professor Basílides de Godoy</p>
+                <label for="instituicao"><b>Escolha as instituições nas quais você trabalha</b></label>
+                <div>
+                    <label class="container">ETEC Doutor Celso Giglio
+                        <input type="checkbox" name="instituicao[]" value="ETEC Doutor Celso Giglio"/>
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">ETEC Professor André Bogasian
+                        <input type="checkbox" name="instituicao[]" value="ETEC Professor André Bogasian"/>
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">ETEC Professor Basílides de Godoy
+                        <input type="checkbox" name="instituicao[]" value="ETEC Professor Basílides de Godoy"/>
+                        <span class="checkmark"></span>
+                    </label>
                 </div>
                 <br>
 
@@ -47,18 +54,17 @@
                 <label for="rsenha"><b>Digite a senha novamente</b></label><br>
                 <input type="password" name="rsenha" minlenght="5" maxlenght="42" placeholder="Senha novamente" class="txtF" required>
                 
-                <label for="rsenha"><b>Matrícula:</b></label><br>
-                <input type="text" name="matricula" minlenght="5" maxlenght="42" placeholder="Digite a matrícula" class="txtF" required>
+                <label for="matricula"><b>Matrícula:</b></label><br>
+                <input type="text" name="matricula" minlength="6" maxlength="6" placeholder="Digite a matrícula" class="txtF" required/>
                 
-                <label for="rsenha"><b>RG:</b></label><br>
-                <input type="text" name="rg" minlenght="5" maxlenght="42" placeholder="Digite o RG" class="txtF" required>
+                <label for="rg"><b>RG:</b></label><br>
+                <input type="text" name="rg" minlength="5" maxlength="14" placeholder="Digite o RG" class="txtF" required/>
                 <br><br>
 
                 <button class="botao">Cadastrar</button>
             </form>
             <br>
-            <button class ="botao">Já tenho uma conta</button>
-            <br><br>
+            <button class="botao" onclick="window.open('../login/', '_self')">Já tenho uma conta</button>
         </div>
         <script>
             var currentLocation = window.location;
