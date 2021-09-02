@@ -62,6 +62,18 @@
         $cod = $_SESSION['codigo_u'];
         $query = "UPDATE usuario SET nome = '$nome', email = '$email', email_rec = '$email_rec', rg = '$rg', matricula = '$matricula' WHERE codigo_u = '$cod'";
         mysqli_query($conexao, $query);
+
+        $old_mat = $_SESSION['matricula'];
+        $old_rg = $_SESSION['rg'];
+        $query = "SELECT matricula, rg FROM solicitacoes WHERE matricula = '$old_mat' AND rg = '$old_rg'";
+        mysqli_query($conexao, $query);
+        $linhas5 = mysqli_affected_rows($conexao);
+
+        if($linhas5 > 0){
+            $query = "UPDATE solicitacoes SET nome = '$nome', email = '$email', email_rec = '$email_rec', matricula = '$matricula', rg = '$rg' WHERE matricula = '$old_mat' AND rg = '$old_rg'";
+            mysqli_query($conexao, $query);
+        }
+
         mysqli_close($conexao);
         $_SESSION['nome'] = $nome;
         $_SESSION['email'] = $email;

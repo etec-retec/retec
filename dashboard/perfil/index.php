@@ -63,11 +63,11 @@
                     <br><br>
                     <label><b>RG</b></label>
                     <br>
-                    <input type="text" min="3" max="64" name="rg" value="<?php echo $_SESSION['rg'];?>" required/>
+                    <input type="text" minlength="5" maxlength="14" name="rg" value="<?php echo $_SESSION['rg'];?>" required/>
                     <br><br>
                     <label><b>Matrícula</b></label>
                     <br>
-                    <input type="text" min="3" max="64" name="matricula" value="<?php echo $_SESSION['matricula'];?>" required/>
+                    <input type="text" minlength="6" maxlength="6" name="matricula" value="<?php echo $_SESSION['matricula'];?>" required/>
                     <br><br>
                     <input type="submit" value="Alterar Dados"/>
                 </form>
