@@ -6,21 +6,21 @@
         $senha = md5($senha);
 
         include "../conexao/conexao.inc";
-        $query = "SELECT * FROM usuario WHERE email = '$email'";
+        $query = "SELECT * FROM usuario WHERE email = '$email' OR email_rec = '$email'";
         $result = mysqli_query($conexao, $query);
         $retorno_email = mysqli_affected_rows($conexao);
         $dados = mysqli_query($conexao, $query);
 
-        $query = "SELECT * FROM solicitacoes WHERE email = '$email'";
+        $query = "SELECT * FROM solicitacoes WHERE email = '$email' OR email_rec = '$email'";
         $result = mysqli_query($conexao, $query);
         $retorno_verificacao = mysqli_affected_rows($conexao);
 
-        $query = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha'";
+        $query = "SELECT * FROM usuario WHERE email = '$email' OR email_rec = '$email' AND senha = '$senha'";
         $dados = mysqli_query($conexao, $query);
         $retorno = mysqli_affected_rows($conexao);
         
         if($retorno == 0){
-            $query_especial = "SELECT * FROM instituicao WHERE email = '$email' AND senha = '$senha'";
+            $query_especial = "SELECT * FROM instituicao WHERE email = '$email' OR email_rec = '$email' AND senha = '$senha'";
             $dados_especiais = mysqli_query($conexao, $query_especial);
             $retorno_especial = mysqli_affected_rows($conexao);
             $retorno = 0;
