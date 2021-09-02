@@ -1,6 +1,7 @@
 <?php
     if(isset($_POST['email']) && isset($_POST['senha'])){
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+        $email = strtolower($email);
         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $senha = md5($senha);
 

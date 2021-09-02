@@ -10,7 +10,9 @@
     $rsenha = filter_input(INPUT_POST, 'rsenha', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $matricula = filter_input(INPUT_POST, 'matricula', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $rg = filter_input(INPUT_POST, 'rg', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
+    $email = strtolower($email);
+    $email_rec = strtolower($email_rec);
+    
     if($senha != $rsenha){
         header("location: ../cadastro/index.php?senha");
     }

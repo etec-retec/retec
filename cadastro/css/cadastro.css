@@ -80,8 +80,12 @@ body{
     border: none;
 }
 
+.formu input[type=email]{
+    text-transform: lowercase;
+}
+
 .checkbox-round {
-    margin-left: 72px !important;
+    /* margin-left: 72px !important;
     display: block !important;
     width: 1.3em !important;
     height: 1.3em !important;
@@ -89,13 +93,13 @@ body{
     border-radius: 50% !important;
     border: 1px solid #ddd !important;
     outline: none !important;
-    cursor: pointer !important;
+    cursor: pointer !important; */
 }
 
 p{
-    display: block;
+    /* display: block;
     margin-top: -24px;
-    margin-bottom: 0px;
+    margin-bottom: 0px; */
 }
 
 .botao:hover{

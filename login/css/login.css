@@ -74,6 +74,10 @@ body{
     border: none;
 }
 
+input[type=email]{
+    text-transform: lowercase;
+}
+
 .botao:hover{
     background-color: #b6b2eb;
 }
@@ -84,6 +88,24 @@ body{
 
 .TxTmobile{
     display: none;
+}
+
+.marker{
+    padding: 20px;
+    font-size: 20px;
+    background-color: #a0bca6;
+    color: #012f00;
+    border-top: 2px solid #012f00;
+    border-bottom: 2px solid #012f00;
+}
+
+.markerRed{
+    padding: 20px;
+    font-size: 20px;
+    background-color: #d98695;
+    color: #800;
+    border-top: 2px solid #800;
+    border-bottom: 2px solid #800;
 }
 
 @media (max-width: 48em){

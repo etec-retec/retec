@@ -2,7 +2,12 @@
     if(!isset($_GET["email"])){
         $_GET["email"] = "null";
     }
-    
+
+    session_start();
+    if(isset($_SESSION['temp_email'])){
+        $enviado = $_SESSION['temp_email'];
+    }
+
     if(session_id() != ''){
         session_destroy();
     }
@@ -17,11 +22,20 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-        <link href="./css/login.css" rel="stylesheet">
+        <link href="css/login.css" rel="stylesheet">
         <link href="../assets/img/icon.ico" type="image/x-icon" rel="icon"/>
         <title>RETEC - Login</title>
     </head>
         <body>
+            <?php
+                if(isset($enviado)){
+            ?>
+                    <div class="marker" style="display:none;" id="enviadoMsg">Um e-mail foi enviado ao endereço "<?php echo $_SESSION['temp_email'];?>"<br>Por favor, verifique.</div>
+                    <div class="marker" style="display:none;" id="solicitacaoMsg">O e-mail "<?php echo $enviado;?>" está na lista de espera para ser verificado pela instituição cadastrada.</div>
+                    <div class="markerRed" style="display:none;" id="encontradoMsg">O e-mail "<?php echo $enviado;?>" não foi encontrado na nossa base de dados.</div>
+            <?php
+                }
+            ?>
             <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button> 
             <div class="formu">
                 <h2>Login</h2>
@@ -43,14 +57,13 @@
                 </form>
 
                 <br>
-                <button class="botao" id="btnEsqueci">Esqueci minha senha</button>
-                <button class="botao" id="btnN">Não tenho cadastro</button>
+                <button class="botao" id="btnEsqueci" onclick="window.open('recuperar-senha/', '_self')">Esqueci minha senha</button>
+                <button class="botao" id="btnN" onclick="window.open('../cadastro/', '_self')">Não tenho cadastro</button>
                 <br><br>
 
             </div>
 
             <div class="TxTmobile">
-
                 <label>Não tem uma conta?</label><br>
                 <a href="../cadastro/index.php"><u>Cadastre-se</u></a>    
             </div>
@@ -66,6 +79,12 @@
                     document.getElementById("email").value = "<?php $_GET["email"];?>"
                 }else if(currentLocation.search.slice(0,7) == "?alert2"){
                     document.getElementById("lbl_alert1").style.display = "block";
+                }else if(currentLocation.search.slice(0,8) == "?enviado"){
+                    document.getElementById("enviadoMsg").style.display = "block";
+                }else if(currentLocation.search.slice(0,13) == "?solicitacoes"){
+                    document.getElementById("solicitacaoMsg").style.display = "block";
+                }else if(currentLocation.search.slice(0,13) == "?notFound"){
+                    document.getElementById("encontradoMsg").style.display = "block";
                 }
             </script>
         </body>

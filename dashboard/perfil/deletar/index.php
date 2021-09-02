@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!isset($_SESSION["numLogin"]) OR !isset($_SESSION['delete'][0])){
-        header("location: ../../../../erro/401.php");
+        header("location: ../../../erro/401.php");
         exit;
     }
 ?>
@@ -38,7 +38,7 @@
             </div>
         </div>
             
-        <input type="text" value="<?php echo $_SESSION["instituicoes"];?>" id="insts" hidden />
+        <input type="text" value="<?php echo $_SESSION["instituicoes"];?>" id="insts" hidden/>
         <div class="center">
             <h1>ATENÇÃO</h1>
             <h2 style="width:60%; margin:0 auto;">Caso você se desvincule da <?php echo $_SESSION['delete'][0];?>, sua conta será excluída automaticamente pois não estará atribuida a mais nenhuma instituição.</h2>
@@ -48,5 +48,5 @@
                 <input type="submit" value="Deletar"/>
             </form>
         </div>
-        </body>
+    </body>
 </html>

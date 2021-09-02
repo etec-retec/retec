@@ -44,7 +44,7 @@
                 }
             }
         ?>
-            <button class="voltar" onclick="window.open('../index.php', '_self')">❮ Voltar</button> 
+            <button class="voltar" onclick="window.open('../login/', '_self')">❮ Voltar</button> 
             <div class="formu">
                 <h1>Olá, <?php echo $_SESSION["nome"];?>!</h1>
                 <h2>Entrar como professor da:</h2>
