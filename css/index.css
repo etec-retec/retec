@@ -8,85 +8,88 @@
     color: #2a3641;
 }
 
+:root{
+    --btn-color:#6253f2;
+    --btn-background-color:#dee7ee;
+    
+}
+
 .actions{
-    background-color: #dee7ee;
-    padding: 32px;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: end;
 }
-
-.btn{
-    float: right;
-    text-align: center;
-    margin-left: 16px;
-    font-size:110%;
-    width: 120px;
-    height: 28px;
-    background-color: white;
-    color: #6253f2;
-    border: solid #6253f2 1px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.btn:hover{
-    background-color: #6253f2;
-    color: #f4f4f4;
-}
-
-#cad{
-    background-color: #6253f2;
-    color:#f4f4f4;
-}
-
-#cad:hover{
-    background-color: #f4f4f4;
-    color: #6253f2;
-    border: solid #f4f4f4 1px;
-}
-
 .banner{
+    position: relative;
     width: 100%;
     height: 350px;
     background-color: #dee7ee;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    margin: 15px 15px 0 0;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 120px;
+    height: 28px;
+    background-color: white;
+    color: var(--btn-color);
+    border: solid #6253f2 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.nome{
-    margin-right: 0;
-    padding-top: 100px;
-    font-size: 48px;
+.btn:hover{
+    background-color: var(--btn-color);
+    color: var(--btn-background-color);
 }
 
-.nome h1{
+#cad{
+    background-color: var(--btn-color);
+    color:var(--btn-background-color);
+}
+
+#cad:hover{
+    background-color: var(--btn-background-color);
+    color: var(--btn-color);
+    border: solid #f4f4f4 1px;
+}
+
+
+.conteudo{
+    display: flex;
+    align-items: center;
+}
+
+h1{
+    font-size: 4em;
     color: #6253f2;
-    float: right;
-    padding-right: 20px;
-}
-
-.logo{
-    margin-top: 64px;
-    float: right;
-    padding-left: 20px;
+    margin-right: 10px;
 }
 
 .tec{
-    display: table;
-    margin: 0 auto;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    object-fit: cover;
 }
 
 .sobre{
-    background-color: #dee7ee;
+    background-color: rgba(222, 231, 238, 0.705);
+    border: 2px 0px;
 }
 
 .sobre h2{
     text-align: center;
     padding: 16px;
-    font-size: 36px;
+    font-size: 2rem;
 }
-
 .grid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -95,62 +98,89 @@
 }
 
 .col{
+    text-align: justify;
     padding: 16px;
 }
 
 .col h3{
     text-align: center;
+    font-size: 1.5em;
     padding: 8px;
 }
 
 .col p{
     text-indent: 50px;
+    font-size: 1em ;
 }
 
 .contato{
-    padding-bottom: 64px;
+    margin: 0 auto;
+    width: 50%;
+    margin-bottom: 11px;
 }
 
 .contato h2{
     text-align: center;
     padding: 32px;
-    font-size: 36px;
+    font-size: 2rem;
 }
 
-.contato form{
+.form{
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    height: 90vh;
 }
 
 .inp_txt{
     width: 350px;
-    font-size: 15px;
+    font-size: 1em;
     padding: 5px;
     border-radius: 4px;
-    border: 2px solid #353839;
+    border: 1px solid #353839;
     outline: none;
+    margin: 0 auto;
 }
 
+.area_txt{
+    margin: 0 auto;
+    border: #2a3641 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+    min-width: 350px;
+    max-width: 350px;
+    min-height: 100px;
+    max-height: 150px;
+    
+}
+
+span{
+    font-size: 0.8em;
+    font-weight: 800;
+    display: flex;
+    justify-content:space-evenly;
+}
 .enviar{
-    background-color: #6253f2;
-    color: #f4f4f4;
+    background-color: var(--btn-color);
+    color: var(--btn-background-color);
     border-radius: 10px;
     border: none;
-    padding: 16px;
-    font-size: 16px;
-    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1em;
+    transition: 0.2s;
+    font-weight: 800;
+    letter-spacing: 1px;
+    width: 100px;
+    margin: 0 auto;
+    margin-bottom: 20px;   
 }
-
 .enviar:hover{
     cursor: pointer;
     background-color: #c2d1d9;
-    color: #6253f2;
+    color: var(--btn-color);
     position: relative;
-}
-
-.contato textarea{
-    border: #2a3641 2px solid;
-    border-radius: 5px;
-    width: 360px;
 }
 
 ::-webkit-scrollbar-track {
@@ -165,55 +195,103 @@
   border-radius: 16px;
 }
 
-@media (max-width: 48em){
+@media (max-width: 768px){
+
 .banner{
-    height: 248px;
-}
-
-.logo{
-    float: right;
-    padding-top: 16px;
-}
-
-.logo img{
-    width: 96px;
-}
-
-#bnr_img{
-    max-width: 90%;
+    justify-content: flex-start;
     display: block;
-    margin: 0 auto;
+    height: 100px;
+}
+.banner h1{
+    font-size: 2.5em;
+}
+
+.btn{
+    padding-left: 5px;
+}
+
+.conteudo{
+   padding:20px;
+}
+
+.conteudo img{
+    width: 50px;
+}
+.actions{
+    padding: 20px 0;
+}
+.tec{
+    position: relative;
+    object-fit: cover;
+    height: auto;
+}
+.tec img{
+    width: 100%;
+    opacity: 80%;
+}
+#tec_img{
+    max-width: 90%;
     content: url(../assets/img/bnr4.png) !important;
 }
 
-.nome h1{
-    font-size: 48px;
-
-}
-
-.bts{
-    margin-right: 64px;
-}
-
-.center{
-    margin: 0;
-    padding: 20px;
-    width: auto;
-}
-
-.cadastrar{
-    margin: 0 auto;
-}
-
-.tec img{
-    width: 100%;
-}
 
 .grid{
     display: block;
     /* grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px; */
-    padding: 0;
+    padding: 0 10px;
+}
+.contato{
+    width: 100%;
+    
+}
+
+.form{
+    height: 100vh;
+}
+
+}
+
+@media (max-width: 625px){
+  
+    .banner{
+        height: 110px;
+    }
+    .banner h1{
+        margin: 0;
+    }
+    .actions{
+        margin-top: 40px;
+        justify-content: center;
+    }
+    .conteudo{
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    .btn{
+        margin: 0 10px;
+    }
+
+    .banner img{
+        display: none;
+    }
+    .tec{
+        padding: 20px 0;
+    }
+}
+
+@media (max-width: 320px){
+
+.contato h2{
+    padding: 10px 0px;
+}
+.inp_txt{
+    width: 300px;
+    }
+.area_txt{
+    max-width: 300px;
+    min-width: 300px;
 }
 
 }
