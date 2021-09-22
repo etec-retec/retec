@@ -95,8 +95,16 @@
     }
 
     include "../conexao/conexao.inc";
-    $query = "INSERT INTO repositorio VALUES(NULL, '$nome', '$prof_orientador', '$prof_corientador', '$membros_grupo', '$membros_banca', '$curso', '$ano', '$mencao', '$resumo', '$abstract',
-     '$pa_ch', '$key_words', '$data_ap', '$instituicao', '$foto_conteudo', '$pdf_conteudo', '$zip_conteudo')";
+    $data_add = date("Y-m-d H:i:s");
+
+    if($_SESSION['tipo'] == 1){
+        $id_prof = $_SESSION['codigo_u'];
+        $query = "INSERT INTO repositorio VALUES(NULL, '$nome', '$prof_orientador', '$prof_corientador', '$membros_grupo', '$membros_banca', '$curso', '$ano', '$mencao', '$resumo', '$abstract',
+        '$pa_ch', '$key_words', '$data_ap', '$instituicao', '$id_prof' , '$data_add', NULL, '$foto_conteudo', '$pdf_conteudo', '$zip_conteudo')";
+    }else{
+        $query = "INSERT INTO repositorio VALUES(NULL, '$nome', '$prof_orientador', '$prof_corientador', '$membros_grupo', '$membros_banca', '$curso', '$ano', '$mencao', '$resumo', '$abstract',
+        '$pa_ch', '$key_words', '$data_ap', '$instituicao', 0, '$data_add', NULL, '$foto_conteudo', '$pdf_conteudo', '$zip_conteudo')";
+    }
     mysqli_query($conexao, $query);
     echo mysqli_error($conexao);
     $query2 = "SELECT codigo_r FROM repositorio WHERE nome = '$nome' AND prof_orientador = '$prof_orientador' AND prof_corientador = '$prof_corientador'";
@@ -105,5 +113,4 @@
     $cod_r = $row[0];
     mysqli_close($conexao);
     header("Location: ../projeto/?tcc=$cod_r&criado=TRUE");
-
 ?>

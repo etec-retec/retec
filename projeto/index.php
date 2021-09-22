@@ -178,14 +178,12 @@
             li = document.createElement("li");
             li.textContent = membros_grupo[i];
             ul.appendChild(li);
-            console.log(membros_grupo[i])
         }
 
         for(i=0; i<=(membros_banca.length-1); i++){
             li = document.createElement("li");
             li.textContent = membros_banca[i];
             ul2.appendChild(li);
-            console.log(membros_banca[i])
         }
 
         data = "<?php echo $data_ap;?>"
