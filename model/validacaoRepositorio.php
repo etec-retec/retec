@@ -106,7 +106,6 @@
         '$pa_ch', '$key_words', '$data_ap', '$instituicao', 0, '$data_add', NULL, '$foto_conteudo', '$pdf_conteudo', '$zip_conteudo')";
     }
     mysqli_query($conexao, $query);
-    echo mysqli_error($conexao);
     $query2 = "SELECT codigo_r FROM repositorio WHERE nome = '$nome' AND prof_orientador = '$prof_orientador' AND prof_corientador = '$prof_corientador'";
     $res = mysqli_query($conexao, $query2);
     $row = mysqli_fetch_array($res);
