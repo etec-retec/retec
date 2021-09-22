@@ -44,7 +44,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-        <link href="css/projeto.css" rel="stylesheet">
+        <link href="../css/projeto.css" rel="stylesheet">
         <link href="../assets/img/icon.ico" type="image/x-icon" rel="icon"/>
         <title>Retec - Projeto</title>
     </head>
@@ -114,7 +114,7 @@
                     <label><b>Data de Apresentação: </b></label><span id="data">111</span>
                 </p>
                 <p>
-                    <label><b>Ano de Conclusão: </b></label> <?php echo $curso;?>
+                    <label><b>Ano de Conclusão: </b></label> <?php echo $ano;?>
                 </p>
                 <p>
                     <label><b>Menção: </b></label> <span style="text-transform:uppercase;"><?php echo $mencao;?></span>

@@ -1,0 +1,158 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #dee7ee;
+    font-family: 'Poppins', sans-serif;
+    color: #2a3641;
+}
+
+.botao{
+    font-size:105%;
+    width: 43%;
+    height: 28px;
+    background-color: #6253f2;
+    color: white;
+    border: 1px #6253f2;
+    border-radius: 4px;
+    cursor: pointer;
+}    
+
+.voltar{
+    margin-left: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-size:110%;
+    width: 100px;
+    height: 28px;
+    background-color: white;
+    color: #6253f2;
+    border: solid #6253f2 1px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.voltar:hover{
+    background-color: #6253f2;
+    color: #f4f4f4;
+}
+
+.formu{
+    padding: 32px;
+    background-color: #fff;
+    color: #2a3641;
+    text-align: center;
+    margin: 0 auto ;
+    margin-top: 13%;
+    width: 35%;
+    height: 10%;
+    border: solid #6253f2 1px;
+    border-radius: 6px;
+}
+
+.formu label{
+    margin-right: 75%;
+}
+
+.formu h2{
+    text-align: center;
+}
+
+.formu input{
+    text-align: justify;
+    margin-right: 3%;
+    width: 80%;
+    height: 27px;
+    color:solid #a7b5bc;
+    border-radius: 4px;
+    border: 2px solid #353839;
+    background-color: transparent;
+}
+
+.formu input :focus{
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+input[type=email]{
+    text-transform: lowercase;
+}
+
+.botao:hover{
+    background-color: #b6b2eb;
+}
+
+::placeholder {
+    color: #709bb3;
+}
+
+.TxTmobile{
+    display: none;
+}
+
+.marker{
+    padding: 20px;
+    font-size: 20px;
+    background-color: #a0bca6;
+    color: #012f00;
+    border-top: 2px solid #012f00;
+    border-bottom: 2px solid #012f00;
+}
+
+.markerRed{
+    padding: 20px;
+    font-size: 20px;
+    background-color: #d98695;
+    color: #800;
+    border-top: 2px solid #800;
+    border-bottom: 2px solid #800;
+}
+
+@media (max-width: 48em){
+
+.botaoVoltar{
+    display: none;
+}
+
+.formu{
+    margin: 0 auto ;
+    width: 100%;
+    margin-top: 25%;
+    border: none;
+}
+
+.formu label{
+    margin-left: 30px;
+}
+
+.botao{
+    height: 40px;
+    width: 90%;
+}
+
+#btnN{
+    display: none;
+}
+
+.TxTmobile{
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+}
+
+.TxTmobile a{
+    font-weight: 900;
+    color: #6253f2;
+}
+
+#btnEsqueci{
+    background-color: white;
+    border: solid #709bb3 1px;
+    font-size: 100%;
+    color: #709bb3;
+    height: 30px;
+    width: 55%;
+    margin: 2%;
+}
+}
