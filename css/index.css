@@ -11,7 +11,6 @@
 :root{
     --btn-color:#6253f2;
     --btn-background-color:#dee7ee;
-    
 }
 
 .actions{
@@ -60,7 +59,6 @@
     color: var(--btn-color);
     border: solid #f4f4f4 1px;
 }
-
 
 .conteudo{
     display: flex;
@@ -153,7 +151,6 @@ h1{
     max-width: 350px;
     min-height: 100px;
     max-height: 150px;
-    
 }
 
 span{
@@ -162,6 +159,7 @@ span{
     display: flex;
     justify-content:space-evenly;
 }
+
 .enviar{
     background-color: var(--btn-color);
     color: var(--btn-background-color);
@@ -176,6 +174,7 @@ span{
     margin: 0 auto;
     margin-bottom: 20px;   
 }
+
 .enviar:hover{
     cursor: pointer;
     background-color: #c2d1d9;
