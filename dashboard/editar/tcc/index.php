@@ -25,6 +25,13 @@
         $key_words = $elemento[12];
         $data_ap = $elemento[13];
         $instituicao = $elemento[14];
+        $id_professor = $elemento[15];
+        $data_add = $elemento[16];
+        $data_att = $elemento[17];
+    }
+
+    if($id_professor != $_SESSION['codigo_u']){
+        header("location: ../../../erro/401.php");
     }
 
     if($_SESSION['instituicao'] != $instituicao){

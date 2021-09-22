@@ -1,7 +1,6 @@
 <meta charset="UTF-8">
 <?php
     session_start();
-
     $id = $_GET["tcc"];
     
     include "../conexao/conexao.inc";
@@ -26,9 +25,67 @@
             $key_words = $elemento[12];
             $data_ap = $elemento[13];
             $instituicao = $elemento[14];
-            $foto = $elemento[15];
-            $pdf = $elemento[16];
-            $zip = $elemento[17];
+            $id_professor = $elemento[15];
+            $data_add = $elemento[16];
+            $data_att = $elemento[17];
+            $foto = $elemento[18];
+            $pdf = $elemento[19];
+            $zip = $elemento[20];
+        }
+    }
+
+    if($id_professor != 0){
+        $query_prof = "SELECT nome FROM usuario WHERE codigo_u = '$id_professor'";
+        $res = mysqli_query($conexao, $query_prof);
+        while($result = mysqli_fetch_assoc($res)){
+            $nome_professor = $result['nome'];
+        }
+    }else{
+        $nome_professor = $instituicao;
+        if($nome_professor == "ETEC Professor Andre Bogasian"){
+            $nome_professor = "ETEC Professor André Bogasian";
+        }
+    }
+
+    $Add_dia = substr($data_add, 8,2);
+    $mesNumeric = substr($data_add, 5, 2);
+    $Add_ano = substr($data_add, 0, 4);
+    $Add_mes = defineMes($mesNumeric);
+    $Add_horario = substr($data_add, 11,5);
+
+    if($data_att){
+        $Att_dia = substr($data_att, 8,2);
+        $mesNumeric = substr($data_att, 5, 2);
+        $Att_ano = substr($data_att, 0, 4);
+        $Att_mes = defineMes($mesNumeric);
+        $Att_horario = substr($data_att, 11,5);
+    }
+
+    function defineMes($mes){
+        if($mes == "01"){
+            return "Janeiro";
+        }elseif($mes == "02"){
+            return "Fevereiro";
+        }elseif($mes == "03"){
+            return "Março";
+        }elseif($mes == "04"){
+            return "Abril";
+        }elseif($mes == "05"){
+            return "Maio";
+        }elseif($mes == "06"){
+            return "Junho";
+        }elseif($mes == "07"){
+            return "Julho";
+        }elseif($mes == "08"){
+            return "Agosto";
+        }elseif($mes == "09"){
+            return "Setembro";
+        }elseif($mes == "10"){
+            return "Outubro";
+        }elseif($mes == "11"){
+            return "Novembro";
+        }elseif($mes == "12"){
+            return "Dezembro";
         }
     }
 
@@ -124,6 +181,16 @@
         </div>
 
         <div class="info_direita">
+            <div class="info_adicionais">
+                <p>Adicionado por <?php echo $nome_professor." em ".$Add_dia." de ".$Add_mes." de ".$Add_ano." às ".$Add_horario;?> </p>
+                <?php
+                    if($data_att){
+                ?>
+                    <p>Atualizado <?php echo "em ".$Att_dia." de ".$Att_mes." de ".$Att_ano." às ".$Att_horario;?><b></b></p>
+                <?php
+                    }
+                ?>
+            </div>
             <h1 style="text-transform:none"><?php echo $nome;?></h1>
             <h2>Resumo</h2>
             <div class="abstract">

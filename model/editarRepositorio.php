@@ -70,38 +70,40 @@
     }
 
     include "../conexao/conexao.inc";
+    $agora = date("Y-m-d H:i:s");
+
     if(isset($issetFOTO) &&  isset($issetPDF) && isset($issetZip)){
         $query = "UPDATE repositorio SET nome = '$nome', prof_orientador = '$prof_orientador', prof_corientador = '$prof_corientador', membros_grupo ='$membros_grupo', 
         membros_banca = '$membros_banca', curso = '$curso', ano = '$ano', mencao = '$mencao', resumo = '$resumo', abstract = '$abstract', pa_ch = '$pa_ch', 
-        key_words = '$key_words', data_ap = '$data_ap', foto = '$foto_conteudo', pdf = '$pdf_conteudo', zip = '$zip_conteudo' WHERE codigo_r='$id'";
+        key_words = '$key_words', data_ap = '$data_ap', data_att = '$agora', foto = '$foto_conteudo', pdf = '$pdf_conteudo', zip = '$zip_conteudo' WHERE codigo_r='$id'";
     }elseif(isset($issetFOTO) && isset($issetPDF)){
         $query = "UPDATE repositorio SET nome = '$nome', prof_orientador = '$prof_orientador', prof_corientador = '$prof_corientador', membros_grupo ='$membros_grupo', 
         membros_banca = '$membros_banca', curso = '$curso', ano = '$ano', mencao = '$mencao', resumo = '$resumo', abstract = '$abstract', pa_ch = '$pa_ch', 
-        key_words = '$key_words', data_ap = '$data_ap', foto = '$foto_conteudo', pdf = '$pdf_conteudo' WHERE codigo_r='$id'";
+        key_words = '$key_words', data_ap = '$data_ap', data_att = '$agora', foto = '$foto_conteudo', pdf = '$pdf_conteudo' WHERE codigo_r='$id'";
     }elseif(isset($issetFOTO) && isset($issetZip)){
         $query = "UPDATE repositorio SET nome = '$nome', prof_orientador = '$prof_orientador', prof_corientador = '$prof_corientador', membros_grupo ='$membros_grupo', 
         membros_banca = '$membros_banca', curso = '$curso', ano = '$ano', mencao = '$mencao', resumo = '$resumo', abstract = '$abstract', pa_ch = '$pa_ch', 
-        key_words = '$key_words', data_ap = '$data_ap', foto = '$foto_conteudo', zip = '$zip_conteudo' WHERE codigo_r='$id'";
+        key_words = '$key_words', data_ap = '$data_ap', data_att = '$agora', foto = '$foto_conteudo', zip = '$zip_conteudo' WHERE codigo_r='$id'";
     }elseif(isset($issetPDF) && isset($issetZip)){
         $query = "UPDATE repositorio SET nome = '$nome', prof_orientador = '$prof_orientador', prof_corientador = '$prof_corientador', membros_grupo ='$membros_grupo', 
         membros_banca = '$membros_banca', curso = '$curso', ano = '$ano', mencao = '$mencao', resumo = '$resumo', abstract = '$abstract', pa_ch = '$pa_ch', 
-        key_words = '$key_words', data_ap = '$data_ap', pdf = '$pdf_conteudo', zip = '$zip_conteudo' WHERE codigo_r='$id'";
+        key_words = '$key_words', data_ap = '$data_ap', data_att = '$agora', pdf = '$pdf_conteudo', zip = '$zip_conteudo' WHERE codigo_r='$id'";
     }elseif(isset($issetFOTO)){
         $query = "UPDATE repositorio SET nome = '$nome', prof_orientador = '$prof_orientador', prof_corientador = '$prof_corientador', membros_grupo ='$membros_grupo', 
         membros_banca = '$membros_banca', curso = '$curso', ano = '$ano', mencao = '$mencao', resumo = '$resumo', abstract = '$abstract', pa_ch = '$pa_ch', 
-        key_words = '$key_words', data_ap = '$data_ap', foto = '$foto_conteudo' WHERE codigo_r='$id'";
+        key_words = '$key_words', data_ap = '$data_ap', data_att = '$agora', foto = '$foto_conteudo' WHERE codigo_r='$id'";
     }elseif(isset($issetPDF)){
         $query = "UPDATE repositorio SET nome = '$nome', prof_orientador = '$prof_orientador', prof_corientador = '$prof_corientador', membros_grupo ='$membros_grupo', 
         membros_banca = '$membros_banca', curso = '$curso', ano = '$ano', mencao = '$mencao', resumo = '$resumo', abstract = '$abstract', pa_ch = '$pa_ch', 
-        key_words = '$key_words', data_ap = '$data_ap', pdf = '$pdf_conteudo' WHERE codigo_r='$id'";
+        key_words = '$key_words', data_ap = '$data_ap', data_att = '$agora', pdf = '$pdf_conteudo' WHERE codigo_r='$id'";
     }elseif(isset($issetZip)){
         $query = "UPDATE repositorio SET nome = '$nome', prof_orientador = '$prof_orientador', prof_corientador = '$prof_corientador', membros_grupo ='$membros_grupo', 
         membros_banca = '$membros_banca', curso = '$curso', ano = '$ano', mencao = '$mencao', resumo = '$resumo', abstract = '$abstract', pa_ch = '$pa_ch', 
-        key_words = '$key_words', data_ap = '$data_ap', zip = '$zip_conteudo' WHERE codigo_r='$id'";
+        key_words = '$key_words', data_ap = '$data_ap', data_att = '$agora', zip = '$zip_conteudo' WHERE codigo_r='$id'";
     }else{
         $query = "UPDATE repositorio SET nome = '$nome', prof_orientador = '$prof_orientador', prof_corientador = '$prof_corientador', membros_grupo ='$membros_grupo', 
         membros_banca = '$membros_banca', curso = '$curso', ano = '$ano', mencao = '$mencao', resumo = '$resumo', abstract = '$abstract', pa_ch = '$pa_ch', 
-        key_words = '$key_words', data_ap = '$data_ap' WHERE codigo_r='$id'";
+        key_words = '$key_words', data_ap = '$data_ap', data_att = '$agora' WHERE codigo_r='$id'";
     }
     mysqli_query($conexao, $query);
     mysqli_close($conexao);

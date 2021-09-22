@@ -43,7 +43,7 @@ body{
 }
 
 .info_direita{
-    margin-top: 100px;
+    margin-top: 64px;
     display: inline;
 }
 
@@ -110,6 +110,12 @@ body{
     color: #012f00;
     border-top: 2px solid #012f00;
     border-bottom: 2px solid #012f00;
+}
+
+.info_adicionais{
+    float: right;
+    padding-right: 64px;
+    line-height: 6px;
 }
 
 ::-webkit-scrollbar-track {

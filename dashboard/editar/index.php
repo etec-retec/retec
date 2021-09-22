@@ -7,7 +7,8 @@
 
     $inst = $_SESSION['instituicao'];
     include "../../conexao/conexao.inc";
-    $query = "SELECT * FROM repositorio WHERE instituicao = '$inst'";
+    $prof_id = $_SESSION['codigo_u'];
+    $query = "SELECT * FROM repositorio WHERE instituicao = '$inst' AND id_prof_criador = '$prof_id'";
     $result = mysqli_query($conexao, $query);
 
     mysqli_close($conexao);
