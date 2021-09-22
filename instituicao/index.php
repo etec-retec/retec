@@ -100,7 +100,7 @@
                 <a id="a" href="adicionar/">Adicionar Projeto</a>
                 <a id="e" href="editar/">Editar Projeto</a>
                 <a id="r" href="remover/">Remover Projeto</a>
-                <a id="m" href="">Lista de Professores</a>
+                <a id="m" href="lista-de-professores/">Lista de Professores</a>
             </div>
         </div>
 

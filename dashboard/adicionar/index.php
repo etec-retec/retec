@@ -145,7 +145,6 @@
                 option.text = materias[i];
                 option.value = materias[i];
                 slct.appendChild(option);
-                console.log(materias[i]);
             }
         </script>
     </body>
