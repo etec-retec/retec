@@ -55,7 +55,7 @@
 
         <div class="center">
             <h2 class="center" id="lbl">Editar <?php echo $nome;?></h2>
-            <form action="../../../rotas/editarRepositorio.php" method="POST" enctype="multipart/form-data">
+            <form action="../../../model/editarRepositorio.php" method="POST" enctype="multipart/form-data">
 
                 <label for="nome"><b>Nome</b></label>
                 <br>

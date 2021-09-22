@@ -17,7 +17,7 @@
         
         <div class="formu">
             <h2>Cadastre-se</h2>
-            <form name="cadastraU" action="../rotas/usuario.php?create=1" method='POST'>
+            <form name="cadastraU" action="../model/usuario.php?create=1" method='POST'>
                 <label id="lbl_aviso" style="display:none;margin:0 auto;"></label>
                 <label for="nome"><b>Nome</b></label><br>
                 <input type="text" name="nome" id="nome" maxlenght="20" placeholder="Nome" class="txtF" autocomplete="off" required>

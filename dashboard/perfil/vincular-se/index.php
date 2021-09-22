@@ -74,7 +74,7 @@
             <?php
                 if($linhas > 0){
             ?>
-            <form action="../../../rotas/vincular.php" method="POST">
+            <form action="../../../model/vincular.php" method="POST">
                 <select class="inp_txt" name="inst" id="slct" required>    
                     <option value="none" selected disabled>Escolha</option>
                     <?php

@@ -16,7 +16,7 @@
         <div class="formu">
             <h2>Recuperar a Senha</h2>
             <h4>Um e-mail será enviado ao endereço digitado.</h4>
-            <form name="cadastraU" action="../../rotas/recuperarSenha.php" method='POST'>
+            <form name="cadastraU" action="../../model/recuperarSenha.php" method='POST'>
                 <label><b>E-mail</b></label><br>
                 <input type="email" name="email" id="email" maxlenght="50" placeholder="exemplo@email.com" class="txtF" autocomplete="off" required>
                 <br><br>

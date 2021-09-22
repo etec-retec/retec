@@ -48,7 +48,7 @@
         <div class="grid-container">
             <div class="info_esquerda">
                 <h1>Dados Pessoais</h1>
-                <form action="../../rotas/editarPerfil.php" method="POST" class="formu">
+                <form action="../../model/editarPerfil.php" method="POST" class="formu">
                     <label><b>Nome</b></label>
                     <br>
                     <input type="text" min="3" max="64" name="nome" value="<?php echo $_SESSION['nome'];?>" required/>

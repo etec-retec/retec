@@ -43,7 +43,7 @@
             <h1>ATENÇÃO</h1>
             <h2 style="width:60%; margin:0 auto;">Caso você se desvincule da <?php echo $_SESSION['delete'][0];?>, sua conta será excluída automaticamente pois não estará atribuida a mais nenhuma instituição.</h2>
             <h3>Tem certeza que deseja fazer isso?</h3>
-            <form action="../../../rotas/deletarConta.php" method="POST">
+            <form action="../../../model/deletarConta.php" method="POST">
                 <input type="button" id="deletar" value="Cancelar" onclick="window.open('../desvincular-se/', '_self')"/>
                 <input type="submit" value="Deletar"/>
             </form>

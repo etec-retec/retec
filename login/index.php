@@ -39,7 +39,7 @@
             <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button> 
             <div class="formu">
                 <h2>Login</h2>
-                <form name="cadastraU" action="../rotas/login.php" method='POST'>
+                <form name="cadastraU" action="../model/login.php" method='POST'>
                     <label><b>E-mail</b></label><br>
                     <input type="email" name="email" id="email" maxlenght="50" placeholder="exemplo@email.com" class="txtF" autocomplete="off" required>
                     <br><br>

@@ -83,7 +83,7 @@
                         
                         <td class="table-column_ex">
                             <div class="item" id="center">
-                                <form action="../../rotas/removerRepositorio.php?tcc=<?php echo $tcc["codigo_r"];?>" method="POST">
+                                <form action="../../model/removerRepositorio.php?tcc=<?php echo $tcc["codigo_r"];?>" method="POST">
                                     <button type="submit" class="fr">Remover</button>
                                   </form>
                             </div>

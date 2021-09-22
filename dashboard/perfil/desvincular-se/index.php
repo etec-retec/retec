@@ -54,7 +54,7 @@
         <input type="text" value="<?php echo $_SESSION["instituicoes"];?>" id="insts" hidden />
         <div class="center">
             <h1>Desvincular-se de:</h1>
-            <form action="../../../rotas/desvincular.php" method="POST">
+            <form action="../../../model/desvincular.php" method="POST">
                 <select class="inp_txt" name="inst" id="slct" required>    
                     <option value="none" selected disabled>Escolha</option>
 

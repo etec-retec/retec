@@ -48,7 +48,7 @@
             <div class="formu">
                 <h1>Olá, <?php echo $_SESSION["nome"];?>!</h1>
                 <h2>Entrar como professor da:</h2>
-                <form name="cadastraU" action="../rotas/selecao.php" method='POST'>
+                <form name="cadastraU" action="../model/selecao.php" method='POST'>
                     <br>
                     <select class="inp_txt" name="inst" id="slct" required>    
                         <option value="none" selected disabled>Escolha</option>

@@ -84,7 +84,7 @@ if (isset($_SESSION)) {
     </div>
 
     <div class="contato" data-anime="botom"> <!--arrumar o data-anime (esta faltando um t)-->
-        <form class="form" action="rotas/contato.php" method="POST">
+        <form class="form" action="model/contato.php" method="POST">
         <h2>Entre em contato conosco!</h2>
 
             <label for="nome"><b>Nome</b></label>

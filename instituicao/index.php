@@ -51,13 +51,13 @@
                     <p><b>Matrícula: </b><?php echo $_SESSION["notMatricula"];?></p>
                     <p><b>RG: </b><?php echo $_SESSION["notRg"];?></p>
                     <p><b>E-mail: </b><?php echo $_SESSION["notEmail"];?></p>
-                    <form action="../rotas/verificacao.php" method="POST">
+                    <form action="../model/verificacao.php" method="POST">
                     <input type="text" name="rg" style="display:none" value="<?php echo $_SESSION["notRg"];?>"/>
                         <input type="text" name="matricula" style="display:none" value="<?php echo $_SESSION["notMatricula"];?>"/>
                         <input type="text" name="conf" style="display:none;" value="1"/>
                         <button class="btnBox" id="ver">Verificar</button>
                     </form>
-                    <form action="../rotas/verificacao.php" method="POST">
+                    <form action="../model/verificacao.php" method="POST">
                         <input type="text" name="rg" style="display:none" value="<?php echo $_SESSION["notRg"];?>"/>
                         <input type="text" name="matricula" style="display:none" value="<?php echo $_SESSION["notMatricula"];?>"/>
                         <input type="text" name="conf" style="display:none" value="0"/>
