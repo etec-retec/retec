@@ -11,6 +11,7 @@
 :root{
     --btn-color:#6253f2;
     --btn-background-color:#dee7ee;
+    
 }
 
 .actions{
@@ -59,6 +60,7 @@
     color: var(--btn-color);
     border: solid #f4f4f4 1px;
 }
+
 
 .conteudo{
     display: flex;
@@ -114,12 +116,10 @@ h1{
 .contato{
     margin: 0 auto;
     width: 50%;
-    margin-bottom: 11px;
 }
 
 .contato h2{
     text-align: center;
-    padding: 32px;
     font-size: 2rem;
 }
 
@@ -130,6 +130,7 @@ h1{
     justify-content: center;
     justify-content: space-evenly;
     height: 90vh;
+    padding-top: 20px;
 }
 
 .inp_txt{
@@ -151,6 +152,7 @@ h1{
     max-width: 350px;
     min-height: 100px;
     max-height: 150px;
+    
 }
 
 span{
@@ -158,8 +160,8 @@ span{
     font-weight: 800;
     display: flex;
     justify-content:space-evenly;
-}
 
+}
 .enviar{
     background-color: var(--btn-color);
     color: var(--btn-background-color);
@@ -174,7 +176,6 @@ span{
     margin: 0 auto;
     margin-bottom: 20px;   
 }
-
 .enviar:hover{
     cursor: pointer;
     background-color: #c2d1d9;
@@ -182,6 +183,21 @@ span{
     position: relative;
 }
 
+.aviso{
+    opacity: 0;
+    background-color: rgb(238, 46, 12);
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    width: 50%;
+    transform: translate3d(20px, 0, 0);
+}
+.avisei{
+    transform: translate3d(0, 0, 0);
+    transition: 1s;
+    opacity: 1;
+    margin: 0 auto;
+}
 ::-webkit-scrollbar-track {
   background-color: #ffffff;
 }
@@ -194,6 +210,29 @@ span{
   border-radius: 16px;
 }
 
+[data-anime]{
+    /* opacity: 0; */
+    transition: .3s;
+}
+
+[data-anime="left"]{
+    /* transform: translate3d(-100px, 0, 0);  */
+    /*primeria casa anima da esquerda pra direita (se for valor negativo, inverte e fica da direita para a esquerda)*/
+    /*segunda casa, anima de baixo pra cima (caso valor seja negativo, inverte e fica de cima para baixo)*/
+    /*na terceira casa, só faz ele esmaecer, o objeto animado não vem de nenhuma direção*/
+}
+
+[data-anime="bottom"]{
+    transform: translate3d( 0, 100px, 0);
+}
+
+/*tras o elemento para a posição inicial dele, quando acionada essa classe .animate com js */
+[data-anime].animate{
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px); 
+}
+
+
 @media (max-width: 768px){
 
 .banner{
@@ -203,10 +242,6 @@ span{
 }
 .banner h1{
     font-size: 2.5em;
-}
-
-.btn{
-    padding-left: 5px;
 }
 
 .conteudo{
@@ -248,7 +283,10 @@ span{
 .form{
     height: 100vh;
 }
-
+.aviso{
+    width: 80%;
+    margin-top: 5px;
+}
 }
 
 @media (max-width: 625px){

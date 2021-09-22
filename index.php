@@ -22,6 +22,7 @@ if (isset($_SESSION)) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/index.css" rel="stylesheet">
+    <script type="text/javascript" src="js/index.js"></script>
     <link href="assets/img/icon.ico" type="image/x-icon" rel="icon" />
     <title>Retec</title>
 </head>
@@ -39,7 +40,7 @@ if (isset($_SESSION)) {
         </div>
     </div>
 
-    <div class="tec">
+    <div class="tec" data-anime="left"><!--este data-anime, serve para a animação do site-->
         <img id="tec_img" src="assets/img/bnr3.png" />
     </div>
 
@@ -82,7 +83,7 @@ if (isset($_SESSION)) {
         </div>
     </div>
 
-    <div class="contato">
+    <div class="contato" data-anime="botom"> <!--arrumar o data-anime (esta faltando um t)-->
         <form class="form" action="rotas/contato.php" method="POST">
         <h2>Entre em contato conosco!</h2>
 
@@ -95,25 +96,13 @@ if (isset($_SESSION)) {
             <label for="mensagem"><b>Mensagem</b></label>
             <textarea type="text" class="area_txt" name="mensagem" placeholder="Escreva aqui..." 
             onkeyup="limite_textarea(this.value)" id="texto" data-ls-module="charCounter" maxlength="250" required></textarea>
+            <span class="aviso">Faça um comentário mais breve para que possamos te ajudar ter uma melhor experiência 😉😉</span>
             
             <span id="cont">250</span><span>Caracteres restantes</span>
 
             <input type="submit" class="enviar" value="Enviar" />
     </form>
     </div>
-
-    <script>
-        function limite_textarea(valor) {
-            quant = 250;
-            total = valor.length;
-            if (total <= quant) {
-                resto = quant - total;
-                document.getElementById('cont').innerHTML = resto;
-            } else {
-                document.getElementById('texto').value = valor.substr(0, quant);
-            }
-        }
-    </script>
 </body>
 
 </html>
