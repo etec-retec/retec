@@ -40,7 +40,7 @@ if (isset($_SESSION)) {
         </div>
     </div>
 
-    <div class="tec" data-anime="left"><!--este data-anime, serve para a animação do site-->
+    <div class="tec"><!--este data-anime, serve para a animação da imagem-->
         <img id="tec_img" src="assets/img/bnr3.png" />
     </div>
 
@@ -83,7 +83,7 @@ if (isset($_SESSION)) {
         </div>
     </div>
 
-    <div class="contato" data-anime="botom"> <!--arrumar o data-anime (esta faltando um t)-->
+    <div class="contato"> <!--arrumar o data-anime 'esta faltando um t'-->
         <form class="form" action="model/contato.php" method="POST">
         <h2>Entre em contato conosco!</h2>
 
@@ -95,8 +95,8 @@ if (isset($_SESSION)) {
 
             <label for="mensagem"><b>Mensagem</b></label>
             <textarea type="text" class="area_txt" name="mensagem" placeholder="Escreva aqui..." 
-            onkeyup="limite_textarea(this.value)" id="texto" data-ls-module="charCounter" maxlength="250" required></textarea>
-            <span class="aviso">Faça um comentário mais breve para que possamos te ajudar ter uma melhor experiência 😉😉</span>
+            onkeyup="limite_textarea(this.value)" id="texto" data-ls-module="charCounter" maxlength="231" required></textarea>
+            <span class="aviso">Faça um comentário mais breve para que possamos te ajudar a ter uma melhor experiência.</span>
             
             <span id="cont">250</span><span>Caracteres restantes</span>
 

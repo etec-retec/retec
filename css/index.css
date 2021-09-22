@@ -115,14 +115,26 @@ h1{
 
 .contato{
     margin: 0 auto;
-    width: 50%;
+    width: 100%;
+
 }
 
 .contato h2{
     text-align: center;
-    font-size: 2rem;
+    font-size: 2rem; 
 }
 
+/* .contato::after{
+    content: '';
+    width: 500px;
+    height: 500px;
+    background-color: blueviolet;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    z-index: 100;
+
+} */
 .form{
     display: flex;
     flex-direction: column;
@@ -141,13 +153,16 @@ h1{
     border: 1px solid #353839;
     outline: none;
     margin: 0 auto;
+    font-weight: 500;
 }
 
 .area_txt{
     margin: 0 auto;
+    font-size: 1em;
     border: #2a3641 1px solid;
     border-radius: 5px;
     padding: 5px;
+    font-weight: 500;
     min-width: 350px;
     max-width: 350px;
     min-height: 100px;
@@ -184,18 +199,20 @@ span{
 }
 
 .aviso{
-    opacity: 0;
-    background-color: rgb(238, 46, 12);
+    visibility: hidden;
+    background-color: var(--btn-color);
+    color:var(--btn-background-color);
     color: white;
     border-radius: 10px;
     padding: 10px;
-    width: 50%;
+    width: 60%;
     transform: translate3d(20px, 0, 0);
+    font-weight: 500;
 }
 .avisei{
     transform: translate3d(0, 0, 0);
-    transition: 1s;
-    opacity: 1;
+    transition: .5s;
+    visibility: initial;
     margin: 0 auto;
 }
 ::-webkit-scrollbar-track {
@@ -209,29 +226,6 @@ span{
   background: #6253f2;
   border-radius: 16px;
 }
-
-[data-anime]{
-    /* opacity: 0; */
-    transition: .3s;
-}
-
-[data-anime="left"]{
-    /* transform: translate3d(-100px, 0, 0);  */
-    /*primeria casa anima da esquerda pra direita (se for valor negativo, inverte e fica da direita para a esquerda)*/
-    /*segunda casa, anima de baixo pra cima (caso valor seja negativo, inverte e fica de cima para baixo)*/
-    /*na terceira casa, só faz ele esmaecer, o objeto animado não vem de nenhuma direção*/
-}
-
-[data-anime="bottom"]{
-    transform: translate3d( 0, 100px, 0);
-}
-
-/*tras o elemento para a posição inicial dele, quando acionada essa classe .animate com js */
-[data-anime].animate{
-    opacity: 1;
-    transform: translate3d(0px, 0px, 0px); 
-}
-
 
 @media (max-width: 768px){
 
@@ -332,3 +326,5 @@ span{
 }
 
 }
+
+
