@@ -31,7 +31,7 @@
     
         <body>
         <?php
-            if(isset($_GET['criado'])){
+            if(isset($_GET['success'])){
         ?>
                 <div class="marker">Professor desvinculado com sucesso!</div>
         <?php

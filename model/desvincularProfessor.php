@@ -54,10 +54,9 @@
             }
         }   
     }   
-    echo $nova;
-        // $_SESSION['instituicoes'] = $nova;
-        // $_SESSION['deletada'] = $deletar;
-        // mysqli_close($conexao);
 
-    
+    $query = "UPDATE usuario SET instituicao = '$nova' WHERE codigo_u = '$id'";
+    mysqli_query($conexao, $query);
+
+    header("Location: ../instituicao/lista-de-professores/?success");
 ?>
