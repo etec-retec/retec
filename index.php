@@ -101,7 +101,8 @@ if (isset($_SESSION)) {
             <span id="cont">250</span><span>Caracteres restantes</span>
 
             <input type="submit" class="enviar" value="Enviar" />
-    </form>
+        
+        </form>
     </div>
 </body>
 
