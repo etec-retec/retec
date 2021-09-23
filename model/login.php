@@ -23,9 +23,11 @@
             $senha_bd = $dado[5];
         }
 
-        if($senha_bd != $senha){
-            header("location: ../login/?denied=4");
-            exit();
+        if(isset($senha_bd)){
+            if($senha_bd != $senha){
+                header("location: ../login/?denied=4");
+                exit();
+            }
         }
         
         if($retorno == 0){  #SE O EMAIL E A SENHA NN BATEREM
