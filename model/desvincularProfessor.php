@@ -28,8 +28,8 @@
     }
 
     if(sizeof($instituicoes) == 1){
-        //Levará para outra tela
-        echo "Só uma";
+        $_SESSION['idProf'] = $id;
+        header("Location: ../instituicao/remover/aviso/");
     }else{
         $nova = "";
         if($instituicoes[0] == $nome){

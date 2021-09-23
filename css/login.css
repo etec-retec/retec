@@ -21,8 +21,8 @@ body{
     padding: 32px;
     background-color: #fff;
     color: #2a3641;
-    height: 60%;
-    width: 30%;
+    height: auto;
+    width: auto;
     border: solid #6253f2 1px;
     border-radius: 6px;
 }

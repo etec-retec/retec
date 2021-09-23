@@ -6,9 +6,9 @@
     }
 
     include "../conexao/conexao.inc";
-    $rg = $_SESSION['rg'];
-    $matricula = $_SESSION['matricula'];
-    $query = "DELETE FROM usuario WHERE rg = '$rg' AND matricula = '$matricula'";
+    $id = $_POST['idProf'];
+    $query = "DELETE FROM usuario WHERE codigo_u = '$id'";
+    unset($_SESSION["idProf"]);
     mysqli_query($conexao, $query);
-    header("Location: ../");
+    header("Location: ../instituicao/lista-de-professores/");
 ?>

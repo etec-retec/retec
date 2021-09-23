@@ -112,3 +112,11 @@ input[type=submit]:hover{
     border-top: 2px solid #800;
     border-bottom: 2px solid #800;
 }
+
+.lblNome{
+    margin-left: 0px !important;
+    margin-top: -32px !important;
+    font-size: 16px !important;
+    color: #2a3641 !important;
+    float: left !important;
+}
