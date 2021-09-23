@@ -6,21 +6,30 @@
         $senha = md5($senha);
 
         include "../conexao/conexao.inc";
-        $query = "SELECT * FROM usuario WHERE email = '$email' OR email_rec = '$email'";
+        $query = "SELECT * FROM usuario WHERE email = '$email' OR email_rec = '$email'"; #PESQUISA SE O EMAIL EXISTE
         $result = mysqli_query($conexao, $query);
         $retorno_email = mysqli_affected_rows($conexao);
         $dados = mysqli_query($conexao, $query);
 
-        $query = "SELECT * FROM solicitacoes WHERE email = '$email' OR email_rec = '$email'";
+        $query = "SELECT * FROM solicitacoes WHERE email = '$email' OR email_rec = '$email'"; #PESQUISA SE O EMAIL ESTÁ NA LISTA DE SOLICITACOES
         $result = mysqli_query($conexao, $query);
         $retorno_verificacao = mysqli_affected_rows($conexao);
 
-        $query = "SELECT * FROM usuario WHERE email = '$email' OR email_rec = '$email' AND senha = '$senha'";
+        $query = "SELECT * FROM usuario WHERE email = '$email' OR email_rec = '$email' AND senha = '$senha'"; #PESQUISA EMAIL E SENHA EM USUÁRIOS
         $dados = mysqli_query($conexao, $query);
         $retorno = mysqli_affected_rows($conexao);
+
+        while($dado = mysqli_fetch_row($dados)){
+            $senha_bd = $dado[5];
+        }
+
+        if($senha_bd != $senha){
+            header("location: ../login/?denied=4");
+            exit();
+        }
         
-        if($retorno == 0){
-            $query_especial = "SELECT * FROM instituicao WHERE email = '$email' OR email_rec = '$email' AND senha = '$senha'";
+        if($retorno == 0){  #SE O EMAIL E A SENHA NN BATEREM
+            $query_especial = "SELECT * FROM instituicao WHERE email = '$email' OR email_rec = '$email' AND senha = '$senha'"; #PESQUISA SE É UMA INSTITUIÇÃO
             $dados_especiais = mysqli_query($conexao, $query_especial);
             $retorno_especial = mysqli_affected_rows($conexao);
             $retorno = 0;
@@ -29,11 +38,15 @@
             }
         }
 
-        if($retorno > 0){
+        if($retorno > 0){ #SE FOR UM USUÁRIO
             $num = rand(100000,900000);
 
             session_start();
             $_SESSION['numLogin'] = $num;
+            
+            $query = "SELECT * FROM usuario WHERE email = '$email' OR email_rec = '$email' AND senha = '$senha'"; #PESQUISA EMAIL E SENHA EM USUÁRIOS
+            $dados = mysqli_query($conexao, $query);
+
             while($elemento = mysqli_fetch_row($dados)){
                 $_SESSION['codigo_u'] = $elemento[0];
                 $_SESSION['nome'] = $elemento[1];
@@ -45,7 +58,7 @@
                 $_SESSION['tipo'] = $elemento[8];
             }
             
-            if($_SESSION['tipo'] == 1){
+            if($_SESSION['tipo'] == 1){ #LEVA PARA A TELA ACESSO
                 $array = $_SESSION['instituicao'];
                 try{
                     $insti = explode(',', $array);
@@ -57,35 +70,22 @@
                     mysqli_close($conexao);
                     header("location: ../acesso/");
                 }
-
-            }elseif($_SESSION['tipo'] == 0){
-                $query = "SELECT * FROM solicitacoes WHERE instituicao = '".$_SESSION['instituicao']."'";
-                $result = mysqli_query($conexao, $query);
-                $retorno = mysqli_affected_rows($conexao);
-                $dados = mysqli_query($conexao, $query);
-
-                if($retorno == 0){
-                    mysqli_close($conexao);
-                    header("location: ../instituicao/");
-                }else{
-                    while($not = mysqli_fetch_row($dados)){
-                        $_SESSION['not'] = TRUE;
-                        $_SESSION['notID'] = $not[0];
-                        $_SESSION['notNome'] = $not[1];
-                        $_SESSION['notEmail'] = $not[2];
-                        $_SESSION['notEmailRec'] = $not[3];
-                        $_SESSION['notMatricula'] = $not[4];
-                        $_SESSION['notRg'] = $not[5];
-                    }
-                    mysqli_close($conexao);
-                    header("location: ../instituicao/");
-                }
-                
-            }else{
-                echo "Erro!";
             }
             
-        }else if($retorno_especial == 1){
+        }else if($retorno_especial == 1){ #INICIA O TRATAMENTO PARA INSTITUICAO
+            $query_instituicao =  "SELECT * FROM instituicao WHERE email = '$email' OR email_rec = '$email' AND senha = '$senha'"; ###MEXENDO AQUIII
+            $res_inst = mysqli_query($conexao, $query_instituicao);
+            $retorno = mysqli_affected_rows($conexao);
+            
+            while($elemento = mysqli_fetch_row($res_inst)){
+                $senha_bd = $elemento[5];
+            }
+
+            if($senha_bd != $senha){
+                header("location: ../login/?denied=4");
+                exit();
+            }
+
             $num = rand(100000,900000);
 
             session_start();
