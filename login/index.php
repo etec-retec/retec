@@ -23,8 +23,9 @@ if (session_id() != '') {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../css/login.css" rel="stylesheet">
-    <link href="../assets/img/icon.ico" type="image/x-icon" rel="icon" />
+    <link href="../assets/img/icon.ico" type="image/x-icon" rel="icon">
     <title>RETEC - Login</title>
 </head>
 
@@ -45,32 +46,25 @@ if (session_id() != '') {
         <form name="cadastraU" action="../model/login.php" method='POST'>
             <label><b>E-mail</b></label><br>
             <input type="email" name="email" id="email" maxlenght="50" placeholder="exemplo@email.com" class="inp_txt" autocomplete="off" required>
-            <label><b>Senha</b></label><br>
-            <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="txtF" required>
+            <br><label><b>Senha</b></label><br>
+            <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="inp_txt" required>
+
             <button type="button" id="eye">
-                <img src="https://cdn0.iconfinder.com/data/icons/feather/96/eye-16.png" alt="eye" />
+                <img src="../assets/svg/pass1.svg" alt="Lpassword" id="olho">
             </button>
-            <br>
+
             <p id="lbl_aviso" style="color:#800;display:none;">A senha está incorreta!</p>
             <p id="lbl_inc" style="color:#800;display:none;">O e-mail não está vinculado a nenhuma conta!</p>
             <p id="lbl_inst" style="color:#800;display:none;">Não encontramos nenhuma conta vinculada a esses dados!</p>
             <p id="lbl_ver" style="color:#800;display:none;">Aguarde sua conta ser verificada por sua instituição!</p>
             <p id="lbl_alert1" style="color:#800;display:none;">Aguarde sua conta ser verificada por uma de suas instituições!</p>
 
-            <br>
-            <button class="botao">Entrar</button>
-        </form>
+            <input type="submit" class="entrar" value="Entrar"></input>
 
-        <p id="lbl_aviso" style="color:#800;display:none;">A senha está incorreta!</p>
-        <p id="lbl_inc" style="color:#800;display:none;">O e-mail não está vinculado a nenhuma conta!</p>
-        <p id="lbl_ver" style="color:#800;display:none;">Aguarde sua conta ser verificada por sua instituição!</p>
-        <p id="lbl_alert1" style="color:#800;display:none;">Aguarde sua conta ser verificada por uma de suas instituições!</p>
-
-        <input type="submit" class="entrar" value="Entrar"></input>
-        <div class="options">
-            <button class="botao" id="btnEsqueci" onclick="window.open('recuperar-senha/', '_self')">Esqueci minha senha</button>
-            <button class="botao" id="btnN" onclick="window.open('../cadastro/', '_self')">Não tenho cadastro</button>
-        </div>
+            <div class="options">
+                <button class="botao" id="btnEsqueci" onclick="window.open('recuperar-senha/', '_self')">Esqueci minha senha</button>
+                <button class="botao" id="btnN" onclick="window.open('../cadastro/', '_self')">Não tenho cadastro</button>
+            </div>
         </form>
 
         <div class="TxTmobile">
