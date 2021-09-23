@@ -45,54 +45,53 @@ if (session_id() != '') {
         <form name="cadastraU" action="../model/login.php" method='POST'>
             <label><b>E-mail</b></label><br>
             <input type="email" name="email" id="email" maxlenght="50" placeholder="exemplo@email.com" class="inp_txt" autocomplete="off" required>
-
-            <br><label><b>Senha</b></label><br>
-            <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="inp_txt" required>
+            <label><b>Senha</b></label><br>
+            <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="txtF" required>
             <button type="button" id="eye">
                 <img src="https://cdn0.iconfinder.com/data/icons/feather/96/eye-16.png" alt="eye" />
             </button>
-
+            <br>
             <p id="lbl_aviso" style="color:#800;display:none;">A senha está incorreta!</p>
             <p id="lbl_inc" style="color:#800;display:none;">O e-mail não está vinculado a nenhuma conta!</p>
+            <p id="lbl_inst" style="color:#800;display:none;">Não encontramos nenhuma conta vinculada a esses dados!</p>
             <p id="lbl_ver" style="color:#800;display:none;">Aguarde sua conta ser verificada por sua instituição!</p>
             <p id="lbl_alert1" style="color:#800;display:none;">Aguarde sua conta ser verificada por uma de suas instituições!</p>
 
-            <input type="submit" class="entrar" value="Entrar"></input>
-            <div class="options">
-                <button class="botao" id="btnEsqueci" onclick="window.open('recuperar-senha/', '_self')">Esqueci minha senha</button>
-                <button class="botao" id="btnN" onclick="window.open('../cadastro/', '_self')">Não tenho cadastro</button>
-            </div>
+            <br>
+            <button class="botao">Entrar</button>
         </form>
 
-    </div>
+        <p id="lbl_aviso" style="color:#800;display:none;">A senha está incorreta!</p>
+        <p id="lbl_inc" style="color:#800;display:none;">O e-mail não está vinculado a nenhuma conta!</p>
+        <p id="lbl_ver" style="color:#800;display:none;">Aguarde sua conta ser verificada por sua instituição!</p>
+        <p id="lbl_alert1" style="color:#800;display:none;">Aguarde sua conta ser verificada por uma de suas instituições!</p>
 
-    <div class="TxTmobile">
-        <label>Não tem uma conta?</label><br>
-        <a href="../cadastro/index.php"><u>Cadastre-se</u></a>
-    </div>
+        <input type="submit" class="entrar" value="Entrar"></input>
+        <div class="options">
+            <button class="botao" id="btnEsqueci" onclick="window.open('recuperar-senha/', '_self')">Esqueci minha senha</button>
+            <button class="botao" id="btnN" onclick="window.open('../cadastro/', '_self')">Não tenho cadastro</button>
+        </div>
+        </form>
 
-    <script>
-        var currentLocation = window.location;
-        if (currentLocation.search.slice(0, 9) == "?denied=1") {
-            document.getElementById("lbl_aviso").style.display = "block";
-            document.getElementById("email").value = "<?php $_GET["email"]; ?>"
-        } else if (currentLocation.search.slice(0, 9) == "?denied=2") {
-            document.getElementById("lbl_inc").style.display = "block";
-        } else if (currentLocation.search.slice(0, 9) == "?denied=3") {
-            document.getElementById("lbl_ver").style.display = "block";
-            document.getElementById("email").value = "<?php $_GET["email"]; ?>"
-        } else if (currentLocation.search.slice(0, 7) == "?alert2") {
-            document.getElementById("lbl_alert1").style.display = "block";
-        } else if (currentLocation.search.slice(0, 7) == "?alert1") {
-            document.getElementById("lbl_alert1").style.display = "block";
-        } else if (currentLocation.search.slice(0, 8) == "?enviado") {
-            document.getElementById("enviadoMsg").style.display = "block";
-        } else if (currentLocation.search.slice(0, 13) == "?solicitacoes") {
-            document.getElementById("solicitacaoMsg").style.display = "block";
-        } else if (currentLocation.search.slice(0, 13) == "?notFound") {
-            document.getElementById("encontradoMsg").style.display = "block";
-        }
-    </script>
+        <div class="TxTmobile">
+            <label>Não tem uma conta?</label><br>
+            <a href="../cadastro/index.php"><u>Cadastre-se</u></a>
+        </div>
+        <script src="../js/login.js"></script>
+        <script src="../js/mostrarSenha.js"></script>
+        <script>
+            var currentLocation = window.location;
+            if (currentLocation.search.slice(0, 9) == "?denied=1") {
+                document.getElementById("lbl_aviso").style.display = "block";
+                document.getElementById("email").value = "<?php $_GET["email"]; ?>"
+            } else if (currentLocation.search.slice(0, 9) == "?denied=3") {
+                document.getElementById("lbl_ver").style.display = "block";
+                document.getElementById("email").value = "<?php $_GET["email"]; ?>"
+            } else if (currentLocation.search.slice(0, 9) == "?denied=4") {
+                document.getElementById("lbl_inst").style.display = "block";
+                document.getElementById("email").value = "<?php $_GET["email"]; ?>"
+            }
+        </script>
 </body>
 
 </html>
