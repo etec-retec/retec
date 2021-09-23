@@ -68,30 +68,20 @@
                 <label>Não tem uma conta?</label><br>
                 <a href="../cadastro/index.php"><u>Cadastre-se</u></a>    
             </div>
+            <script src="../js/login.js"></script>
+            <script src="../js/mostrarSenha.js"></script>
             <script>
                 var currentLocation = window.location;
                 if(currentLocation.search.slice(0,9) == "?denied=1"){
                     document.getElementById("lbl_aviso").style.display = "block";
                     document.getElementById("email").value = "<?php $_GET["email"];?>"
-                }else if(currentLocation.search.slice(0,9) == "?denied=2"){
-                    document.getElementById("lbl_inc").style.display = "block";
                 }else if(currentLocation.search.slice(0,9) == "?denied=3"){
                     document.getElementById("lbl_ver").style.display = "block";
                     document.getElementById("email").value = "<?php $_GET["email"];?>"
                 }else if(currentLocation.search.slice(0,9) == "?denied=4"){
                     document.getElementById("lbl_inst").style.display = "block";
                     document.getElementById("email").value = "<?php $_GET["email"];?>"
-                }else if(currentLocation.search.slice(0,7) == "?alert2"){
-                    document.getElementById("lbl_alert1").style.display = "block";
-                }else if(currentLocation.search.slice(0,7) == "?alert1"){
-                    document.getElementById("lbl_alert1").style.display = "block";
-                }else if(currentLocation.search.slice(0,8) == "?enviado"){
-                    document.getElementById("enviadoMsg").style.display = "block";
-                }else if(currentLocation.search.slice(0,13) == "?solicitacoes"){
-                    document.getElementById("solicitacaoMsg").style.display = "block";
-                }else if(currentLocation.search.slice(0,13) == "?notFound"){
-                    document.getElementById("encontradoMsg").style.display = "block";
-                }
+                } 
             </script>
         </body>
     </html>

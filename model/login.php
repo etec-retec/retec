@@ -73,10 +73,10 @@
             }
             
         }else if($retorno_especial == 1){ #INICIA O TRATAMENTO PARA INSTITUICAO
-            $query_instituicao =  "SELECT * FROM instituicao WHERE email = '$email' OR email_rec = '$email' AND senha = '$senha'"; ###MEXENDO AQUIII
+            $query_instituicao =  "SELECT * FROM instituicao WHERE email = '$email' OR email_rec = '$email' AND senha = '$senha'";
             $res_inst = mysqli_query($conexao, $query_instituicao);
             $retorno = mysqli_affected_rows($conexao);
-            
+
             while($elemento = mysqli_fetch_row($res_inst)){
                 $senha_bd = $elemento[5];
             }
