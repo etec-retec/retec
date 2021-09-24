@@ -14,6 +14,7 @@ body{
     align-items: center;
     height: 100vh;
     width: 100%;
+
 }
 .formu{
     display: flex;
@@ -40,6 +41,9 @@ input[type="text"]{
     border: 1px solid #353839;
     transition: .2s;
 }
+.formu input[type="email"]{
+    text-transform: lowercase;
+}
 .formu input[type="email"], input[type="password"]{
     font-size: 1rem;
     width: 80%;
@@ -49,21 +53,7 @@ input[type="text"]{
     border-radius: 4px;
     border: 1px solid #353839;
     transition: .2s;
-}
 
-input:focus{
-    width: 83%;
-    background-color: transparent;
-    outline: none;
-    border: 1px solid #353839;
-}
-
-input[type=email]:focus{
-    width: 83%;
-    background-color: transparent;
-    outline: none;
-    border: 1px solid #353839;
-    text-transform: lowercase;
 }
 input[type="submit"]{
     font-size:1.2em;
@@ -143,7 +133,7 @@ img{
 
 @media (max-width: 48em){
 
-.botaoVoltar{
+.voltar{
     display: none;
 }
 

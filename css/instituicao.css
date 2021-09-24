@@ -1,3 +1,6 @@
+@import url("btnVoltar.css");
+@import url("index.css");
+
 body{
     margin: 0;
     padding: 0;
@@ -7,37 +10,30 @@ body{
 }
 
 .cabecalho{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
     height: 175px;
     background-color: #dee7ee;
 }
 
 .logo h1{
-    margin-left: 188px;
-    margin-top: -20px;
     font-size: 64px;
     color: #6253f2;
 }
 
 .logo label{
-    margin-left: 192px;
-    margin-top: -56px;
     font-size: 16px;
     color: #2a3641;
-    float:left;
-}
-
-.center {
-    margin: auto;
-    width: 20%;
-    padding: 40px;
 }
 
 .notificacao{
+    top: 20px;
+    right:0 ;
+    z-index: 99;
     max-width: 48px;
-    float: right;
-    padding: 32px;
-    display: block;
 }
 
 .notificacao:hover{
@@ -56,25 +52,6 @@ body{
 
 .center h2{
     text-align: center;   
-}
-
-.voltar{
-    margin-left: 10px;
-    margin-top: 10px;
-    text-align: center;
-    font-size:110%;
-    width: 100px;
-    height: 28px;
-    background-color: white;
-    color: #6253f2;
-    border: solid #6253f2 1px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.voltar:hover{
-    background-color: #6253f2;
-    color: #f4f4f4;
 }
 
 .cap{
@@ -115,7 +92,8 @@ body{
 }
 
 .boxNot{
-    padding: 10px 30px 20px 30px;
+    right: 0;
+    padding: 20px 30px;
 }
 
 .boxNot button{

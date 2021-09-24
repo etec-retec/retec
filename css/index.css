@@ -12,6 +12,7 @@
     --btn-color:#6253f2;
     --btn-background-color:#dee7ee;
     --back-login-cad-color: #dee7ee; 
+    --body-display-transparent: hidden;
 
 }
 
@@ -171,11 +172,11 @@ span{
 .enviar{
     background-color: var(--btn-color);
     color: var(--btn-background-color);
-    border-radius: 10px;
+    border-radius: 20px 20px 5px 20px;
     border: none;
     padding: 10px 20px;
     font-size: 1em;
-    transition: 0.2s;
+    transition: all 0.2s ease;
     font-weight: 800;
     letter-spacing: 1px;
     width: 100px;

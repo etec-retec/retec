@@ -1,3 +1,6 @@
+@import url("btnVoltar.css");
+@import url("index.css");
+
 #customers {
   border-collapse: collapse;
   background-color: #fff;
