@@ -26,10 +26,10 @@
         <h2>Cadastre-se</h2>
         <form name="cadastraU" action="../model/usuario.php?create=1" method='POST'>
             <label id="lbl_aviso" style="display:none;margin:0 auto;"></label>
-            <label for="nome"><b>Nome</b></label><br>
+            <label for="nome"><b>Nome</b></label>
             <input type="text" name="nome" id="nome" maxlenght="20" placeholder="Nome" class="inp_txt" autocomplete="off" required>
 
-            <label for="sobrenome"><b>Sobrenome</b></label><br>
+            <label for="sobrenome"><b>Sobrenome</b></label>
             <input type="text" name="sobrenome" id="sobrenome" maxlenght="43" placeholder="Sobrenome" class="inp_txt" autocomplete="off" required>
 
             <label for="instituicao"><b>Escolha as instituições nas quais você trabalha</b></label>
@@ -47,31 +47,32 @@
                     <span class="checkmark"></span>
                 </label>
             </div>
-            <br>
 
-            <label for="email"><b>E-mail</b></label><br>
+            <label for="email"><b>E-mail</b></label>
             <input type="email" name="email" maxlenght="64" placeholder="exemplo@email.com" class="inp_txt" autocomplete="off" required>
 
-            <label for="email2"><b>E-mail de recuperação</b></label><br>
+            <label for="email2"><b>E-mail de recuperação</b></label>
             <input type="email" name="email2" maxlenght="64" placeholder="exemplo2@email.com" class="inp_txt" autocomplete="off" required>
 
-            <label for="senha"><b>Senha</b></label><br>
+            <label for="senha"><b>Senha</b></label>
             <input type="password" name="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="inp_txt" required>
 
-            <label for="rsenha"><b>Digite a senha novamente</b></label><br>
+            <label for="rsenha"><b>Digite a senha novamente</b></label>
             <input type="password" name="rsenha" minlenght="5" maxlenght="42" placeholder="Senha novamente" class="inp_txt" required>
 
-            <label for="matricula"><b>Matrícula:</b></label><br>
+            <label for="matricula"><b>Matrícula:</b></label>
             <input type="text" name="matricula" minlength="6" maxlength="6" placeholder="Digite a matrícula" class="inp_txt" required />
 
-            <label for="rg"><b>RG:</b></label><br>
-            <input type="text" name="rg" id="rg" placeholder="Digite o RG" maxlength="12" autocomplete="off" class="inp_txt" required />
-            <br><br>
+            <label for="rg"><b>RG:</b></label>
+            <input type="number" name="rg" id="rg" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            maxlength="9" placeholder="Digite o RG" autocomplete="off" class="inp_txt" required />
 
             <button class="botao">Cadastrar</button>
         </form>
-        <br>
-        <button class="botao" onclick="window.open('../login/', '_self')">Já tenho uma conta</button>
+        
+        <div class="options1">
+            <button class="botao" onclick="window.open('../login/', '_self')">Já tenho uma conta</button>
+        </div>
     </div>
     <script>
         var currentLocation = window.location;

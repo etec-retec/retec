@@ -2,30 +2,13 @@
 @import url("index.css");
 
 body{
+    width: 100%;
+    height: 100vh;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     font-family: 'Poppins', sans-serif;
     color: #2a3641;
-}
-
-.voltar{
-    margin-left: 10px;
-    margin-top: 10px;
-    text-align: center;
-    font-size:110%;
-    width: 100px;
-    height: 28px;
-    background-color: white;
-    color: #6253f2;
-    border: solid #6253f2 1px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.voltar:hover{
-    background-color: #6253f2;
-    color: #f4f4f4;
 }
 
 .grid-container{

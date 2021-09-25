@@ -50,14 +50,16 @@ if (session_id() != '') {
     <div class="formu">
         <h2>Login</h2>
         <form name="cadastraU" action="../model/login.php" method='POST'>
-            <label><b>E-mail</b></label><br>
+            <label for="email"><b>E-mail</b></label>
             <input type="email" name="email" id="email" maxlenght="50" placeholder="exemplo@email.com" class="inp_txt" autocomplete="off" required>
-            <br><label><b>Senha</b></label><br>
-            <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="inp_txt" required>
-
-            <button type="button" id="eye">
-                <img src="../assets/svg/pass1.svg" alt="Lpassword" id="olho">
-            </button>
+            
+            <label for="senha"><b>Senha</b></label>
+            <div class="content-senha">
+                <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="inp_txt" required>
+                <button type="button" id="eye">
+                    <img src="../assets/svg/pass1.svg" alt="Lpassword" id="olho">
+                </button>
+            </div>
 
             <p id="lbl_aviso" style="color:#800;display:none;">A senha está incorreta!</p>
             <p id="lbl_inc" style="color:#800;display:none;">O e-mail não está vinculado a nenhuma conta!</p>
@@ -74,7 +76,7 @@ if (session_id() != '') {
         </form>
 
         <div class="TxTmobile">
-            <label>Não tem uma conta?</label><br>
+            <label>Não tem uma conta?</label>
             <a href="../cadastro/index.php"><u>Cadastre-se</u></a>
         </div>
         <script src="../js/login.js"></script>

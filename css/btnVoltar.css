@@ -18,3 +18,9 @@
     background-color: #6253f2;
     color: #f4f4f4;
 }
+
+@media (max-width: 48em){
+    .voltar{
+        display: none;
+    }
+}

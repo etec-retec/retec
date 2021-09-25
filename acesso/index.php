@@ -27,6 +27,7 @@ if ($_SESSION["tipo"] == "0") {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="../loader/loading.css">
     <script type="text/javascript" src="../loader/loading.js"></script>
 
@@ -55,19 +56,20 @@ if ($_SESSION["tipo"] == "0") {
     <button class="voltar" onclick="window.open('../login/', '_self')">❮ Voltar</button>
     <div class="formu">
         <h1>Olá, <?php echo $_SESSION["nome"]; ?>!</h1>
+        
+            
         <h2>Entrar como professor da:</h2>
         <form name="cadastraU" action="../model/selecao.php" method='POST'>
-            <br>
+         
             <select class="inp_txt" name="inst" id="slct" required>
                 <option value="none" selected disabled>Escolha</option>
             </select>
-            <br><br>
-            <input type="text" name="instituicoes" style="display:none" value="<?php echo $_SESSION["instituicao"]; ?>" />
+        
+                <input type="text" name="instituicoes" style="display:none" value="<?php echo $_SESSION["instituicao"]; ?>" />
+                <button class="botao">Entrar</button>
+            
 
-            <br>
-            <button class="botao">Entrar</button>
         </form>
-        <br><br>
     </div>
     <script>
         <?php

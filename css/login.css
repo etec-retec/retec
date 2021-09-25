@@ -17,13 +17,14 @@ body{
 
 }
 .formu{
+    position: absolute;
     display: flex;
     flex-direction: column;
     padding: 32px;
     background-color: #fff;
     color: #2a3641;
     height: auto;
-    width: auto;
+    width: 40%;
     border: solid #6253f2 1px;
     border-radius: 6px;
 }
@@ -31,11 +32,15 @@ body{
 .formu h2{
     text-align: center;
 }
+
+form label{
+    display:block;
+    width: 100%;
+    margin: 1rem 0 0 0; 
+}
 input[type="text"]{
     font-size: 1rem;
-    width: 80%;
     margin-bottom: 20px;
-    height: 27px;
     color:solid #a7b5bc;
     border-radius: 4px;
     border: 1px solid #353839;
@@ -46,13 +51,10 @@ input[type="text"]{
 }
 .formu input[type="email"], input[type="password"]{
     font-size: 1rem;
-    width: 80%;
     margin-bottom: 20px;
-    height: 27px;
     color:solid #a7b5bc;
     border-radius: 4px;
-    border: 1px solid #353839;
-    transition: .2s;
+
 
 }
 input[type="submit"]{
@@ -68,9 +70,17 @@ input[type="submit"]{
     transition: .3s;
 }
 
+.content-senha{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#senha{
+    margin: 0 15px 0 0;
+}
 #eye{
-    background: none;
-
+    background: none; 
+    height: 37px;  
 }
 img{
     text-align: center;
@@ -140,14 +150,14 @@ img{
 .formu{
     margin: 0 auto ;
     width: 100%;
-    margin-top: 25%;
     border: none;
 }
-
-.formu label{
-    margin-left: 30px;
+input[type="password"]{
+    width: 330px;
 }
-
+input[type="text"]{
+    width: 330px;
+}
 .botao{
     height: 40px;
     width: 90%;
@@ -176,6 +186,6 @@ img{
     color: #709bb3;
     height: 30px;
     width: 55%;
-    margin: 2%;
+    margin: 10px auto;
 }
 }

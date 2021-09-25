@@ -7,9 +7,11 @@
     box-sizing: border-box;
 }
 body{
-    background-color:#dee7ee;
+    min-height: 100vh;
+    background: var(--background-color);
     font-family: 'Poppins', sans-serif;
     color: #2a3641;
+    scroll-behavior: smooth;
 }
 
 .botao{
@@ -21,7 +23,13 @@ body{
     border: 1px #6253f2;
     border-radius: 4px;
     cursor: pointer;
+    margin: 10px;
 }    
+
+.botao:hover{
+    background-color: #b6b2eb;
+}
+
 
 .formu{
     padding: 32px;
@@ -31,7 +39,7 @@ body{
     margin: 0 auto;
     margin-top: 64px;
     margin-bottom: 64px;
-    width: 512px;
+    width: 46%;
     border: solid #6253f2 1px;
     border-radius: 6px;
 }
@@ -41,38 +49,18 @@ body{
 }
 
 .formu label{
+    width: 100%;
     display: table;
-    margin-left: 70px;
-    margin-bottom: -10px;
-    margin-top: 35px;
-}
-/* 
-.formu input{
-    width: 80%;
-    height: 27px;
-    color: solid #a7b5bc;
-    border-radius: 4px;
-    border: 2px solid #353839;
-}
-
-.formu input :focus{
-    background-color: transparent;
-    outline: none;
-    border: none;
-} */
+    margin: 30px 0 10px 0; 
+} 
 
 .formu input[type=email]{
     text-transform: lowercase;
 }
 
-.botao:hover{
-    background-color: #b6b2eb;
-}
-
 .container {
     display: block;
     position: relative;
-    padding-left: 35px;
     margin-bottom: 12px;
     cursor: pointer;
     font-size: 17px;
@@ -86,8 +74,6 @@ body{
     position: absolute;
     opacity: 0;
     cursor: pointer;
-    height: 0;
-    width: 0;
 }
 
 .checkmark {
@@ -117,7 +103,7 @@ body{
     display: block;
 }
 
-.container .checkmark:after {
+.container .checkmark::after {
     left: 9px;
     top: 5px;
     width: 5px;
@@ -135,6 +121,13 @@ body{
 
 #slct:hover{
     cursor: pointer;
+}
+
+.options1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -161,18 +154,17 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media (max-width: 48em){
-.botaoVoltar{
+.voltar{
     display: none;
 }
 
 .formu{
     margin: 0 auto ;
-    width: 90%;
-    margin-top: 15px;
+    width: 100%;
 }
 
 .formu label{
-    margin-left: 30px;
+    margin: 20px 0 10px 0;
 }
     
 }
