@@ -9,6 +9,7 @@ body{
     background-color: #f4f4f4;
     font-family: 'Poppins', sans-serif;
     color: #2a3641;
+    overflow-x: hidden;
 }
 
 .grid-container{

@@ -57,6 +57,14 @@ body{
 .formu input[type=email]{
     text-transform: lowercase;
 }
+#eye{
+    background: none; 
+}
+.email-e-senha{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
 
 .container {
     display: block;

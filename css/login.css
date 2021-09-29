@@ -140,7 +140,28 @@ img{
     border-top: 2px solid #800;
     border-bottom: 2px solid #800;
 }
+@media (min-width: 1920px){
+    .options{
+        justify-content: space-evenly;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .formu{
+        width: 50%;
+    }
+}
+@media (max-width: 773px){
+    .formu{
+        width: 80%;
+        padding: 20px;
+    }
+}
 
+@media (max-width: 425px){
+    .inp_txt{
+        width: 98%;
+    }
+}
 @media (max-width: 48em){
 
 .voltar{

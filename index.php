@@ -23,7 +23,7 @@ if (isset($_SESSION)) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="loader/loading.css">
     <script type="text/javascript" src="loader/loading.js"></script>
-
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
     <script type="text/javascript" src="js/index.js"></script>
     <link href="css/index.css" rel="stylesheet">
     <link href="assets/img/icon.ico" type="image/x-icon" rel="icon" />
@@ -97,19 +97,20 @@ if (isset($_SESSION)) {
         <form class="form" action="model/contato.php" method="POST">
             <h2>Entre em contato conosco!</h2>
 
-            <label for="nome"><b>Nome</b></label>
-            <input type="text" class="inp_txt" name="nome" placeholder="Digite aqui..." min="3" max="64" required>
-
-            <label for="email"><b>E-mail</b></label>
-            <input type="email" class="inp_txt" name="email" placeholder="exemplo@email.com" min="3" max="64" required>
-
-            <label for="mensagem"><b>Mensagem</b></label>
-            <textarea type="text" class="area_txt" name="mensagem" placeholder="Escreva aqui..." onkeyup="limite_textarea(this.value)" id="texto" data-ls-module="charCounter" maxlength="230" required></textarea>
-            <span class="aviso">Faça um comentário mais breve para que possamos te ajudar a ter uma melhor experiência.</span>
-
-            <span id="cont">250</span><span>Caracteres restantes</span>
-
-            <input type="submit" class="enviar" value="Enviar" />
+            <div class="form-box">
+                <label for="nome"><b>Nome</b></label>
+                <input type="text" class="inp_txt" name="nome" placeholder="Digite aqui..." min="3" max="64" required>
+                <label for="email"><b>E-mail</b></label>
+                <input type="email" class="inp_txt" name="email" placeholder="exemplo@email.com" min="3" max="64" required>
+                <label for="mensagem"><b>Mensagem</b></label>
+                <textarea type="text" class="area_txt" name="mensagem" placeholder="Escreva aqui..." onkeyup="limite_textarea(this.value)" id="texto" data-ls-module="charCounter" maxlength="230" required></textarea>
+            </div>
+            
+            <div class="limite-caractere">
+                <span class="aviso">Faça um comentário mais breve para que possamos te ajudar a ter uma melhor experiência.</span>
+                <span id="cont">250</span><span>Caracteres restantes</span>
+                <input type="submit" class="enviar" value="Enviar" />
+            </div>
 
         </form>
     </div>

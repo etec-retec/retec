@@ -26,14 +26,17 @@
         <h2>Cadastre-se</h2>
         <form name="cadastraU" action="../model/usuario.php?create=1" method='POST'>
             <label id="lbl_aviso" style="display:none;margin:0 auto;"></label>
-            <label for="nome"><b>Nome</b></label>
-            <input type="text" name="nome" id="nome" maxlenght="20" placeholder="Nome" class="inp_txt" autocomplete="off" required>
 
-            <label for="sobrenome"><b>Sobrenome</b></label>
-            <input type="text" name="sobrenome" id="sobrenome" maxlenght="43" placeholder="Sobrenome" class="inp_txt" autocomplete="off" required>
+            <div class="name">
+                <label for="nome"><b>Nome</b></label>
+                <input type="text" name="nome" id="nome" maxlenght="20" placeholder="Nome" class="inp_txt" autocomplete="off" required>
+                <label for="sobrenome"><b>Sobrenome</b></label>
+                <input type="text" name="sobrenome" id="sobrenome" maxlenght="43" placeholder="Sobrenome" class="inp_txt" autocomplete="off" required>
+            </div>
 
-            <label for="instituicao"><b>Escolha as instituições nas quais você trabalha</b></label>
-            <div>
+            <div class="instituicao">
+                <label for="instituicao"><b>Escolha as instituições nas quais você trabalha</b></label>
+
                 <label class="container">ETEC Doutor Celso Giglio
                     <input type="checkbox" name="instituicao[]" value="ETEC Doutor Celso Giglio" />
                     <span class="checkmark"></span>
@@ -48,32 +51,39 @@
                 </label>
             </div>
 
-            <label for="email"><b>E-mail</b></label>
-            <input type="email" name="email" maxlenght="64" placeholder="exemplo@email.com" class="inp_txt" autocomplete="off" required>
+            <div class="email-e-senha">
+                <label for="email"><b>E-mail</b></label>
+                <input type="email" name="email" maxlenght="64" placeholder="exemplo@email.com" class="inp_txt" autocomplete="off" required>
+                <label for="email2"><b>E-mail de recuperação</b></label>
+                <input type="email" name="email2" maxlenght="64" placeholder="exemplo2@email.com" class="inp_txt" autocomplete="off" required>
+                
+                <label for="senha"><b>Senha</b></label>  
+                <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="inp_txt" required>
+              
+                
+                <label for="rsenha"><b>Digite a senha novamente</b></label>
+                <input type="password" name="rsenha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha novamente" class="inp_txt" required>
+                <button type="button" id="eye">
+                    <img src="../assets/svg/pass1.svg" alt="Lpassword" id="olho">
+                </button>
+            </div>
 
-            <label for="email2"><b>E-mail de recuperação</b></label>
-            <input type="email" name="email2" maxlenght="64" placeholder="exemplo2@email.com" class="inp_txt" autocomplete="off" required>
+            <div class="dados">
+                <label for="matricula"><b>Matrícula:</b></label>
+                <input type="text" name="matricula" minlength="6" maxlength="6" placeholder="Digite a matrícula" class="inp_txt" required />
 
-            <label for="senha"><b>Senha</b></label>
-            <input type="password" name="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="inp_txt" required>
-
-            <label for="rsenha"><b>Digite a senha novamente</b></label>
-            <input type="password" name="rsenha" minlenght="5" maxlenght="42" placeholder="Senha novamente" class="inp_txt" required>
-
-            <label for="matricula"><b>Matrícula:</b></label>
-            <input type="text" name="matricula" minlength="6" maxlength="6" placeholder="Digite a matrícula" class="inp_txt" required />
-
-            <label for="rg"><b>RG:</b></label>
-            <input type="number" name="rg" id="rg" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-            maxlength="9" placeholder="Digite o RG" autocomplete="off" class="inp_txt" required />
+                <label for="rg"><b>RG:</b></label>
+                <input type="number" name="rg" id="rg" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="9" placeholder="Digite o RG" autocomplete="off" class="inp_txt" required />
+            </div>
 
             <button class="botao">Cadastrar</button>
         </form>
-        
+
         <div class="options1">
             <button class="botao" onclick="window.open('../login/', '_self')">Já tenho uma conta</button>
         </div>
     </div>
+    <script src="../js/mostrarSenha.js"></script>
     <script>
         var currentLocation = window.location;
         if (currentLocation.search.slice(0, 6) == "?email") {

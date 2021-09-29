@@ -1,14 +1,13 @@
-let olho = document.querySelector('#olho')
+let olho = document.querySelector('#olho');
+var p = document.querySelector('[type = "password"]');
 
 function show() {
-    var p = document.getElementById('senha');
+   
     p.setAttribute('type', 'text');
     olho.setAttribute('src','../assets/svg/pass2.svg')
-
 }
 
 function hide() {
-    var p = document.getElementById('senha');
     p.setAttribute('type', 'password');
     olho.setAttribute('src','../assets/svg/pass1.svg')
 }
