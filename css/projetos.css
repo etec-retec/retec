@@ -16,10 +16,11 @@ body{
 
 .grid-container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-gap: 20px;
 }
 
+/*estas classes estão sendo importadas para outras páginas(adicionar, editar, remover) desde o login como prof ou instituição*/
 .cabecalho{
     width: 100%;
     height: 175px;
@@ -30,8 +31,9 @@ body{
 
 
 .logo{
-   margin-left: 125px
+   margin-left: 125px;
 }
+/**/
 
 .info_esquerda{
     width: 320px;

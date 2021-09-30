@@ -168,8 +168,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .formu{
-    margin: 0 auto ;
+    margin: auto auto ;
     width: 100%;
+    /* height: 90vh; */
 }
 
 .formu label{
