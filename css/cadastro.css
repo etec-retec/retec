@@ -42,6 +42,7 @@ body{
     width: 46%;
     border: solid #6253f2 1px;
     border-radius: 6px;
+    box-shadow: 20px 30px 15px -15px rgba(0, 0, 0, 0.103);
 }
 
 .formu h2{

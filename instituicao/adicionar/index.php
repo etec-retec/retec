@@ -37,20 +37,23 @@ if (!isset($_SESSION["numLogin"])) {
             <a id="rem" href="../remover/">Remover</a>
             <a id="ed" href="../editar/">Editar</a>
         </div>
-        <h1 class="logo">RETEC</h1>
-        <?php
-        if ($_SESSION['instituicao'] == "ETEC Professor Andre Bogasian") {
-        ?>
-            <label class="lblNome">ETEC Professor André Bogasian</label>
-        <?php
-        } else {
-        ?>
-            <label class="lblNome"><?php echo $_SESSION["instituicao"]; ?></label>
-        <?php
-        }
-        ?>
-        <br>
-        <label class="lblNome"><b>Institucional</b></label>
+        <div class="logo">
+            
+            <h1>RETEC</h1>
+            <?php
+            if ($_SESSION['instituicao'] == "ETEC Professor Andre Bogasian") {
+            ?>
+                <label class="lblNome">ETEC Professor André Bogasian</label>
+            <?php
+            } else {
+            ?>
+                <label class="lblNome"><?php echo $_SESSION["instituicao"]; ?></label>
+            <?php
+            }
+            ?>
+        <br><label class="lblNome"><b>Institucional</b></label>
+        </div>
+     
     </div>
 
     <div class="center">

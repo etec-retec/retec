@@ -39,7 +39,7 @@ if (!isset($_SESSION["numLogin"])) {
         <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
 
         <div class="logo">
-            <h1 class="logo" id="texto">RETEC</h1>
+            <h1 class="logo"id="texto">RETEC</h1>
             <?php
             if ($_SESSION["instituicao"] == "ETEC Professor Andre Bogasian") {
             ?>

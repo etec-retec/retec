@@ -12,13 +12,13 @@
     border-radius: 4px;
     cursor: pointer;
     transition: all .3s;
-    box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.123);
+    box-shadow: 8px 8px 8px -5px rgba(0, 0, 0, 0.123);
 }
 
 .voltar:hover{
     background-color: #6253f2;
     color: #f4f4f4;
-    box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.24);
+    box-shadow: 8px 8px 8px -5px rgba(0, 0, 0, 0.322);
 }
 
 @media (max-width: 48em){

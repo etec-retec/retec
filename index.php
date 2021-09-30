@@ -103,7 +103,7 @@ if (isset($_SESSION)) {
                 <label for="email"><b>E-mail</b></label>
                 <input type="email" class="inp_txt" name="email" placeholder="exemplo@email.com" min="3" max="64" required>
                 <label for="mensagem"><b>Mensagem</b></label>
-                <textarea type="text" class="area_txt" name="mensagem" placeholder="Escreva aqui..." onkeyup="limite_textarea(this.value)" id="texto" data-ls-module="charCounter" maxlength="230" required></textarea>
+                <textarea type="text" class="area_txt" name="mensagem" placeholder="Escreva aqui..." onkeyup="limite_textarea(this.value)" id="texto" data-ls-module="charCounter" maxlength="251" required></textarea>
             </div>
             
             <div class="limite-caractere">

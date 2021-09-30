@@ -34,18 +34,21 @@ if (!isset($_SESSION["numLogin"])) {
             <a id="add">Adicionar</a>
             <a id="ed" href="../editar/">Editar</a>
         </div>
-        <h1 class="logo">RETEC</h1>
-        <?php
-        if ($_SESSION["instituicao"] == "ETEC Professor Andre Bogasian") {
-        ?>
-            <label>ETEC Professor André Bogasian</label>
-        <?php
-        } else {
-        ?>
-            <label><?php echo $_SESSION["instituicao"]; ?></label>
-        <?php
-        }
-        ?>
+        <div class="logo">
+            
+            <h1>RETEC</h1>
+            <?php
+            if ($_SESSION["instituicao"] == "ETEC Professor Andre Bogasian") {
+            ?>
+                <label>ETEC Professor André Bogasian</label>
+            <?php
+            } else {
+            ?>
+                <label><?php echo $_SESSION["instituicao"]; ?></label>
+            <?php
+            }
+            ?>
+        </div>
     </div>
 
     <div class="center">
