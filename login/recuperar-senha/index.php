@@ -25,7 +25,7 @@
     <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
     <div class="formu">
         <h2>Recuperar a Senha</h2>
-        <h4>Um e-mail será enviado ao endereço digitado.</h4>
+        <h4>Um e-mail será enviado ao endereço digitado</h4>
         <form name="cadastraU" action="../../model/recuperarSenha.php" method='POST'>
             <label for="email"><b>E-mail</b></label>
             <input type="email" name="email" id="email" maxlenght="50" placeholder="exemplo@email.com" class="inp_txt" autocomplete="off" required>
@@ -35,7 +35,9 @@
             <p id="lbl_ver" style="color:#800;display:none;">Aguarde sua conta ser verificada por sua instituição!</p>
             <p id="lbl_alert1" style="color:#800;display:none;">Aguarde sua conta ser verificada por uma de suas instituições!</p>
 
-            <button class="botao">Recuperar</button>
+            <input type="submit" class="botao">Recuperar
+            <a href="retec:maxmotorolamotog2@gmail.com?subject=Teste para saber se posso confiar minha senha à vc"></a>
+        </input>
         </form>
         <br>
     </div>

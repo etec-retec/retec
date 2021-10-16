@@ -1,8 +1,8 @@
 *{
     margin: 0;
     padding: 0;
-    border: 0;
     outline: 0;
+    box-sizing: border-box;
     vertical-align: baseline;
     font-family: 'Poppins', sans-serif;
     color: #2a3641;
@@ -32,6 +32,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+button{
+    border: none;
 }
 .btn{
     margin: 15px 15px 0 0;

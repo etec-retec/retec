@@ -59,13 +59,13 @@
                 
                 <label for="senha"><b>Senha</b></label>  
                 <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="inp_txt" required>
-              
+                 <button type="button" id="eye">
+                    <img src="../assets/svg/pass1.svg" alt="Lpassword" id="olho">
+                </button>
                 
                 <label for="rsenha"><b>Digite a senha novamente</b></label>
                 <input type="password" name="rsenha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha novamente" class="inp_txt" required>
-                <button type="button" id="eye">
-                    <img src="../assets/svg/pass1.svg" alt="Lpassword" id="olho">
-                </button>
+             
             </div>
 
             <div class="dados">

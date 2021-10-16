@@ -40,9 +40,9 @@ body{
     margin-top: 64px;
     margin-bottom: 64px;
     width: 46%;
-    border: solid #6253f2 1px;
+    /* border: solid #6253f2 1px; */
     border-radius: 6px;
-    box-shadow: 20px 30px 15px -15px rgba(0, 0, 0, 0.103);
+    box-shadow: 10px 12px 11px 0px rgba(0, 0, 0, 0.103);
 }
 
 .formu h2{
@@ -60,6 +60,7 @@ body{
 }
 #eye{
     background: none; 
+    border: none;
 }
 .email-e-senha{
     flex-direction: column;

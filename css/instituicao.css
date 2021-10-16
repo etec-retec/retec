@@ -77,10 +77,11 @@ body{
     color: #6253f2;
     font-size: 18px;
     font-weight: 600;
+    transition: .3s;
 }
 
 .opcoes a:hover{
-    font-weight:normal;
+    color: #968cf0d3;
 }
 
 .lblNome{

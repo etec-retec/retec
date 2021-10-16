@@ -91,19 +91,20 @@ if (isset($_SESSION)) {
             </div>
         </div>
     </div>
-
+    <!-- Contato -->
     <div class="contato">
-
         <form class="form" action="model/contato.php" method="POST">
             <h2>Entre em contato conosco!</h2>
 
             <div class="form-box">
                 <label for="nome"><b>Nome</b></label>
                 <input type="text" class="inp_txt" name="nome" placeholder="Digite aqui..." min="3" max="64" required>
+
                 <label for="email"><b>E-mail</b></label>
                 <input type="email" class="inp_txt" name="email" placeholder="exemplo@email.com" min="3" max="64" required>
+
                 <label for="mensagem"><b>Mensagem</b></label>
-                <textarea type="text" class="area_txt" name="mensagem" placeholder="Escreva aqui..." onkeyup="limite_textarea(this.value)" id="texto" data-ls-module="charCounter" maxlength="251" required></textarea>
+                <textarea type="text" class="area_txt" name="mensagem" placeholder="Sua mensagem..." onkeyup="limite_textarea(this.value)" id="texto" data-ls-module="charCounter" maxlength="251" required></textarea>
             </div>
             
             <div class="limite-caractere">

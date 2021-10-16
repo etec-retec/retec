@@ -80,7 +80,6 @@ mysqli_close($conexao);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="../loader/loading.css">
     <script type="text/javascript" src="../loader/loading.js"></script>
 
@@ -93,6 +92,7 @@ mysqli_close($conexao);
     <div class="preload">
         <span class="load"></span>
     </div>
+    <!-- <span id="topo"></span> -->
     <?php
     if (isset($_SESSION["numLogin"]) && $_SESSION["tipo"] == 0) {
     ?>
@@ -160,72 +160,82 @@ mysqli_close($conexao);
         </div>
 
         <div class="grid-container">
-            <div class="info_esquerda">
+            <div class  ="info_esquerda">
+
                 <h1 class="fltrs">Filtros</h1>
                 <form action="?" method="GET">
-                    <h3>Cursos</h3>
-                    <?php
-                    for ($i = 0; $i <= 15; $i++) {
-                        echo "&nbsp;<input type='checkbox' class='checkbox-round' name='curso[]' value='" . $values[$i] . "'";
-                        $atual = $values[$i];
-                        if (isset($_GET['curso'])) {
-                            for ($j = 0; $j <= 15; $j++) {
-                                for ($k = 0; $k <= (sizeof($_GET['curso']) - 1); $k++) {
-                                    if ($atual == $_GET['curso'][$k]) {
-                                        echo " checked ";
+
+                    <div class="cursos">
+                        <h3>Cursos</h3>
+                        <?php
+                        for ($i = 0; $i <= 15; $i++) {
+                            echo "&nbsp;<input type='checkbox' class='checkbox-round' name='curso[]' value='" . $values[$i] . "'";
+                            $atual = $values[$i];
+                            if (isset($_GET['curso'])) {
+                                for ($j = 0; $j <= 15; $j++) {
+                                    for ($k = 0; $k <= (sizeof($_GET['curso']) - 1); $k++) {
+                                        if ($atual == $_GET['curso'][$k]) {
+                                            echo " checked ";
+                                        }
                                     }
                                 }
                             }
+                            echo "> " . $nomes[$i] . "<br>";
                         }
-                        echo "> " . $nomes[$i] . "<br>";
-                    }
-                    ?>
-                    <br>
-                    <h3>Instituição</h3>
-                    <?php
-                    for ($i = 0; $i <= 2; $i++) {
-                        echo "&nbsp;<input type='checkbox' class='checkbox-round' name='instituicao[]' value='" . $valores[$i] . "'";
-                        $atual = $valores[$i];
-                        if (isset($_GET['instituicao'])) {
-                            for ($j = 0; $j <= 3; $j++) {
-                                for ($k = 0; $k <= (sizeof($_GET['instituicao']) - 1); $k++) {
-                                    if ($atual == $_GET['instituicao'][$k]) {
-                                        echo " checked ";
+                        ?>
+
+                    </div>
+                    <div class="instituicao">
+
+                        <h3>Instituição</h3>
+                        <?php
+                        for ($i = 0; $i <= 2; $i++) {
+                            echo "&nbsp;<input type='checkbox' class='checkbox-round' name='instituicao[]' value='" . $valores[$i] . "'";
+                            $atual = $valores[$i];
+                            if (isset($_GET['instituicao'])) {
+                                for ($j = 0; $j <= 3; $j++) {
+                                    for ($k = 0; $k <= (sizeof($_GET['instituicao']) - 1); $k++) {
+                                        if ($atual == $_GET['instituicao'][$k]) {
+                                            echo " checked ";
+                                        }
                                     }
                                 }
                             }
+                            echo ">";
+                            if ($instituicoes[$i] == "ETEC Professor Andre Bogasian") {
+                                echo " ETEC Professor André Bogasian";
+                            } else {
+                                echo " " . $instituicoes[$i];
+                            }
+                            echo "<br>";
                         }
-                        echo ">";
-                        if ($instituicoes[$i] == "ETEC Professor Andre Bogasian") {
-                            echo " ETEC Professor André Bogasian";
+                        ?>
+
+                    </div>
+                    <div class="ano-publicacao">
+
+                        <h3>Ano de Publicação</h3>
+                        <?php
+                        if (isset($_GET['ano1'])) {
+                            if ($_GET['ano1'] != '') {
+                        ?>
+                                De <input type="number" name="ano1" class="ano_inp" min="2008" max="2021" value="<?php echo $_GET['ano1']; ?>">
+                            <?php
+                            }
+                        }
+                        if (isset($_GET['ano2'])) {
+                            if ($_GET['ano2'] != '') {
+                            ?>
+                                até <input type="number" name="ano2" class="ano_inp" min="2009" max="2022" value="<?php echo $_GET['ano2']; ?>">
+                            <?php
+                            }
                         } else {
-                            echo " " . $instituicoes[$i];
-                        }
-                        echo "<br>";
-                    }
-                    ?>
-                    <br>
-                    <h3>Ano de Publicação</h3>
-                    <?php
-                    if (isset($_GET['ano1'])) {
-                        if ($_GET['ano1'] != '') {
-                    ?>
-                            De <input type="number" name="ano1" class="ano_inp" min="2008" max="2021" value="<?php echo $_GET['ano1']; ?>">
+                            ?>
+                            De <input type="number" name="ano1" class="ano_inp" min="2008" max="2021"> até <input type="number" name="ano2" class="ano_inp" min="2009" max="2022">
                         <?php
                         }
-                    }
-                    if (isset($_GET['ano2'])) {
-                        if ($_GET['ano2'] != '') {
                         ?>
-                            até <input type="number" name="ano2" class="ano_inp" min="2009" max="2022" value="<?php echo $_GET['ano2']; ?>">
-                        <?php
-                        }
-                    } else {
-                        ?>
-                        De <input type="number" name="ano1" class="ano_inp" min="2008" max="2021"> até <input type="number" name="ano2" class="ano_inp" min="2009" max="2022">
-                    <?php
-                    }
-                    ?>
+                    </div>
                     <br><br>
                     <input type="submit" class="btn_filtrar" value="Filtrar" />
                     <br><br>
@@ -235,7 +245,14 @@ mysqli_close($conexao);
 
             <div class="info_direita">
                 <form action="?" method="GET">
-                    <button class="btn_pesquisar" id="ico" type="submit"><i class="fa fa-search"></i></button><input type="text" class="btn_pesquisar" name="search" id="btn" placeholder="Pesquisar" autocomplete="off" />
+                   
+                <div class="pesquisa">
+                    <input type="text" class="btn_pesquisar" name="search" id="btn" placeholder="Pesquisar" autocomplete="off" />
+                    <button class="btn_pesquisar" id="ico" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    
+                </div>
                 </form>
                 <br><br><br><br>
                 <?php
@@ -271,19 +288,30 @@ mysqli_close($conexao);
                                     echo "/>";
                                     ?>
                                 </div>
-                                <h3><?php echo $tcc["nome"]; ?></h3>
-                                <p><?php echo $tcc["resumo"]; ?></p>
+
+                                <div class="titulo">
+                                    <h3><?php echo $tcc["nome"]; ?></h3>
+                                </div>
+
+                                <div class="conteudo">
+                                    <p><?php echo $tcc["resumo"]; ?></p>
+                                </div>
+                            </a>
                         </div>
-                        </a>
                     <?php
                     }
                     ?>
                 </div>
             </div>
         </div>
-        <script>
-
-        </script>
+        <div class="topo">
+            <a href="#top">
+                <button type="button" class="icon-topo">
+                <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                </button>
+            </a>
+        </div>
+        <script src="../js/btn-top(projetos).js"></script>
 
 </body>
 

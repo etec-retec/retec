@@ -21,7 +21,7 @@
     border: 2px solid rgb(255, 254, 254);
     border-left: 3px solid  #6253f2;
     border-radius: 50%;
-    animation: loading .8s linear infinite;
+    animation: loading .4s linear infinite;
 
 }
 .finish{
@@ -34,8 +34,4 @@
     to{
         transform: rotate(360deg);
     }  
-}
-
-@media (width: 48em){
-    
 }

@@ -1,10 +1,6 @@
 @import url("btnVoltar.css");
 @import url("index.css");
 
-*{
-    margin: 0;
-    padding: 0;
-}
 body{
     width: 100%;
     height: 100vh;
@@ -12,14 +8,8 @@ body{
     font-family: 'Poppins', sans-serif;
     color: #2a3641;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
-
-.grid-container{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 20px;
-}
-
 /*estas classes estão sendo importadas para outras páginas(adicionar, editar, remover) desde o login como prof ou instituição*/
 .cabecalho{
     width: 100%;
@@ -27,34 +17,47 @@ body{
     background-color: #dee7ee;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
-
 
 .logo{
    margin-left: 125px;
+   width: 50%;
 }
 /**/
 
+.grid-container{
+    width: 100%;
+    min-height: calc(100vh - 175px);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+    "filtros projetos";
+    /* grid-gap: 20px; */
+}
+
+.info_esquerda h3{
+    margin-top: 10px;
+}
+h1 label{
+    font-size: 100%;
+}
 .info_esquerda{
+    grid-area: filtros;
     width: 320px;
     margin-left: 64px;
-    margin-top: 0;
 }
-
-.info_direita{
-    margin-left: -532px;
-    display: inline;
-}
-
 .result h2{
-    text-align: right;
+    padding-left: 10px;
     margin-right: 64px;
+    font-size: 1.2em;
 }
 
 .fltrs{
     font-weight: 900;
     margin-top: 40px;
     margin-left: 64px;
+    font-size: 3em;
 }
 
 .checkbox-round {
@@ -92,17 +95,42 @@ body{
 .btn_filtrar:hover{
     background-color: #b6b2eb;
 }
+.pesquisa{
+    display: flex;
+    text-align: center;
+}
+.pesquisa #ico{
+    background: none;
+}
 
-.btn_pesquisar{
-    margin-top: 40px;
-    float: right;
-    margin-right: 64px;
-    height: 30px;
-    font-size: 16px;
+.btn_pesquisar i{
+    font-size: 1.5em;
+    color: rgba(165, 157, 157, 0.486);
+    transition: .2s;
+}
+.btn_pesquisar i:hover{
+    color: rgba(78, 78, 78, 0.486);
+
+}
+.info_direita .pesquisa{
+    right: 0;
+    position: absolute;
+    padding: 30px;
+    
+}
+#btn{
+    font-size: 1.2em;
+    padding: 2px 0;
+    width: 250px;
     background-color: transparent;
+    border: solid;
     border: none;
     border-bottom: #2a3641 1px solid;
     outline: none;
+}
+
+.info_direita{
+    grid-area: projetos;
 }
 
 .link{
@@ -111,59 +139,73 @@ body{
 }
 
 .sizeImg{
-    height: 200px;
+    height: 45%;
     width: 100%;
     overflow: hidden;
+    background-position: center;
+    border-radius: 10px 10px 0 0;
 }
-
+img{
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    
+}
 .img_set{
     max-width: 300px;
 }
 
 .blocos{
-    padding: 25px;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 20px ;
 }
 
 .bloco{
     text-decoration: none;
-    height: 400px;
-    width: 300px;
-    border-radius: 24px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    float: right;
-    margin: 36px;
+    height: 350px;
+    width: 270px;
+    border-radius: 10px;
+    margin: 10px;
+    border: 1px solid rgba(204, 199, 199, 0.336);
+    box-shadow: 1px 7px 12px #a4a2b8a9;
+    transition: all .2s ease;
 }
 
 .bloco:hover{
-    box-shadow: 10px 10px 5px #c7c2f1;
+    box-shadow: 0px 3px 5px #888791a9;
 
 }
 
-.bloco h3:hover{
-    font-size:1.6em;
+.bloco .titulo{
+    line-height: 18px;
+    height: 50px;
+    position: relative;
 }
-
-.bloco p:hover{
-    font-size:0.5em;
-}
-
-.bloco h3{
+.bloco .titulo h3{
     margin-top: 0;
-    padding: 15px;
+    padding: 15px 15px 0 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1em;
 }
-
-.bloco p{
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: justify;
-    text-indent: 20px;
+.bloco .titulo:hover h3{
+    transition: .5s;
+    white-space: normal;
 }
-
-#btn{
-    margin-right: 20px;
+.bloco .conteudo p{
+    padding: 0 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box; /*também necessário para limitar o tamanho do texto*/
+     -webkit-line-clamp: 6; /* quantidade de linhas */
+     -webkit-box-orient: vertical; /* conteúdo será apresentado verticalmente */
+    width: 100%;
+    height: auto; 
+    font-size: .9em;
 }
-
 #ico{
     cursor: pointer;
     border: none;
@@ -176,7 +218,45 @@ body{
 #lp_filtros{
     margin-bottom: 32px;
 }
+.topo button{
+    background: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 100%;
+}
 
+.topo button i{
+    color: white;
+    font-size: 2em;
+}
+.topo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background: var(--btn-color); 
+    padding: 5px;
+    left: 10;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    margin: 0 30px 30px 0;
+    cursor: pointer;
+    background: rgba(89, 125, 245, 0.5);
+    box-shadow: 3px 4px 15px rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur( 3px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    transition: all .3s ease;
+}
+.topo:hover button i{
+    font-size: 2.3em;
+}
 ::-webkit-scrollbar-track {
   background-color: #ffffff;
 }
@@ -188,10 +268,14 @@ body{
   background: #6253f2;
   border-radius: 16px;
 }
-@media (max-width: 1366px){
 
-}
 @media (max-width: 48em){
+    h1{
+        font-size: 100%;
+    }
+    .logo{
+        margin-left: 20px;
+    }
 .grid-container{
     display: block;    
 }
