@@ -25,6 +25,8 @@
     <div class="formu">
         <h2>Cadastre-se</h2>
         <form name="cadastraU" action="../model/usuario.php?create=1" method='POST'>
+        
+        <!--Aviso de quando algum email ja esta em uso-->
             <label id="lbl_aviso" style="display:none;margin:0 auto;"></label>
 
             <div class="name">
@@ -56,16 +58,18 @@
                 <input type="email" name="email" maxlenght="64" placeholder="exemplo@email.com" class="inp_txt" autocomplete="off" required>
                 <label for="email2"><b>E-mail de recuperação</b></label>
                 <input type="email" name="email2" maxlenght="64" placeholder="exemplo2@email.com" class="inp_txt" autocomplete="off" required>
-                
-                <label for="senha"><b>Senha</b></label>  
-                <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="inp_txt" required>
-                 <button type="button" id="eye">
-                    <img src="../assets/svg/pass1.svg" alt="Lpassword" id="olho">
-                </button>
-                
+
+                <label for="senha"><b>Senha</b></label>
+                <div class="eyeInside">
+                    <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="inp_txt" required>
+                    <button type="button" id="eye">
+                        <img src="../assets/svg/pass1.svg" alt="Lpassword" id="olho">
+                    </button>
+                </div>
+
                 <label for="rsenha"><b>Digite a senha novamente</b></label>
                 <input type="password" name="rsenha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha novamente" class="inp_txt" required>
-             
+
             </div>
 
             <div class="dados">
@@ -76,12 +80,14 @@
                 <input type="number" name="rg" id="rg" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="9" placeholder="Digite o RG" autocomplete="off" class="inp_txt" required />
             </div>
 
-            <button class="botao">Cadastrar</button>
+            <div class="opt">
+                <button class="botao btn1">Cadastrar</button>
+                </div>
+                <button class="botao btn2" onclick="window.open('../login/', '_self')">Já tenho uma conta</button>
+                
+      
         </form>
 
-        <div class="options1">
-            <button class="botao" onclick="window.open('../login/', '_self')">Já tenho uma conta</button>
-        </div>
     </div>
     <script src="../js/mostrarSenha.js"></script>
     <script>

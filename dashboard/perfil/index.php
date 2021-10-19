@@ -29,17 +29,12 @@ if (!isset($_SESSION["numLogin"])) {
     <div class="preload">
         <span class="load"></span>
     </div>
-    <div class="marker" style="display:none;" id="senhaMsg">Um e-mail foi enviado ao endereço <?php echo $_SESSION['email']; ?> <br>Por favor, verifique.</div>
-    <div class="marker" style="display:none;" id="dadosMsg">Os dados foram alterados com sucesso!</div>
-    <div class="markerRed" style="display:none;" id="emailMsg">O e-mail já está em uso!</div>
-    <div class="markerRed" style="display:none;" id="emailRecMsg">O e-mail de recuperação já está em uso!</div>
-    <div class="markerRed" style="display:none;" id="rgMsg">O RG já está em uso!</div>
-    <div class="markerRed" style="display:none;" id="matriculaMsg">A matrícula já está em uso!</div>
+  
     <div class="cabecalho" id="teste">
         <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
 
         <div class="logo">
-            <h1 class="logo"id="texto">RETEC</h1>
+            <h1 class="logo" id="texto">RETEC</h1>
             <?php
             if ($_SESSION["instituicao"] == "ETEC Professor Andre Bogasian") {
             ?>
@@ -53,41 +48,46 @@ if (!isset($_SESSION["numLogin"])) {
             ?>
         </div>
     </div>
+    <div class="marker" style="display:none;" id="senhaMsg">Um e-mail foi enviado ao endereço <?php echo $_SESSION['email']; ?> <br>Por favor, verifique.</div>
+    <div class="marker" style="display:none;" id="dadosMsg">Os dados foram alterados com sucesso!</div>
+    <div class="markerRed" style="display:none;" id="emailMsg">O e-mail já está em uso!</div>
+    <div class="markerRed" style="display:none;" id="emailRecMsg">O e-mail de recuperação já está em uso!</div>
+    <div class="markerRed" style="display:none;" id="rgMsg">O RG já está em uso!</div>
+    <div class="markerRed" style="display:none;" id="matriculaMsg">A matrícula já está em uso!</div>
 
-    <div class="grid-container">
-        <div class="info_esquerda">
+    <div class="container">
+        <div class="container-dados">
             <h1>Dados Pessoais</h1>
             <form action="../../model/editarPerfil.php" method="POST" class="formu">
-                <label><b>Nome</b></label>
-                <br>
-                <input type="text" min="3" max="64" name="nome" value="<?php echo $_SESSION['nome']; ?>" required />
-                <br><br>
-                <label><b>E-mail</b></label>
-                <br>
-                <input type="text" min="3" max="64" name="email" value="<?php echo $_SESSION['email']; ?>" required />
-                <br><br>
-                <label><b>E-mail de Recuperação</b></label>
-                <br>
-                <input type="text" min="3" max="64" name="email_rec" value="<?php echo $_SESSION['email_rec']; ?>" required />
-                <br><br>
-                <label><b>RG</b></label>
-                <br>
-                <input type="text" minlength="5" maxlength="14" name="rg" value="<?php echo $_SESSION['rg']; ?>" required />
-                <br><br>
-                <label><b>Matrícula</b></label>
-                <br>
-                <input type="text" minlength="6" maxlength="6" name="matricula" value="<?php echo $_SESSION['matricula']; ?>" required />
-                <br><br>
-                <input type="submit" value="Alterar Dados" />
+
+                <div class="esquerda">
+
+                    <label><b>Nome</b></label><br>
+                    <input type="text" class="txt" min="3" max="64" name="nome" value="<?php echo $_SESSION['nome']; ?>" required />
+
+                    <label><b>E-mail</b></label><br>
+                    <input type="text" class="txt" min="3" max="64" name="email" value="<?php echo $_SESSION['email']; ?>" required />
+
+                    <label><b>E-mail de Recuperação</b></label><br>
+                    <input type="text" class="txt" min="3" max="64" name="email_rec" value="<?php echo $_SESSION['email_rec']; ?>" required />
+                </div>
+
+                <div class="direita">
+
+                    <label><b>RG</b></label><br>
+                    <input type="text" class="txt" minlength="5" maxlength="14" name="rg" value="<?php echo $_SESSION['rg']; ?>" required />
+                    <label><b>Matrícula</b></label><br>
+                    <input type="text" class="txt" minlength="6" maxlength="6" name="matricula" value="<?php echo $_SESSION['matricula']; ?>" required />
+
+                    <input type="submit" class="alterar" value="Alterar Dados" />
+                </div>
             </form>
         </div>
 
-        <div class="info_direita">
+        <div class="container-acoes">
             <h1>Ações</h1>
             <button class="acoes" onclick="window.open('vincular-se/', '_self')">Vincular-se à alguma instituição</button>
-            <br>
             <button class="acoes" onclick="window.open('desvincular-se/', '_self')">Desvincular-se de alguma instituição</button>
-            <br>
             <button class="acoes" onclick="window.open('?senha', '_self')">Solicitar Mudança de Senha</button>
         </div>
     </div>

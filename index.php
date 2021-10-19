@@ -106,9 +106,11 @@ if (isset($_SESSION)) {
                 <label for="mensagem"><b>Mensagem</b></label>
                 <textarea type="text" class="area_txt" name="mensagem" placeholder="Sua mensagem..." onkeyup="limite_textarea(this.value)" id="texto" data-ls-module="charCounter" maxlength="251" required></textarea>
             </div>
-            
+
+            <div class="av">
+                    <span class="aviso">Faça um comentário mais breve para que possamos te ajudar a ter uma melhor experiência.</span>
+                </div>
             <div class="limite-caractere">
-                <span class="aviso">Faça um comentário mais breve para que possamos te ajudar a ter uma melhor experiência.</span>
                 <span id="cont">250</span><span>Caracteres restantes</span>
                 <input type="submit" class="enviar" value="Enviar" />
             </div>

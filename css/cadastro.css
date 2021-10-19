@@ -14,23 +14,10 @@ body{
     scroll-behavior: smooth;
 }
 
-.botao{
-    font-size:105%;
-    width: 200px;
-    height: 28px;
-    background-color: #6253f2;
-    color: white;
-    border: 1px #6253f2;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 10px;
-}    
-
-.botao:hover{
-    background-color: #b6b2eb;
+.formu h2{
+    text-align: center;
+    margin-bottom: 20px;
 }
-
-
 .formu{
     padding: 32px;
     background-color: #fff;
@@ -44,30 +31,20 @@ body{
     border-radius: 6px;
     box-shadow: 10px 12px 11px 0px rgba(0, 0, 0, 0.103);
 }
-
-.formu h2{
-    text-align: center;
-}
-
 .formu label{
     width: 100%;
     display: table;
-    margin: 30px 0 10px 0; 
+    margin: 10px 0 5px 0; 
 } 
 
-.formu input[type=email]{
-    text-transform: lowercase;
+/* Instituição */
+.instituicao{
+    margin: 40px 0px;
+    border: 1px solid rgba(134, 133, 133, 0.342);
+    padding: 15px;
+    border-radius: 5px;
+    /* box-shadow: 0 3px 7px 0px rgb(0 0 0 / 19%) */
 }
-#eye{
-    background: none; 
-    border: none;
-}
-.email-e-senha{
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-}
-
 .container {
     display: block;
     position: relative;
@@ -124,20 +101,51 @@ body{
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+/**/
 
+.inp_txt{
+    max-width: 400px ;
+}
+
+.formu input[type=email]{
+    text-transform: lowercase;
+}
+
+#eye{
+    position: absolute;
+    background: none; 
+    border: none;
+    height: 20px;
+    right: calc(100% - 50% - 165px);
+    margin-top: 10px;
+    opacity: 50%;
+}
+
+.email-e-senha{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+.email-e-senha label:first-child{
+    margin-top: 0;
+}
+.email-e-senha label:last-child{
+    margin-top: 15px;
+}
+.email-e-senha .eyeInside input{
+    padding-right: 10%;
+    position: relative;
+}
+
+.dados label:first-child{
+    margin-top: 45px;
+}
 #slct{
     color: #808080
 }
 
 #slct:hover{
     cursor: pointer;
-}
-
-.options1{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -147,6 +155,51 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0; 
 }
+
+.botao{
+    font-size:1em;
+    width: 200px;
+    min-height: 30px;
+    padding: 5px;
+    background: var(--btn-color);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: .3s;
+
+}    
+.btn1{
+    letter-spacing: 2px;
+    padding:5px;
+    transition: all .3s ease-out;
+}
+.btn1:hover{
+    font-weight: bold;
+    text-transform: uppercase;
+    background: none;
+    border: 1px solid black;
+    color: black;
+}
+.btn2{
+    margin-top: 15px;
+    border-bottom: 2px solid var(--btn-color);
+    transition: all .3s ease-out;
+}
+.btn2:hover{
+    border-bottom: 2px solid var(--btn-color);
+    background: white;
+    color: black;
+    border-radius: 0;
+    font-weight: bold;
+}
+
+.opt{
+   height: 50px; 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}   
 ::placeholder {
     color: #709bb3;
 }
@@ -164,18 +217,18 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media (max-width: 48em){
-.voltar{
-    display: none;
-}
+    .voltar{
+        display: none;
+    }
 
-.formu{
-    margin: auto auto ;
-    width: 100%;
-    /* height: 90vh; */
-}
+    .formu{
+        margin: auto auto ;
+        width: 100%;
+        /* height: 90vh; */
+    }
 
-.formu label{
-    margin: 20px 0 10px 0;
-}
+    .formu label{
+        margin: 20px 0 10px 0;
+    }
     
 }

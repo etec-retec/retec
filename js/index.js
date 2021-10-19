@@ -1,7 +1,7 @@
 
 //contador de caracteres do textarea 
 function limite_textarea(valor) {
-    quant = 250;
+    quant = 2;
     total = valor.length;
     let aviso = document.querySelector(".aviso")
     if (total <= quant) {
@@ -31,4 +31,4 @@ function limite_textarea(valor) {
 //       .focus(); // foca no elemento
 //    }
 
-// });
+// })

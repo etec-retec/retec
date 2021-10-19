@@ -2,14 +2,138 @@
 @import url("index.css");
 @import url("dashboard.css");
 
-body{
-    margin: 0;
+*{
     padding: 0;
-    background-color: #f4f4f4;
-    font-family: 'Poppins', sans-serif;
-    color: #2a3641;
+    margin: 0;
 }
 
+.container h1{
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+.container{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    gap: 40px;
+    padding-bottom: 60px;
+    
+}
+.container-acoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    padding: 15px 10px;    
+    border-radius: 15px;
+    width: 80%;
+    margin-top: 20px;
+    box-shadow: rgba(100, 100, 100, 0.24) 0px 4px 8px;
+
+}
+.container-acoes .acoes{
+    padding: 5px 10px;
+    color: black;
+    font-size: 1em;
+    margin-left: 20px;
+    transition: all .3s ease-out;
+    border-bottom: 1px solid black;
+    background: none;
+}
+
+.container-acoes .acoes:hover{
+    background: var(--btn-color);
+    color: white;
+    border: none;
+}
+.container-acoes .acoes:nth-child(4):hover{
+    background:rgb(121, 184, 135);
+    color: white;
+    border: none;
+}
+
+.container-dados{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.863);
+    width: 80%;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 253, 253, 0.322);
+    box-shadow: rgba(59, 59, 59, 0.24) 0px 3px 8px;
+}
+.formu{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.formu .esquerda{
+    width: 40%;
+}
+.formu .direita{
+    width: 40%;
+    position: relative;
+}
+label b{
+    font-weight: bold;
+    margin-left: 10px;
+    letter-spacing: 1px;
+}
+.container-dados .txt{
+    display: inline-block;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 1em;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 2px solid cornflowerblue ;
+    background: none;
+    color: black;
+    font-weight: normal;
+    box-shadow: inset 1px 4px 9px -6px rgba(255, 255, 255, 0.747);
+    transition: .2s;
+
+}
+.container-dados .esquerda .txt:last-child{
+    margin-bottom: 0;
+}
+.container-dados .txt:focus{
+    background:rgba(255, 255, 255, 0.692) ;
+    font-weight: bold;
+}
+
+.alterar{
+    position: absolute;
+    padding: 8px 18px;
+    width: 190px;
+    font-size: 1em;
+    border-radius: 10px;
+    background: none;
+    transition: all .3s ease-in-out;
+    letter-spacing: 1px;
+    background: #c0bece;
+    border: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #c0bece;
+}
+
+/* S
+@media (min-width: 1920px){
+    .container{
+        height: 80%;
+    }
+}
+/* 
 #texto{
     margin-left: 0;
 }
@@ -80,24 +204,65 @@ body{
 .acoes:hover{
     background-color: #b6b2eb;
 }
-
+*/
 .marker{
-    padding: 20px;
-    font-size: 20px;
+    position: relative;
+    font-size: 1em;
+    padding: 15px;
     background-color: #a0bca6;
-    color: #012f00;
-    border-top: 2px solid #012f00;
-    border-bottom: 2px solid #012f00;
+    color: #f7f7f7;
+    max-width: 80%;
+    margin: 0 auto;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    transition: all .3s ease-in;
+    border-radius: 10px;
+}
+.marker::after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #a0bca6;
+    right: 5px;
+    bottom: -4px;
+    transform: rotateZ(21deg);
 }
 
 .markerRed{
-    padding: 20px;
+    position: relative;
+    font-size: 1em;
+    padding: 15px;
+    background-color: #a0bca6;
+    color: #f7f7f7;
+    max-width: 80%;
+    margin: 0 auto;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    transition: all .3s ease-in;
+    border-radius: 10px;
+}
+.markerRed::after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #a0bca6;
+    right: 5px;
+    bottom: -4px;
+    transform: rotateZ(21deg);
+}
+
+.markerRed{
+    padding: 15px;
     font-size: 20px;
     background-color: #d98695;
     color: #800;
     border-top: 2px solid #800;
     border-bottom: 2px solid #800;
-}
+} 
 
 ::-webkit-scrollbar-track {
   background-color: #ffffff;
@@ -109,8 +274,4 @@ body{
 ::-webkit-scrollbar-thumb {
   background: #6253f2;
   border-radius: 16px;
-}
-
-@media (max-width: 48em){
-
 }

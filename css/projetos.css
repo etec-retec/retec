@@ -118,6 +118,7 @@ h1 label{
     padding: 30px;
     
 }
+/* Esse #btn é a barra de pesquisa*/
 #btn{
     font-size: 1.2em;
     padding: 2px 0;
@@ -125,7 +126,7 @@ h1 label{
     background-color: transparent;
     border: solid;
     border: none;
-    border-bottom: #2a3641 1px solid;
+    border-bottom: #2a364167 1px solid;
     outline: none;
 }
 
@@ -156,21 +157,22 @@ img{
 }
 
 .blocos{
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     flex-wrap: wrap;
-    padding-right: 20px ;
+    /* padding-right: 20px; */
+    margin-bottom: 50px;
 }
 
 .bloco{
     text-decoration: none;
     height: 350px;
-    width: 270px;
+    max-width: 270px;
     border-radius: 10px;
     margin: 10px;
     border: 1px solid rgba(204, 199, 199, 0.336);
     box-shadow: 1px 7px 12px #a4a2b8a9;
-    transition: all .2s ease;
+    transition: all .3s ease-out;
 }
 
 .bloco:hover{
@@ -281,6 +283,13 @@ img{
 }
 
 .cabecalho{
-    height: 150px;
+    height: 100px;
+}
+.info_esquerda{
+    display: block;
+}
+.blocos{
+    justify-content: center;
+    padding: 0;
 }
 }
