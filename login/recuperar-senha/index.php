@@ -35,7 +35,7 @@
             <p id="lbl_ver" style="color:#800;display:none;">Aguarde sua conta ser verificada por sua instituição!</p>
             <p id="lbl_alert1" style="color:#800;display:none;">Aguarde sua conta ser verificada por uma de suas instituições!</p>
 
-            <input type="submit" class="botao">Recuperar
+            <input type="submit" class="botao" value="Recuperar">   
             <a href="retec:maxmotorolamotog2@gmail.com?subject=Teste para saber se posso confiar minha senha à vc"></a>
         </input>
         </form>

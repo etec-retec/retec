@@ -56,7 +56,7 @@ input[type="text"]{
 .formu input[type="email"], input[type="password"]{
     font-size: 1em;
     margin-bottom: 20px;
-    color:solid #a7b5bc;
+    color:#a7b5bc;
     border-radius: 4px;
     /* border: 1px solid rgba(105, 110, 112, 0.569); */
 
@@ -130,7 +130,7 @@ img{
 .botao:nth-child(1):hover{
     background-color: #9f9fa1;
     color: white;
-    border: 1px solid black;
+    border: 1px solid white ;
 }
 .botao:first-child{
     margin-right: 10px; 
@@ -174,10 +174,15 @@ img{
     }
 }
 @media (max-width: 773px){
+
     .formu{
         width: 80%;
         padding: 20px;
     }
+/* 
+    .formu input[type="email"]{
+        width: 50%;
+    } */
 }
 
 @media (max-width: 570px){
@@ -190,6 +195,9 @@ img{
     margin: 0 auto ;
     width: 100%;
     border: none;
+}
+input[type="email"]{
+    width:90% ;
 }
 input[type="password"]{
     width: 330px;

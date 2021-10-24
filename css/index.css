@@ -13,9 +13,13 @@
     --btn-background-color:#f2f6f8;
     --background-color:#dee7ee;
     --back-login-cad-color: #dee7ee; 
+    --background-color2: #f4f4f4
 
 }
 
+::placeholder {
+    color: #709bb3;
+}
 .actions{
     position: absolute;
     z-index: 1;

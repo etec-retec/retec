@@ -55,7 +55,7 @@ if (session_id() != '') {
             
             <label for="senha"><b>Senha</b></label>
             <div class="content-senha">
-                <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="inp_txt" required>
+                <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" autocomplete="off" class="inp_txt" required>
                 <button type="button" id="eye">
                     <img src="../assets/svg/pass1.svg" alt="Lpassword" id="olho">
                 </button>

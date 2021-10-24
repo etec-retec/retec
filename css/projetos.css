@@ -1,14 +1,17 @@
 @import url("btnVoltar.css");
 @import url("index.css");
 
+
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
 body{
     width: 100%;
     height: 100vh;
     background-color: #f4f4f4;
     font-family: 'Poppins', sans-serif;
     color: #2a3641;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 /*estas classes estão sendo importadas para outras páginas(adicionar, editar, remover) desde o login como prof ou instituição*/
 .cabecalho{
@@ -29,10 +32,12 @@ body{
 .grid-container{
     width: 100%;
     min-height: calc(100vh - 175px);
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* display: grid;
+    grid-template-columns: 320px 2fr;
     grid-template-areas: 
-    "filtros projetos";
+    "filtros projetos"; */
     /* grid-gap: 20px; */
 }
 
@@ -44,8 +49,10 @@ h1 label{
 }
 .info_esquerda{
     grid-area: filtros;
-    width: 320px;
+    /* min-width: 320px; */
     margin-left: 64px;
+    width: auto;
+
 }
 .result h2{
     padding-left: 10px;
@@ -57,7 +64,7 @@ h1 label{
     font-weight: 900;
     margin-top: 40px;
     margin-left: 64px;
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 .checkbox-round {
@@ -101,9 +108,13 @@ h1 label{
 }
 .pesquisa #ico{
     background: none;
+    /* margin: 0px 10px; */
 }
 
 .btn_pesquisar i{
+    padding: 15px;
+    background: white;
+    border-radius: 50%;
     font-size: 1.5em;
     color: rgba(165, 157, 157, 0.486);
     transition: .2s;
@@ -113,25 +124,32 @@ h1 label{
 
 }
 .info_direita .pesquisa{
-    right: 0;
-    position: absolute;
-    padding: 30px;
+    /* margin: 0 auto ; */
+    position: relative;
+    padding: 40px 0px;
     
 }
 /* Esse #btn é a barra de pesquisa*/
 #btn{
     font-size: 1.2em;
-    padding: 2px 0;
-    width: 250px;
+    padding: 10px 15px;
+    min-width: 300px;
     background-color: transparent;
     border: solid;
     border: none;
-    border-bottom: #2a364167 1px solid;
+    border-radius: 20px ;
+    /* border-bottom: #2a364167 1px solid; */
     outline: none;
+    background: white;
+    margin-right: 1%;
+    
 }
 
 .info_direita{
     grid-area: projetos;
+    /* position: relative; */
+    padding-left: 10px;
+    width: 100%;
 }
 
 .link{
@@ -161,18 +179,21 @@ img{
     display: flex;
     flex-wrap: wrap;
     /* padding-right: 20px; */
-    margin-bottom: 50px;
+    /* margin-top: auto; */
 }
 
 .bloco{
     text-decoration: none;
-    height: 350px;
-    max-width: 270px;
+    min-height: 353px;
+    min-width: 265px;
+    width: 15vw;
+    height: 20vw;
     border-radius: 10px;
     margin: 10px;
-    border: 1px solid rgba(204, 199, 199, 0.336);
+    border: 1px solid rgba(255, 254, 254, 0.644);
     box-shadow: 1px 7px 12px #a4a2b8a9;
     transition: all .3s ease-out;
+    /* flex: 1 1 auto; */
 }
 
 .bloco:hover{
@@ -182,7 +203,7 @@ img{
 
 .bloco .titulo{
     line-height: 18px;
-    height: 50px;
+    height: 15%;
     position: relative;
 }
 .bloco .titulo h3{
@@ -193,16 +214,18 @@ img{
     white-space: nowrap;
     font-size: 1em;
 }
-.bloco .titulo:hover h3{
-    transition: .5s;
+/* .bloco .titulo:hover h3{
+    font-size: .8em;
+    transition: .3s;
     white-space: normal;
-}
+} */
 .bloco .conteudo p{
+    margin-top: 10px;
     padding: 0 20px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box; /*também necessário para limitar o tamanho do texto*/
-     -webkit-line-clamp: 6; /* quantidade de linhas */
+     -webkit-line-clamp: 5; /* quantidade de linhas */
      -webkit-box-orient: vertical; /* conteúdo será apresentado verticalmente */
     width: 100%;
     height: auto; 
@@ -238,12 +261,11 @@ img{
     justify-content: center;
     align-items: center;
     position: fixed;
-    height: 70px;
-    width: 70px;
+    height: 5rem;
+    width: 5rem;
     border-radius: 50%;
     background: var(--btn-color); 
     padding: 5px;
-    left: 10;
     z-index: 2;
     right: 0;
     bottom: 0;
@@ -256,8 +278,9 @@ img{
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     transition: all .3s ease;
 }
-.topo:hover button i{
-    font-size: 2.3em;
+.topo:hover{
+    background: rgba(59, 85, 170, 0.678);
+    
 }
 ::-webkit-scrollbar-track {
   background-color: #ffffff;
@@ -271,25 +294,36 @@ img{
   border-radius: 16px;
 }
 
-@media (max-width: 48em){
+@media (max-width: 768px){
     h1{
         font-size: 100%;
     }
     .logo{
         margin-left: 20px;
     }
+    .cabecalho{
+        height: 50px;
+    }
 .grid-container{
     display: block;    
 }
-
-.cabecalho{
-    height: 100px;
+.info_direita .pesquisa{
+    justify-content: center;
+    padding: 5px;
 }
-.info_esquerda{
+.result h2{
+    text-align: center;
+}
+.conteudo{
+    padding: 0;
+}
+/* .info_esquerda{
     display: block;
-}
+    justify-content: center;
+} */
 .blocos{
     justify-content: center;
     padding: 0;
 }
+
 }

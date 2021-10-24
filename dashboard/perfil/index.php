@@ -47,15 +47,17 @@ if (!isset($_SESSION["numLogin"])) {
             }
             ?>
         </div>
-    </div>
-    <div class="marker" style="display:none;" id="senhaMsg">Um e-mail foi enviado ao endereço <?php echo $_SESSION['email']; ?> <br>Por favor, verifique.</div>
-    <div class="marker" style="display:none;" id="dadosMsg">Os dados foram alterados com sucesso!</div>
-    <div class="markerRed" style="display:none;" id="emailMsg">O e-mail já está em uso!</div>
-    <div class="markerRed" style="display:none;" id="emailRecMsg">O e-mail de recuperação já está em uso!</div>
-    <div class="markerRed" style="display:none;" id="rgMsg">O RG já está em uso!</div>
-    <div class="markerRed" style="display:none;" id="matriculaMsg">A matrícula já está em uso!</div>
+        </div>
+
+        <div class="marker mk" style="display:none;" id="senhaMsg">Um e-mail foi enviado ao endereço <?php echo $_SESSION['email']; ?> <br>Por favor, verifique.</div>
+    <div class="marker mk" style="display:none;" id="dadosMsg">Os dados foram alterados com sucesso!</div>
+    <div class="markerRed mk" style="display:none;" id="emailMsg">O e-mail já está em uso!</div>
+    <div class="markerRed mk" style="display:none;" id="emailRecMsg">O e-mail de recuperação já está em uso!</div>
+    <div class="markerRed mk" style="display:none;" id="rgMsg">O RG já está em uso!</div>
+    <div class="markerRed mk" style="display:none;" id="matriculaMsg">A matrícula já está em uso!</div>
 
     <div class="container">
+
         <div class="container-dados">
             <h1>Dados Pessoais</h1>
             <form action="../../model/editarPerfil.php" method="POST" class="formu">
@@ -90,6 +92,7 @@ if (!isset($_SESSION["numLogin"])) {
             <button class="acoes" onclick="window.open('desvincular-se/', '_self')">Desvincular-se de alguma instituição</button>
             <button class="acoes" onclick="window.open('?senha', '_self')">Solicitar Mudança de Senha</button>
         </div>
+
     </div>
     <script>
         var currentLocation = window.location;

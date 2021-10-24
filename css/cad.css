@@ -1,13 +1,15 @@
 @import url("btnVoltar.css");
-@import url("index.css");
-@import url("projetos.css");
+@import url("index.css"); /*este import é EXTREMAMENTE IMPORTANTE PARA O FUNCIONAMENTO DO SITE, NÃO TIRE ELE*/
+/* @import url("projetos.css"); */
+/* @import url("perfil.css"); */
 
 body{
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    background-color: var(--background-color2);
     font-family: 'Poppins', sans-serif;
     color: #2a3641;
+    /* height: 100vh;
+    width: 100%; */
+    padding-bottom: 20px;
 }
 
 .cabecalho{
@@ -15,6 +17,12 @@ body{
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-around;
+    width: 100%;
+    height: 175px;
+    background-color: #dee7ee;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 .logo{
     padding-left: 20px;
@@ -59,33 +67,90 @@ body{
     color: #c2d1d9;
 }
 
-.center {
-    margin: auto;
-    width: 20%;
-    padding: 40px;
+.center{
+    width: 100%;
+    height: auto;
 }
 
 .center h2{
     text-align: center;   
 }
-
-.inp_txt{
-    width: 350px;
-    font-size: 15px;
-    padding: 5px;
-    border-radius: 4px;
-    border: 2px solid #353839;
-    outline: none;
+.form{
+    padding-top: 10px;
+    margin: 20px auto;
 }
 
-.area_txt{
-    font-family: 'Poppins', sans-serif;
-    width: 350px;
-    font-size: 15px;
-    padding: 5px;
-    border-radius: 4px;
-    border: 2px solid #353839;
+#lbl{
+    padding: 20px;
+    font-size: 1.5em;
+    width: auto;
+    /* margin-left: 32px; */
+}
+
+.inp_txt{
+    width: 80%;
+    padding: 5px 10px;
     outline: none;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #6253f2 ;
+    box-shadow: none;
+    margin-bottom: 20px;
+    transition: .3s;
+}
+.inp_txt:focus{
+    font-weight: bold;
+}
+.form .membros .area_txt{
+    margin-bottom: 1px;
+}
+.center .form label{
+    display: inline-flex;
+    width: 100%;
+    align-self: left;
+    margin-left: 40px;
+    margin-bottom:10px ;
+}
+.data{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px 40px;
+}
+.center .form .data label{
+    margin: 10px 0px;
+}
+.txt{
+    width: 230px;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border: 1.5px solid #6253f2;
+    border-radius: 5px;
+    text-align: initial;
+}
+input[type=number]{
+    text-align: center;
+}
+/*serve para tirar as setas chatas que ficam de quando a text box é do tipo number*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+/*serve para tirar as setas chatas que ficam de quando a text box é do tipo number*/
+.area_txt{
+    width: 75%;
+    font-size: 1em;
+    padding: 15px;
+    border-radius: 4px;
+    justify-content:start;
+    outline: none;
+    margin-bottom: 30px;
 }
 
 #slct:hover{
@@ -100,24 +165,38 @@ body{
 #dt_ap:hover{
     cursor: pointer;
 }
-
+.center .form .arquivos label{
+    margin: 0;
+    margin-left: 20px;
+}
+.arquivos{
+    padding: 20px 0px;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
 .arquivos input{
     background-color: #6253f2;
     color: #f4f4f4;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     padding: 8px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .cadastrar{
-    background-color: #6253f2;
-    color: #f4f4f4;
+    background-color: #f4faf4;
+    color: black;
     border-radius: 10px;
-    border: none;
+    border: 1px solid #6253f2;
     padding: 16px;
     font-size: 16px;
     cursor: pointer;
+    width: 200px;
+    margin: 10px 0px 20px 0px;
+    align-self: center;
 }
 
 .cadastrar:hover{
@@ -127,16 +206,6 @@ body{
     position: relative;
 }
 
-#lbl{
-    padding: 30px;
-    width: auto;
-    margin-left: 32px;
-}
-
-#sub_box{
-    margin-left: 80px;
-    /* margin: 0 auto; */
-}
 
 ::-webkit-scrollbar-track {
   background-color: #ffffff;
@@ -165,12 +234,12 @@ body{
 .bts{
     margin-right: 64px;
 }
-
+/* 
 .center{
     margin: 0;
     padding: 20px;
     width: auto;
-}
+} */
 
 .cadastrar{
     margin: 0 auto;

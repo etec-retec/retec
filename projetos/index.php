@@ -158,7 +158,7 @@ mysqli_close($conexao);
             ?>
             </div>
         </div>
-
+            
         <div class="grid-container">
             <div class  ="info_esquerda">
 
@@ -254,7 +254,7 @@ mysqli_close($conexao);
                     
                 </div>
                 </form>
-                <br><br><br><br>
+                <!-- <br><br><br><br> -->
                 <?php
                 if ($encontrados == 1) {
                 ?>
@@ -289,12 +289,13 @@ mysqli_close($conexao);
                                     ?>
                                 </div>
 
-                                <div class="titulo">
-                                    <h3><?php echo $tcc["nome"]; ?></h3>
-                                </div>
-
-                                <div class="conteudo">
-                                    <p><?php echo $tcc["resumo"]; ?></p>
+                                <div class="content-bloco">
+                                    <div class="titulo">
+                                        <h3><?php echo $tcc["nome"]; ?></h3>
+                                    </div>
+                                    <div class="conteudo">
+                                        <p><?php echo $tcc["resumo"]; ?></p>
+                                    </div>
                                 </div>
                             </a>
                         </div>

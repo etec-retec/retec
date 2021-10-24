@@ -67,8 +67,6 @@ if ($_SESSION["tipo"] == "0") {
         
                 <input type="text" name="instituicoes" style="display:none" value="<?php echo $_SESSION["instituicao"]; ?>" />
                 <button class="botao">Entrar</button>
-            
-
         </form>
     </div>
     <script>
