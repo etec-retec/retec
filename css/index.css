@@ -3,7 +3,7 @@
     padding: 0;
     outline: 0;
     box-sizing: border-box;
-    vertical-align: baseline;
+    /* vertical-align: baseline;    */
     font-family: 'Poppins', sans-serif;
     color: #2a3641;
 }
@@ -17,9 +17,6 @@
 
 }
 
-::placeholder {
-    color: #709bb3;
-}
 .actions{
     position: absolute;
     z-index: 1;
@@ -279,6 +276,9 @@ label b{
     100%{
         opacity: 1;
     }
+}
+::placeholder {
+    color: #709bb3;
 }
 ::-webkit-scrollbar-track {
   background-color: #ffffff;

@@ -92,7 +92,8 @@ mysqli_close($conexao);
     <div class="preload">
         <span class="load"></span>
     </div>
-    <!-- <span id="topo"></span> -->
+    <!-- <button class="voltar" onclick="window.open('../dashboard/', '_self')">❮ Voltar</button> -->
+
     <?php
     if (isset($_SESSION["numLogin"]) && $_SESSION["tipo"] == 0) {
     ?>
@@ -117,7 +118,7 @@ mysqli_close($conexao);
                 }
                 if ($_SESSION['tipo'] == 0) {
                 ?>
-                    <br><label><b>Institucional</b></label>
+                    <label><b>Institucional</b></label>
                 <?php
                 }
                 ?>
@@ -128,9 +129,7 @@ mysqli_close($conexao);
     ?>
         <!-- Usuário Professor -->
         <div class="cabecalho">
-            <button class="voltar" onclick="window.open('../dashboard/', '_self')">❮ Voltar</button>
             <div class="logo">
-
                 <h1>RETEC</h1>
                 <?php
                 if (isset($_SESSION['instituicao'])) {
@@ -146,173 +145,186 @@ mysqli_close($conexao);
                 }
             } else {
                 ?>
+                <!-- sem login -->
                 <div class="cabecalho">
                     <button class="voltar" onclick="window.open('../', '_self')">❮ Início</button>
                     <div class="logo">
                         <h1>RETEC</h1>
                     </div>
-
                 </div>
             <?php
             }
             ?>
             </div>
         </div>
-            
-        <div class="grid-container">
-            <div class  ="info_esquerda">
-
-                <h1 class="fltrs">Filtros</h1>
-                <form action="?" method="GET">
-
-                    <div class="cursos">
-                        <h3>Cursos</h3>
-                        <?php
-                        for ($i = 0; $i <= 15; $i++) {
-                            echo "&nbsp;<input type='checkbox' class='checkbox-round' name='curso[]' value='" . $values[$i] . "'";
-                            $atual = $values[$i];
-                            if (isset($_GET['curso'])) {
-                                for ($j = 0; $j <= 15; $j++) {
-                                    for ($k = 0; $k <= (sizeof($_GET['curso']) - 1); $k++) {
-                                        if ($atual == $_GET['curso'][$k]) {
-                                            echo " checked ";
+        <section class="main">
+            <div class="grid-container">
+                <div class="info_esquerda">
+                    <h1>Filtros</h1>
+                    <form action="?" method="GET">
+                        <div class="cursos">
+                            <h3>Cursos</h3>
+                            <?php
+                            for ($i = 0; $i <= 15; $i++) {
+                                echo "&nbsp;<input type='checkbox' class='checkbox-round' name='curso[]' value='" . $values[$i] . "'";
+                                $atual = $values[$i];
+                                if (isset($_GET['curso'])) {
+                                    for ($j = 0; $j <= 15; $j++) {
+                                        for ($k = 0; $k <= (sizeof($_GET['curso']) - 1); $k++) {
+                                            if ($atual == $_GET['curso'][$k]) {
+                                                echo " checked ";
+                                            }
                                         }
                                     }
                                 }
+                                echo "> " . $nomes[$i] . "<br>";
                             }
-                            echo "> " . $nomes[$i] . "<br>";
-                        }
-                        ?>
-
-                    </div>
-                    <div class="instituicao">
-
-                        <h3>Instituição</h3>
-                        <?php
-                        for ($i = 0; $i <= 2; $i++) {
-                            echo "&nbsp;<input type='checkbox' class='checkbox-round' name='instituicao[]' value='" . $valores[$i] . "'";
-                            $atual = $valores[$i];
-                            if (isset($_GET['instituicao'])) {
-                                for ($j = 0; $j <= 3; $j++) {
-                                    for ($k = 0; $k <= (sizeof($_GET['instituicao']) - 1); $k++) {
-                                        if ($atual == $_GET['instituicao'][$k]) {
-                                            echo " checked ";
+                            ?>
+                        </div>
+                        <div class="instituicao">
+                            <h3>Instituição</h3>
+                            <?php
+                            for ($i = 0; $i <= 2; $i++) {
+                                echo "&nbsp;<input type='checkbox' class='checkbox-round' name='instituicao[]' value='" . $valores[$i] . "'";
+                                $atual = $valores[$i];
+                                if (isset($_GET['instituicao'])) {
+                                    for ($j = 0; $j <= 3; $j++) {
+                                        for ($k = 0; $k <= (sizeof($_GET['instituicao']) - 1); $k++) {
+                                            if ($atual == $_GET['instituicao'][$k]) {
+                                                echo " checked ";
+                                            }
                                         }
                                     }
                                 }
+                                echo ">";
+                                if ($instituicoes[$i] == "ETEC Professor Andre Bogasian") {
+                                    echo " ETEC Professor André Bogasian";
+                                } else {
+                                    echo " " . $instituicoes[$i];
+                                }
+                                echo "<br>";
                             }
-                            echo ">";
-                            if ($instituicoes[$i] == "ETEC Professor Andre Bogasian") {
-                                echo " ETEC Professor André Bogasian";
+                            ?>
+                        </div>
+                        <div class="ano-publicacao">
+                            <h3>Ano de Publicação</h3>
+                            <?php
+                            if (isset($_GET['ano1'])) {
+                                if ($_GET['ano1'] != '') {
+                            ?>
+                                    De <input type="number" name="ano1" class="ano_inp" min="2008" max="2021" value="<?php echo $_GET['ano1']; ?>">
+                                <?php
+                                }
+                            }
+                            if (isset($_GET['ano2'])) {
+                                if ($_GET['ano2'] != '') {
+                                ?>
+                                    até <input type="number" name="ano2" class="ano_inp" min="2009" max="2022" value="<?php echo $_GET['ano2']; ?>">
+                                <?php
+                                }
                             } else {
-                                echo " " . $instituicoes[$i];
-                            }
-                            echo "<br>";
-                        }
-                        ?>
-
-                    </div>
-                    <div class="ano-publicacao">
-
-                        <h3>Ano de Publicação</h3>
-                        <?php
-                        if (isset($_GET['ano1'])) {
-                            if ($_GET['ano1'] != '') {
-                        ?>
-                                De <input type="number" name="ano1" class="ano_inp" min="2008" max="2021" value="<?php echo $_GET['ano1']; ?>">
+                                ?>
+                                De <input type="number" name="ano1" class="ano_inp" min="2008" max="2021"> até <input type="number" name="ano2" class="ano_inp" min="2009" max="2022">
                             <?php
                             }
-                        }
-                        if (isset($_GET['ano2'])) {
-                            if ($_GET['ano2'] != '') {
                             ?>
-                                até <input type="number" name="ano2" class="ano_inp" min="2009" max="2022" value="<?php echo $_GET['ano2']; ?>">
-                            <?php
-                            }
-                        } else {
-                            ?>
-                            De <input type="number" name="ano1" class="ano_inp" min="2008" max="2021"> até <input type="number" name="ano2" class="ano_inp" min="2009" max="2022">
-                        <?php
-                        }
-                        ?>
-                    </div>
-                    <br><br>
-                    <input type="submit" class="btn_filtrar" value="Filtrar" />
-                    <br><br>
-                    <input type="button" class="btn_filtrar" id="lp_filtros" onclick="window.open('../projetos/', '_self')" value="Limpar Filtros" />
-                </form>
-            </div>
-
-            <div class="info_direita">
-                <form action="?" method="GET">
-                   
-                <div class="pesquisa">
-                    <input type="text" class="btn_pesquisar" name="search" id="btn" placeholder="Pesquisar" autocomplete="off" />
-                    <button class="btn_pesquisar" id="ico" type="submit">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    
+                        </div>
+                        <!-- <br><br> -->
+                        <input type="submit" class="btn_filtrar" value="Filtrar" />
+                        <!-- <br><br> -->
+                        <input type="button" class="btn_filtrar" id="lp_filtros" onclick="window.open('../projetos/', '_self')" value="Limpar Filtros" />
+                    </form>
                 </div>
-                </form>
-                <!-- <br><br><br><br> -->
-                <?php
-                if ($encontrados == 1) {
-                ?>
-                    <div class="result">
-                        <h2>Encontramos <?php echo $encontrados; ?> projetos...</h2>
-                    </div>
-                <?php
-                } elseif ($encontrados > 1) {
-                ?>
-                    <div class="result">
-                        <h2>Encontramos <?php echo $encontrados; ?> projetos...</h2>
-                    </div>
-                <?php
-                } else {
-                ?>
-                    <div class="result">
-                        <h2>Não foi encontrado nenhum projeto com a sua pesquisa...</h2>
-                    </div>
-                <?php
-                }
-                ?>
-                <div class="blocos">
-                    <?php
-                    foreach ($result as $tcc) {
-                    ?>
-                        <div class="bloco">
-                            <a href="../projeto/?tcc=<?php echo $tcc["codigo_r"]; ?>" class="link">
-                                <div class="sizeImg">
-                                    <?php
-                                    echo '<img src="data:image/jpeg;base64,' . base64_encode($tcc['foto']) . '"';
-                                    echo "/>";
-                                    ?>
-                                </div>
+                <div class="info_direita">
+                    <form action="?" method="GET">
 
-                                <div class="content-bloco">
-                                    <div class="titulo">
-                                        <h3><?php echo $tcc["nome"]; ?></h3>
-                                    </div>
-                                    <div class="conteudo">
-                                        <p><?php echo $tcc["resumo"]; ?></p>
-                                    </div>
-                                </div>
-                            </a>
+                        <div class="pesquisa">
+                            <input type="text" class="btn_pesquisar" name="search" id="btn" title="Procure pelos melhores TCCs do CPS" placeholder="Pesquisar" autocomplete="off" />
+                            <!-- <div class="apagar"><i class="fa fa-times" aria-hidden="true"></i></div> -->
+                            <button type="submit" class="btn_pesquisar" id="ico">
+                                <i class="fa fa-search" alt="pes" title="Pesquisar"></i>
+                            </button>
+
+                        </div>
+                    </form>
+
+                    <?php
+                    if ($encontrados == 1) {
+                    ?>
+                        <div class="result">
+                            <h2>Encontramos <?php echo $encontrados; ?> projetos...</h2>
+                        </div>
+                    <?php
+                    } elseif ($encontrados > 1) {
+                    ?>
+                        <div class="result">
+                            <h2>Encontramos <?php echo $encontrados; ?> projetos...</h2>
+                        </div>
+                    <?php
+                    } else {
+                    ?>
+                        <div class="result">
+                            <h2>Não foi encontrado nenhum projeto com a sua pesquisa...</h2>
                         </div>
                     <?php
                     }
                     ?>
+                    
+                    <div class="content-blocos">
+                        <div class="blocos">
+                            <?php
+                            foreach ($result as $tcc) {
+                            ?>
+                                <div class="bloco">
+                                    <a href="../projeto/?tcc=<?php echo $tcc["codigo_r"]; ?>" class="link">
+                                        <div class="sizeImg">
+                                            <?php
+                                            echo '<img src="data:image/jpeg;base64,' . base64_encode($tcc['foto']) . '"';
+                                            echo "/>";
+                                            ?>
+                                        </div>
+                                        <div class="content-bloco">
+                                            <div class="titulo" title="<?php echo $tcc["nome"]; ?>">
+                                                <h3><?php echo $tcc["nome"]; ?></h3>
+                                            </div>
+                                            <div class="conteudo" title="<?php echo $tcc["resumo"]; ?>">
+                                                <p><?php echo $tcc["resumo"]; ?></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="topo">
-            <a href="#top">
-                <button type="button" class="icon-topo">
-                <i class="fa fa-arrow-up" aria-hidden="true"></i>
-                </button>
-            </a>
-        </div>
-        <script src="../js/btn-top(projetos).js"></script>
+            <div class="topo">
+                <a href="#top">
+                    <button type="button" class="icon-topo">
+                        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                    </button>
+                </a>
+            </div>
+        </section>
+        <script>
+            let = document.querySelector(".cabecalho")
+            let = document.querySelector(".voltar")
+            let = document.querySelector(".grid-container")
+            let = document.querySelector(".info-esquerda")
+            let = document.querySelector(".info-direita")
+            let = document.querySelector(".pesquisa")
+            let = document.querySelector(".resul")
+            let = document.querySelector(".blocos")
+            let doc = document.documentElement
+
+            window.addEventListener('scroll', function() {
+                let value = parseInt(100 * doc.scrollTop / (doc.scrollHeight - doc.clientHeight))
+                console.log()
+            })
+        </script>
+        <script src="../js/btn-top-projetos.js"></script>
 
 </body>
 

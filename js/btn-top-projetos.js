@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     $(window).scroll(function(){
         if ($(this).scrollTop() > 100) {
@@ -11,4 +12,4 @@ $(document).ready(function(){
         $('html, body').animate({scrollTop : 0},800);
         return false;
     });
-});
+})
