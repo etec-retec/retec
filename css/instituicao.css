@@ -7,6 +7,9 @@ body{
     background-color: #f4f4f4;
     font-family: 'Poppins', sans-serif;
     color: #2a3641;
+    height: 100vh;
+    font-size: 16px;
+
 }
 
 .cabecalho{
@@ -16,16 +19,17 @@ body{
     align-items: center;
     width: 100%;
     height: 175px;
+    min-height: 10px;
     background-color: #dee7ee;
 }
 
 .logo h1{
-    font-size: 64px;
+    font-size: 3em;
     color: #6253f2;
 }
 
 .logo label{
-    font-size: 16px;
+    font-size: 1em;
     color: #2a3641;
 }
 
@@ -50,32 +54,38 @@ body{
     display: none;
 }
 
-.center h2{
-    text-align: center;   
+.corpo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
 }
 
-.cap{
+.corpo h1{
+    font-size: clamp(1.5em, 4vw, 5em);
+}
+/* .cap{
     font-size: 64px;
     display: table;
     margin: 0 auto;
     margin-top: 196px;
     text-transform: capitalize;
-}
+} */
 
 .opcoes{
     display: table;
     margin: 0 auto;
-    padding: 32px;
-    padding-top: 64px;
+    padding-top: 10px;
 }
 
 .opcoes a{
     padding-top: 0px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 0 16px;
     text-decoration: none;
     color: #6253f2;
-    font-size: 18px;
+    font-size: clamp(1em, 1.5vw, 5em);;
     font-weight: 600;
     transition: .3s;
 }
@@ -133,11 +143,13 @@ body{
     background-color: #ff6961;
 }
 
-@media (max-width: 48em){
+@media (max-width: 768px){
+    .cabecalho{
+        height: 110px;
+    }
 .cap{
-    padding-top: 64px;
-    text-align: center;
-    font-size: 32px;
+    margin-top: 64px;
+    font-size: .5em;
 }
 
 .opcoes{
@@ -156,4 +168,14 @@ body{
 #p, #a, #e, #r{
     border-right: none;
 }
+}
+
+@media (max-width: 460px){
+    .logo h1{
+        font-size: 1.5em;
+    }
+    .notificacao{
+        width: 20px;
+        height: 20px;
+    }
 }

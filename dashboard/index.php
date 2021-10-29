@@ -32,7 +32,7 @@ if (!isset($_SESSION["numLogin"])) {
     </div>
 
     <div class="cabecalho" id="teste">
-        <button class="voltar" onclick="window.open('../', '_self')">❮ Sair</button>
+        <button class="voltar" onclick="window.open('../login/index.php', '_self')">❮ Sair</button>
 
         <div class="logo">
             <h1 class="logo" id="texto">RETEC</h1>

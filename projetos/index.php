@@ -92,7 +92,6 @@ mysqli_close($conexao);
     <div class="preload">
         <span class="load"></span>
     </div>
-    <!-- <button class="voltar" onclick="window.open('../dashboard/', '_self')">❮ Voltar</button> -->
 
     <?php
     if (isset($_SESSION["numLogin"]) && $_SESSION["tipo"] == 0) {
@@ -129,6 +128,7 @@ mysqli_close($conexao);
     ?>
         <!-- Usuário Professor -->
         <div class="cabecalho">
+            <button class="voltar" onclick="window.open('../dashboard/', '_self')">❮ Voltar</button>
             <div class="logo">
                 <h1>RETEC</h1>
                 <?php
@@ -158,7 +158,6 @@ mysqli_close($conexao);
             </div>
         </div>
         <section class="main">
-            <div class="grid-container">
                 <div class="info_esquerda">
                     <h1>Filtros</h1>
                     <form action="?" method="GET">
@@ -237,38 +236,38 @@ mysqli_close($conexao);
                 </div>
                 <div class="info_direita">
                     <form action="?" method="GET">
-
-                        <div class="pesquisa">
-                            <input type="text" class="btn_pesquisar" name="search" id="btn" title="Procure pelos melhores TCCs do CPS" placeholder="Pesquisar" autocomplete="off" />
-                            <!-- <div class="apagar"><i class="fa fa-times" aria-hidden="true"></i></div> -->
-                            <button type="submit" class="btn_pesquisar" id="ico">
-                                <i class="fa fa-search" alt="pes" title="Pesquisar"></i>
-                            </button>
-
-                        </div>
-                    </form>
-
-                    <?php
-                    if ($encontrados == 1) {
-                    ?>
-                        <div class="result">
-                            <h2>Encontramos <?php echo $encontrados; ?> projetos...</h2>
-                        </div>
-                    <?php
-                    } elseif ($encontrados > 1) {
-                    ?>
-                        <div class="result">
-                            <h2>Encontramos <?php echo $encontrados; ?> projetos...</h2>
-                        </div>
-                    <?php
-                    } else {
-                    ?>
-                        <div class="result">
-                            <h2>Não foi encontrado nenhum projeto com a sua pesquisa...</h2>
-                        </div>
-                    <?php
-                    }
-                    ?>
+                            <div class="content-pesquisa">
+                            <div class="pesquisa">
+                                <input type="text" class="input_pesquisar" name="search" id="btn" title="Procure pelos melhores TCCs do CPS" placeholder="Pesquisar" autocomplete="off" />
+                                <button class="apagar"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                <button type="submit" class="btn_pesquisar" id="ico">
+                                    <i class="fa fa-search" alt="pes" title="Pesquisar"></i>
+                                </button>
+                            </div>
+                            </div>
+                        </form>
+                        <?php
+                        if ($encontrados == 1) {
+                        ?>
+                            <div class="result">
+                                <h2>Encontramos <?php echo $encontrados; ?> projetos...</h2>
+                            </div>
+                        <?php
+                        } elseif ($encontrados > 1) {
+                        ?>
+                            <div class="result">
+                                <h2>Encontramos <?php echo $encontrados; ?> projetos...</h2>
+                            </div>
+                        <?php
+                        } else {
+                        ?>
+                            <div class="result">
+                                <h2>Não foi encontrado nenhum projeto com a sua pesquisa...</h2>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                        
                     
                     <div class="content-blocos">
                         <div class="blocos">
@@ -299,7 +298,6 @@ mysqli_close($conexao);
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="topo">
                 <a href="#top">
                     <button type="button" class="icon-topo">

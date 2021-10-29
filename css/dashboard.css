@@ -33,7 +33,7 @@ body{
     height: calc(90vh - 175px);
 }
 h1{
-    font-size: 3em;
+    font-size: clamp(100%, 2em + 1vw, 5em);
 }
 .opcoes a{
     padding-top: 0px;

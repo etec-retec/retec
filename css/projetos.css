@@ -16,6 +16,7 @@ body{
 }
 .main{
     zoom: 73%;
+    margin-top: 67px;
 }
 .voltar{
     font-size: .8em;
@@ -36,8 +37,10 @@ body{
 
 .logo{
    margin-left: 10%;
-   width: 50%;
+   width: 100%;
    display: flex;
+   align-items: center;
+   position: relative;
 }
 label{
     min-width: 0;
@@ -48,18 +51,25 @@ label{
     width: 20%;
     font-size: .8em;
     line-height: 20px;
+    padding: 0 10px ;
 }
-
+.logo label b{
+    display: inline-block;
+    position: absolute;
+    right: 80px;
+}
 .logo h1{
     font-size: 2em;
 }
 /**/
 
-.grid-container{
-    min-width: 100%;
+/* .grid-container{
+    width: 100%;
     display: flex;
-    margin-top: 67px;
-}
+    
+    height: 100%;
+    position: relative;
+} */
 .info_esquerda form h3{
     margin-top: 10px;
 }
@@ -143,29 +153,27 @@ h1 label{
     position: absolute;
     right: 0;
 }
-.pesquisa{
-    display: flex;
-    text-align: center;
+
+.btn_pesquisar i{
+    padding: 15px;
+    /* background: white;
+    border-radius: 50%; */
+    font-size: 1.5em;
+    color: rgba(165, 157, 157, 0.486);
+    transition: .2s;
+
+}
+
+.btn_pesquisar i:hover{
+    color: rgba(78, 78, 78, 0.486);
+    
 }
 .pesquisa #ico{
     background: none;
     /* margin: 0px 10px; */
 }
-
-.btn_pesquisar i{
-    padding: 15px;
-    background: white;
-    border-radius: 50%;
-    font-size: 1.5em;
-    color: rgba(165, 157, 157, 0.486);
-    transition: .2s;
-}
-.btn_pesquisar i:hover{
-    color: rgba(78, 78, 78, 0.486);
-
-}
-.info_direita .pesquisa{
-    /* margin: 0 auto ; */
+/* .info_direita .pesquisa{
+    margin: 0 auto ; //
     position: relative;
     padding: 40px 0px;
     position: fixed;
@@ -175,25 +183,60 @@ h1 label{
     background: var(--background-color2);
     padding-left: 20px;
     
+} */
+.content-pesquisa{
+    position: fixed;
+    background: var(--background-color2);
+    width: 100%;
+    z-index: 99;
+
+}
+.content-pesquisa .pesquisa{
+    /* z-index: 11; */
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    /* margin: 0 auto ; */
+    margin: 40px 0px;
+    margin-left: 20px;
+    padding: 5px 20px;
+    /* position: absolute; */
+    z-index: 10;
+    width: calc(30vw + 50px);
+    min-width: 395px;
+    border-radius: 25px;
+    /* overflow: hidden; */
+    background: white;
+    /* padding-left: 20px; */
+    
 }
 /* Esse #btn é a barra de pesquisa*/
 #btn{
-    font-size: 1.2em;
-    padding: 10px 15px;
-    width: calc(30vw + 20px);
-    min-width: 365px;
-    background-color: transparent;
-    border: solid;
+    font-size: 1em;
+    width: 80%;
     border: none;
+    background-color: transparent;
     border-radius: 20px ;
-    /* border-bottom: #2a364167 1px solid; */
     outline: none;
-    background: white;
-    margin-right: 1%;
-    position: relative;
-    
 }
 
+.apagar{
+    /* position: absolute;
+    left: calc(30vw + 20px - 5px);*/
+    background: none; 
+    cursor: pointer;
+    text-align: center;
+    /* display: none; */
+}
+
+.apagar i{
+    padding: 3px;
+    border-radius: 50%;
+    background: #709cb385;
+    color: white;
+    font-size: 1em;
+}
+/*TCCS*/
 .link{
     text-decoration: none;
     color: #2a3641;
@@ -215,12 +258,14 @@ img{
 .img_set{
     max-width: 300px;
 }
+.content-blocos{
+    margin-top: 140px;   
+}
 
 .blocos{
     display: flex;
     flex-wrap: wrap;
-    margin-top: 140px;
-    position: relative;
+    /* position: absolute; */
     margin-left: 10px;
 }
 
@@ -240,6 +285,7 @@ img{
 
 .bloco:hover{
     box-shadow: 0px 3px 5px #888791a9;
+    transform: translateY(-10px);
 
 }
 
@@ -357,16 +403,35 @@ img{
     .cabecalho{
         height: 60px;
     }
+    .cabecalho{
+        display: none;
+    }
 .grid-container{
     display: block;    
 }
 .info_direita {
     margin: 0 auto;
     justify-content: center;
+    width: 100%;
+    padding: 0;
+
 }
 .info_direita .pesquisa{
     justify-content: center;
-    padding: 5px;
+    padding-top: 45px;
+    top: 0;
+    padding: 25px 0 40px 0;
+}
+#btn{
+    font-size: 1em;
+}
+.blocos{
+    margin-top: 40px;
+    justify-content: center;
+}
+.result{    
+    margin: 0 auto;
+    top:86px;
 }
 .result h2{
     text-align: center;
@@ -375,13 +440,8 @@ img{
     padding: 0;
 }
 .info_esquerda{
-    margin: 0 auto;
-    display: block;
+    display: none;
     width: 90%;
     text-align: center;
-}
-.blocos{
-    justify-content: center;
-    padding: 0;
 }
 }

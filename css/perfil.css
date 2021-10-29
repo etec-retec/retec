@@ -16,7 +16,7 @@
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    height: auto;
+    height: calc(100% - 131px);
     gap: 40px;
     padding-bottom: 60px;
     
@@ -44,7 +44,7 @@
     color: black;
     font-size: clamp(1rem, .5vw, 2rem);
     transition: all .3s ease-out;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--fildset);
     background: none;
     /* width: 100%; */
     max-width: 330px;
@@ -57,7 +57,7 @@
     border: none;
     border-bottom: 1px solid var(--btn-color);
 }
-.container-acoes .acoes:nth-child(4):hover{
+.container-acoes .acoes:nth-child(3):hover{
     background:rgb(121, 184, 135);
     color: white;
     border: none;
@@ -103,7 +103,7 @@ label b{
     font-size: 1em;
     margin-bottom: 10px;
     border-radius: 5px;
-    border: 2px solid cornflowerblue ;
+    border: 1px solid var(--fildset);
     background: none;
     color: black;
     font-weight: normal;
@@ -116,7 +116,7 @@ label b{
 }
 .container-dados .txt:focus{
     background:rgba(255, 255, 255, 0.692) ;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .alterar{
@@ -221,22 +221,13 @@ label b{
     .container-dados{
         width: 90%;
     }
-    .container-acoes .acoes{
-
-    }
+    
 }
 
 @media (max-width: 768px){
     .cabecalho{
         height: 100px;
     }
-    .container-dados{
-        /* padding: 10px; */
-    }
-    /* .formu{
-        flex-direction: column;
-    
-    } */
     .inp_txt{
         margin-bottom: 10px;
     }

@@ -87,7 +87,7 @@ if (!isset($_SESSION["numLogin"])) {
         </div>
 
         <div class="container-acoes">
-            <h1>Ações</h1>
+            <!-- <h1>Ações</h1> -->
             <button class="acoes" onclick="window.open('vincular-se/', '_self')">Vincular-se à alguma instituição</button>
             <button class="acoes" onclick="window.open('desvincular-se/', '_self')">Desvincular-se de alguma instituição</button>
             <button class="acoes" onclick="window.open('?senha', '_self')">Solicitar Mudança de Senha</button>

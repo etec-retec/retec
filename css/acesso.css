@@ -58,6 +58,17 @@ h1{
     font-weight: 700;
     background-color: #09052b;
 }
+label{
+    min-width: 0;
+    position: absolute;
+    left: 0;
+    color: #6253f2;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+form{
+    position: relative;
+}
 .inp_txt{
     max-width: 350px;
     transition: all .25s ease-out;

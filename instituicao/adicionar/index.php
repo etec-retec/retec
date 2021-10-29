@@ -51,53 +51,43 @@ if (!isset($_SESSION["numLogin"])) {
             <?php
             }
             ?>
-        <br><label class="lblNome"><b>Institucional</b></label>
+       <label class="lblNome"><b>Institucional</b></label>
         </div>
      
     </div>
 
     <div class="center">
         <h2 class="center" id="lbl">Adicionar Projeto</h2>
-        <form action="../../model/validacaoRepositorio.php" method="POST" enctype="multipart/form-data">
+        <form class="form" action="../../model/validacaoRepositorio.php" method="POST" enctype="multipart/form-data">
 
             <label for="nome"><b>Nome</b></label>
-            <br>
             <input type="text" class="inp_txt" name="nome" placeholder="Nome do TCC" min="3" max="64" required>
-            <br><br>
 
             <label for="prof_orientador"><b>Professor Orientador</b></label>
-            <br>
             <input type="text" name="prof_orientador" class="inp_txt" min="8" max="64" placeholder="Nome" required />
-            <br><br>
-
+           
             <label for="prof_coorientador"><b>Professor Co-orientador</b></label>
-            <br>
             <input type="text" name="prof_corientador" class="inp_txt" min="8" max="64" placeholder="Nome" required />
-            <br><br>
-
+           
             <label for="membros"><b>Membros do Grupo</b></label>
             <p style="font-size:12px; margin-top:0">Separe os integrantes por vírgulas ","</p>
             <input type="text" name="membros_grupo" class="inp_txt" min="8" max="564" placeholder="Ex: Alexandre Lima, Luiz Henrique, Carlos Alberto" required />
-            <br><br>
+           
 
             <label for="membros"><b>Membros da Banca</b></label>
             <p style="font-size:12px; margin-top:0">Separe os integrantes por vírgulas ","</p>
             <input type="text" name="membros_banca" class="inp_txt" min="8" max="564" placeholder="Ex: Regina Santos, Marcello Zanfra, Thiago" required />
-            <br><br>
+           
 
             <label for="curso"><b>Curso</b></label>
-            <br>
             <select class="inp_txt" name="curso" min="8" max="64" id="slct">
             </select>
-            <br><br>
 
             <label for="ano"><b>Ano de Conclusão</b></label>
-            <br>
-            <input type="number" class="inp_txt" name="ano" placeholder="Ano" min="2008" max="2021" required>
-            <br><br>
+            <input type="number" class="inp_txt" name="ano" placeholder="Ano" min="2008" max="2021" 
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" required>
 
             <label for="mencao"><b>Menção</b></label>
-            <br>
             <select class="inp_txt" name="mencao" id="slct">
                 <h3>Curso - ETIM</h3>
                 <option value="mb">MB</option>
@@ -105,32 +95,22 @@ if (!isset($_SESSION["numLogin"])) {
                 <option value="r">R</option>
                 <option value="i">I</option>
             </select>
-            <br><br>
 
             <label for="resumo"><b>Resumo</b></label>
-            <br>
             <textarea type="text" class="area_txt" name="resumo" placeholder="Trecho do PDF (Resumo)" required></textarea>
-            <br><br>
-
+        
             <label for="abstract"><b>Abstract</b></label>
-            <br>
             <textarea type="text" class="area_txt" name="abstract" placeholder="Trecho do PDF (Abstract)" required></textarea>
-            <br><br>
 
             <label for="pa_ch"><b>Palavras-chave</b></label>
-            <br>
             <textarea type="text" class="area_txt" name="pa_ch" placeholder="Trecho do PDF (Palavras-chave)" required></textarea>
-            <br><br>
-
-            <label for="key_words"><b>Key Words</b></label>
-            <br>
+           
+            <label for="key_words"><b>Key Words</b></label>          
             <textarea type="text" class="area_txt" name="key_words" placeholder="Trecho do PDF (Key Words)" required></textarea>
-            <br><br>
-
+           
             <label for="data_ap"><b>Data de Apresentação</b></label>
-            <br>
             <input type="date" class="inp_txt" name="data_ap" min="4" max="256" id="dt_ap" required>
-            <br><br>
+           
 
             <div class="arquivos">
                 <h3>Arquivos</h3>
@@ -145,7 +125,7 @@ if (!isset($_SESSION["numLogin"])) {
                 </p>
             </div>
             <input type="text" name="instituicao" value="<?php echo $_SESSION['instituicao']; ?>" hidden />
-            <br>
+           
 
             <input type="submit" class="cadastrar" id="sub_box" value="Adicionar Projeto" />
         </form>

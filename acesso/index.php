@@ -61,8 +61,9 @@ if ($_SESSION["tipo"] == "0") {
         <h2>Entrar como professor da:</h2>
         <form name="cadastraU" action="../model/selecao.php" method='POST'>
          
+        <label for="inst">Escolha</label><br>
             <select class="inp_txt" name="inst" id="slct" required>
-                <option value="none" selected disabled>Escolha</option>
+                <option name="Escolha a ETEC" value="none" selected disabled></option>
             </select>
         
                 <input type="text" name="instituicoes" style="display:none" value="<?php echo $_SESSION["instituicao"]; ?>" />
