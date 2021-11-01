@@ -59,8 +59,7 @@ mysqli_close($conexao);
             <?php
             }
             ?>
-            <br>
-            <label class="lblNome"><b>Institucional</b></label>
+            <label class="lblNome"><b>| Institucional</b></label>
         </div>
     </div>
 

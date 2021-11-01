@@ -4,5 +4,4 @@ window.addEventListener('load', () =>{
 
     preloader.classList.add('finish')
     animate.classList.remove('Main::after')
-
 })

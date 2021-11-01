@@ -22,7 +22,7 @@
     box-shadow: 8px 8px 8px -5px rgba(0, 0, 0, 0.322);
 }
 
-@media (max-width: 48em){
+@media (max-width: 810px){
     .voltar{
         display: none;
     }

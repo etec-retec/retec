@@ -51,7 +51,7 @@ if (!isset($_SESSION["numLogin"])) {
             <?php
             }
             ?>
-       <label class="lblNome"><b>Institucional</b></label>
+       <label class="lblNome"><b>| Institucional</b></label>
         </div>
      
     </div>

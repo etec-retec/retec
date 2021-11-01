@@ -48,8 +48,8 @@ label{
 .logo label{
     color: white;
     font-weight: 600;
-    width: 20%;
-    font-size: .8em;
+    width: 100%;
+    font-size: clamp(50%, .3em + 1vw, 1em);
     line-height: 20px;
     padding: 0 10px ;
 }
@@ -57,9 +57,10 @@ label{
     display: inline-block;
     position: absolute;
     right: 80px;
+    font-size: clamp(50%, .1em + 1vw, 2em); ;
 }
 .logo h1{
-    font-size: 2em;
+    font-size: clamp(100%, 1.5em + 1vw, 3em);
 }
 /**/
 
@@ -93,7 +94,7 @@ h1 label{
 
 .result{
     position: fixed;
-    z-index: 999;
+    z-index: 98;
     right: 150px;
     top: 117px;
 }
@@ -188,7 +189,7 @@ h1 label{
     position: fixed;
     background: var(--background-color2);
     width: 100%;
-    z-index: 99;
+    z-index: 98;
 
 }
 .content-pesquisa .pesquisa{
@@ -381,11 +382,11 @@ img{
   background: #6253f2;
   border-radius: 16px;
 }
-@media (min-width: 1400px){
 
- .main{
+@media (min-width: 1400px){
+    .main{
      zoom: initial;
- }
+    } 
 } 
 @media (min-width: 1366px){
     .info_esquerda{
@@ -393,63 +394,66 @@ img{
     }
 }
 @media (max-width: 810px){
-    h1{
-        font-size: 100%;
-    }
+
     .logo{
         margin-left: 20px;
+        width: 100%;
+        height: 100%;
+    }
+    .logo label{
         width: 100%;
     }
     .cabecalho{
         height: 60px;
+        position: fixed;
+        top: 0;
     }
-    .cabecalho{
+    /* .cabecalho{
         display: none;
+    } */
+    .grid-container{
+        display: block;    
     }
-.grid-container{
-    display: block;    
-}
-.content-pesquisa{
-    display: flex;
-    align-items: center;
-    margin-left: 36px;
-    top: 0;
-}
-.info_direita {
-    margin: 0 auto;
-    justify-content: center;
-    width: 100%;
-    padding: 0;
+    .content-pesquisa{
+        display: flex;
+        align-items: center;
+        margin-left: 36px;
+    }
+    .info_direita {
+        margin: 0 auto;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
 
-}
-.info_direita .pesquisa{
-    justify-content: center;
-    padding-top: 45px;
-    top: 0;
-    padding: 5px 10px;
-}
-#btn{
-    font-size: 1em;
-    padding: 10px;
-}
-.blocos{
-    margin-top: 40px;
-    justify-content: center;
-}
-.result{    
-    margin: 0 auto;
-}
-.result h2{
-    text-align: center;
-}
-.conteudo{
-    padding: 0;
-}
-.info_esquerda{
-    display: none;
-    width: 90%;
-    text-align: center;
-}
+    }
+    .info_direita .pesquisa{
+        justify-content: center;
+        padding-top: 45px;
+        top: 0;
+        padding: 5px 10px;
+    }
+    #btn{
+        font-size: 1em;
+        padding: 10px;
+    }
+    .blocos{
+        margin-top: 40px;
+        justify-content: center;
+    }
+    .result{    
+        margin: 0 auto;
+    }
+    .result h2{
+        text-align: center;
+    }
+    .conteudo{
+        padding: 0;
+    }
+    .info_esquerda{
+        display: none;
+        width: 90%;
+        text-align: center;
+    }
 }
 @media (max-width: 425px){
     .content-pesquisa{
