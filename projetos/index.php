@@ -80,8 +80,12 @@ mysqli_close($conexao);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../loader/loading.css">
-    <script type="text/javascript" src="../loader/loading.js"></script>
+    
+    <!-- <link rel="stylesheet" href="../loader/loading.css">
+    <script type="text/javascript" src="../loader/loading.js"></script> -->
+
+    <link rel="stylesheet" href="../loader/projetos/load-projetos.css">
+    <script type="text/javascript" src="../loader/projetos/load-projetos.js"></script>
 
     <link href="../css/projetos.css" rel="stylesheet">
     <link href="../assets/img/icon.ico" type="image/x-icon" rel="icon" />
@@ -89,8 +93,64 @@ mysqli_close($conexao);
 </head>
 
 <body>
+<!--     
     <div class="preload">
         <span class="load"></span>
+    </div> -->
+
+    <div class="master">
+        <div class="Main">
+            <div class="esquerda">
+                <span class="t"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="t"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="t"></span>
+                <span></span>
+                <div class="box">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="direita">
+                <div class="Pesquisa">
+                    <div class="s"></div>
+                </div>
+
+                <div class="Blocos">
+                    <div class="b"></div>
+                    <div class="b"></div>
+                    <div class="b"></div>
+                    <div class="b"></div>
+                    <div class="b"></div>
+                    <div class="b"></div>
+                    <div class="b"></div>
+                    <div class="b"></div>
+                    <div class="b"></div>
+                    <div class="b"></div>
+                    <div class="b"></div>
+                    <div class="b"></div>
+                    <div class="b"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <?php

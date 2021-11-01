@@ -59,7 +59,7 @@ if ($_SESSION['tipo'] != 0) {
     </div>
 
     <div class="cabecalho" id="teste">
-        <button class="voltar" onclick="window.open('../', '_self')">❮ Sair</button>
+        <button class="voltar" onclick="window.open('../login/index.php', '_self')">❮ Sair</button>
         <?php
         if ((isset($_SESSION['not']) && $_SESSION['not'] > 0)) {
         ?>

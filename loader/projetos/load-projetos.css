@@ -1,0 +1,176 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.finish{
+    transition: ease-out 1s;
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}
+.master{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.Main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: #fcfcfca1;
+    zoom: 72%;
+    position: absolute;
+}
+.esquerda{
+    width: 20%;
+    height: 90%;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+}
+.esquerda span{
+    display: inline-block;
+    width: 65%;
+    height: 15px;
+    border-radius: 2px;
+    background: #f4f4f4;
+    margin-top: 10px;
+    z-index: 2;
+
+    
+}
+.esquerda .t{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    height: 35px;
+    width: 40%;
+}
+
+.box{
+    display: flex;
+    height: 40px;
+    gap: 10px;
+    align-items: flex-start;
+    width: 210px;
+    margin-top: 20px;
+}
+.box span{
+    display: inline-block;
+    height: 100%;
+    flex: 1;
+    width: 10px;
+}
+.direita{
+    padding-left: 10px;
+    width: 75%;
+    position: absolute;
+    right: 0;
+}
+.Blocos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    right: 0;
+    height: 100vh;
+    padding-left: 20px;
+}
+
+.Pesquisa{
+    width: 100%;
+    height: 140px;
+
+}
+.Pesquisa .s{
+    margin: 40px 0px;
+    margin-left: 20px;
+    padding: 5px 20px;
+    width: calc(30vw + 50px);
+    min-width: 355px;
+    border-radius: 25px;
+    background: #f4f4f4;
+    height: 60px;
+}
+.Blocos .b{
+    width: 15vw;
+    height: 20vw;
+    min-height: 373px;
+    min-width: 285px;
+    border-radius: 10px;
+    background: #f4f4f4;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.Main::after{
+    content: '';
+    transform: skew(302deg);
+    position: absolute;
+    width: 5%;
+    height: 200%;
+    z-index: 2;
+    background: #fcfcfca1;
+    box-shadow: 0px 0px 30px 30px #fcfcfca1;
+    animation: animate 2s linear infinite;
+    animation-delay: -2s;
+}
+@keyframes animate{
+    0%{
+        top: -100%;
+        left: 0;    
+    }
+    50%{
+        top: 50%;
+        left: 50%;
+    }
+    100%{
+        top: 200%;
+        right: 0;
+    }
+}
+@media (min-width: 1400px){
+    .Main{
+        zoom: initial;
+    }
+}
+@media (min-width: 1366px){
+    .esquerda{
+        margin-top: 20px;
+    }
+}
+@media (max-width: 768px){
+    .esquerda{
+        display: none;
+    }
+    .Main{
+        display: block;    
+    }
+    .direita {
+        margin: 0 auto;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+    
+    }
+    .direita .Pesquisa{
+        justify-content: center;
+        padding-top: 45px;
+        top: 0;
+        padding: 25px 0 40px 0;
+    }
+    .Blocos{
+        margin-top: 40px;
+        justify-content: center;
+    }
+}
+@media (max-width: 425px){
+    .direita .Pesquisa{
+        height: 140px;
+        top: 0;
+    }
+    .Pesquisa .s{
+        margin: 20px 20px;
+    }
+}
