@@ -31,10 +31,17 @@ body{
     flex-direction: column;
     width: 100%;
     height: calc(90vh - 175px);
+    padding: 1em;
 }
+
 h1{
     font-size: clamp(100%, 2em + 1vw, 5em);
 }
+
+.opcoes{
+    padding: 1em;
+}
+
 .opcoes a{
     padding-top: 0px;
     padding-left: 16px;
@@ -48,7 +55,6 @@ h1{
 .opcoes a:hover{
     color: #968cf0d3;
 }
-
 
 #p, #a, #e, #r{
     border-right: 1px solid #6253f2;

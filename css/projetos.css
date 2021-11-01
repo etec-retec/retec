@@ -46,7 +46,7 @@ label{
     min-width: 0;
 }
 .logo label{
-    color: white;
+    color: #2a3641;
     font-weight: 600;
     width: 100%;
     font-size: clamp(50%, .3em + 1vw, 1em);

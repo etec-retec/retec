@@ -51,8 +51,9 @@ h1{
     border-radius: 4px;
     cursor: pointer;
     transition: .2s;
+    margin-top: 1em;
+}
 
-}    
 .botao:hover{
     font-weight: 700;
     background-color: #b6b2eb;

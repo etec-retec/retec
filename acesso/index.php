@@ -67,7 +67,7 @@ if ($_SESSION["tipo"] == "0") {
             </select>
         
                 <input type="text" name="instituicoes" style="display:none" value="<?php echo $_SESSION["instituicao"]; ?>" />
-                <button class="botao">Entrar</button>
+                <span><button class="botao">Entrar</button></span>
         </form>
     </div>
     <script>

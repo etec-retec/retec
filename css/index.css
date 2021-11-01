@@ -16,7 +16,6 @@
     --background-color2: #f4f4f4;
     --fildset: #dfdfdf;
     --placeholder: #709bb3;
-
 }
 
 .actions{
@@ -83,10 +82,8 @@ h1{
 }
 
 .tec{
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    object-fit: cover;
+    display: table;
+  margin: 0 auto;
 }
 
 .sobre{

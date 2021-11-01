@@ -17,6 +17,7 @@ body{
 
 }
 .formu{
+    margin: 0 auto;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -24,15 +25,18 @@ body{
     background-color: #fff;
     color: #2a3641;
     height: auto;
-    width: 40%;
-    /* border: solid #6253f2 1px; */
     border-radius: 6px;
     box-shadow:2px 18px 14px -8px rgb(209 208 208);
+}
+
+.formu form{
+    width: auto;
 }
 
 .formu h2{
     text-align: center;
 }
+
 label{
     display: inline-block;
     width: 100%;
@@ -79,7 +83,7 @@ input[type="submit"]{
 .content-senha{
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 }
 #senha{
     margin: 0 15px 0 0;

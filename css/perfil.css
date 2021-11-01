@@ -11,6 +11,7 @@
     font-size: 1.5em;
     letter-spacing: 1px;
 }
+
 .container{
     display: flex;
     flex-direction: column-reverse;
@@ -21,6 +22,7 @@
     padding-bottom: 60px;
     
 }
+
 .container-acoes{
     display: flex;
     justify-content: center;
@@ -33,11 +35,12 @@
     margin-top: 20px;
     box-shadow: rgba(100, 100, 100, 0.24) 0px 4px 8px;
     gap: 10px;
-
 }
+
 .container-acoes  h1{
     font-size: 1rem;   
 }
+
 .container-acoes .acoes{
     flex: 1 1 auto;
     padding: 5px 5px;
@@ -56,7 +59,9 @@
     color: white;
     border: none;
     border-bottom: 1px solid var(--btn-color);
+    cursor: pointer;
 }
+
 .container-acoes .acoes:nth-child(3):hover{
     background:rgb(121, 184, 135);
     color: white;
@@ -76,6 +81,7 @@
     border: 1px solid rgba(255, 253, 253, 0.322);
     box-shadow: rgba(59, 59, 59, 0.24) 0px 3px 8px;
 }
+
 .formu{
     display: flex;
     gap: 20px;
@@ -86,10 +92,12 @@
 .formu .esquerda{
     width: 40%;
 }
+
 .formu .direita{
     width: 40%;
     position: relative;
 }
+
 label b{
     font-weight: bold;
     margin-left: 10px;
@@ -109,11 +117,12 @@ label b{
     font-weight: normal;
     /* box-shadow: inset 1px 4px 9px -6px rgba(255, 255, 255, 0.747); */
     transition: .2s;
-
 }
+
 .container-dados .esquerda .txt:last-child{
     margin-bottom: 0;
 }
+
 .container-dados .txt:focus{
     background:rgba(255, 255, 255, 0.692) ;
     font-weight: 600;
@@ -129,15 +138,22 @@ label b{
     background: none;
     transition: all .3s ease-in-out;
     letter-spacing: 1px;
-    background: #c0bece;
+    background: #A0BCA6;
     border: none;
     color: white;
     font-weight: bold;
     text-transform: uppercase;
     right: 0;
     bottom: 0;
+    border: 2px solid #A0BCA6;
+    cursor: pointer;
+}
+
+.alterar:hover{
+    background-color: #c0bece;
     border: 2px solid #c0bece;
 }
+
 .marker{
     position: relative;
     font-size: 1em;
@@ -152,6 +168,7 @@ label b{
     border-radius: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
+
 .marker::after{
     content: '';
     position: absolute;
@@ -162,9 +179,11 @@ label b{
     bottom: -4px;
     transform: rotateZ(21deg);
 }
+
 .mk{
     max-width: 80%;
 }
+
 .markerRed{
     position: relative;
     font-size: 1em;
@@ -178,6 +197,7 @@ label b{
     transition: all .3s ease-in;
     border-radius: 10px;
 }
+
 .markerRed::after{
     content: '';
     position: absolute;
@@ -201,10 +221,12 @@ label b{
 ::-webkit-scrollbar-track {
   background-color: #ffffff;
 }
+
 ::-webkit-scrollbar {
   width: 8px;
   background: #000;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #6253f2;
   border-radius: 16px;

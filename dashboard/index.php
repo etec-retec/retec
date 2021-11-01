@@ -52,14 +52,18 @@ if (!isset($_SESSION["numLogin"])) {
     <br>
     <div class="corpo">
         <h1 class="cap">Olá, <?php echo $_SESSION["nome"]; ?>!</h1>
+        <span>
         <h2 class="access">O que você deseja acessar?</h2>
+        </span>
 
+        <span>
         <div class="opcoes">
             <a id="p" href="../projetos/">Projetos</a>
             <a id="a" href="adicionar/">Adicionar Projeto</a>
             <a id="e" href="editar/">Editar Projeto</a>
             <a id="m" href="perfil/">Meu Perfil</a>
         </div>
+        </span>
     </div>
 
 </body>
