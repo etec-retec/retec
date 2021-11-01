@@ -98,8 +98,10 @@ mysqli_close($conexao);
         <span class="load"></span>
     </div> -->
 
-    <div class="master">
-        <div class="Main">
+        <!-- PAG DE LOADING -->
+
+        <div class="master">
+            <div class="Main">
             <div class="esquerda">
                 <span class="t"></span>
                 <span></span>
@@ -151,8 +153,9 @@ mysqli_close($conexao);
                 </div>
             </div>
         </div>
-    </div>
+        <!-- PAG DE LOADING -->
 
+    </div>
     <?php
     if (isset($_SESSION["numLogin"]) && $_SESSION["tipo"] == 0) {
     ?>
@@ -299,7 +302,7 @@ mysqli_close($conexao);
                             <div class="content-pesquisa">
                             <div class="pesquisa">
                                 <input type="text" class="input_pesquisar" name="search" id="btn" title="Procure pelos melhores TCCs do CPS" placeholder="Pesquisar" autocomplete="off" />
-                                <button class="apagar"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                <button type="reset" class="apagar"><i class="fa fa-times" aria-hidden="true"></i></button>
                                 <button type="submit" class="btn_pesquisar" id="ico">
                                     <i class="fa fa-search" alt="pes" title="Pesquisar"></i>
                                 </button>

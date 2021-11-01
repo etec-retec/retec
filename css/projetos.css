@@ -156,10 +156,10 @@ h1 label{
 }
 
 .btn_pesquisar i{
-    padding: 15px;
+    padding: 12px;
     /* background: white;
     border-radius: 50%; */
-    font-size: 1.5em;
+    font-size: 2em;
     color: rgba(165, 157, 157, 0.486);
     transition: .2s;
 
@@ -224,18 +224,19 @@ h1 label{
 .apagar{
     /* position: absolute;
     left: calc(30vw + 20px - 5px);*/
-    background: none; 
     cursor: pointer;
     text-align: center;
+    border: none;
+    background: none;
     /* display: none; */
 }
 
 .apagar i{
-    padding: 3px;
     border-radius: 50%;
     background: #709cb385;
     color: white;
-    font-size: 1em;
+    font-size: .8em;
+    padding: 3.5px;
 }
 /*TCCS*/
 .link{
