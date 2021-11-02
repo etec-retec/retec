@@ -47,6 +47,10 @@ if ($id_professor != 0) {
     }
 }
 
+if ($instituicao == "ETEC Professor Andre Bogasian") {
+    $instituicao = "ETEC Professor André Bogasian";
+}
+
 $Add_dia = substr($data_add, 8, 2);
 $mesNumeric = substr($data_add, 5, 2);
 $Add_ano = substr($data_add, 0, 4);
