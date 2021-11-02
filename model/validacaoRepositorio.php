@@ -9,6 +9,7 @@
     if(isset($_POST['nome']) && isset($_POST['prof_orientador']) && isset($_POST['prof_corientador']) && isset($_POST['membros_banca']) && isset($_POST['membros_grupo']) 
     && isset($_POST['curso']) && isset($_POST['ano']) && isset($_POST['mencao']) && isset($_POST['resumo']) && isset($_POST['abstract'])
     && isset($_POST['pa_ch']) && isset($_POST['key_words']) && isset($_POST['data_ap']) && isset($_POST['instituicao'])){
+        $dados = [];
         $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $prof_orientador = filter_input(INPUT_POST, 'prof_orientador', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $prof_corientador = filter_input(INPUT_POST, 'prof_corientador', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -23,6 +24,22 @@
         $key_words = filter_input(INPUT_POST, 'key_words', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $data_ap = filter_input(INPUT_POST, 'data_ap', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $instituicao = filter_input(INPUT_POST, 'instituicao', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        array_push($dados, $nome, $prof_orientador, $prof_corientador, $membros_grupo, $membros_banca, $curso, $ano, $mencao, $resumo, $abstract, $pa_ch, $key_words, $data_ap, $instituicao);
+
+        
+        print('<br>'.$ano.'<br>');
+        print_r($dados);
+
+        foreach($dados as $dado){
+            if($dado == ""){
+                $impedimento = TRUE;
+                if($_SESSION['tipo'] == 1){
+                    header("Location: ../dashboard/adicionar/?dadoFaltante");
+                }else{
+                    header("Location: ../instituicao/adicionar/?dadoFaltante");
+                }
+            }
+        }
 
         #FOTO DE PERFIL
         if($imagem = $_FILES['foto']['tmp_name'] != NULL){
@@ -105,11 +122,14 @@
         $query = "INSERT INTO repositorio VALUES(NULL, '$nome', '$prof_orientador', '$prof_corientador', '$membros_grupo', '$membros_banca', '$curso', '$ano', '$mencao', '$resumo', '$abstract',
         '$pa_ch', '$key_words', '$data_ap', '$instituicao', 0, '$data_add', NULL, '$foto_conteudo', '$pdf_conteudo', '$zip_conteudo')";
     }
-    mysqli_query($conexao, $query);
-    $query2 = "SELECT codigo_r FROM repositorio WHERE nome = '$nome' AND prof_orientador = '$prof_orientador' AND prof_corientador = '$prof_corientador'";
-    $res = mysqli_query($conexao, $query2);
-    $row = mysqli_fetch_array($res);
-    $cod_r = $row[0];
-    mysqli_close($conexao);
-    header("Location: ../projeto/?tcc=$cod_r&criado=TRUE");
+
+    if($impedimento == FALSE){
+        mysqli_query($conexao, $query);
+        $query2 = "SELECT codigo_r FROM repositorio WHERE nome = '$nome' AND prof_orientador = '$prof_orientador' AND prof_corientador = '$prof_corientador'";
+        $res = mysqli_query($conexao, $query2);
+        $row = mysqli_fetch_array($res);
+        $cod_r = $row[0];
+        mysqli_close($conexao);
+        header("Location: ../projeto/?tcc=$cod_r&criado=TRUE");
+    }
 ?>

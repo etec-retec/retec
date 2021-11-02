@@ -20,6 +20,7 @@ if (!isset($_SESSION["numLogin"])) {
     <script type="text/javascript" src="../../loader/loading.js"></script>
 
     <link href="../../css/cad.css" rel="stylesheet">
+    <link href="../../css/perfil.css" rel="stylesheet">
     <link href="../../assets/img/icon.ico" type="image/x-icon" rel="icon" />
     <title>Retec - Adicionar</title>
 </head>
@@ -50,6 +51,8 @@ if (!isset($_SESSION["numLogin"])) {
             ?>
         </div>
     </div>
+
+    <div class="markerRed mk" style="display:none;" id="dadoMsg">O formulário não foi preenchido corretamente!</div>
 
     <div class="center">
         <form class="form" action="../../model/validacaoRepositorio.php" method="POST" enctype="multipart/form-data">
@@ -134,6 +137,11 @@ if (!isset($_SESSION["numLogin"])) {
             option.text = materias[i];
             option.value = materias[i];
             slct.appendChild(option);
+        }
+
+        var currentLocation = window.location;
+        if (currentLocation.search.slice(0, 13) == "?dadoFaltante") {
+            document.getElementById("dadoMsg").style.display = "block";
         }
     </script>
 </body>
