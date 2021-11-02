@@ -73,6 +73,7 @@ body{
 
 .corpo h1{
     font-size: clamp(1.5em, 4vw, 5em);
+    margin-bottom: 16px;
 }
 /* .cap{
     font-size: 64px;

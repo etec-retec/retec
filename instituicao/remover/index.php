@@ -80,8 +80,8 @@ mysqli_close($conexao);
 
         <table id="customers">
             <tr id="especial">
-                <th>Projeto</th>
-                <th>Remover</th>
+                <th id="red">Projeto</th>
+                <th id="red">Remover</th>
             </tr>
 
             <?php
@@ -95,7 +95,7 @@ mysqli_close($conexao);
                     <td class="table-column_ex">
                         <div class="item" id="center">
                             <form action="../../model/removerRepositorio.php?tcc=<?php echo $tcc["codigo_r"]; ?>" method="POST">
-                                <button type="submit" class="fr">Remover</button>
+                                <button type="submit" class="fr" id="red">Remover</button>
                             </form>
                         </div>
                     </td>

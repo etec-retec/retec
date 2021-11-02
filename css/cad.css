@@ -60,6 +60,11 @@ body{
     font-weight: 900;
     color: #ff0000;
     border-right: #c2d1d9 solid 1px;
+    padding: 8px;
+}
+
+#red{
+    background-color: #ff0000;
 }
 
 #rem:hover{
@@ -86,8 +91,9 @@ body{
 .center h2{
     text-align: center;   
 }
+
 .form{
-    padding-top: 10px;
+    padding-top: 32px;
     margin: 20px auto;
 }
 
@@ -198,15 +204,15 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .cadastrar{
-    background-color: #f4faf4;
-    color: black;
+    background-color: #6253f2;
+    color: #fff;
     border-radius: 10px;
-    border: 1px solid #6253f2;
+    border: none;
     padding: 16px;
     font-size: 16px;
     cursor: pointer;
-    width: 200px;
-    margin: 10px 0px 20px 0px;
+    margin-top: 32px;
+    margin-bottom: 32px;
     align-self: center;
 }
 
@@ -217,18 +223,20 @@ input[type=number]::-webkit-outer-spin-button {
     position: relative;
 }
 
-
 ::-webkit-scrollbar-track {
   background-color: #ffffff;
 }
+
 ::-webkit-scrollbar {
   width: 8px;
   background: #000;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #6253f2;
   border-radius: 16px;
 }
+
 @media (min-width:1500px){
     .inp_txt{
         max-width: 608px;
@@ -259,6 +267,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 .cadastrar{
     margin: 0 auto;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    padding: 8px;
+    background-color: #6253f2;
+    color: #fff;
 }
 
 }

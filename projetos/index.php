@@ -88,6 +88,7 @@ mysqli_close($conexao);
     <script type="text/javascript" src="../loader/projetos/load-projetos.js"></script>
 
     <link href="../css/projetos.css" rel="stylesheet">
+    <link href="../css/img.css" rel="stylesheet">
     <link href="../assets/img/icon.ico" type="image/x-icon" rel="icon" />
     <title>Retec - Projetos</title>
 </head>
@@ -339,7 +340,7 @@ mysqli_close($conexao);
                             ?>
                                 <div class="bloco">
                                     <a href="../projeto/?tcc=<?php echo $tcc["codigo_r"]; ?>" class="link">
-                                        <div class="sizeImg">
+                                        <div class="zoom">
                                             <?php
                                             echo '<img src="data:image/jpeg;base64,' . base64_encode($tcc['foto']) . '"';
                                             echo "/>";
