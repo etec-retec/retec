@@ -26,10 +26,6 @@
         $instituicao = filter_input(INPUT_POST, 'instituicao', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         array_push($dados, $nome, $prof_orientador, $prof_corientador, $membros_grupo, $membros_banca, $curso, $ano, $mencao, $resumo, $abstract, $pa_ch, $key_words, $data_ap, $instituicao);
 
-        
-        print('<br>'.$ano.'<br>');
-        print_r($dados);
-
         foreach($dados as $dado){
             if($dado == ""){
                 $impedimento = TRUE;
@@ -38,6 +34,8 @@
                 }else{
                     header("Location: ../instituicao/adicionar/?dadoFaltante");
                 }
+            }else{
+                $impedimento = FALSE;
             }
         }
 
@@ -53,10 +51,10 @@
             $foto_conteudo = addslashes($foto_conteudo);
             fclose($fp);
         }elseif(!isset($_POST['foto'])){
-            $imagem = 'img_padrao.bin';
+            $imagem = '../assets/img/image.bin';
             $foto_tipo = 'image/png';
             $foto_nome_img = 'padrão';
-            $foto_tamanho = filesize('img_padrao.bin');
+            $foto_tamanho = filesize('../assets/img/image.bin');
 
             $fp = fopen($imagem, "rb");
             $foto_conteudo = fread($fp, $foto_tamanho);
@@ -65,27 +63,16 @@
         }
 
         #PDF
-        if($pdf = $_FILES['pdf']['tmp_name'] != NULL){
-            $pdf = $_FILES['pdf']['tmp_name'];
-            $pdf_tamanho = $_FILES['pdf']['size'];
-            $pdf_tipo = $_FILES['pdf']['type'];
-            $pdf_arquivos = $_FILES['pdf']['name'];
+        $pdf = $_FILES['pdf']['tmp_name'];
+        $pdf_tamanho = $_FILES['pdf']['size'];
+        $pdf_tipo = $_FILES['pdf']['type'];
+        $pdf_arquivos = $_FILES['pdf']['name'];
 
-            $fp = fopen($pdf, "rb");
-            $pdf_conteudo = fread($fp, $pdf_tamanho);
-            $pdf_conteudo = addslashes($pdf_conteudo);
-            fclose($fp);
-        }elseif(!isset($_POST['pdf'])){
-            $pdf = 'img_padrao.bin';
-            $pdf_tipo = 'image/png';
-            $pdf_nome = 'padrão';
-            $pdf_tamanho = filesize('img_padrao.bin');
-
-            $fp = fopen($pdf, "rb");
-            $pdf_conteudo = fread($fp, $pdf_tamanho);
-            $pdf_conteudo = addslashes($pdf_conteudo);
-            fclose($fp);        
-        }
+        $fp = fopen($pdf, "rb");
+        $pdf_conteudo = fread($fp, $pdf_tamanho);
+        $pdf_conteudo = addslashes($pdf_conteudo);
+        fclose($fp);
+    
 
         #ZIP
         if($zip = $_FILES['zip']['tmp_name'] != NULL){
@@ -98,38 +85,42 @@
             $zip_conteudo = fread($fp, $zip_tamanho);
             $zip_conteudo = addslashes($zip_conteudo);
             fclose($fp);
-        }elseif(!isset($_POST['zip'])){
-            $zip = 'img_padrao.bin';
-            $zip_tipo = 'image/png';
-            $zip_nome = 'padrão';
-            $zip_tamanho = filesize('img_padrao.bin');
-
-            $fp = fopen($zip, "rb");
-            $zip_conteudo = fread($fp, $zip_tamanho);
-            $zip_conteudo = addslashes($conteudo);
-            fclose($fp);        
+            $zipTrue = TRUE;
+        }elseif($zip = $_FILES['zip']['tmp_name'] == NULL){
+            $zipTrue = FALSE;
         }
-    }
 
-    include "../conexao/conexao.inc";
-    $data_add = date("Y-m-d H:i:s");
+        include "../conexao/conexao.inc";
+        $data_add = date("Y-m-d H:i:s");
 
-    if($_SESSION['tipo'] == 1){
-        $id_prof = $_SESSION['codigo_u'];
-        $query = "INSERT INTO repositorio VALUES(NULL, '$nome', '$prof_orientador', '$prof_corientador', '$membros_grupo', '$membros_banca', '$curso', '$ano', '$mencao', '$resumo', '$abstract',
-        '$pa_ch', '$key_words', '$data_ap', '$instituicao', '$id_prof' , '$data_add', NULL, '$foto_conteudo', '$pdf_conteudo', '$zip_conteudo')";
-    }else{
-        $query = "INSERT INTO repositorio VALUES(NULL, '$nome', '$prof_orientador', '$prof_corientador', '$membros_grupo', '$membros_banca', '$curso', '$ano', '$mencao', '$resumo', '$abstract',
-        '$pa_ch', '$key_words', '$data_ap', '$instituicao', 0, '$data_add', NULL, '$foto_conteudo', '$pdf_conteudo', '$zip_conteudo')";
-    }
+        if($zipTrue == TRUE){
+            if($_SESSION['tipo'] == 1){
+                $id_prof = $_SESSION['codigo_u'];
+                $query = "INSERT INTO repositorio VALUES(NULL, '$nome', '$prof_orientador', '$prof_corientador', '$membros_grupo', '$membros_banca', '$curso', '$ano', '$mencao', '$resumo', '$abstract',
+                '$pa_ch', '$key_words', '$data_ap', '$instituicao', '$id_prof' , '$data_add', NULL, '$foto_conteudo', '$pdf_conteudo', '$zip_conteudo')";
+            }else{
+                $query = "INSERT INTO repositorio VALUES(NULL, '$nome', '$prof_orientador', '$prof_corientador', '$membros_grupo', '$membros_banca', '$curso', '$ano', '$mencao', '$resumo', '$abstract',
+                '$pa_ch', '$key_words', '$data_ap', '$instituicao', 0, '$data_add', NULL, '$foto_conteudo', '$pdf_conteudo', '$zip_conteudo')";
+            }    
+        }else{
+            if($_SESSION['tipo'] == 1){
+                $id_prof = $_SESSION['codigo_u'];
+                $query = "INSERT INTO repositorio VALUES(NULL, '$nome', '$prof_orientador', '$prof_corientador', '$membros_grupo', '$membros_banca', '$curso', '$ano', '$mencao', '$resumo', '$abstract',
+                '$pa_ch', '$key_words', '$data_ap', '$instituicao', '$id_prof' , '$data_add', NULL, '$foto_conteudo', '$pdf_conteudo', NULL)";
+            }else{
+                $query = "INSERT INTO repositorio VALUES(NULL, '$nome', '$prof_orientador', '$prof_corientador', '$membros_grupo', '$membros_banca', '$curso', '$ano', '$mencao', '$resumo', '$abstract',
+                '$pa_ch', '$key_words', '$data_ap', '$instituicao', 0, '$data_add', NULL, '$foto_conteudo', '$pdf_conteudo', NULL)";
+            }    
+        }
 
-    if($impedimento == FALSE){
-        mysqli_query($conexao, $query);
-        $query2 = "SELECT codigo_r FROM repositorio WHERE nome = '$nome' AND prof_orientador = '$prof_orientador' AND prof_corientador = '$prof_corientador'";
-        $res = mysqli_query($conexao, $query2);
-        $row = mysqli_fetch_array($res);
-        $cod_r = $row[0];
-        mysqli_close($conexao);
-        header("Location: ../projeto/?tcc=$cod_r&criado=TRUE");
+        if($impedimento == FALSE){
+            mysqli_query($conexao, $query);
+            $query2 = "SELECT codigo_r FROM repositorio WHERE nome = '$nome' AND prof_orientador = '$prof_orientador' AND prof_corientador = '$prof_corientador'";
+            $res = mysqli_query($conexao, $query2);
+            $row = mysqli_fetch_array($res);
+            $cod_r = $row[0];
+            mysqli_close($conexao);
+            header("Location: ../projeto/?tcc=$cod_r&criado=TRUE");
+        }
     }
 ?>

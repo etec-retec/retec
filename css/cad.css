@@ -115,19 +115,28 @@ body{
     margin-bottom: 20px;
     transition: .3s;
 }
+
 .inp_txt:focus{
     font-weight: bold;
 }
+
 .form .membros .area_txt{
     margin-bottom: 1px;
 }
+
 .center .form label{
     display: inline-flex;
     width: 100%;
     align-self: left;
     margin-left: 40px;
-    margin-bottom:10px ;
+    margin-bottom: 10px ;
+    margin-top: 64px;
 }
+
+#first{
+    margin-top: 32px !important;
+}
+
 .data{
     display: flex;
     justify-content: center;
@@ -135,9 +144,11 @@ body{
     flex-direction: column;
     padding: 20px 40px;
 }
+
 .center .form .data label{
     margin: 10px 0px;
 }
+
 .txt{
     width: 230px;
     padding: 10px;
@@ -148,9 +159,11 @@ body{
     border-radius: 5px;
     text-align: initial;
 }
+
 input[type=number]{
     text-align: center;
 }
+
 /*serve para tirar as setas chatas que ficam de quando a text box é do tipo number*/
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
@@ -159,7 +172,7 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0; 
 }
-/*serve para tirar as setas chatas que ficam de quando a text box é do tipo number*/
+
 .area_txt{
     width: 75%;
     font-size: 1em;
@@ -182,10 +195,12 @@ input[type=number]::-webkit-outer-spin-button {
 #dt_ap:hover{
     cursor: pointer;
 }
+
 .center .form .arquivos label{
     margin: 0;
     margin-left: 20px;
 }
+
 .arquivos{
     padding: 20px 0px;
     width: 90%;
@@ -193,6 +208,7 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+
 .arquivos input{
     background-color: #6253f2;
     color: #f4f4f4;
@@ -243,6 +259,7 @@ input[type=number]::-webkit-outer-spin-button {
         margin-left: 10%; 
     }
 }
+
 @media (max-width: 48em){
 /* .cabecalho{
     height: 50px;
@@ -258,12 +275,10 @@ input[type=number]::-webkit-outer-spin-button {
 .bts{
     margin-right: 64px;
 }
-/* 
-.center{
-    margin: 0;
-    padding: 20px;
-    width: auto;
-} */
+
+#space_span{
+    padding: 1000px !important;
+}
 
 .cadastrar{
     margin: 0 auto;

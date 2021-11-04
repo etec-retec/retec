@@ -62,7 +62,7 @@ if (!isset($_SESSION["numLogin"])) {
         <h2 class="center" id="lbl">Adicionar Projeto</h2>
         <form class="form" action="../../model/validacaoRepositorio.php" method="POST" enctype="multipart/form-data">
 
-            <label for="nome"><b>Nome</b></label>
+            <label for="nome" id="first"><b>Nome</b></label>
             <input type="text" class="inp_txt" name="nome" placeholder="Nome do TCC" min="3" max="64" required>
 
             <label for="prof_orientador"><b>Professor Orientador</b></label>
@@ -113,11 +113,10 @@ if (!isset($_SESSION["numLogin"])) {
             <label for="data_ap"><b>Data de Apresentação</b></label>
             <input type="date" class="inp_txt" name="data_ap" min="4" max="256" id="dt_ap" required>
            
-
             <div class="arquivos">
                 <h3>Arquivos</h3>
                 <p>
-                    <label>Upload PDF: </label><input type="file" name="pdf" value="" accept="application/pdf" />
+                    <label>Upload PDF: </label><input type="file" name="pdf" value="" accept="application/pdf" required/>
                 </p>
                 <p>
                     <label>Upload Projeto Completo(.zip): </label><input type="file" name="zip" accept=".zip,.rar,.7zip" />
@@ -132,6 +131,7 @@ if (!isset($_SESSION["numLogin"])) {
             <input type="submit" class="cadastrar" id="sub_box" value="Adicionar Projeto" />
         </form>
     </div>
+    
     <script>
         materias = `<?php echo $_SESSION['materias']; ?>`;
         materias = materias.split(";");

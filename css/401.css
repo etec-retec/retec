@@ -1,5 +1,5 @@
 .mensagem h1{
-    padding: 48px;
+    padding: 128px 32px 32px 32px !important;
     display: table;
     margin: 0 auto;
 }
@@ -9,4 +9,9 @@
     margin: 0 auto;
     text-decoration: none;
     font-size: 20px;
+}
+
+.logo{
+    font-size: 32px !important;
+    margin-top: -32px;
 }

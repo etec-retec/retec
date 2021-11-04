@@ -234,12 +234,20 @@ mysqli_close($conexao);
                     echo "<a download='artigo.pdf' href='data:application/pdf;base64," . base64_encode($pdf) . "'> PDF</a>";
                     ?>
                 </p>
+                <?php 
+                    if($zip != ""){
+                ?>
                 <p>
                     <label>Projeto Completo(.zip): </label>
                     <?php
                     echo "<a download='tcc.rar' href='data:application/zip;base64," . base64_encode($zip) . "'> ZIP</a>";
                     ?>
                 </p>
+                <?php
+                    }
+                ?>
+
+                
             </div>
         </div>
     </div>
