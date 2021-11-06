@@ -247,7 +247,6 @@ mysqli_close($conexao);
                     }
                 ?>
 
-                
             </div>
         </div>
     </div>
