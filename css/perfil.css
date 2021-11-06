@@ -138,14 +138,14 @@ label b{
     background: none;
     transition: all .3s ease-in-out;
     letter-spacing: 1px;
-    background: #A0BCA6;
+    background: #45d765;
     border: none;
     color: white;
     font-weight: bold;
     text-transform: uppercase;
     right: 0;
     bottom: 0;
-    border: 2px solid #A0BCA6;
+    border: 2px solid #45d765;
     cursor: pointer;
 }
 

@@ -43,11 +43,11 @@ button{
     font-size: 1rem;
     font-weight: 600;
     width: 120px;
-    height: 28px;
     background-color: white;
     color: var(--btn-color);
     border: solid #6253f2 1px;
-    border-radius: 4px;
+    border-radius: 12px;
+    padding: 4px;
     cursor: pointer;
     transition: 0.3s;
 

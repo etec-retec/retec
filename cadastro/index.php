@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- <!DOCTYPE html> -->
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../loader/loading.css">
     <script type="text/javascript" src="../loader/loading.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link href="../css/cadastro.css" rel="stylesheet">
     <link href="../assets/img/icon.ico" type="image/x-icon" rel="icon" />
     <title>RETEC - Cadastro</title>
@@ -26,7 +26,6 @@
         <h2>Cadastre-se</h2>
         <form name="cadastraU" action="../model/usuario.php?create=1" method='POST'>
         
-        <!--Aviso de quando algum email ja esta em uso-->
             <label id="lbl_aviso" style="display:none;margin:0 auto;"></label>
 
             <div class="name">
@@ -74,10 +73,10 @@
 
             <div class="dados">
                 <label for="matricula"><b>Matrícula:</b></label>
-                <input type="text" name="matricula" minlength="6" maxlength="6" placeholder="Digite a matrícula" class="inp_txt" required />
+                <input type="number" name="matricula" id="matricula" max="6" placeholder="Digite a matrícula" class="inp_txt" required/>
 
                 <label for="rg"><b>RG:</b></label>
-                <input type="number" name="rg" id="rg" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="9" placeholder="Digite o RG" autocomplete="off" class="inp_txt" required />
+                <input type="text" name="rg" id="rg" max="14" placeholder="Digite o RG" autocomplete="off" class="inp_txt" pattern="[a-zA-Z0-9-]+" required/>
             </div>
 
             <div class="opt">
@@ -91,6 +90,26 @@
     </div>
     <script src="../js/mostrarSenha.js"></script>
     <script>
+        $(function(){
+          $("input[name='matricula']").on('input', function (e) {
+            $(this).val($(this).val().replace(/[^0-9]/g, ''));
+            if($(this).val().length >= 6) {
+                $(this).val($('#matricula').val().substr(0,6));
+            }
+          });
+        });
+
+        $(function(){
+          $("input[name='rg']").on('input', function (e) {
+            if($(this).val().length >= 14) {
+                $(this).val($('#rg').val().substr(0,14));
+            }
+            var raw_text =  jQuery(this).val();
+            var return_text = raw_text.replace(/[^a-zA-Z0-9 _]/g,'');
+            jQuery(this).val(return_text);
+          });
+        });
+
         var currentLocation = window.location;
         if (currentLocation.search.slice(0, 6) == "?email") {
             document.getElementById("lbl_aviso").style.display = "block";

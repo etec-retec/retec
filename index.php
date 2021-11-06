@@ -23,7 +23,6 @@ if (isset($_SESSION)) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="loader/loading.css">
     <script type="text/javascript" src="loader/loading.js"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
     <script type="text/javascript" src="js/index.js"></script>
     <link href="css/index.css" rel="stylesheet">
     <link href="assets/img/icon.ico" type="image/x-icon" rel="icon" />
@@ -39,7 +38,7 @@ if (isset($_SESSION)) {
     <div class="actions">
         <button class="btn" id="cad" onclick="window.open('projetos', '_self')">Projetos</button>
         <button class="btn" onclick="window.open('login/', '_self')">Login</button>
-        <button class="btn" id="cad" onclick="window.open('cadastro/', '_self')">Cadastrar</button>
+        <button class="btn" id="cad" onclick="window.open('cadastro/', '_self')">Cadastro de Professores</button>
     </div>
     <div class="banner">
         <div class="conteudo">

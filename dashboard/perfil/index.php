@@ -17,7 +17,7 @@ if (!isset($_SESSION["numLogin"])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../../loader/loading.css">
     <script type="text/javascript" src="../../loader/loading.js"></script>
 
@@ -95,6 +95,17 @@ if (!isset($_SESSION["numLogin"])) {
 
     </div>
     <script>
+        $(function(){
+          $("input[name='rg']").on('input', function (e) {
+            if($(this).val().length >= 14) {
+                $(this).val($('#rg').val().substr(0,14));
+            }
+            var raw_text =  jQuery(this).val();
+            var return_text = raw_text.replace(/[^a-zA-Z0-9 _]/g,'');
+            jQuery(this).val(return_text);
+          });
+        });
+
         var currentLocation = window.location;
         if (currentLocation.search.slice(0, 6) == "?senha") {
             document.getElementById("senhaMsg").style.display = "block";
