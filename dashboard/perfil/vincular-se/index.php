@@ -44,18 +44,18 @@ $linhas = mysqli_affected_rows($conexao);
         if ($_SESSION['novaInst'] == "ETEC Professor Andre Bogasian") {
     ?>
             <div class="marker" style="display:none;" id="sucessoMsg">Seu pedido foi enviado à ETEC Professor André Bogasian!<br>Por favor, aguarde ser verificado.</div>
-            <div class="markerRed" style="display:none;" id="negadoMsg">Seu pedido à ETEC Professor André Bogasian foi negado pois ele já está na lista de solicitações.</div>
+            <div class="markerRed" style="display:none;" id="negadoMsg">Seu pedido à ETEC Professor André Bogasian já está na lista de solicitações.</div>
         <?php
         } else {
         ?>
             <div class="marker" style="display:none;" id="sucessoMsg">Seu pedido foi enviado à <?php echo $_SESSION['novaInst']; ?>!<br>Por favor, aguarde ser verificado.</div>
-            <div class="markerRed" style="display:none;" id="negadoMsg">Seu pedido à <?php echo $_SESSION['novaInst']; ?> foi negado pois ele já está na lista de solicitações.</div>
+            <div class="markerRed" style="display:none;" id="negadoMsg">Seu pedido à <?php echo $_SESSION['novaInst']; ?> está na lista de solicitações.</div>
     <?php
         }
     }
     ?>
     <div class="cabecalho">
-        <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
+        <button class="voltar" id="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
 
         <div class="logo">
             <h1 class="logo" id="texto">RETEC</h1>
@@ -136,10 +136,14 @@ $linhas = mysqli_affected_rows($conexao);
         var currentLocation = window.location;
         if (currentLocation.search.slice(0, 7) == "?negado") {
             document.getElementById("negadoMsg").style.display = "block";
+            elementoA = document.getElementById("voltar");
+            elementoA.style.marginTop = "80px";
         }
 
         if (currentLocation.search.slice(0, 8) == "?sucesso") {
             document.getElementById("sucessoMsg").style.display = "block";
+            elementoA = document.getElementById("voltar");
+            elementoA.style.marginTop = "80px";
         }
     </script>
 </body>

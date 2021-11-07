@@ -53,7 +53,7 @@ if ($_SESSION["tipo"] == "0") {
         }
     }
     ?>
-    <button class="voltar" onclick="window.open('../login/', '_self')">❮ Voltar</button>
+    <button class="voltar" id="voltar" onclick="window.open('../login/', '_self')">❮ Voltar</button>
     <div class="formu">
         <h1>Olá, <?php echo $_SESSION["nome"]; ?>!</h1>
         
@@ -96,6 +96,8 @@ if ($_SESSION["tipo"] == "0") {
         var currentLocation = window.location;
         if (currentLocation.search.slice(0, 8) == "?sucesso") {
             document.getElementById("sucessoMsg").style.display = "block";
+            elementoA = document.getElementById("voltar");
+            elementoA.style.marginTop = "80px";
         }
     </script>
 </body>
