@@ -137,13 +137,13 @@ $linhas = mysqli_affected_rows($conexao);
         if (currentLocation.search.slice(0, 7) == "?negado") {
             document.getElementById("negadoMsg").style.display = "block";
             elementoA = document.getElementById("voltar");
-            elementoA.style.marginTop = "80px";
+            elementoA.style.marginTop = "100px";
         }
 
         if (currentLocation.search.slice(0, 8) == "?sucesso") {
             document.getElementById("sucessoMsg").style.display = "block";
             elementoA = document.getElementById("voltar");
-            elementoA.style.marginTop = "80px";
+            elementoA.style.marginTop = "100px";
         }
     </script>
 </body>

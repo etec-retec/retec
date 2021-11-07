@@ -84,6 +84,11 @@ if ($_SESSION['tipo'] != 0) {
                     <button class="btnBox" id="neg">Negar</button>
                 </form>
             </div>
+
+            <script>
+                elementoA = document.getElementById("boxNot");
+                elementoA.style.marginTop = "150px";
+            </script>
         <?php
         } else {
         ?>
