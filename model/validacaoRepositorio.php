@@ -117,13 +117,11 @@
         }
 
         if($impedimento == FALSE){
-            mysqli_query($conexao, $query);
-            $query2 = "SELECT codigo_r FROM repositorio WHERE nome = '$nome' AND prof_orientador = '$prof_orientador' AND prof_corientador = '$prof_corientador'";
-            $res = mysqli_query($conexao, $query2);
-            $row = mysqli_fetch_array($res);
-            $cod_r = $row[0];
+            if (mysqli_query($conexao, $query)) {
+                $last_id = mysqli_insert_id($conexao);
+            }
             mysqli_close($conexao);
-            header("Location: ../projeto/?tcc=$cod_r&criado=TRUE");
+            header("Location: ../projeto/?tcc=$last_id&criado=TRUE");
         }
     }
 ?>
