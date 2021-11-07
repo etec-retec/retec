@@ -9,7 +9,6 @@ body{
     color: #2a3641;
     height: 100vh;
     font-size: 16px;
-
 }
 
 .cabecalho{
@@ -114,6 +113,9 @@ body{
 .boxNot{
     right: 0;
     padding: 20px 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: 32px;
 }
 
 .boxNot button{

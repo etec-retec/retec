@@ -144,11 +144,11 @@ mysqli_close($conexao);
         <?php
         if (isset($_SESSION["numLogin"])) {
         ?>
-            <button class="voltar" onclick="window.open('../projetos/', '_self')">❮ Voltar</button>
+            <button class="voltar" id="voltar" onclick="window.open('../projetos/', '_self')">❮ Voltar</button>
         <?php
         } else {
         ?>
-            <button class="voltar" onclick="window.open('../projetos/', '_self')">❮ Outros Projetos</button>
+            <button class="voltar" id="voltar" onclick="window.open('../projetos/', '_self')">❮ Outros Projetos</button>
         <?php
         }
         ?>
@@ -207,7 +207,7 @@ mysqli_close($conexao);
         </div>
 
         <div class="info_direita">
-            <div class="info_adicionais">
+            <div class="info_adicionais" id="info_adicionais">
                 <p>Adicionado por <?php echo $nome_professor . " em " . $Add_dia . " de " . $Add_mes . " de " . $Add_ano . " às " . $Add_horario; ?> </p>
                 <?php
                 if ($data_att) {
@@ -291,6 +291,19 @@ mysqli_close($conexao);
         nova_data = data[2] + '/' + data[1] + '/' + data[0];
         document.getElementById("data").textContent = nova_data;
     </script>
+
+    <?php
+        if(isset($_GET['criado'])){
+    ?>
+            <script>
+                elementoA = document.getElementById("voltar");
+                elementoB = document.getElementById("info_adicionais");
+                elementoA.style.marginTop = "70px";
+                elementoB.style.marginTop = "70px";
+            </script>
+    <?php
+        }
+    ?>
 </body>
 
 </html>
