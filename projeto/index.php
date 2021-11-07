@@ -161,7 +161,13 @@ mysqli_close($conexao);
                 <div class="orientadores">
 
                     <label><b>Prof. Orientador: </b></label> <?php echo $prof_orientador; ?><br>
-                    <label><b>Prof. Coorientador: </b></label> <?php echo $prof_corientador; ?>
+                    <?php
+                        if($prof_corientador != ""){
+                    ?>
+                        <label><b>Prof. Coorientador: </b></label> <?php echo $prof_corientador; ?>
+                    <?php
+                        }
+                    ?>
                 </div>
     
                     <label><b>Membros: </b></label>
@@ -172,7 +178,6 @@ mysqli_close($conexao);
                 <p>
                     <label><b>Banca: </b></label>
                 <ul id="list2">
-
                 </ul>
                 </p>
                 <p>

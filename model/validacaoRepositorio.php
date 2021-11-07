@@ -6,7 +6,7 @@
         exit;
     }
 
-    if(isset($_POST['nome']) && isset($_POST['prof_orientador']) && isset($_POST['prof_corientador']) && isset($_POST['membros_banca']) && isset($_POST['membros_grupo']) 
+    if(isset($_POST['nome']) && isset($_POST['prof_orientador']) && isset($_POST['membros_banca']) && isset($_POST['membros_grupo']) 
     && isset($_POST['curso']) && isset($_POST['ano']) && isset($_POST['mencao']) && isset($_POST['resumo']) && isset($_POST['abstract'])
     && isset($_POST['pa_ch']) && isset($_POST['key_words']) && isset($_POST['data_ap']) && isset($_POST['instituicao'])){
         $dados = [];
@@ -24,7 +24,11 @@
         $key_words = filter_input(INPUT_POST, 'key_words', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $data_ap = filter_input(INPUT_POST, 'data_ap', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $instituicao = filter_input(INPUT_POST, 'instituicao', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        array_push($dados, $nome, $prof_orientador, $prof_corientador, $membros_grupo, $membros_banca, $curso, $ano, $mencao, $resumo, $abstract, $pa_ch, $key_words, $data_ap, $instituicao);
+        array_push($dados, $nome, $prof_orientador, $membros_grupo, $membros_banca, $curso, $ano, $mencao, $resumo, $abstract, $pa_ch, $key_words, $data_ap, $instituicao);
+
+        if($prof_corientador == ""){
+            $prof_corientador = NULL;
+        }
 
         foreach($dados as $dado){
             if($dado == ""){
@@ -72,7 +76,6 @@
         $pdf_conteudo = fread($fp, $pdf_tamanho);
         $pdf_conteudo = addslashes($pdf_conteudo);
         fclose($fp);
-    
 
         #ZIP
         if($zip = $_FILES['zip']['tmp_name'] != NULL){
