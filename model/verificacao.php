@@ -61,6 +61,7 @@
             $query = "SELECT * FROM solicitacoes WHERE instituicao = '$inst'";
             $result = mysqli_query($conexao, $query);
             $retorno = mysqli_affected_rows($conexao);
+            echo $retorno;
 
             if($retorno == 0){   
                 unset($_SESSION['not']);
@@ -85,13 +86,6 @@
                 }
                 mysqli_close($conexao);
 
-                unset($_SESSION['not']);
-                unset($_SESSION['notID']);
-                unset($_SESSION['notNome']);
-                unset($_SESSION['notEmail']);
-                unset($_SESSION['notEmailRec']);
-                unset($_SESSION['notMatricula']);
-                unset($_SESSION['notRg']);
                 $nl = $_SESSION['numLogin'];
                 header("location: ../instituicao/");
             }
