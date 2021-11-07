@@ -203,21 +203,17 @@ mysqli_close($conexao);
                             <h3>Ano de Publicação</h3>
                             <?php
                             if (isset($_GET['ano1'])) {
-                                if ($_GET['ano1'] != '') {
                             ?>
-                                    De <input type="number" name="ano1" class="ano_inp" min="2008" max="2021" value="<?php echo $_GET['ano1']; ?>">
+                                    De <input type="number" name="ano1" class="ano_inp" min="1911" max="2021" value="<?php echo $_GET['ano1']; ?>">
                                 <?php
-                                }
                             }
                             if (isset($_GET['ano2'])) {
-                                if ($_GET['ano2'] != '') {
                                 ?>
-                                    até <input type="number" name="ano2" class="ano_inp" min="2009" max="2022" value="<?php echo $_GET['ano2']; ?>">
+                                    até <input type="number" name="ano2" class="ano_inp" min="1911" max="2022" value="<?php echo $_GET['ano2']; ?>">
                                 <?php
-                                }
                             } else {
                                 ?>
-                                De <input type="number" name="ano1" class="ano_inp" min="2008" max="2021"> até <input type="number" name="ano2" class="ano_inp" min="2009" max="2022">
+                                De <input type="number" name="ano1" class="ano_inp" min="1911" max="2021"> até <input type="number" name="ano2" class="ano_inp" min="2009" max="2022">
                             <?php
                             }
                             ?>
@@ -262,7 +258,6 @@ mysqli_close($conexao);
                         }
                         ?>
                         
-                    
                     <div class="content-blocos">
                         <div class="blocos">
                             <?php
