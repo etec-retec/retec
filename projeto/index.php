@@ -40,6 +40,13 @@ if ($id_professor != 0) {
     while ($result = mysqli_fetch_assoc($res)) {
         $nome_professor = $result['nome'];
     }
+
+    if(mysqli_affected_rows($conexao) == 0){
+        $nome_professor = $instituicao;
+        if ($nome_professor == "ETEC Professor Andre Bogasian") {
+            $nome_professor = "ETEC Professor André Bogasian";
+        }
+    }
 } else {
     $nome_professor = $instituicao;
     if ($nome_professor == "ETEC Professor Andre Bogasian") {
