@@ -29,7 +29,7 @@ body{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;   
     z-index: 100;
@@ -80,6 +80,7 @@ label{
 .info_esquerda form .ano-publicacao h3{
     border-top: 1px solid rgba(175, 175, 175, 0.815);
 }
+
 h1 label{
     font-size: 100%;
 }
@@ -87,17 +88,17 @@ h1 label{
     margin-left: 40px;
     max-width: 20%;
     min-width: 15%;
-    position: fixed;
+    position: absolute;
     margin-top: 40px;
-
 }
 
 .result{
-    position: fixed;
+    position: absolute;
     z-index: 98;
     right: 150px;
-    top: 117px;
+    top: 64px;
 }
+
 .result h2{
     font-size: 1em;
 }
@@ -187,12 +188,12 @@ h1 label{
     
 } */
 .content-pesquisa{
-    position: fixed;
+    position: absolute;
     background: var(--background-color2);
     width: 100%;
     z-index: 98;
-
 }
+
 .content-pesquisa .pesquisa{
     /* z-index: 11; */
     display: flex;
@@ -210,8 +211,8 @@ h1 label{
     /* overflow: hidden; */
     background: white;
     /* padding-left: 20px; */
-    
 }
+
 /* Esse #btn é a barra de pesquisa*/
 #btn{
     font-size: 1em;
