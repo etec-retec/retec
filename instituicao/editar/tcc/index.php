@@ -43,10 +43,9 @@ mysqli_close($conexao);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../../../loader/loading.css">
     <script type="text/javascript" src="../../../loader/loading.js"></script>
-
     <link href="../../../css/cad.css" rel="stylesheet">
     <link href="../../../assets/img/icon.ico" type="image/x-icon" rel="icon" />
     <title>Retec - Editar</title>
@@ -64,7 +63,7 @@ mysqli_close($conexao);
 
     <div class="center">
         <h2 class="center" id="lbl">Editar <?php echo $nome; ?></h2>
-        <form action="../../../model/editarRepositorio.php" method="POST" enctype="multipart/form-data">
+        <form action="../../../model/editarRepositorio.php" method="POST" enctype="multipart/form-data" class="form">
 
             <label for="nome"><b>Nome</b></label>
             <br>
@@ -99,7 +98,7 @@ mysqli_close($conexao);
 
             <label for="ano"><b>Ano de Conclusão</b></label>
             <br>
-            <input type="number" class="inp_txt" name="ano" value="<?php echo $ano; ?>" placeholder="Ano" min="2021" max="2022" required>
+            <input type="number" class="inp_txt" name="ano" value="<?php echo $ano; ?>" placeholder="Ano" min="1911" max="2021" id="ano" required>
             <br><br>
 
             <label for="mencao"><b>Menção</b></label>
@@ -184,6 +183,21 @@ mysqli_close($conexao);
             slct.appendChild(option);
             console.log(materias[i]);
         }
+
+        $(function () {
+            $( "#ano" ).change(function() {
+                var max = parseInt($(this).attr('max'));
+                var min = parseInt($(this).attr('min'));
+                if ($(this).val() > 2021)
+                {
+                    $(this).val(2021);
+                }
+                else if ($(this).val() < 1911)
+                {
+                    $(this).val(1911);
+                }       
+            }); 
+        });
     </script>
 </body>
 
