@@ -73,7 +73,7 @@
 
             <div class="dados">
                 <label for="matricula"><b>Matrícula:</b></label>
-                <input type="number" name="matricula" id="matricula" max="6" placeholder="Digite a matrícula" class="inp_txt" required/>
+                <input type="number" name="matricula" id="matricula" max="999999" placeholder="Digite a matrícula" class="inp_txt" required/>
 
                 <label for="rg"><b>RG:</b></label>
                 <input type="text" name="rg" id="rg" max="14" placeholder="Digite o RG" autocomplete="off" class="inp_txt" pattern="[a-zA-Z0-9-]+" required/>
@@ -121,6 +121,11 @@
             document.getElementById("lbl_aviso").style.color = "#800";
             document.getElementById("lbl_aviso").style.textDecoration = "underline";
             document.getElementById("lbl_aviso").textContent = "As senhas não são iguais";
+        } else if (currentLocation.search.slice(0, 7) == "?repeat") {
+            document.getElementById("lbl_aviso").style.display = "block";
+            document.getElementById("lbl_aviso").style.color = "#800";
+            document.getElementById("lbl_aviso").style.textDecoration = "underline";
+            document.getElementById("lbl_aviso").textContent = "Os e-mails não podem se repetir!";
         }
     </script>
 </body>

@@ -13,8 +13,14 @@
     $email = strtolower($email);
     $email_rec = strtolower($email_rec);
     
+    if($email == $email_rec){
+        header("location: ../cadastro/index.php?repeat");
+        $impedimento = TRUE;
+    }
+
     if($senha != $rsenha){
         header("location: ../cadastro/index.php?senha");
+        $impedimento = TRUE;
     }
 
     include '../conexao/conexao.inc';
@@ -35,7 +41,7 @@
         $objeto->setSenha($senha);
         $objeto->setMatricula($matricula);
         $objeto->setRG($rg);
-        $objeto->atualizaBD_U();
+        $objeto->atualizaBD_U();   
     }
 
     class Usuario{
@@ -137,6 +143,8 @@
     }
 
     if(isset($_GET["create"]) and $retorno == 0){
-        addUsuario($nome, $sobrenome, $instituicao, $email, $email_rec, $senha, $matricula, $rg);
+        if(!isset($impedimento)){
+            addUsuario($nome, $sobrenome, $instituicao, $email, $email_rec, $senha, $matricula, $rg);
+        }
     }
 ?>
