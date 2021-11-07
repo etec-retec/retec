@@ -16,10 +16,9 @@ if (!isset($_SESSION["numLogin"])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="../../loader/loading.css">
     <script type="text/javascript" src="../../loader/loading.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link href="../../css/cad.css" rel="stylesheet">
     <link href="../../css/perfil.css" rel="stylesheet">
     <link href="../../assets/img/icon.ico" type="image/x-icon" rel="icon" />
@@ -86,7 +85,7 @@ if (!isset($_SESSION["numLogin"])) {
             </select>
 
             <label for="ano"><b>Ano de Conclusão (*)</b></label>
-            <input type="number" class="inp_txt" name="ano" placeholder="Ano" min="2008" max="2021" maxlength="4" required>
+            <input type="number" class="inp_txt" name="ano" id="ano" placeholder="Ano" required>
 
             <label for="mencao"><b>Menção (*)</b></label>
             <select class="inp_txt" name="mencao" id="slct">
@@ -109,7 +108,7 @@ if (!isset($_SESSION["numLogin"])) {
             <textarea type="text" class="area_txt" name="key_words" placeholder="Trecho do PDF (Key Words)" required></textarea>
            
             <label for="data_ap"><b>Data de Apresentação (*)</b></label>
-            <input type="date" class="inp_txt" name="data_ap" min="4" max="256" id="dt_ap" required>
+            <input type="date" class="inp_txt" name="data_ap" min="1911-09-28" max="2021-12-31" id="dt_ap" required>
            
             <div class="arquivos">
                 <h3>Arquivos</h3>
@@ -147,6 +146,21 @@ if (!isset($_SESSION["numLogin"])) {
         if (currentLocation.search.slice(0, 13) == "?dadoFaltante") {
             document.getElementById("dadoMsg").style.display = "block";
         }
+
+        $(function () {
+            $( "#ano" ).change(function() {
+                var max = parseInt($(this).attr('max'));
+                var min = parseInt($(this).attr('min'));
+                if ($(this).val() > 2021)
+                {
+                    $(this).val(2021);
+                }
+                else if ($(this).val() < 1911)
+                {
+                    $(this).val(1911);
+                }       
+            }); 
+        });
     </script>
 </body>
 
