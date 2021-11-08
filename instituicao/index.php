@@ -34,10 +34,8 @@ if ($_SESSION['tipo'] != 0) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="../loader/loading.css">
     <script type="text/javascript" src="../loader/loading.js"></script>
-
     <link href="../css/instituicao.css" rel="stylesheet">
     <link href="../assets/img/icon.ico" type="image/x-icon" rel="icon" />
     <?php
@@ -58,7 +56,7 @@ if ($_SESSION['tipo'] != 0) {
         <span class="load"></span>
     </div>
 
-    <div class="cabecalho" id="teste">
+    <div class="cabecalho" id="cent">
         <button class="voltar" onclick="window.open('../login/index.php', '_self')">❮ Sair</button>
         <?php
         if ((isset($_SESSION['not']) && $_SESSION['not'] > 0)) {
@@ -112,8 +110,7 @@ if ($_SESSION['tipo'] != 0) {
             <?php
             }
             ?>
-            <br>
-            <label class="lblNome"><b>Institucional</b></label>
+            <label class="institucional">Institucional</label>
         </div>
     </div>
 

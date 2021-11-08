@@ -33,7 +33,7 @@ if (!isset($_SESSION["numLogin"])) {
     <div class="cabecalho">
         <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
         <div class="bts">
-            <a id="add">Adicionar</a>
+            <a id="add">Adicionar </a>
             <a id="rem" href="../remover/">Remover</a>
             <a id="ed" href="../editar/">Editar</a>
         </div>

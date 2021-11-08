@@ -22,19 +22,23 @@ body{
     min-height: 10px;
     background-color: #dee7ee;
 }
+
 .logo{
     max-width: 50%;
 }
+
 .logo h1{
-    font-size: clamp(100%, 1.5em + 1vw, 3em);
+    font-size: clamp(100%, 2em + 1vw, 5em);
     color: #6253f2;
+    margin: 0 auto;
+    display: table;
 }
 
 .logo label{
-    font-size: clamp(50%, .5em + 1vw, 2em);
     color: #2a3641;
     line-height: 1em;
 }
+
 .logo label b{
     font-size: clamp(50%, .1em + 1vw, 2em);
 
@@ -71,7 +75,7 @@ body{
 }
 
 .corpo h1{
-    font-size: clamp(1.5em, 4vw, 5em);
+    font-size: clamp(100%, 2em + 1vw, 5em);
     margin-bottom: 16px;
 }
 /* .cap{
@@ -90,12 +94,12 @@ body{
 
 .opcoes a{
     padding-top: 0px;
-    padding: 0 16px;
+    padding-left: 16px;
+    padding-right: 16px;
     text-decoration: none;
     color: #6253f2;
-    font-size: clamp(1em, 1.5vw, 5em);;
+    font-size: 18px;
     font-weight: 600;
-    transition: .3s;
 }
 
 .opcoes a:hover{
@@ -103,7 +107,14 @@ body{
 }
 
 .lblNome{
-    float: left;
+    margin: 0 auto;
+    display: table;
+}
+
+.institucional{
+    font-weight: bolder;
+    margin: 0 auto;
+    display: table;
 }
 
 #p, #a, #e, #r{

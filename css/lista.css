@@ -23,6 +23,7 @@ body{
 .center h2{
     text-align: center;
     color: #800000;
+    padding-top: 32px;
 }
 
 #sub_box{

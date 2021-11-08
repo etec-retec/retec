@@ -36,6 +36,12 @@ body{
 
 h1{
     font-size: clamp(100%, 2em + 1vw, 5em);
+    margin: 0 auto;
+    display: table;
+}
+
+#texto{
+    margin: 0 auto;
 }
 
 .opcoes{
