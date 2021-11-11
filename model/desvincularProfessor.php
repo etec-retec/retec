@@ -29,6 +29,7 @@
 
     if(sizeof($instituicoes) == 1){
         $_SESSION['idProf'] = $id;
+        $impedimento = TRUE;
         header("Location: ../instituicao/remover/aviso/");
     }else{
         $nova = "";
@@ -55,8 +56,9 @@
         }   
     }   
 
-    $query = "UPDATE usuario SET instituicao = '$nova' WHERE codigo_u = '$id'";
-    mysqli_query($conexao, $query);
-
-    header("Location: ../instituicao/lista-de-professores/?success");
+    if(!isset($impedimento)){
+        $query = "UPDATE usuario SET instituicao = '$nova' WHERE codigo_u = '$id'";
+        mysqli_query($conexao, $query);
+        header("Location: ../instituicao/lista-de-professores/?success");
+    } 
 ?>
