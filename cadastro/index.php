@@ -130,6 +130,18 @@
             document.getElementById("lbl_aviso").style.fontWeight = "900";
             document.getElementById("lbl_aviso").style.textDecoration = "underline";
             document.getElementById("lbl_aviso").textContent = "Os e-mails não podem se repetir!";
+        } else if (currentLocation.search.slice(0, 10) == "?matricula") {
+            document.getElementById("lbl_aviso").style.display = "block";
+            document.getElementById("lbl_aviso").style.color = "#F00";
+            document.getElementById("lbl_aviso").style.fontWeight = "900";
+            document.getElementById("lbl_aviso").style.textDecoration = "underline";
+            document.getElementById("lbl_aviso").textContent = "A matrícula já está cadastrada!";
+        } else if (currentLocation.search.slice(0, 3) == "?rg") {
+            document.getElementById("lbl_aviso").style.display = "block";
+            document.getElementById("lbl_aviso").style.color = "#F00";
+            document.getElementById("lbl_aviso").style.fontWeight = "900";
+            document.getElementById("lbl_aviso").style.textDecoration = "underline";
+            document.getElementById("lbl_aviso").textContent = "O RG já está cadastrado!";
         }
     </script>
 </body>

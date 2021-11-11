@@ -44,6 +44,46 @@
         header("location: ../cadastro/index.php?email");
     }
 
+    $query = "SELECT * FROM usuario WHERE matricula = '$matricula'";
+    $result = mysqli_query($conexao, $query);
+    $retorno = mysqli_affected_rows($conexao);
+    if($retorno > 0){
+        $nome = htmlentities($nome, ENT_QUOTES, "UTF-8");
+        $impedimento = TRUE;
+        mysqli_close($conexao);
+        header("location: ../cadastro/index.php?matricula");
+    }
+
+    $query = "SELECT * FROM usuario WHERE rg = '$rg'";
+    $result = mysqli_query($conexao, $query);
+    $retorno = mysqli_affected_rows($conexao);
+    if($retorno > 0){
+        $nome = htmlentities($nome, ENT_QUOTES, "UTF-8");
+        $impedimento = TRUE;
+        mysqli_close($conexao);
+        header("location: ../cadastro/index.php?rg");
+    }
+
+    $query = "SELECT * FROM solicitacoes WHERE matricula = '$matricula'";
+    $result = mysqli_query($conexao, $query);
+    $retorno = mysqli_affected_rows($conexao);
+    if($retorno > 0){
+        $nome = htmlentities($nome, ENT_QUOTES, "UTF-8");
+        $impedimento = TRUE;
+        mysqli_close($conexao);
+        header("location: ../cadastro/index.php?matricula");
+    }
+
+    $query = "SELECT * FROM solicitacoes WHERE rg = '$rg'";
+    $result = mysqli_query($conexao, $query);
+    $retorno = mysqli_affected_rows($conexao);
+    if($retorno > 0){
+        $nome = htmlentities($nome, ENT_QUOTES, "UTF-8");
+        $impedimento = TRUE;
+        mysqli_close($conexao);
+        header("location: ../cadastro/index.php?rg");
+    }
+
     function addUsuario($nome, $sobrenome, $instituicao, $email, $email_rec, $senha, $matricula, $rg){
         $objeto = new Usuario();
         $objeto->setNome($nome, $sobrenome);
