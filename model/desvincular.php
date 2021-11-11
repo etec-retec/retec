@@ -28,6 +28,11 @@
             }
         }
 
+        $ver = substr($nova, 0, 1);
+        if ($ver == ","){
+            $nova = substr($nova, 1);
+        }
+
         $rg = $_SESSION['rg'];
         $matricula = $_SESSION['matricula'];
         $query = "UPDATE usuario SET instituicao = '$nova' WHERE rg = '$rg' AND matricula = '$matricula'";

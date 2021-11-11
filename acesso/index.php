@@ -18,7 +18,7 @@ if ($_SESSION["tipo"] == "0") {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">

@@ -43,7 +43,7 @@ if (!isset($_SESSION["numLogin"])) {
     }
     ?>
     <div class="cabecalho" id="teste">
-        <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
+        <button class="voltar" id="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
 
         <div class="logo">
             <h1 class="logo" id="texto">RETEC</h1>
@@ -104,6 +104,7 @@ if (!isset($_SESSION["numLogin"])) {
         var currentLocation = window.location;
         if (currentLocation.search.slice(0, 8) == "?sucesso") {
             document.getElementById("sucessoMsg").style.display = "block";
+            document.getElementById("voltar").style.marginTop = "80px";
         }
     </script>
 </body>
