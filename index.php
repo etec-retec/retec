@@ -94,6 +94,15 @@ if (isset($_SESSION)) {
     <div class="contato">
         <form class="form" action="model/contato.php" method="POST">
             <h2>Entre em contato conosco!</h2>
+            <?php
+                if(isset($_GET['contato'])){
+            ?>
+                <div class="contatoBox">
+                    Muito obrigado por nos contatar, responderemos o mais rápido possível!
+                </div>
+            <?php
+                }
+            ?>
 
             <div class="form-box">
                 <label for="nome"><b>Nome</b></label>

@@ -295,6 +295,15 @@ label b{
     animation: animate .2s cubic-bezier(0, 0.55, 0.96, 1.32);
 }
 
+.contatoBox{
+    background-color: #4bd84b;
+    color: #435821;
+    border-top: solid 1px #435821;
+    border-bottom: solid 1px #435821;
+    padding: 16px;
+    margin-bottom: 32px;
+}
+
 @keyframes animate{
 
     0%{

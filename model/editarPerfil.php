@@ -16,22 +16,44 @@
         include "../conexao/conexao.inc";
 
         if($email != $_SESSION['email']){
-            $query = "SELECT email FROM usuario WHERE email = '$email' OR email_rec = '$email'";
+            $query = "SELECT * FROM usuario WHERE email = '$email' OR email_rec = '$email'";
             mysqli_query($conexao, $query);
             $linhas1 = mysqli_affected_rows($conexao);
             
             if($linhas1 > 0){
+                $impedimento = TRUE;
+                mysqli_close($conexao);
+                header("Location: ../dashboard/perfil/?emailDenied");
+            }
+
+            $query = "SELECT * FROM solicitacoes WHERE email = '$email' OR email_rec = '$email'";
+            mysqli_query($conexao, $query);
+            $linhas1 = mysqli_affected_rows($conexao);
+            
+            if($linhas1 > 0){
+                $impedimento = TRUE;
                 mysqli_close($conexao);
                 header("Location: ../dashboard/perfil/?emailDenied");
             }
         }
 
         if($email_rec != $_SESSION['email_rec']){
-            $query = "SELECT email_rec FROM usuario WHERE email = '$email_rec' OR email_rec = '$email_rec'";
+            $query = "SELECT * FROM usuario WHERE email = '$email_rec' OR email_rec = '$email_rec'";
             mysqli_query($conexao, $query);
             $linhas2 = mysqli_affected_rows($conexao);
 
             if($linhas2 > 0){
+                $impedimento = TRUE;
+                mysqli_close($conexao);
+                header("Location: ../dashboard/perfil/?email_recDenied");
+            }
+
+            $query = "SELECT * FROM solicitacoes WHERE email = '$email_rec' OR email_rec = '$email_rec'";
+            mysqli_query($conexao, $query);
+            $linhas2 = mysqli_affected_rows($conexao);
+
+            if($linhas2 > 0){
+                $impedimento = TRUE;
                 mysqli_close($conexao);
                 header("Location: ../dashboard/perfil/?email_recDenied");
             }
@@ -43,6 +65,17 @@
             $linhas3 = mysqli_affected_rows($conexao);
 
             if($linhas3 > 0){
+                $impedimento = TRUE;
+                mysqli_close($conexao);
+                header("Location: ../dashboard/perfil/?rgDenied");
+            }
+
+            $query = "SELECT rg FROM solicitacoes WHERE rg = '$rg'";
+            mysqli_query($conexao, $query);
+            $linhas3 = mysqli_affected_rows($conexao);
+
+            if($linhas3 > 0){
+                $impedimento = TRUE;
                 mysqli_close($conexao);
                 header("Location: ../dashboard/perfil/?rgDenied");
             }
@@ -54,6 +87,17 @@
             $linhas4 = mysqli_affected_rows($conexao);
 
             if($linhas4 > 0){
+                $impedimento = TRUE;
+                mysqli_close($conexao);
+                header("Location: ../dashboard/perfil/?matriculaDenied");
+            }
+
+            $query = "SELECT matricula FROM solicitacoes WHERE matricula = '$matricula'";
+            mysqli_query($conexao, $query);
+            $linhas4 = mysqli_affected_rows($conexao);
+
+            if($linhas4 > 0){
+                $impedimento = TRUE;
                 mysqli_close($conexao);
                 header("Location: ../dashboard/perfil/?matriculaDenied");
             }
@@ -69,7 +113,7 @@
         mysqli_query($conexao, $query);
         $linhas5 = mysqli_affected_rows($conexao);
 
-        if($linhas5 > 0){
+        if($linhas5 > 0 AND !isset($impedimento)){
             $query = "UPDATE solicitacoes SET nome = '$nome', email = '$email', email_rec = '$email_rec', matricula = '$matricula', rg = '$rg' WHERE matricula = '$old_mat' AND rg = '$old_rg'";
             mysqli_query($conexao, $query);
         }
