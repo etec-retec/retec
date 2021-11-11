@@ -47,7 +47,7 @@ mysqli_close($conexao);
     }
     ?>
     <div class="cabecalho">
-        <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
+        <button class="voltar" id="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
         <div class="logo">
 
             <h1>RETEC</h1>
@@ -118,6 +118,13 @@ mysqli_close($conexao);
             ?>
         </table>
     </div>
+
+    <script>
+        var currentLocation = window.location;
+        if (currentLocation.search.slice(0, 8) == "?success") {
+            document.getElementById("voltar").style.marginTop = "80px";
+        }
+    </script>
 </body>
 
 </html>
