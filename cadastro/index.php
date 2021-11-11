@@ -46,8 +46,8 @@
                     <input type="checkbox" name="instituicao[]" value="ETEC Professor André Bogasian" />
                     <span class="checkmark"></span>
                 </label>
-                <label class="container">ETEC Professor Basílides de Godoy
-                    <input type="checkbox" name="instituicao[]" value="ETEC Professor Basílides de Godoy" />
+                <label class="container">ETEC Professor Basilides de Godoy
+                    <input type="checkbox" name="instituicao[]" value="ETEC Professor Basilides de Godoy" />
                     <span class="checkmark"></span>
                 </label>
             </div>

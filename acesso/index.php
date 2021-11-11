@@ -82,7 +82,7 @@ if ($_SESSION["tipo"] == "0") {
                             option.text = 'ETEC Professor André Bogasian';
                             option.value = 'ETEC Professor Andre Bogasian';
                         }else if('$inst' == 'ETEC Basilides de Godoy'){
-                            option.text = 'ETEC Basílides de Godoy';
+                            option.text = 'ETEC Basilides de Godoy';
                             option.value = 'ETEC Basilides de Godoy';
                         }else{
                             option.text = '$inst';
