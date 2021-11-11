@@ -36,9 +36,9 @@ if (isset($_SESSION)) {
     </div>
 
     <div class="actions">
-        <button class="btn" id="cad" onclick="window.open('projetos', '_self')">Projetos</button>
-        <button class="btn" onclick="window.open('login/', '_self')">Login</button>
-        <button class="btn" id="cad" onclick="window.open('cadastro/', '_self')">Cadastro de Professores</button>
+        <button class="btn" onclick="window.open('projetos', '_self')"><span>Projetos</span></button>
+        <button class="btn" onclick="window.open('login/', '_self')"><span>Login</span></button>
+        <button class="btn" id="cad" onclick="window.open('cadastro/', '_self')"><span>Cadastrar Professor</span></button>
     </div>
     <div class="banner">
         <div class="conteudo">

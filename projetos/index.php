@@ -81,7 +81,6 @@ mysqli_close($conexao);
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="../css/projetos.css" rel="stylesheet">
-    <link href="../css/img.css" rel="stylesheet">
     <link href="../assets/img/icon.ico" type="image/x-icon" rel="icon" />
     <title>Retec - Projetos</title>
 </head>
@@ -218,17 +217,19 @@ mysqli_close($conexao);
                             }
                             ?>
                         </div>
-                        <!-- <br><br> -->
-                        <input type="submit" class="btn_filtrar" value="Filtrar" />
-                        <!-- <br><br> -->
+            
+                        <input type="submit" class="btn_filtrar" value="Filtrar" />           
                         <input type="button" class="btn_filtrar" id="lp_filtros" onclick="window.open('../projetos/', '_self')" value="Limpar Filtros" />
                     </form>
                 </div>
+                
+                
+                
                 <div class="info_direita">
                     <form action="?" method="GET">
                             <div class="content-pesquisa">
                             <div class="pesquisa">
-                                <input type="text" class="input_pesquisar" name="search" id="btn" title="Procure pelos melhores TCCs do CPS" placeholder="Pesquisar" autocomplete="off" />
+                                <input type="text" class="input_pesquisar" name="search" id="btn" title="Procure pelos melhores TCCs do CPS" placeholder="Pesquisar" autocomplete="off" required/>
                                 <button type="reset" class="apagar"><i class="fa fa-times" aria-hidden="true"></i></button>
                                 <button type="submit" class="btn_pesquisar" id="ico">
                                     <i class="fa fa-search" alt="pes" title="Pesquisar"></i>
@@ -295,24 +296,7 @@ mysqli_close($conexao);
                 </a>
             </div>
         </section>
-        <script>
-            let = document.querySelector(".cabecalho")
-            let = document.querySelector(".voltar")
-            let = document.querySelector(".grid-container")
-            let = document.querySelector(".info-esquerda")
-            let = document.querySelector(".info-direita")
-            let = document.querySelector(".pesquisa")
-            let = document.querySelector(".resul")
-            let = document.querySelector(".blocos")
-            let doc = document.documentElement
 
-            window.addEventListener('scroll', function() {
-                let value = parseInt(100 * doc.scrollTop / (doc.scrollHeight - doc.clientHeight))
-                console.log()
-            })
-        </script>
         <script src="../js/btn-top-projetos.js"></script>
-
 </body>
-
 </html>

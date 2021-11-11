@@ -103,10 +103,6 @@ body{
 }
 /**/
 
-.inp_txt{
-    max-width: 400px ;
-}
-
 .formu input[type=email]{
     text-transform: lowercase;
 }
@@ -116,7 +112,7 @@ body{
     background: none; 
     border: none;
     height: 20px;
-    right: calc(100% - 50% - 165px);
+    right: calc(100% - 50% - 210px);
     margin-top: 10px;
     opacity: 50%;
 }

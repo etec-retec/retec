@@ -150,7 +150,6 @@ h1 label{
 /* LADO DIREITO */
 
 .info_direita{
-    /* position: relative; */
     padding-left: 10px;
     width: 75%;
     position: absolute;
@@ -159,8 +158,6 @@ h1 label{
 
 .btn_pesquisar i{
     padding: 12px;
-    /* background: white;
-    border-radius: 50%; */
     font-size: 2em;
     color: rgba(165, 157, 157, 0.486);
     transition: .2s;
@@ -175,18 +172,7 @@ h1 label{
     background: none;
     /* margin: 0px 10px; */
 }
-/* .info_direita .pesquisa{
-    margin: 0 auto ; //
-    position: relative;
-    padding: 40px 0px;
-    position: fixed;
-    z-index: 10;
-    width: 100%;
-    overflow: hidden;
-    background: var(--background-color2);
-    padding-left: 20px;
-    
-} */
+
 .content-pesquisa{
     position: absolute;
     background: var(--background-color2);
@@ -195,26 +181,23 @@ h1 label{
 }
 
 .content-pesquisa .pesquisa{
-    /* z-index: 11; */
     display: flex;
     text-align: center;
     justify-content: space-between;
-    /* margin: 0 auto ; */
     margin: 40px 0px;
     margin-left: 20px;
     padding: 5px 20px;
-    /* position: absolute; */
     z-index: 10;
     width: calc(30vw + 50px);
     min-width: 355px;
     border-radius: 25px;
-    /* overflow: hidden; */
     background: white;
-    /* padding-left: 20px; */
+    
 }
 
 /* Esse #btn é a barra de pesquisa*/
 #btn{
+    color:#709bb3;
     font-size: 1em;
     width: 80%;
     border: none;
@@ -224,21 +207,19 @@ h1 label{
 }
 
 .apagar{
-    /* position: absolute;
-    left: calc(30vw + 20px - 5px);*/
     cursor: pointer;
     text-align: center;
     border: none;
     background: none;
-    /* display: none; */
 }
 
 .apagar i{
-    border-radius: 50%;
-    background: #709cb385;
-    color: white;
-    font-size: .8em;
+    color: rgba(165, 157, 157, 0.486);
+    font-size: 2em;
     padding: 3.5px;
+}
+.apagar i:hover {
+    color: rgba(78, 78, 78, 0.486);
 }
 /*TCCS*/
 .link{
@@ -246,22 +227,21 @@ h1 label{
     color: #2a3641;
 }
 
-.sizeImg{
-    height: 45%;
-    width: 100%;
-    overflow: hidden;
-    background-position: center;
-    border-radius: 10px 10px 0 0;
+.zoom{
+    overflow: hidden; /* não deixa a imagem se expandir na hora do zoom*/
+    cursor: pointer;
+	height: 170px;
+	background-position: center;
+	border-radius: 10px 10px 0 0;
 }
-img{
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    
+
+.zoom img {
+	max-width: 100%;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
 }
-.img_set{
-    max-width: 300px;
-}
+
 .content-blocos{
     margin-top: 140px;   
 }
@@ -269,7 +249,6 @@ img{
 .blocos{
     display: flex;
     flex-wrap: wrap;
-    /* position: absolute; */
     margin-left: 10px;
 }
 
@@ -280,17 +259,16 @@ img{
     min-height: 373px;
     min-width: 285px;
     border-radius: 10px;
-    margin: 10px;
+    margin: .5vw;
     border: 1px solid rgba(255, 254, 254, 0.644);
-    box-shadow: 1px 7px 12px #a4a2b8a9;
-    transition: all .3s ease-out;
-    /* flex: 1 1 auto; */
+    box-shadow: 0px 3px 5px #888791a9;
+    transition: all .2s ease-out;
 }
 
 .bloco:hover{
-    box-shadow: 0px 3px 5px #888791a9;
-    transform: translateY(-10px);
-
+    box-shadow: 1px 7px 12px #a4a2b8a9;
+    transform: scale(1.02);
+    background-color: #fff8f8d3;
 }
 
 .bloco .titulo{
@@ -356,9 +334,8 @@ img{
     background: var(--btn-color); 
     padding: 5px;
     z-index: 2;
-    right: 0;
-    bottom: 0;
-    margin: 0 30px 30px 0;
+    right: 30px;
+    bottom:30px;    
     cursor: pointer;
     background: rgba(89, 125, 245, 0.5);
     box-shadow: 3px 4px 15px rgba( 31, 38, 135, 0.37 );
@@ -412,9 +389,7 @@ img{
         position: fixed;
         top: 0;
     }
-    /* .cabecalho{
-        display: none;
-    } */
+
     .grid-container{
         display: block;    
     }
@@ -423,6 +398,9 @@ img{
         align-items: center;
         margin-left: 36px;
     }
+    .content-pesquisa .pesquisa{
+        width: 50%;
+    } 
     .info_direita {
         margin: 0 auto;
         justify-content: center;
@@ -457,6 +435,15 @@ img{
         display: none;
         width: 90%;
         text-align: center;
+    }
+}
+@media (max-width:700px){
+    .result{
+        top: 110px;
+        right: 50%;
+    }
+    .result h2{
+        font-size: 1em;
     }
 }
 @media (max-width: 425px){

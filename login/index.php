@@ -77,7 +77,7 @@ if (session_id() != '') {
 
         <div class="TxTmobile">
             <label>Não tem uma conta?</label>
-            <a href="../cadastro/index.php"><u>Cadastre-se</u></a>
+            <a href="../cadastro/index.php">Cadastre-se</a>
         </div>
         <script src="../js/login.js"></script>
         <script src="../js/mostrarSenha.js"></script>

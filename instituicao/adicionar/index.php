@@ -16,8 +16,10 @@ if (!isset($_SESSION["numLogin"])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../../loader/loading.css">
     <script type="text/javascript" src="../../loader/loading.js"></script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link href="../../css/cad.css" rel="stylesheet">
     <link href="../../css/perfil.css" rel="stylesheet">

@@ -25,7 +25,71 @@
     background: transparent;
     display: flex;
     justify-content: end;
+    align-items: center;
 }
+
+button{
+    border: none;
+}
+.btn{
+    margin: 15px 15px 0 0;
+    font-weight: 600;
+    width: 120px;
+    height: 35px;
+    background: var(--btn-color);
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+}
+#cad{
+    height: 58px;
+    background: var(--btn-background-color);
+    z-index: 10;
+    border: 1px solid var(--btn-color); 
+}
+#cad span{
+    color: var(--btn-color);   
+    line-height: 1.2;
+}
+
+.btn:hover:last-child::before{
+    background: white;
+    
+}
+#cad:hover{
+    border: 1px solid var(--btn-color);   
+}
+
+.btn span{
+    z-index: 2;
+    position: relative;
+    color: var(--btn-background-color);
+    font-size: 1rem;
+}
+.btn::before{
+    content: '';
+    z-index: 1;
+    left: 0;
+    top: 0;
+    position: absolute;
+    height:0;
+    width: 100%;
+    transform-origin:center;
+    background-color: var(--btn-background-color);
+    transition: .3s;
+    border-radius: 3px;
+}
+
+.btn:hover::before{
+    height:100%;
+}
+
+.btn:hover span{
+    color:var(--btn-color);
+}
+
 .banner{
     position: relative;
     width: 100%;
@@ -35,41 +99,6 @@
     justify-content: center;
     align-items: center;
 }
-button{
-    border: none;
-}
-.btn{
-    margin: 15px 15px 0 0;
-    font-size: 1rem;
-    font-weight: 600;
-    width: 120px;
-    background-color: white;
-    color: var(--btn-color);
-    border: solid #6253f2 1px;
-    border-radius: 12px;
-    padding: 4px;
-    cursor: pointer;
-    transition: 0.3s;
-
-}
-
-.btn:hover{
-    background-color: var(--btn-color);
-    color: var(--btn-background-color);
-}
-
-#cad{
-    background-color: var(--btn-color);
-    color:var(--btn-background-color);
-}
-
-#cad:hover{
-    background-color: var(--btn-background-color);
-    color: var(--btn-color);
-    border: solid #f4f4f4 1px;
-}
-
-
 .conteudo{
     display: flex;
     align-items: center;
@@ -126,19 +155,18 @@ h1{
     justify-content: center;
     background: #f4f4f4;
     padding: 10px 0px;
-    /* background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(228, 227, 227, 0.685) 99%); */
 }
 
 .contato h2{
     text-align: center;
     font-size: 2rem; 
+    margin-bottom: 30px;
 }
 
 .form{
     display: flex;
     flex-direction: column;
     text-align: center;
-    /* height: 90vh; */
     padding-top: 20px;
     width: 50%;
     margin: 0 auto;
@@ -156,7 +184,8 @@ h1{
 }
 
 .inp_txt{
-    width: 350px;
+    width: 80%;
+    max-width: 450px;
     font-size: 1em;
     padding: 10px;
     border-radius: 5px;
@@ -175,7 +204,8 @@ h1{
     border-radius: 5px 5px 5px 5px;
     padding: 10px;
     font-weight: 500;
-    min-width: 350px;
+    width: 80%;
+    max-width: 450px;
     min-height: 120px;
     resize: none;
     letter-spacing: 1px;
@@ -223,7 +253,6 @@ label b{
     
 }
 .enviar:hover{
-    /* transform: translateY(-4px);  */
     background-color: #f8f9fa;
     color: var(--btn-color);
     border: 1px solid #6253f2;
@@ -262,7 +291,6 @@ label b{
 }
 .avisei{
     display: block;
-    /* transform: translate3d(0, 0, 0); */
     margin: 0 auto;
     animation: animate .2s cubic-bezier(0, 0.55, 0.96, 1.32);
 }
@@ -351,27 +379,29 @@ label b{
         margin: 0;
     }
     .actions{
-        margin-top: 40px;
+        margin-top: 20px;
         justify-content: center;
+        padding: 10px;
     }
     .conteudo{
         justify-content: center;
         align-items: center;
         padding: 0;
     }
-    .btn{
-        margin: 0 10px;
-    }
-
+   
     .banner img{
         display: none;
     }
     .tec{
         padding: 20px 0;
     }
+
+    .contato h2{
+        font-size: 1.5em;
+    }
 }
 
-@media (max-width: 320px){
+@media (max-width: 425px){
 
     .contato h2{
         padding: 10px 0px;
@@ -383,7 +413,20 @@ label b{
         max-width: 300px;
         min-width: 300px;
     }
-
+    .btn{
+        margin: 0 5px;
+        width: 100px;
+        height: 29px;
+    }
+    .btn span{
+        font-size: .9em;
+    }
+    #cad{
+        height: 40px;
+    }
+    .actions{
+        margin-top: 50px;
+    }
 }
 
 

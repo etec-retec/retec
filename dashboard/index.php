@@ -49,7 +49,7 @@ if (!isset($_SESSION["numLogin"])) {
             ?>
         </div>
     </div>
-    <br>
+    
     <div class="corpo">
         <h1 class="cap">Olá, <?php echo $_SESSION["nome"]; ?>!</h1>
         <span>
