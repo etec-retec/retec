@@ -24,11 +24,23 @@
     }
 
     include '../conexao/conexao.inc';
-    $query = "SELECT * FROM usuario WHERE email = '$email'";
+    $query = "SELECT * FROM usuario WHERE email = '$email' OR email_rec = '$email' OR email_rec = '$email' OR email_rec = '$email_rec'";
     $result = mysqli_query($conexao, $query);
     $retorno = mysqli_affected_rows($conexao);
     if($retorno > 0){
         $nome = htmlentities($nome, ENT_QUOTES, "UTF-8");
+        $impedimento = TRUE;
+        mysqli_close($conexao);
+        header("location: ../cadastro/index.php?email");
+    }
+
+    $query = "SELECT * FROM solicitacoes WHERE email = '$email' OR email_rec = '$email' OR email_rec = '$email' OR email_rec = '$email_rec'";
+    $result = mysqli_query($conexao, $query);
+    $retorno = mysqli_affected_rows($conexao);
+    if($retorno > 0){
+        $nome = htmlentities($nome, ENT_QUOTES, "UTF-8");
+        $impedimento = TRUE;
+        mysqli_close($conexao);
         header("location: ../cadastro/index.php?email");
     }
 
@@ -69,6 +81,13 @@
 
         public function setInstituicao($instituicao){
             $array = $instituicao;
+
+            for($i = 0; $i < sizeof($array); $i++){
+                if($array[$i] == "ETEC Professor André Bogasian"){
+                    $array[$i] = "ETEC Professor Andre Bogasian";
+                }
+            }
+
             if(isset($array[1])){
                 $this->instiuicao = $instituicao;
                 $this->unico = FALSE;
@@ -131,7 +150,6 @@
                 header("Location: ../login/?alert1");
             }else{
                 $array = explode(',', $this->instituicao);
-                var_dump($GLOBALS["instituicao"]);
                 foreach($GLOBALS["instituicao"] as $inst){
                     $query_insert_usuario = "INSERT INTO solicitacoes VALUES (NULL, '$this->nome_completo', '$this->email','$this->email_rec', '$this->matricula', '$this->rg', '$this->senha', '$inst')";
                     $res = mysqli_query($conexao, $query_insert_usuario);

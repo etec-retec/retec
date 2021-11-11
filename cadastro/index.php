@@ -76,6 +76,7 @@
                 <input type="number" name="matricula" id="matricula" max="999999" placeholder="Digite a matrícula" class="inp_txt" required/>
 
                 <label for="rg"><b>RG:</b></label>
+                <label style="margin-top: 0px; font-size: 12px">(Sem traços e pontos)</label>
                 <input type="text" name="rg" id="rg" max="14" placeholder="Digite o RG" autocomplete="off" class="inp_txt" pattern="[a-zA-Z0-9-]+" required/>
             </div>
 
@@ -113,17 +114,20 @@
         var currentLocation = window.location;
         if (currentLocation.search.slice(0, 6) == "?email") {
             document.getElementById("lbl_aviso").style.display = "block";
-            document.getElementById("lbl_aviso").style.color = "#800";
+            document.getElementById("lbl_aviso").style.color = "#F00";
+            document.getElementById("lbl_aviso").style.fontWeight = "900";
             document.getElementById("lbl_aviso").style.textDecoration = "underline";
             document.getElementById("lbl_aviso").textContent = "O E-mail já está em uso";
         } else if (currentLocation.search.slice(0, 6) == "?senha") {
             document.getElementById("lbl_aviso").style.display = "block";
-            document.getElementById("lbl_aviso").style.color = "#800";
+            document.getElementById("lbl_aviso").style.color = "#F00";
+            document.getElementById("lbl_aviso").style.fontWeight = "900";
             document.getElementById("lbl_aviso").style.textDecoration = "underline";
             document.getElementById("lbl_aviso").textContent = "As senhas não são iguais";
         } else if (currentLocation.search.slice(0, 7) == "?repeat") {
             document.getElementById("lbl_aviso").style.display = "block";
-            document.getElementById("lbl_aviso").style.color = "#800";
+            document.getElementById("lbl_aviso").style.color = "#F00";
+            document.getElementById("lbl_aviso").style.fontWeight = "900";
             document.getElementById("lbl_aviso").style.textDecoration = "underline";
             document.getElementById("lbl_aviso").textContent = "Os e-mails não podem se repetir!";
         }
