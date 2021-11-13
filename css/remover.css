@@ -9,39 +9,28 @@ body{
     font-family: 'Poppins', sans-serif;
     color: #2a3641;
 }
-
-.bts a{
-    padding: 10px;
-    text-decoration: none;
-    color: #2a3641
+.cabecalho{
+    flex-wrap: wrap-reverse;
 }
 
 #add{
-    font-weight: 900;
-    color: #6253f2;
-    border-right: #c2d1d9 solid 1px;
+    color: var(--btn-color);
+    cursor: pointer;
 }
 
 #add:hover{
+    color: var(--btn-color);
     cursor: pointer;
-    color: #c2d1d9;
 }
 
 #rem{
-    font-weight: 900;
     color: #c2d1d9;
-    border-right: #c2d1d9 solid 1px;
-    cursor: auto;
-}
-
-#ed{
-    font-weight: 900;
-    color: #6253f2;
+    pointer-events: none;
 }
 
 #ed:hover{
     cursor: pointer;
-    color: #c2d1d9;
+    color: var(--btn-color);
 }
 
 .center {
@@ -67,18 +56,4 @@ body{
     color: #012f00;
     border-top: 2px solid #012f00;
     border-bottom: 2px solid #012f00;
-}
-
-@media (max-width: 48em){
-.banner{
-    height: 150px;
-}
-
-.logo{
-    float: right;
-    font-size: 30px;
-    margin-top: -124px;
-    margin-right: 12px;
-}
-
 }

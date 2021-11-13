@@ -57,7 +57,7 @@ mysqli_close($conexao);
         <span class="load"></span>
     </div>
     <div class="cabecalho">
-        <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
+        <button class="voltar" onclick="window.history.back()">❮ Voltar</button>
         <h1 class="logo">RETEC</h1>
     </div>
 

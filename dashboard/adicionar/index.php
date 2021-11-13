@@ -30,7 +30,7 @@ if (!isset($_SESSION["numLogin"])) {
         <span class="load"></span>
     </div>
     <div class="cabecalho">
-        <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
+    <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
         <div div class="bts">
             <a id="add">Adicionar</a>
             <a id="ed" href="../editar/">Editar</a>

@@ -39,7 +39,7 @@ mysqli_close($conexao);
         <span class="load"></span>
     </div>
     <div class="cabecalho" id="cent">
-        <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
+    <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
         <div class="bts">
             <a id="add" href="../adicionar/">Adicionar</a>
             <a id="ed">Editar</a>

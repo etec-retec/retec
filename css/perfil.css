@@ -216,8 +216,7 @@ label b{
     border-top: 2px solid #800;
     border-bottom: 2px solid #800;
 } 
-
-
+    
 @media (max-width:1024px){
     .container-acoes{
         width: 90%;
@@ -234,7 +233,8 @@ label b{
 
 @media (max-width: 768px){
     .cabecalho{
-        height: 100px;
+        height: 131px;
+        flex-wrap: wrap-reverse;
     }
     .inp_txt{
         margin-bottom: 10px;

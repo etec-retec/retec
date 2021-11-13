@@ -22,7 +22,7 @@
     <div class="preload">
         <span class="load"></span>
     </div>
-    <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
+    <button class="voltar" onclick="window.history.back()">❮ Voltar</button>
     <div class="formu">
         <h2>Recuperar a Senha</h2>
         <h4>Um e-mail será enviado ao endereço digitado</h4>

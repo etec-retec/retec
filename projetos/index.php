@@ -141,7 +141,7 @@ mysqli_close($conexao);
                 ?>
                 <!-- sem login -->
                 <div class="cabecalho">
-                    <button class="voltar" onclick="window.open('../', '_self')">❮ Início</button>
+                    <button class="voltar" onclick="window.history.back()">❮ Início</button>
                     <div class="logo">
                         <h1>RETEC</h1>
                     </div>

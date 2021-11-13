@@ -47,18 +47,17 @@ if (session_id() != '') {
     <?php
     }
     ?>
-    <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
+    <button class="voltar" onclick="window.history.back()">❮ Voltar</button>
 
     <div class="formu">
         <h2>Login</h2>
         <form name="cadastraU" action="../model/login.php" method='POST'>
             <label for="email"><b>E-mail</b></label>
-            <input type="email" name="email" id="email" maxlenght="50" placeholder="exemplo@etec.sp.gov.br" class="inp_txt" autocomplete="off" required>
-            <!-- <a href="" class="saber-mais" title=""><i class="fa fa-question" aria-hidden="true"></i></a> -->
+            <input type="email" name="email" id="email" maxlenght="50" placeholder="exemplo@etec.sp.gov.br" class="inp_txt" required>
             
             <label for="senha"><b>Senha</b></label>
             <div class="content-senha">
-                <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" autocomplete="off" class="inp_txt" required>
+                <input type="password" name="senha" id="senha" minlenght="5" maxlenght="42" placeholder="Senha" class="inp_txt" required>
                 <button type="button" id="eye">
                     <img src="../assets/svg/pass1.svg" alt="Lpassword" id="olho">
                 </button>
@@ -74,10 +73,9 @@ if (session_id() != '') {
 
             <div class="options">
                 <button class="botao" id="btnEsqueci" onclick="window.open('recuperar-senha/', '_self')">Esqueci minha senha</button>
-                <button class="botao" id="btnN" onclick="window.open('../cadastro/', '_self')">Não tenho cadastro</button>
+                <input type="button" class="botao" value="Não tenho cadastro" id="btnN" onclick="window.open('../cadastro/', '_self')">
             </div>
         </form>
-
         <div class="TxTmobile">
             <label>Não tem uma conta?</label>
             <a href="../cadastro/index.php">Cadastre-se</a>

@@ -63,7 +63,7 @@ mysqli_close($conexao);
         <span class="load"></span>
     </div>
     <div class="cabecalho">
-        <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
+        <button class="voltar" onclick="window.history.back()">❮ Voltar</button>
         <h1 class="logo">RETEC</h1>
         <?php
         if ($_SESSION['instituicao'] == "ETEC Professor Andre Bogasian") {
@@ -93,12 +93,12 @@ mysqli_close($conexao);
             <input type="text" name="prof_corientador" class="inp_txt" min="8" max="64" value="<?php echo $prof_corientador; ?>" placeholder="Nome" required />
         
             <label for="membros"><b>Membros do Grupo</b></label>
-            <p style="font-size:12px; margin-top:0">Separe os integrantes por vírgulas ","</p>
+            <p>Separe os integrantes por vírgulas ","</p>
             <input type="text" name="membros_grupo" class="inp_txt" value="<?php echo $membros_grupo; ?>" min="8" max="564" placeholder="Ex: Alexandre Lima, Luiz Henrique, Carlos Alberto" required />
             
 
             <label for="membros"><b>Membros da Banca</b></label>
-            <p style="font-size:12px; margin-top:0">Separe os integrantes por vírgulas ","</p>
+            <p>Separe os integrantes por vírgulas ","</p>
             <input type="text" name="membros_banca" class="inp_txt" value="<?php echo $membros_banca; ?>" min="8" max="564" placeholder="Ex: Regina Santos, Marcello Zanfra, Thiago" required />
             
 

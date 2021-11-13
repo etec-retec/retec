@@ -10,23 +10,17 @@ body{
     color: #2a3641;
     height: 100vh;
 }
+.cabecalho{
+    flex-wrap: wrap-reverse;
+}
 
 #add{
-    padding-right: 5px;
-    font-weight: 900;
     color: var(--btn-color);
-    border-right: #c2d1d9 solid 1px;
 }
 
 #add:hover{
     cursor: pointer;
     color: var(--btn-color);
-}
-
-#rem{
-    font-weight: 900;
-    color: #800;
-    border-right: #c2d1d9 solid 1px;
 }
 
 #rem:hover{
@@ -35,8 +29,8 @@ body{
 }
 
 #ed{
-    font-weight: 900;
     color: #c2d1d9;
+    pointer-events: none;
 }
 
 .center {

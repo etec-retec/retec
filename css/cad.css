@@ -1,7 +1,6 @@
 @import url("btnVoltar.css");
 @import url("index.css"); /*este import é EXTREMAMENTE IMPORTANTE PARA O FUNCIONAMENTO DO SITE, NÃO TIRE ELE*/
-/* @import url("projetos.css"); */
-/* @import url("perfil.css"); */
+
 
 body{
     background-color: var(--background-color2);
@@ -46,42 +45,39 @@ body{
 }
 
 .bts a{
+    font-weight: 900;
     text-decoration: none;
-    color: #2a3641
+    color: #6253f2;
+    padding: 5px;
 }
 
 #add{
-    padding-right: 5px;
-    font-weight: 900;
     color: #c2d1d9;
     border-right: #c2d1d9 solid 1px;
 }
 
 #rem{
-    font-weight: 900;
     color: #ff0000;
     border-right: #c2d1d9 solid 1px;
-    padding: 8px;
-}
 
-#red{
-    background-color: #ff0000;
 }
 
 #rem:hover{
     cursor: pointer;
-    color: #c2d1d9;
+    color: var(--btn-color);
 }
 
 #ed{
     margin-left: 5px;
-    font-weight: 900;
-    color: #6253f2;
 }
-
 #ed:hover{
     cursor: pointer;
-    color: #c2d1d9;
+    color: var(--btn-color);
+
+}
+
+#red{
+    background-color: #ff0000;
 }
 
 .center{
@@ -259,13 +255,6 @@ input[type=number]::-webkit-outer-spin-button {
 .bts{
     margin: 0;
 }
-/* 
-.logo{
-    float: right;
-    font-size: 30px;
-    margin-top: -124px;
-    margin-right: 12px;
-} */
 
 #space_span{
     padding: 1000px !important;

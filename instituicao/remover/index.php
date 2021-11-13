@@ -51,8 +51,7 @@ mysqli_close($conexao);
     }
     ?>
     <div class="cabecalho">
-        <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
-        <div class="bts" style="padding:10px 6px">
+    <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>        <div class="bts" style="padding:10px 6px">
             <a id="add" href="../adicionar/">Adicionar </a>
             <a id="rem">Remover</a>
             <a id="ed" href="../editar/">Editar</a>
