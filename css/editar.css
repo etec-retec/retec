@@ -53,31 +53,5 @@ body{
 
 #sub_box{
     margin-left: 80px;
-    /* margin: 0 auto; */
-}
-
-::-webkit-scrollbar-track {
-  background-color: #ffffff;
-}
-::-webkit-scrollbar {
-  width: 8px;
-  background: #000;
-}
-::-webkit-scrollbar-thumb {
-  background: #6253f2;
-  border-radius: 16px;
-}
-
-@media (max-width: 48em){
-.banner{
-    height: 150px;
-}
-
-.logo{
-    float: right;
-    font-size: 30px;
-    margin-top: -124px;
-    margin-right: 12px;
-}
 
 }

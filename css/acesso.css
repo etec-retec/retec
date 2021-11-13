@@ -8,8 +8,6 @@
 }
 
 body{
-    /* width: 100%;
-    height: 100%; */
     background: var(--background-color);
     font-family: 'Poppins', sans-serif;
     color: #2a3641;
@@ -98,20 +96,15 @@ form{
 }
 @media (max-width: 570px){
 
-h1{
-    line-height: 80%;
-}
-label{
-    width: 100%;
-    margin: 0 auto;
-}
+    h1{
+        line-height: 80%;
+    }
+    label{
+        width: 100%;
+        margin: 0 auto;
+    }
+    #btnN{
+        display: none;
 
-/* .formu{
-    width: 100%;
-} */
-
-#btnN{
-    display: none;
-
-}
+    }
 }

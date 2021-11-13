@@ -25,16 +25,6 @@ body{
     list-style: none;
 }
 
-/* .inp_txt{
-    width: 300px;
-    font-size: 15px;
-    padding: 5px;
-    border-radius: 4px;
-    border: 2px solid #353839;
-    outline: none;
-    cursor: pointer;
-} */
-
 input[type=submit], #deletar{
     width: 96px;
     padding: 8px;

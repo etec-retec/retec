@@ -28,7 +28,7 @@ body{
 }
 
 .logo h1{
-    font-size: clamp(100%, 2em + 1vw, 5em);
+    font-size: clamp(100%, 1.5em + 1vw, 5em);
     color: #6253f2;
     margin: 0 auto;
     display: table;
@@ -56,15 +56,6 @@ body{
     cursor: pointer;
 }
 
-.boxNot{
-    float: right;
-    background-color: #f4f4f4;
-    border: 1px solid #6253f2;
-    border-radius: 4px;
-    padding: 0px 20px 0px 20px;
-    margin-top: 10px;
-    display: none;
-}
 
 .corpo{
     position: absolute;
@@ -79,13 +70,6 @@ body{
     font-size: clamp(100%, 2em + 1vw, 5em);
     margin-bottom: 16px;
 }
-/* .cap{
-    font-size: 64px;
-    display: table;
-    margin: 0 auto;
-    margin-top: 196px;
-    text-transform: capitalize;
-} */
 
 .opcoes{
     display: table;
@@ -121,7 +105,15 @@ body{
 #p, #a, #e, #r{
     border-right: 1px solid #6253f2;
 }
-
+.boxNot{
+    float: right;
+    background-color: #f4f4f4;
+    border: 1px solid #6253f2;
+    border-radius: 4px;
+    padding: 0px 20px 0px 20px;
+    margin-top: 10px;
+    display: none;
+}
 .boxNot{
     right: 0;
     padding: 20px 30px;
@@ -176,7 +168,9 @@ body{
 @media (max-width: 768px){
     .cabecalho{
         height: 110px;
+        padding: 0 30px;
     }
+
 .cap{
     margin-top: 64px;
     font-size: .5em;
@@ -201,11 +195,22 @@ body{
 }
 
 @media (max-width: 460px){
-    .logo h1{
-        font-size: 1.5em;
+    .cabecalho{
+        padding: 0 10px;
     }
     .notificacao{
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .boxNot{
+        padding: 10px 10px;
+        margin-right: 10px;
+    }
+    .boxNot h4{
+        font-size: 1em;
+    }
+    .logo h1{
+        margin: 0;
     }
 }

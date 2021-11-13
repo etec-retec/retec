@@ -49,7 +49,6 @@
     transition: all .3s ease-out;
     border-bottom: 1px solid var(--fildset);
     background: none;
-    /* width: 100%; */
     max-width: 330px;
     min-height: min-content;
 }
@@ -218,19 +217,6 @@ label b{
     border-bottom: 2px solid #800;
 } 
 
-::-webkit-scrollbar-track {
-  background-color: #ffffff;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-  background: #000;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #6253f2;
-  border-radius: 16px;
-}
 
 @media (max-width:1024px){
     .container-acoes{

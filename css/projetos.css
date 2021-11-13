@@ -53,24 +53,17 @@ label{
     line-height: 20px;
     padding: 0 10px ;
 }
+/*este estilo corresponde para indicar o quando é usuário institucional*/
 .logo label b{
     display: inline-block;
     position: absolute;
     right: 80px;
-    font-size: clamp(50%, .1em + 1vw, 2em); ;
+    font-size: clamp(50%, .5em + 1vw, 2em); ;
 }
 .logo h1{
     font-size: clamp(100%, 1.5em + 1vw, 3em);
 }
 /**/
-
-/* .grid-container{
-    width: 100%;
-    display: flex;
-    
-    height: 100%;
-    position: relative;
-} */
 .info_esquerda form h3{
     margin-top: 10px;
 }
@@ -189,7 +182,7 @@ h1 label{
     padding: 5px 20px;
     z-index: 10;
     width: calc(30vw + 50px);
-    min-width: 355px;
+    min-width: 430px;
     border-radius: 25px;
     background: white;
     
@@ -352,17 +345,6 @@ h1 label{
     width: 100%;
     height: 100%;
 } 
-::-webkit-scrollbar-track {
-  background-color: #ffffff;
-}
-::-webkit-scrollbar {
-  width: 8px;
-  background: #000;
-}
-::-webkit-scrollbar-thumb {
-  background: #6253f2;
-  border-radius: 16px;
-}
 
 @media (min-width: 1400px){
     .main{
@@ -440,32 +422,49 @@ h1 label{
 @media (max-width:700px){
     .result{
         top: 110px;
-        right: 50%;
+        right: 65%;
     }
     .result h2{
         font-size: 1em;
     }
 }
 @media (max-width: 425px){
+    .logo{
+        margin-left: 11px;
+    }
+    .logo label{
+        padding: 0;
+        line-height: 12px;
+    }
+    .logo label b{
+        right: 40px;
+        font-size: 1.2em;
+    }
     .content-pesquisa{
         margin: 0;
+        justify-content: center;
     }
     .info_direita .pesquisa{
-        margin: 20px 20px;
-        margin-bottom: 50px;
-        padding: 0 7px;
+        margin-left:0;
     }
     .btn-pesquisa i{
         padding: 5px;
     }
     .result{
-        top: 90px;
-        right: 50%;
+        width: 70%;
+        right: 0;
+
     }
     .result h2{
         font-size: .8em;
     }
     .blocos{
         margin-top: 0;
+    }
+    .bloco{
+        margin-bottom: 10px;
+        min-height: 400px;
+        min-width: 350px;
+
     }
 }

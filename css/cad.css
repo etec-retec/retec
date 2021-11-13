@@ -252,41 +252,20 @@ input[type=number]::-webkit-outer-spin-button {
     color: black;
 }
 
-::-webkit-scrollbar-track {
-  background-color: #ffffff;
+@media (max-width: 768px){
+.cabecalho{
+    flex-wrap: nowrap;
 }
-
-::-webkit-scrollbar {
-  width: 8px;
-  background: #000;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #6253f2;
-  border-radius: 16px;
+.bts{
+    margin: 0;
 }
 /* 
-@media (min-width:1500px){
-    .inp_txt{
-        max-width: 608px;
-    }
-} */
-
-@media (max-width: 48em){
-/* .cabecalho{
-    height: 50px;
-}
-
 .logo{
     float: right;
     font-size: 30px;
     margin-top: -124px;
     margin-right: 12px;
 } */
-
-.bts{
-    margin-right: 64px;
-}
 
 #space_span{
     padding: 1000px !important;
@@ -301,4 +280,22 @@ input[type=number]::-webkit-outer-spin-button {
     color: #fff;
 }
 
+}
+
+@media (max-width:425px){
+
+    .center .form label{
+        margin-top: 10px;
+    }
+
+    .center .form .ad{
+        width: 80%;
+    }
+}
+
+@media (max-width:375px){
+    .logo{
+        padding-left: 5px;
+
+    }
 }
