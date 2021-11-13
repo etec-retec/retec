@@ -80,47 +80,36 @@ mysqli_close($conexao);
     </div>
 
     <div class="center">
-        <h2 class="center" id="lbl">Editar <?php echo $nome; ?></h2>
         <form action="../../../model/editarRepositorio.php" method="POST" enctype="multipart/form-data" class="form">
+            <h2 class="center" id="lbl">Editar: <br><?php echo $nome; ?></h2>
 
             <label for="nome"><b>Nome</b></label>
-            <br>
             <input type="text" class="inp_txt" name="nome" placeholder="Nome do TCC" value="<?php echo $nome; ?>" min="3" max="64" required>
-            <br><br>
-
+            
             <label for="prof_orientador"><b>Professor Orientador</b></label>
-            <br>
             <input type="text" name="prof_orientador" class="inp_txt" min="8" max="64" value="<?php echo $prof_orientador; ?>" placeholder="Nome" required />
-            <br><br>
-
+            
             <label for="prof_coorientador"><b>Professor Co-orientador</b></label>
-            <br>
             <input type="text" name="prof_corientador" class="inp_txt" min="8" max="64" value="<?php echo $prof_corientador; ?>" placeholder="Nome" required />
-            <br><br>
-
+        
             <label for="membros"><b>Membros do Grupo</b></label>
             <p style="font-size:12px; margin-top:0">Separe os integrantes por vírgulas ","</p>
             <input type="text" name="membros_grupo" class="inp_txt" value="<?php echo $membros_grupo; ?>" min="8" max="564" placeholder="Ex: Alexandre Lima, Luiz Henrique, Carlos Alberto" required />
-            <br><br>
+            
 
             <label for="membros"><b>Membros da Banca</b></label>
             <p style="font-size:12px; margin-top:0">Separe os integrantes por vírgulas ","</p>
             <input type="text" name="membros_banca" class="inp_txt" value="<?php echo $membros_banca; ?>" min="8" max="564" placeholder="Ex: Regina Santos, Marcello Zanfra, Thiago" required />
-            <br><br>
+            
 
             <label for="curso"><b>Curso</b></label>
-            <br>
             <select class="inp_txt" name="curso" min="8" max="64" id="slct">
             </select>
-            <br><br>
-
+        
             <label for="ano"><b>Ano de Conclusão</b></label>
-            <br>
             <input type="number" class="inp_txt" name="ano" value="<?php echo $ano; ?>" placeholder="Ano" min="2021" max="2022" id="ano" required>
-            <br><br>
-
+            
             <label for="mencao"><b>Menção</b></label>
-            <br>
             <select class="inp_txt" name="mencao" id="slct_menc">
                 <h3>Curso - ETIM</h3>
                 <option value="mb">MB</option>
@@ -128,40 +117,29 @@ mysqli_close($conexao);
                 <option value="r">R</option>
                 <option value="i">I</option>
             </select>
-            <br><br>
+            
 
             <label for="resumo"><b>Resumo</b></label>
-            <br>
-            <textarea type="text" class="area_txt" name="resumo" placeholder="Trecho do PDF (Resumo)" required><?php echo $resumo; ?></textarea>
-            <br><br>
+            <textarea type="text" class="area_txt res" name="resumo" placeholder="Trecho do PDF (Resumo)" required><?php echo $resumo; ?></textarea>
 
             <label for="abstract"><b>Abstract</b></label>
-            <br>
-            <textarea type="text" class="area_txt" name="abstract" placeholder="Trecho do PDF (Abstract)" required><?php echo $abstract; ?></textarea>
-            <br><br>
+            <textarea type="text" class="area_txt res" name="abstract" placeholder="Trecho do PDF (Abstract)" required><?php echo $abstract; ?></textarea>
 
             <label for="pa_ch"><b>Palavras-chave</b></label>
-            <br>
             <textarea type="text" class="area_txt" name="pa_ch" placeholder="Trecho do PDF (Palavras-chave)" required><?php echo $pa_ch; ?></textarea>
-            <br><br>
 
             <label for="key_words"><b>Key Words</b></label>
-            <br>
             <textarea type="text" class="area_txt" name="key_words" placeholder="Trecho do PDF (Key Words)" required><?php echo $key_words; ?></textarea>
-            <br><br>
 
             <label for="data_ap"><b>Data de Apresentação</b></label>
-            <br>
             <input type="date" class="inp_txt" name="data_ap" value="<?php echo $data_ap; ?>" min="4" max="256" id="dt_ap" required>
-            <br><br>
 
             <input type="text" value="<?php echo $codigo; ?>" name="id" hidden />
-
             <div class="arquivos">
                 <h3 style="margin-bottom:0;">Substituir Arquivos</h3>
                 <p style="font-size:12px; margin-top:0; color:#800;">Caso deseje manter os arquivos anteriores, ignore os campos abaixo.</p>
                 <p>
-                    <label><b>Substituir</b> PDF: </label><br><input type="file" name="pdf" value="" accept="application/pdf" />
+                    <label><b>Substituir</b> PDF: </label><input type="file" name="pdf" value="" accept="application/pdf" />
                 </p>
                 <p>
                     <label><b>Substituir</b> Projeto Completo(.zip): </label><input type="file" name="zip" value="" accept=".zip,.rar,.7zip" />
@@ -173,7 +151,7 @@ mysqli_close($conexao);
             <input type="text" name="instituicao" value="<?php echo $_SESSION['instituicao']; ?>" hidden />
             <input type="text" id="to_js1" value="<?php echo $curso; ?>" hidden />
             <input type="text" id="to_js2" value="<?php echo $mencao; ?>" hidden />
-            <br>
+            
 
             <input type="submit" class="cadastrar" id="sub_box" value="Editar Projeto" />
         </form>

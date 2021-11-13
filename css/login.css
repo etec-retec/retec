@@ -34,6 +34,7 @@ body{
 
 .formu h2{
     text-align: center;
+    letter-spacing: 2px;
 }
 
 label{
@@ -71,13 +72,24 @@ input[type="submit"]{
     transition: all .2s ease-out;
 }
 
+#senha, #email{
+    margin: 0 15px 10px 0;
+}
+
+.saber-mais{
+    font-size: 1.2em;
+    opacity: 80%;
+}
+
+.saber-mais:hover{
+    opacity: initial;
+
+}
+
 .content-senha{
     display: flex;
     align-items: center;
     margin-bottom: 16px;
-}
-#senha{
-    margin: 0 15px 0 0;
 }
 .content-senha button{
     background: none; 
@@ -103,7 +115,6 @@ img{
 }
 .options{
     display: flex;
-    /* justify-content: space-between; */
     flex-wrap: wrap;
     margin-top: 10px;
     align-items: flex-start;

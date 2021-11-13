@@ -17,6 +17,7 @@ body{
 .formu h2{
     text-align: center;
     margin-bottom: 20px;
+    letter-spacing: 2px;
 }
 .formu{
     padding: 32px;

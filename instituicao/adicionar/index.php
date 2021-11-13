@@ -60,8 +60,8 @@ if (!isset($_SESSION["numLogin"])) {
     <div class="markerRed mk" style="display:none;" id="dadoMsg">O formulário não foi preenchido corretamente!</div>
 
     <div class="center">
-        <h2 class="center" id="lbl">Adicionar Projeto</h2>
         <form class="form" action="../../model/validacaoRepositorio.php" method="POST" enctype="multipart/form-data">
+            <h2 class="center" id="lbl">Adicionar Projeto</h2>
 
             <label for="nome" id="first"><b>Nome (*)</b></label>
             <input type="text" class="inp_txt" name="nome" placeholder="Nome do TCC" min="3" max="64" required>

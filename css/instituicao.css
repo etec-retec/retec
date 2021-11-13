@@ -49,6 +49,7 @@ body{
     right:0 ;
     z-index: 99;
     max-width: 48px;
+    transition: .3s ease-in-out;
 }
 
 .notificacao:hover{

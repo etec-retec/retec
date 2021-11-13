@@ -16,6 +16,7 @@ if (!isset($_SESSION["numLogin"])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sweetalert2.min.css">
 
     <link rel="stylesheet" href="../loader/loading.js">
     <script type="text/javascript" src="../loader/loading.js"></script>
@@ -32,7 +33,7 @@ if (!isset($_SESSION["numLogin"])) {
     </div>
 
     <div class="cabecalho" id="teste">
-        <button class="voltar" onclick="window.open('../login/index.php', '_self')">❮ Sair</button>
+        <button class="voltar" id="certeza" onclick="volt()">❮ Sair</button>
 
         <div class="logo">
             <h1 class="logo" id="texto">RETEC</h1>
@@ -65,7 +66,8 @@ if (!isset($_SESSION["numLogin"])) {
         </div>
         </span>
     </div>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/voltar.js"></script>
 </body>
 
 </html>

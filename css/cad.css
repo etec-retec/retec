@@ -22,7 +22,9 @@ body{
     align-items: center;
     flex-wrap: wrap;
 }
-
+.cabecalho label{
+    min-width: 0px;
+}
 .logo{
     padding-left: 20px;
     margin-top: 0;
@@ -34,14 +36,6 @@ body{
     margin: 0 auto;
     display: table;
 }
-
-/* .logo label{
-    font-size: clamp(50%, .5em + 1vw, 2em);
-} */
-
-/* .logo label b{
-    font-size: clamp(50%, .1em + 1vw, 2em);
-} */
 
 .bts{
     padding: 10px 15px;
@@ -96,7 +90,12 @@ body{
 }
 
 .center h2{
-    text-align: center;   
+    text-align: initial; 
+    letter-spacing: 2px;  
+    font-size: 1.3em;
+    padding-left: 5vw;
+    padding-top: 10px;
+    padding-bottom: 10px;  
 }
 
 .center .form{
@@ -105,16 +104,9 @@ body{
     margin-bottom: 64px;
 }
 
-#lbl{
-    padding: 20px;
-    font-size: 1.5em;
-    width: auto;
-    /* margin-left: 32px; */
-}
-
 .inp_txt{
     width: 80%;
-    padding: 5px 10px;
+    max-width: 565px;
     outline: none;
     font-size: 1em;
     border-radius: 5px;
@@ -123,7 +115,12 @@ body{
     margin-bottom: 20px;
     transition: .3s;
 }
-
+.center .form .ad{
+    max-width: 565px;
+}
+.center .form .res{
+    min-height: 260px;
+}
 .inp_txt:focus{
     font-weight: bold;
 }
@@ -136,7 +133,7 @@ body{
     display: inline-flex;
     width: 100%;
     align-self: left;
-    margin-left: 40px;
+    margin-left: 7vw;
     margin-bottom: 10px ;
     margin-top: 64px;
 }
@@ -148,13 +145,15 @@ body{
 .data{
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     padding: 20px 40px;
+    margin: 10px auto;
 }
 
 .center .form .data label{
-    margin: 10px 0px;
+    margin: 10px auto;
+
 }
 
 .txt{
@@ -183,14 +182,16 @@ input[type=number]::-webkit-outer-spin-button {
 
 .area_txt{
     width: 75%;
+    max-width: 565px;
     font-size: 1em;
     padding: 15px;
     border-radius: 4px;
     justify-content:start;
     outline: none;
-    margin-bottom: 30px;
 }
-
+.res{
+    min-height: 260px;
+}
 #slct:hover{
     cursor: pointer;
 }
@@ -212,7 +213,7 @@ input[type=number]::-webkit-outer-spin-button {
 .arquivos{
     padding: 20px 0px;
     width: 90%;
-    margin: 0 auto;
+    margin: 20px auto;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
@@ -228,27 +229,27 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .cadastrar{
-    background-color: #6253f2;
+    background: #6253f2;
     color: #fff;
-    border-radius: 10px;
-    border: none;
-    padding: 16px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 32px;
-    margin-bottom: 32px;
+    border-radius: 4px;
+    width: 230px;
     align-self: center;
+    margin: 25px 0px;
+    font-size: 1em;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #6253f2;
+    letter-spacing: 2px;
+    transition: all .3s ease-out;
 }
 
 .cadastrar:hover{
-    cursor: pointer;
-    background-color: #c2d1d9;
-    color: #6253f2;
-    position: relative;
-}
-
-#cent{
-    justify-content: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: none;
+    border: 1px solid black;
+    color: black;
 }
 
 ::-webkit-scrollbar-track {
@@ -264,13 +265,12 @@ input[type=number]::-webkit-outer-spin-button {
   background: #6253f2;
   border-radius: 16px;
 }
-
+/* 
 @media (min-width:1500px){
     .inp_txt{
         max-width: 608px;
-        margin-left: 10%; 
     }
-}
+} */
 
 @media (max-width: 48em){
 /* .cabecalho{

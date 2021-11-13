@@ -59,21 +59,21 @@ if (!isset($_SESSION["numLogin"])) {
         <h2 class="center-h2" id="lbl">Adicionar Projeto</h2>
 
             <label for="nome" id="first"><b>Nome (*)</b></label>
-            <input type="text" name="nome" class="inp_txt" placeholder="Nome do TCC" min="3" max="64" required>
+            <input type="text" name="nome" class="inp_txt ad" placeholder="Nome do TCC" min="3" max="64" required>
 
             <label for="prof_orientador"><b>Professor Orientador (*)</b></label>
-            <input type="text" name="prof_orientador" class="inp_txt" min="8" max="64" placeholder="Nome" required/>
+            <input type="text" name="prof_orientador" class="inp_txt ad" min="8" max="64" placeholder="Nome" required/>
 
             <label for="prof_coorientador"><b>Professor Co-orientador</b></label>
-            <input type="text" name="prof_corientador" class="inp_txt" min="8" max="64" placeholder="Nome"/>
+            <input type="text" name="prof_corientador" class="inp_txt ad" min="8" max="64" placeholder="Nome"/>
 
             <div class="membros">
                 <label for="membros"><b>Membros do Grupo (*)</b></label>
-                <input type="text" name="membros_grupo" class="area_txt" min="8" max="564" placeholder="Ex: Alexandre Lima, Luiz Henrique, Carlos Alberto" required />
+                <input type="text" name="membros_grupo" class="area_txt ad" min="8" max="564" placeholder="Ex: Alexandre Lima, Luiz Henrique, Carlos Alberto" required />
                 <span>Separe os integrantes por vírgulas ","</span>
 
                 <label for="membros"><b>Membros da Banca (*)</b></label>
-                <input type="text" name="membros_banca" class="area_txt" min="8" max="564" placeholder="Ex: Regina Santos, Marcello Zanfra, Thiago" required />
+                <input type="text" name="membros_banca" class="area_txt ad" min="8" max="564" placeholder="Ex: Regina Santos, Marcello Zanfra, Thiago" required />
                 <span>Separe os integrantes por vírgulas ","</span>
             </div>
 
@@ -94,19 +94,19 @@ if (!isset($_SESSION["numLogin"])) {
             </div>
 
             <label for="resumo"><b>Resumo (*)</b></label>
-            <textarea type="text" class="area_txt" name="resumo" placeholder="Trecho do PDF (Resumo)" required></textarea>
+            <textarea type="text" class="area_txt ad res" name="resumo" placeholder="Trecho do PDF (Resumo)" required></textarea>
 
             <label for="abstract"><b>Abstract (*)</b></label>
-            <textarea type="text" class="area_txt" name="abstract" placeholder="Trecho do PDF (Abstract)" required></textarea>
+            <textarea type="text" class="area_txt ad res" name="abstract" placeholder="Trecho do PDF (Abstract)" required></textarea>
 
             <label for="pa_ch"><b>Palavras-chave (*)</b></label>
-            <textarea type="text" class="area_txt" name="pa_ch" placeholder="Trecho do PDF (Palavras-chave)" required></textarea>
+            <textarea type="text" class="area_txt ad" name="pa_ch" placeholder="Trecho do PDF (Palavras-chave)" required></textarea>
 
             <label for="key_words"><b>Key Words (*)</b></label>
-            <textarea type="text" class="area_txt" name="key_words" placeholder="Trecho do PDF (Key Words)" required></textarea>
+            <textarea type="text" class="area_txt ad" name="key_words" placeholder="Trecho do PDF (Key Words)" required></textarea>
 
             <label for="data_ap"><b>Data de Apresentação (*)</b></label>
-            <input type="date" class="inp_txt" name="data_ap" min="1911-09-28" max="2021-12-31" id="dt_ap" required>
+            <input type="date" class="inp_txt ad" name="data_ap" min="1911-09-28" max="2021-12-31" id="dt_ap" required>
 
             <div class="arquivos">
                 <h3>Arquivos</h3>
