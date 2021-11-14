@@ -47,7 +47,7 @@ if (session_id() != '') {
     <?php
     }
     ?>
-    <button class="voltar" onclick="window.history.back()">❮ Voltar</button>
+    <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
 
     <div class="formu">
         <h2>Login</h2>

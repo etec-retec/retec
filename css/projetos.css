@@ -17,6 +17,7 @@ body{
 .main{
     zoom: 73%;
     margin-top: 67px;
+    position: relative;
 }
 .voltar{
     font-size: .8em;
@@ -79,8 +80,7 @@ h1 label{
 }
 .info_esquerda{
     margin-left: 40px;
-    max-width: 20%;
-    min-width: 15%;
+    width: 22%;
     position: absolute;
     margin-top: 40px;
 }
@@ -375,6 +375,43 @@ h1 label{
     .grid-container{
         display: block;    
     }
+    .one,
+    .two,
+    .three {
+        background-color: #fff;
+        height: 5px;
+        width: 100%;
+        margin: 6px auto;
+        transition-duration: 0.3s;
+    }
+    #btn-toggle{
+        position: fixed;
+        right: 55px;
+        top: 15px;
+        z-index: 999;
+        background: none;
+    }
+    .menu-toggle {
+        width: 40px;
+        height: 30px;
+        position: absolute;
+    }
+
+    .info_esquerda{
+        opacity: 0;
+    }
+
+    .mostrou{
+        display: block;
+        background: #a9a9ad;
+        width: 450px;
+        position: absolute;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 10px;
+        right: 20px;
+        z-index: 999;
+    }
     .content-pesquisa{
         display: flex;
         align-items: center;
@@ -413,11 +450,7 @@ h1 label{
     .conteudo{
         padding: 0;
     }
-    .info_esquerda{
-        display: none;
-        width: 90%;
-        text-align: center;
-    }
+
 }
 @media (max-width:700px){
     .result{

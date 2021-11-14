@@ -141,7 +141,7 @@ mysqli_close($conexao);
                 ?>
                 <!-- sem login -->
                 <div class="cabecalho">
-                    <button class="voltar" onclick="window.history.back()">❮ Início</button>
+                <button class="voltar" onclick="window.open('../', '_self')">❮ Início</button>
                     <div class="logo">
                         <h1>RETEC</h1>
                     </div>
@@ -151,6 +151,14 @@ mysqli_close($conexao);
             ?>
             </div>
         </div>
+        
+        <button id="btn-toggle">
+            <div class="menu-toggle">
+                <span class="one"></span>
+                <span class="two"></span>
+                <span class="three"></span>
+            </div>
+        </button>
         <section class="main">
                 <div class="info_esquerda">
                     <h1>Filtros</h1>
@@ -299,5 +307,6 @@ mysqli_close($conexao);
         </section>
 
         <script src="../js/btn-top-projetos.js"></script>
+        <script src="../js/mostrarFiltro.js"></script>
 </body>
 </html>

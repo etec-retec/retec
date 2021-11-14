@@ -12,11 +12,6 @@ body{
     color: #2a3641;
 }
 
-.voltar{
-    width: auto;
-    padding: 0 10px 0;
-}
-
 .grid-container{
     display: grid;
     grid-template-columns: 1fr 1fr;

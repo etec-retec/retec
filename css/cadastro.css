@@ -199,19 +199,35 @@ input[type=number]::-webkit-outer-spin-button {
    align-items: center;
 }   
 
-@media (max-width: 48em){
+@media (max-width: 968px){
     .voltar{
         display: none;
     }
 
     .formu{
-        margin: auto auto ;
-        width: 100%;
-        /* height: 90vh; */
+        margin: auto auto;
+        width: 80%;
     }
 
     .formu label{
         margin: 20px 0 10px 0;
     }
     
+}
+
+@media (max-width:600px){
+    .formu{
+        width: 100%;
+    }
+    #eye{
+        right: calc(100% - 45% - 210px);
+    }
+}
+
+
+@media (max-width:425px){
+    #eye{
+        right: calc(100% - 33% - 210px);
+    }
+
 }
