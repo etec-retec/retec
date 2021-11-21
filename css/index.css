@@ -16,8 +16,21 @@
     --background-color2: #f4f4f4;
     --fildset: #dfdfdf;
     --placeholder: #709bb3;
+    --card-bg: #FFFFFF;
+    --info-esq-bg: #ffffff;
+    --info-esq-span-h:#f4f4f4;
+    --info-esq-span-h-f:#e6e6e6;
 }
-
+.dark-mode:root{
+    
+    --btn-color:#6253f2;
+    --btn-background-color:#f2f6f8;
+    --background-color:#dee7ee;
+    --back-login-cad-color: #dee7ee; 
+    --background-color2: #f4f4f4;
+    --fildset: #dfdfdf;
+    --placeholder: #709bb3;
+}
 .actions{
     position: absolute;
     z-index: 1;

@@ -59,81 +59,142 @@ label{
     display: inline-block;
     position: absolute;
     right: 80px;
-    font-size: clamp(50%, .5em + 1vw, 2em); ;
+    font-size: clamp(50%, .3em + 1vw, 2em); ;
 }
 .logo h1{
-    font-size: clamp(100%, 1.5em + 1vw, 3em);
+    font-size: clamp(100%, 1.3em + 1vw, 3em);
 }
 /**/
-.info_esquerda form h3{
-    margin-top: 10px;
+.info_esquerda .instituicao{
+    border: 1px solid var(--fildset);
+    padding: 15px;
+    border-radius: 10px;
 }
-.info_esquerda form .instituicao h3{
-    border-top: 1px solid rgba(175, 175, 175, 0.815);
-}
-.info_esquerda form .ano-publicacao h3{
-    border-top: 1px solid rgba(175, 175, 175, 0.815);
-}
-
 h1 label{
     font-size: 100%;
 }
-.info_esquerda{
-    margin-left: 40px;
-    width: 22%;
-    position: absolute;
-    margin-top: 40px;
-}
-
-.result{
-    position: absolute;
-    z-index: 98;
-    right: 150px;
-    top: 64px;
-}
-
-.result h2{
-    font-size: 1em;
-}
-
 .info_esquerda h1{
     font-weight: 900;
     font-size: 2em;
     display: none;
 }
 
+.info_esquerda{
+    margin-left: 40px;
+    width: 22%;
+    position: absolute;
+    background: #FFFFFFFF;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.10);
+
+}
+.info_esquerda span{
+    display: inline-block;
+    position: absolute;
+    left: 1.5em;
+    font-weight: 600;
+    font-size: .9em;
+    padding: 10px;
+    cursor: pointer;
+    pointer-events: none;
+    width: 100%;
+}
+
+.info_esquerda .checkbox-round:hover{
+    background: var(--info-esq-span-h);
+
+}
+/* .info_esquerda span:hover .checkbox-round{
+    background: var(--info-esq-span-h);
+
+} */
+/* .info_esquerda span::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: #6253f2;
+    
+} */
+
 .checkbox-round {
-    width: 1.3em;
-    height: 1.3em;
+    position: relative;
+    width: 100%;
+    height: calc(20px + .9em);
+    height: 50px;
+    margin: -3px;
+    background-color: transparent;
+    border-radius: 10px;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    
+}
+/* .checkbox-round::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    margin-top: -12px;
+    width: 1.5em;
+    height: 1.5em;
     background-color: white;
     border-radius: 50%;
-    vertical-align: middle;
     border: 1px solid #ddd;
     -webkit-appearance: none;
     outline: none;
     cursor: pointer;
+    
+} */
+.checkbox-round:checked{
+    background: var(--info-esq-span-h-f);
 }
 
-.checkbox-round:checked {
-    background-color: #6253f2;
+.checkbox-round:checked span{
+    color: white;
+}
+.checkbox-round:checked:hover{
+    background: #d3d3d3da;
+}
+
+.result{
+    position: absolute;
+    z-index: 98;
+    right: 150px;
+    top: 16px;
+}
+
+.result h2{
+    font-size: 1em;
 }
 
 .ano_inp{
-    width: 60px;
+    font-size: .9em;
+    padding: 2px;
+    /* width: 60px;
+    height: 50px; */
 }
-
+.actions-btn{
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    flex-direction: row-reverse ;
+}
 .btn_filtrar{
+    flex: 1;
     font-size: 1em;
-    width: 128px;
-    height: 32px;
+    padding: 10px 0;
+    /* width: 128px;
+    height: 32px; */
     background-color: #6253f2;
     color: white;
     border: 1px #6253f2;
-    border-radius: 4px;
+    border-radius: 15px;
     cursor: pointer;
-    margin-left: 20px;
+    transition: .3s ease-out;
+    /* margin-left: 20px;
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 16px; */
 }
 
 .btn_filtrar:hover{
@@ -147,6 +208,9 @@ h1 label{
     width: 75%;
     position: absolute;
     right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
 }
 
 .btn_pesquisar i{
@@ -167,7 +231,7 @@ h1 label{
 }
 
 .content-pesquisa{
-    position: absolute;
+    position: relative;
     background: var(--background-color2);
     width: 100%;
     z-index: 98;
@@ -177,15 +241,22 @@ h1 label{
     display: flex;
     text-align: center;
     justify-content: space-between;
-    margin: 40px 0px;
     margin-left: 20px;
     padding: 5px 20px;
     z-index: 10;
     width: calc(30vw + 50px);
     min-width: 430px;
     border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     background: white;
+    transition: .3s;
     
+}
+.content-pesquisa .pesquisa:hover{
+    box-shadow: 0 0 15px rgba(0,0,0,0.10);
+}
+.content-pesquisa .pesquisa:focus{
+    box-shadow: 0 0 15px rgba(0,0,0,0.10);
 }
 
 /* Esse #btn é a barra de pesquisa*/
@@ -235,9 +306,9 @@ h1 label{
 	transition: all 0.3s;
 }
 
-.content-blocos{
+/* .content-blocos{
     margin-top: 140px;   
-}
+} */
 
 .blocos{
     display: flex;
@@ -256,12 +327,12 @@ h1 label{
     border: 1px solid rgba(255, 254, 254, 0.644);
     box-shadow: 0px 3px 5px #888791a9;
     transition: all .2s ease-out;
+    background: var(--card-bg) ;
 }
 
 .bloco:hover{
     box-shadow: 1px 7px 12px #a4a2b8a9;
     transform: scale(1.02);
-    background-color: #fff8f8d3;
 }
 
 .bloco .titulo{
@@ -297,10 +368,6 @@ h1 label{
 
 #ico:hover{
     color: #6253f2;
-}
-
-#lp_filtros{
-    margin-bottom: 32px;
 }
 
 .topo button{
@@ -351,9 +418,9 @@ h1 label{
      zoom: initial;
     } 
 } 
-@media (min-width: 1366px){
+@media (min-width: 1380px){
     .info_esquerda{
-        margin-top: 20px;
+        top: 100px;
     }
 }
 @media (max-width: 810px){
@@ -416,7 +483,13 @@ h1 label{
         display: flex;
         align-items: center;
         margin-left: 36px;
+        top: 50px;
     }
+
+    .result{
+        top: 60px;
+    
+    }   
     .content-pesquisa .pesquisa{
         width: 50%;
     } 
@@ -484,15 +557,16 @@ h1 label{
         padding: 5px;
     }
     .result{
-        width: 70%;
-        right: 0;
+        width: 100%;
+        right: 0px;
+        padding: 7px;
 
     }
     .result h2{
         font-size: .8em;
     }
     .blocos{
-        margin-top: 0;
+        margin-top: 45px;
     }
     .bloco{
         margin-bottom: 10px;

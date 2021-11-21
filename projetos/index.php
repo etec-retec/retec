@@ -165,28 +165,30 @@ mysqli_close($conexao);
                     <form action="?" method="GET">
                         <div class="cursos">
                             <h3>Cursos</h3>
-                            <?php
-                            for ($i = 0; $i <= 15; $i++) {
-                                echo "&nbsp;<input type='checkbox' class='checkbox-round' name='curso[]' value='" . $values[$i] . "'";
-                                $atual = $values[$i];
-                                if (isset($_GET['curso'])) {
-                                    for ($j = 0; $j <= 15; $j++) {
-                                        for ($k = 0; $k <= (sizeof($_GET['curso']) - 1); $k++) {
-                                            if ($atual == $_GET['curso'][$k]) {
-                                                echo " checked ";
+
+                                
+                                <?php
+                                for ($i = 0; $i <= 15; $i++) {
+                                    echo "&nbsp;<input id='checkbox' type='checkbox' title='".$values[$i]."' class='checkbox-round' name='curso[]' value='" . $values[$i] . "'";
+                                    $atual = $values[$i];
+                                    if (isset($_GET['curso'])) {
+                                        for ($j = 0; $j <= 15; $j++) {
+                                            for ($k = 0; $k <= (sizeof($_GET['curso']) - 1); $k++) {
+                                                if ($atual == $_GET['curso'][$k]) {
+                                                    echo " checked ";
+                                                }
                                             }
                                         }
                                     }
+                                    echo "> <span>" . $nomes[$i] . "</span><br>";
                                 }
-                                echo "> " . $nomes[$i] . "<br>";
-                            }
-                            ?>
+                                ?>
                         </div>
                         <div class="instituicao">
                             <h3>Instituição</h3>
                             <?php
                             for ($i = 0; $i <= 2; $i++) {
-                                echo "&nbsp;<input type='checkbox' class='checkbox-round' name='instituicao[]' value='" . $valores[$i] . "'";
+                                echo "&nbsp;<input type='checkbox' class='checkbox-round' title='".$valores[$i]."' name='instituicao[]' value='" . $valores[$i] . "'";
                                 $atual = $valores[$i];
                                 if (isset($_GET['instituicao'])) {
                                     for ($j = 0; $j <= 3; $j++) {
@@ -199,11 +201,11 @@ mysqli_close($conexao);
                                 }
                                 echo ">";
                                 if ($instituicoes[$i] == "ETEC Professor Andre Bogasian") {
-                                    echo " ETEC Professor André Bogasian";
+                                    echo "<span>" . " ETEC Professor André Bogasian" . "</span> <br>";
                                 } else {
-                                    echo " " . $instituicoes[$i];
+                                    echo "<span>" . $instituicoes[$i] . "</span> <br>";
                                 }
-                                echo "<br>";
+    
                             }
                             ?>
                         </div>
@@ -227,8 +229,10 @@ mysqli_close($conexao);
                             ?>
                         </div>
             
-                        <input type="submit" class="btn_filtrar" value="Filtrar" />           
-                        <input type="button" class="btn_filtrar" id="lp_filtros" onclick="window.open('../projetos/', '_self')" value="Limpar Filtros" />
+                        <div class="actions-btn">
+                            <input type="submit" class="btn_filtrar" value="Filtrar" />
+                            <input type="button" class="btn_filtrar" id="lp_filtros" onclick="window.open('../projetos/', '_self')" value="Limpar Filtros" />
+                        </div>
                     </form>
                 </div>
                 
