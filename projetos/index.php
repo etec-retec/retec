@@ -86,7 +86,7 @@ mysqli_close($conexao);
     <title>Retec - Projetos</title>
 </head>
 
-<body>
+<body class="filt">
     <?php
     if (isset($_SESSION["numLogin"]) && $_SESSION["tipo"] == 0) {
     ?>
@@ -151,40 +151,19 @@ mysqli_close($conexao);
             ?>
             </div>
         </div>
-        
-        <button id="btn-toggle">
-            <div class="menu-toggle">
-                <span class="one"></span>
-                <span class="two"></span>
-                <span class="three"></span>
+
+            <div class="toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        </button>
+
         <section class="main">
                 <div class="info_esquerda">
                     <h1>Filtros</h1>
                     <form action="?" method="GET">
-                        <div class="cursos">
-                            <h3>Cursos</h3>
-
-                                
-                                <?php
-                                for ($i = 0; $i <= 15; $i++) {
-                                    echo "&nbsp;<input id='checkbox' type='checkbox' title='".$values[$i]."' class='checkbox-round' name='curso[]' value='" . $values[$i] . "'";
-                                    $atual = $values[$i];
-                                    if (isset($_GET['curso'])) {
-                                        for ($j = 0; $j <= 15; $j++) {
-                                            for ($k = 0; $k <= (sizeof($_GET['curso']) - 1); $k++) {
-                                                if ($atual == $_GET['curso'][$k]) {
-                                                    echo " checked ";
-                                                }
-                                            }
-                                        }
-                                    }
-                                    echo "> <span>" . $nomes[$i] . "</span><br>";
-                                }
-                                ?>
-                        </div>
-                        <div class="instituicao">
+                        
+                    <div class="instituicao">
                             <h3>Instituição</h3>
                             <?php
                             for ($i = 0; $i <= 2; $i++) {
@@ -209,17 +188,38 @@ mysqli_close($conexao);
                             }
                             ?>
                         </div>
+                        <div class="cursos">
+                            <h3>Cursos</h3>
+
+                                
+                                <?php
+                                for ($i = 0; $i <= 15; $i++) {
+                                    echo "&nbsp;<input id='checkbox' type='checkbox' title='".$values[$i]."' class='checkbox-round' name='curso[]' value='" . $values[$i] . "'";
+                                    $atual = $values[$i];
+                                    if (isset($_GET['curso'])) {
+                                        for ($j = 0; $j <= 15; $j++) {
+                                            for ($k = 0; $k <= (sizeof($_GET['curso']) - 1); $k++) {
+                                                if ($atual == $_GET['curso'][$k]) {
+                                                    echo " checked ";
+                                                }
+                                            }
+                                        }
+                                    }
+                                    echo "> <span>" . $nomes[$i] . "</span><br>";
+                                }
+                                ?>
+                        </div>
                         <div class="ano-publicacao">
                             <h3>Ano de Publicação</h3>
                             <?php
                             if (isset($_GET['ano1'])) {
                             ?>
-                                    De <input type="number" name="ano1" class="ano_inp" min="1911" max="2021" value="<?php echo $_GET['ano1']; ?>">
+                                    De <input type="number" name="ano1" class="ano_inp"  title="Mínimo este ano"min="1911" max="2021" value="<?php echo $_GET['ano1']; ?>">
                                 <?php
                             }
                             if (isset($_GET['ano2'])) {
                                 ?>
-                                    até <input type="number" name="ano2" class="ano_inp" min="1911" max="2022" value="<?php echo $_GET['ano2']; ?>">
+                                    até <input type="number" name="ano2" class="ano_inp" title="Máximo este ano" min="1911" max="2022" value="<?php echo $_GET['ano2']; ?>">
                                 <?php
                             } else {
                                 ?>
@@ -311,6 +311,24 @@ mysqli_close($conexao);
         </section>
 
         <script src="../js/btn-top-projetos.js"></script>
-        <script src="../js/mostrarFiltro.js"></script>
+        <!-- <script src="../js/mostrarFiltro.js"></script> -->
+        <script>
+            
+       let toggle = document.querySelector(".toggle");
+       let filt = document.querySelector(".info_esquerda");
+       let blur = document.querySelector(".info_direita");
+       let topNone = document.querySelector(".topo");
+       let fix = document.querySelector(".filt");
+       
+       toggle.onclick = function(){
+
+           toggle.classList.toggle("open");
+           filt.classList.toggle("active");
+           blur.classList.toggle("blur");
+           topNone.classList.toggle("none");
+           fix.classList.toggle("filt-a");
+       }
+
+        </script>
 </body>
 </html>

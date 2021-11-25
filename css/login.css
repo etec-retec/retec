@@ -8,7 +8,7 @@
     color: #2a3641;
 }
 body{
-    background: var(--background-color);
+    background: var(--background-color2);
     display: flex;
     justify-content: center;
     align-items: center;

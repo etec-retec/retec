@@ -148,7 +148,7 @@ mysqli_close($conexao);
         <?php
         } else {
         ?>
-            <button class="voltar" id="voltar" onclick="window.open('../projetos/', '_self')">❮ Outros Projetos</button>
+            <button class="voltar" id="voltar" style="width: 150px;" onclick="window.open('../projetos/', '_self')">❮ Outros Projetos</button>
         <?php
         }
         ?>

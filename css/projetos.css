@@ -16,7 +16,7 @@ body{
 }
 .main{
     zoom: 73%;
-    margin-top: 67px;
+    margin-top: 100px;
     position: relative;
 }
 .voltar{
@@ -54,6 +54,7 @@ label{
     line-height: 20px;
     padding: 0 10px ;
 }
+
 /*este estilo corresponde para indicar o quando é usuário institucional*/
 .logo label b{
     display: inline-block;
@@ -66,9 +67,12 @@ label{
 }
 /**/
 .info_esquerda .instituicao{
-    border: 1px solid var(--fildset);
-    padding: 15px;
-    border-radius: 10px;
+    border-bottom: 1px solid var(--fildset);
+    /* padding: 15px; */
+
+}
+.info_esquerda .cursos{
+    padding-top: 30px;
 }
 h1 label{
     font-size: 100%;
@@ -80,11 +84,11 @@ h1 label{
 }
 
 .info_esquerda{
-    margin-left: 40px;
+    margin-left: 20px;
     width: 22%;
     position: absolute;
     background: #FFFFFFFF;
-    padding: 15px;
+    padding: 40px 15px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.10);
 
@@ -105,23 +109,10 @@ h1 label{
     background: var(--info-esq-span-h);
 
 }
-/* .info_esquerda span:hover .checkbox-round{
-    background: var(--info-esq-span-h);
-
-} */
-/* .info_esquerda span::before{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    background-color: #6253f2;
-    
-} */
 
 .checkbox-round {
     position: relative;
     width: 100%;
-    height: calc(20px + .9em);
     height: 50px;
     margin: -3px;
     background-color: transparent;
@@ -131,21 +122,6 @@ h1 label{
     cursor: pointer;
     
 }
-/* .checkbox-round::after {
-    content: '';
-    position: absolute;
-    left: 5px;
-    margin-top: -12px;
-    width: 1.5em;
-    height: 1.5em;
-    background-color: white;
-    border-radius: 50%;
-    border: 1px solid #ddd;
-    -webkit-appearance: none;
-    outline: none;
-    cursor: pointer;
-    
-} */
 .checkbox-round:checked{
     background: var(--info-esq-span-h-f);
 }
@@ -167,34 +143,46 @@ h1 label{
 .result h2{
     font-size: 1em;
 }
-
+.ano-publicacao{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .ano_inp{
-    font-size: .9em;
+    font-size: 1em;
     padding: 2px;
-    /* width: 60px;
-    height: 50px; */
+    width: 50%;
+    height: 40px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: .3s;
+    transform-origin: center;
+}
+.ano_inp:focus{
+    box-shadow: none;
+    border-bottom: 1px solid black;
 }
 .actions-btn{
     display: flex;
     padding: 10px;
     gap: 10px;
-    flex-direction: row-reverse ;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
 }
 .btn_filtrar{
     flex: 1;
+    min-width: 150px;
     font-size: 1em;
     padding: 10px 0;
-    /* width: 128px;
-    height: 32px; */
     background-color: #6253f2;
     color: white;
     border: 1px #6253f2;
     border-radius: 15px;
     cursor: pointer;
     transition: .3s ease-out;
-    /* margin-left: 20px;
-    margin-top: 10px;
-    font-size: 16px; */
 }
 
 .btn_filtrar:hover{
@@ -442,43 +430,102 @@ h1 label{
     .grid-container{
         display: block;    
     }
-    .one,
-    .two,
-    .three {
+
+    /*toggle*/
+    .toggle {
         background-color: #fff;
-        height: 5px;
-        width: 100%;
-        margin: 6px auto;
-        transition-duration: 0.3s;
-    }
-    #btn-toggle{
-        position: fixed;
-        right: 55px;
-        top: 15px;
-        z-index: 999;
-        background: none;
-    }
-    .menu-toggle {
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 40px;
-        height: 30px;
-        position: absolute;
+        height: 40px;
+        padding: 5px;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 999;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
     }
 
+    .toggle span{
+        background-color: #6253f2;
+        height: 3px;
+        width: 30px;
+        transition-duration: 0.3s;
+        border-radius: 3px;
+        position: absolute;
+    }
+    .toggle span:nth-child(1){
+        transform: translateY(-8px);
+        width: 20px;
+        left: 5px;
+    }
+    .toggle span:nth-child(2){
+    transform: translateY(8px);
+    width: 10px;
+    left: 5px;
+
+    }
+    
+    .open span:nth-child(3){
+        transform: translateX(40px);
+    }
+    
+    .open span:nth-child(1){
+        transform: translateY(0px) rotate(45deg);
+        width: 30px;
+    }
+    .open span:nth-child(2){
+        transform: translateY(0px) rotate(-45deg);
+        width: 30px;
+        
+    }
+    /*toggle*/
+
+    /*filtro-responsivo*/
     .info_esquerda{
+        display: none;
+        z-index: 9999;
+        width: 50%;
+        left: -100%;
+        transition: .5s ease;
+    }
+    
+    .active{
+        display: block;
+        overflow-y: auto;
+        overflow-x: hidden;
+        left: initial;
+        top: 30px;
+        height: 100vh;
+        border-top: 15px solid #FFFFFF;
+        border-bottom: 15px solid #FFFFFF;
+        animation: active .5s ease;
+    }
+    @keyframes active{
+
+        0%{
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    .blur{
+        filter: blur(20px);
+        pointer-events: none;
+        
+    }
+    .none{
         opacity: 0;
     }
-
-    .mostrou{
-        display: block;
-        background: #a9a9ad;
-        width: 450px;
-        position: absolute;
-        padding: 20px;
-        border-radius: 10px;
-        margin: 10px;
-        right: 20px;
-        z-index: 999;
+    .filt-a{
+        position: fixed;
     }
+    /*filtro-responsivo*/
     .content-pesquisa{
         display: flex;
         align-items: center;
@@ -534,7 +581,7 @@ h1 label{
         font-size: 1em;
     }
 }
-@media (max-width: 425px){
+@media (max-width: 536px){
     .logo{
         margin-left: 11px;
     }
@@ -573,5 +620,10 @@ h1 label{
         min-height: 400px;
         min-width: 350px;
 
+    }
+
+    .active{
+        width: 80%;
+        margin: none;
     }
 }

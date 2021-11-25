@@ -8,11 +8,11 @@
     position: fixed;
     z-index: 99999999;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #dee7ee;
+    background-color: #f4f4f4;
     transition: all 0.5s ease;
     overflow-y: hidden;
 }   

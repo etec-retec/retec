@@ -3,7 +3,6 @@
     padding: 0;
     outline: 0;
     box-sizing: border-box;
-    /* vertical-align: baseline;    */
     font-family: 'Poppins', sans-serif;
     color: #2a3641;
 }
@@ -107,7 +106,8 @@ button{
     position: relative;
     width: 100%;
     height: 270px;
-    background-color: #dee7ee;
+    background: var(--background-color);
+    box-shadow:inset 0 -30px 30px rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
