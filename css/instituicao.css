@@ -4,10 +4,12 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(180deg, var(--background-color) 20vh, var(--background-color2) 75vh, rgba(235, 234, 234, 0.479) 85vh);    
+    /* background: linear-gradient(180deg, var(--background-color) 0%, var(--background-color2) 40vw); */
+    /* background-color: #f4f4f4; */
     font-family: 'Poppins', sans-serif;
     color: #2a3641;
-    height: 100vh;
+    min-height: 100vh;
     font-size: 16px;
 }
 
@@ -20,7 +22,7 @@ body{
     width: 100%;
     height: 131px;
     min-height: 10px;
-    background-color: #dee7ee;
+    /* background-color: #dee7ee; */
 }
 
 .logo{
@@ -68,7 +70,6 @@ body{
 
 .corpo h1{
     font-size: clamp(100%, 2em + 1vw, 5em);
-    margin-bottom: 16px;
 }
 
 .opcoes{
@@ -101,26 +102,18 @@ body{
     margin: 0 auto;
     display: table;
 }
-
-#p, #a, #e, #r{
-    border-right: 1px solid #6253f2;
-}
 .boxNot{
-    float: right;
-    background-color: #f4f4f4;
-    border: 1px solid #6253f2;
-    border-radius: 4px;
-    padding: 0px 20px 0px 20px;
-    margin-top: 10px;
-    display: none;
-}
-.boxNot{
-    right: 0;
     padding: 20px 30px;
-    display: block;
     margin-left: auto;
     margin-right: 32px;
-    /* margin-top: 124px; */
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    background-color: #f4f4f4;
+    margin-top: 10px;
+}
+
+.boxNot h4{
+    color:#6253f2
 }
 
 .boxNot button{
@@ -138,10 +131,13 @@ body{
     display: table;
     margin: 0 auto;
 }
-
+#p, #a, #e, #r{
+    border-right: 1px solid #6253f2;
+}
 #ver{
     background-color: #008000;
     color:#f4f4f4;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
 }
 
 #ver:hover{
@@ -152,11 +148,15 @@ body{
 #neg{
     background-color: #800;
     color:#f4f4f4;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
 }
 
 #neg:hover{
     cursor: pointer;
     background-color: #ff6961;
+}
+.swal2-container.swal2-backdrop-show{
+    backdrop-filter: blur(3px);
 }
 
 @media (min-width: 810px){
@@ -186,9 +186,6 @@ body{
     padding-bottom: 12px;
 }
 
-#p{
-    padding-top: 16px;
-}
 #p, #a, #e, #r{
     border-right: none;
 }
@@ -204,13 +201,17 @@ body{
     }
 
     .boxNot{
-        padding: 10px 10px;
-        margin-right: 10px;
+        padding: 7px;
+        margin: 5px;
     }
     .boxNot h4{
-        font-size: 1em;
+        font-size: .9em;
     }
     .logo h1{
+        margin: 0;
+    }
+
+    .institucional{ 
         margin: 0;
     }
 }

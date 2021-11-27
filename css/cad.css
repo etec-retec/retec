@@ -3,7 +3,8 @@
 
 
 body{
-    background-color: var(--background-color2);
+    background: var(--background-color2);
+    /* background: linear-gradient(180deg, var(--background-color) 20%, var(--background-color2) 90%); */
     font-family: 'Poppins', sans-serif;
     color: #2a3641;
     padding-bottom: 20px;
@@ -16,7 +17,7 @@ body{
     justify-content: space-around;
     width: 100%;
     height: 131px;
-    background-color: #dee7ee;
+    background: var(--background-color);
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -127,7 +128,7 @@ body{
 
 .center .form label{
     display: inline-flex;
-    width: 100%;
+    width: 90%;
     align-self: left;
     margin-left: 7vw;
     margin-bottom: 10px ;

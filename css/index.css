@@ -105,9 +105,9 @@ button{
 .banner{
     position: relative;
     width: 100%;
-    height: 270px;
+    height: 210px;
     background: var(--background-color);
-    box-shadow:inset 0 -30px 30px rgb(255, 255, 255);
+    /* box-shadow:inset 0 -30px 30px rgb(255, 255, 255); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,8 +124,13 @@ h1{
 }
 
 .tec{
-    display: table;
-  margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+.tec img{
+    margin-left: 25px;
 }
 
 .sobre{
@@ -172,7 +177,7 @@ h1{
 
 .contato h2{
     text-align: center;
-    font-size: 2rem; 
+    font-size: clmap(100%, 1.5em + 1vw, 2em); 
     margin-bottom: 30px;
 }
 

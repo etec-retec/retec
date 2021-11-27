@@ -34,15 +34,12 @@ body{
 }
 
 .center {
-    width: 90%;
-    margin: 0 auto;
-    margin-top: 64px;
-    margin-bottom: 64px;
-}
-
-.center h2{
+    width: auto;
+    display: flex;
+    justify-content: center;
     text-align: center;
-    color: #800000;
+    flex-direction: column;
+
 }
 
 #sub_box{

@@ -9,7 +9,8 @@ html{
 body{
     width: 100%;
     height: 100vh;
-    background-color: var(--background-color2);
+    box-sizing: border-box;
+    background: var(--background-color2);   
     font-family: 'Poppins', sans-serif;
     color: #2a3641;
     font-size: 20px;
@@ -26,6 +27,7 @@ body{
 .cabecalho{
     width: 100%;
     height: 67px;
+    /* background: linear-gradient(180deg, var(--background-color) 30%, var(--background-color2) 100%); */
     background-color: #dee7ee;
     display: flex;
     align-items: center;
@@ -37,11 +39,13 @@ body{
 }
 
 .logo{
-   margin-left: 125px;
+   /* margin-left: 125px; */
    width: 100%;
    display: flex;
    align-items: center;
    position: relative;
+   flex-direction: row-reverse;
+   justify-content: space-around;
 }
 label{
     min-width: 0;
@@ -50,30 +54,35 @@ label{
     color: #2a3641;
     font-weight: 600;
     width: 100%;
-    font-size: clamp(50%, .3em + 1vw, 1em);
+    font-size: clamp(50%, .3em + 1vw, .9em);
     line-height: 20px;
-    padding: 0 10px ;
-}
-
-/*este estilo corresponde para indicar o quando é usuário institucional*/
-.logo label b{
-    display: inline-block;
-    position: absolute;
-    right: 80px;
-    font-size: clamp(50%, .3em + 1vw, 2em); ;
+    padding: 0 10px;
+    color: #6253f2;
 }
 .logo h1{
     font-size: clamp(100%, 1.3em + 1vw, 3em);
 }
-/**/
-.info_esquerda .instituicao{
-    border-bottom: 1px solid var(--fildset);
-    /* padding: 15px; */
+.logo .inst{
+    line-height: 10px;
+}
+.logo .inst label{
+    display: inline-block;
+}
 
-}
+/*este estilo corresponde para indicar o quando é usuário institucional*/
+/* .logo label b{
+    display: inline-block;
+    position: absolute;
+    right: 80px;
+    font-size: clamp(50%, .3em + 1vw, 2em); ;
+} */
+/**/
+
 .info_esquerda .cursos{
-    padding-top: 30px;
+    margin-top: 25px;
+    border-top: 1px solid var(--fildset);
 }
+
 h1 label{
     font-size: 100%;
 }
@@ -215,12 +224,11 @@ h1 label{
 }
 .pesquisa #ico{
     background: none;
-    /* margin: 0px 10px; */
 }
 
 .content-pesquisa{
     position: relative;
-    background: var(--background-color2);
+    background: transparent;
     width: 100%;
     z-index: 98;
 }
@@ -293,11 +301,6 @@ h1 label{
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 }
-
-/* .content-blocos{
-    margin-top: 140px;   
-} */
-
 .blocos{
     display: flex;
     flex-wrap: wrap;
@@ -405,13 +408,16 @@ h1 label{
     .main{
      zoom: initial;
     } 
+    .cabecalho{
+        height: 80px;
+    }
 } 
 @media (min-width: 1380px){
     .info_esquerda{
         top: 100px;
     }
 }
-@media (max-width: 810px){
+@media (max-width: 990px){
 
     .logo{
         margin-left: 20px;
@@ -422,7 +428,7 @@ h1 label{
         width: 100%;
     }
     .cabecalho{
-        height: 60px;
+        height: 70px;
         position: fixed;
         top: 0;
     }
@@ -442,7 +448,7 @@ h1 label{
         height: 40px;
         padding: 5px;
         position: fixed;
-        top: 10px;
+        top: 15px;
         right: 10px;
         z-index: 999;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -582,15 +588,22 @@ h1 label{
     }
 }
 @media (max-width: 536px){
+    .cabecalho{
+        background: var(--background-color2);
+    }
     .logo{
         margin-left: 11px;
+    }
+    .logo h1{
+        margin-right: 60px;
     }
     .logo label{
         padding: 0;
         line-height: 12px;
     }
     .logo label b{
-        right: 40px;
+        left: 93px;
+        bottom: 8px;
         font-size: 1.2em;
     }
     .content-pesquisa{

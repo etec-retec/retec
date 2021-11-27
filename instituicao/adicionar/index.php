@@ -19,7 +19,7 @@ if (!isset($_SESSION["numLogin"])) {
 
     <link rel="stylesheet" href="../../loader/loading.css">
     <script type="text/javascript" src="../../loader/loading.js"></script>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link href="../../css/cad.css" rel="stylesheet">
     <link href="../../css/perfil.css" rel="stylesheet">
@@ -33,13 +33,14 @@ if (!isset($_SESSION["numLogin"])) {
         <span class="load"></span>
     </div>
     <div class="cabecalho">
-    <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>        <div class="bts">
+        <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
+        <div class="bts">
             <a id="add">Adicionar </a>
             <a id="rem" href="../remover/">Remover</a>
             <a id="ed" href="../editar/">Editar</a>
         </div>
         <div class="logo">
-            
+
             <h1>RETEC</h1>
             <?php
             if ($_SESSION['instituicao'] == "ETEC Professor Andre Bogasian") {
@@ -52,7 +53,7 @@ if (!isset($_SESSION["numLogin"])) {
             <?php
             }
             ?>
-       <label class="lblNome"><b>| Institucional</b></label>
+            <label class="lblNome"><b>| Institucional</b></label>
         </div>
     </div>
 
@@ -67,19 +68,19 @@ if (!isset($_SESSION["numLogin"])) {
 
             <label for="prof_orientador"><b>Professor Orientador (*)</b></label>
             <input type="text" name="prof_orientador" class="inp_txt" min="8" max="64" placeholder="Nome" required />
-           
+
             <label for="prof_coorientador"><b>Professor Co-orientador</b></label>
-            <input type="text" name="prof_corientador" class="inp_txt" min="8" max="64" placeholder="Nome"/>
-           
+            <input type="text" name="prof_corientador" class="inp_txt" min="8" max="64" placeholder="Nome" />
+
             <label for="membros"><b>Membros do Grupo (*)</b></label>
             <p style="font-size:12px; margin-top:0">Separe os integrantes por vírgulas ","</p>
             <input type="text" name="membros_grupo" class="inp_txt" min="8" max="564" placeholder="Ex: Alexandre Lima, Luiz Henrique, Carlos Alberto" required />
-           
+
 
             <label for="membros"><b>Membros da Banca (*)</b></label>
             <p style="font-size:12px; margin-top:0">Separe os integrantes por vírgulas ","</p>
             <input type="text" name="membros_banca" class="inp_txt" min="8" max="564" placeholder="Ex: Regina Santos, Marcello Zanfra, Thiago" required />
-           
+
 
             <label for="curso"><b>Curso (*)</b></label>
             <select class="inp_txt" name="curso" min="8" max="64" id="slct">
@@ -98,23 +99,23 @@ if (!isset($_SESSION["numLogin"])) {
 
             <label for="resumo"><b>Resumo (*)</b></label>
             <textarea type="text" class="area_txt" name="resumo" placeholder="Trecho do PDF (Resumo)" required></textarea>
-        
+
             <label for="abstract"><b>Abstract (*)</b></label>
             <textarea type="text" class="area_txt" name="abstract" placeholder="Trecho do PDF (Abstract)" required></textarea>
 
             <label for="pa_ch"><b>Palavras-chave (*)</b></label>
             <textarea type="text" class="area_txt" name="pa_ch" placeholder="Trecho do PDF (Palavras-chave)" required></textarea>
-           
-            <label for="key_words"><b>Key Words (*)</b></label>          
+
+            <label for="key_words"><b>Key Words (*)</b></label>
             <textarea type="text" class="area_txt" name="key_words" placeholder="Trecho do PDF (Key Words)" required></textarea>
-           
+
             <label for="data_ap"><b>Data de Apresentação (*)</b></label>
             <input type="date" class="inp_txt" name="data_ap" min="1911-09-28" max="2021-12-31" id="dt_ap" required>
-           
+
             <div class="arquivos">
                 <h3>Arquivos</h3>
                 <p>
-                    <label>Upload PDF (*): </label><input type="file" name="pdf" value="" accept="application/pdf" required/>
+                    <label>Upload PDF (*): </label><input type="file" name="pdf" value="" accept="application/pdf" required />
                 </p>
                 <p>
                     <label>Upload Projeto Completo(.zip): </label><input type="file" name="zip" accept=".zip,.rar,.7zip" />
@@ -124,12 +125,12 @@ if (!isset($_SESSION["numLogin"])) {
                 </p>
             </div>
             <input type="text" name="instituicao" value="<?php echo $_SESSION['instituicao']; ?>" hidden />
-           
+
 
             <input type="submit" class="cadastrar" id="sub_box" value="Adicionar Projeto" />
         </form>
     </div>
-    
+
     <script>
         materias = `<?php echo $_SESSION['materias']; ?>`;
         materias = materias.split(";");
@@ -148,19 +149,16 @@ if (!isset($_SESSION["numLogin"])) {
             document.getElementById("dadoMsg").style.display = "block";
         }
 
-        $(function () {
-            $( "#ano" ).change(function() {
+        $(function() {
+            $("#ano").change(function() {
                 var max = parseInt($(this).attr('max'));
                 var min = parseInt($(this).attr('min'));
-                if ($(this).val() > 2021)
-                {
+                if ($(this).val() > 2021) {
                     $(this).val(2021);
-                }
-                else if ($(this).val() < 1911)
-                {
+                } else if ($(this).val() < 1911) {
                     $(this).val(1911);
-                }       
-            }); 
+                }
+            });
         });
     </script>
 </body>

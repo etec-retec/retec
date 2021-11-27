@@ -139,8 +139,6 @@ mysqli_close($conexao);
     <?php
     }
     ?>
-
-    <div class="banner">
         <?php
         if (isset($_SESSION["numLogin"])) {
         ?>
@@ -152,11 +150,10 @@ mysqli_close($conexao);
         <?php
         }
         ?>
-    </div>
 
-    <div class="grid-container">
+    <div class="container">
 
-        <div class="info_esquerda">
+        <div class="esquerda">
             <div class="foto">
                 <?php
                 echo '<img src="data:image/jpeg;base64,' . base64_encode($foto) . '"/>';
@@ -167,11 +164,11 @@ mysqli_close($conexao);
 
                 <div class="orientadores">
 
-                    <label><b>Prof. Orientador: </b></label> <?php echo $prof_orientador; ?><br>
+                    <label><b>Prof. Orientador: </b> <br></label><?php echo $prof_orientador; ?><br>
                     <?php
                         if($prof_corientador != ""){
                     ?>
-                        <label><b>Prof. Coorientador: </b></label> <?php echo $prof_corientador; ?>
+                        <label><b>Prof. Coorientador: </b><br></label> <?php echo $prof_corientador; ?>
                     <?php
                         }
                     ?>
@@ -203,10 +200,9 @@ mysqli_close($conexao);
                     <label><b>Menção: </b></label> <span style="text-transform:uppercase;"><?php echo $mencao; ?></span>
                 </p>
             </div>
-            <br><br>
         </div>
 
-        <div class="info_direita">
+        <div class="direita">
             <div class="info_adicionais" id="info_adicionais">
                 <p>Adicionado por <?php echo $nome_professor . " em " . $Add_dia . " de " . $Add_mes . " de " . $Add_ano . " às " . $Add_horario; ?> </p>
                 <?php
