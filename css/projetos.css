@@ -45,7 +45,7 @@ body{
    align-items: center;
    position: relative;
    flex-direction: row-reverse;
-   justify-content: space-around;
+   justify-content: space-evenly;
 }
 label{
     min-width: 0;
@@ -53,7 +53,7 @@ label{
 .logo label{
     color: #2a3641;
     font-weight: 600;
-    width: 100%;
+    /* width: 100%; */
     font-size: clamp(50%, .3em + 1vw, .9em);
     line-height: 20px;
     padding: 0 10px;
@@ -244,7 +244,7 @@ h1 label{
     min-width: 430px;
     border-radius: 25px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    background: white;
+    background-color: #fff;
     transition: .3s;
     
 }
@@ -253,6 +253,7 @@ h1 label{
 }
 .content-pesquisa .pesquisa:focus{
     box-shadow: 0 0 15px rgba(0,0,0,0.10);
+ 
 }
 
 /* Esse #btn é a barra de pesquisa*/
@@ -297,9 +298,6 @@ h1 label{
 
 .zoom img {
 	max-width: 100%;
-	-moz-transition: all 0.3s;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
 }
 .blocos{
     display: flex;
@@ -309,7 +307,7 @@ h1 label{
 
 .bloco{
     text-decoration: none;
-    width: 15vw;
+    width: 16vw;
     height: 20vw;
     min-height: 373px;
     min-width: 285px;
@@ -535,7 +533,7 @@ h1 label{
     .content-pesquisa{
         display: flex;
         align-items: center;
-        margin-left: 36px;
+        padding-left: 36px;
         top: 50px;
     }
 
@@ -555,9 +553,9 @@ h1 label{
     }
     .info_direita .pesquisa{
         justify-content: center;
-        padding-top: 45px;
         top: 0;
         padding: 5px 10px;
+        /* margin-left: 50px; */
     }
     #btn{
         font-size: 1em;
@@ -607,6 +605,7 @@ h1 label{
         font-size: 1.2em;
     }
     .content-pesquisa{
+        padding: 0;
         margin: 0;
         justify-content: center;
     }
@@ -620,21 +619,21 @@ h1 label{
         width: 100%;
         right: 0px;
         padding: 7px;
-
     }
     .result h2{
         font-size: .8em;
     }
+
     .blocos{
         margin-top: 45px;
+        margin-left: 0;
     }
-    .bloco{
+    /* .bloco{
         margin-bottom: 10px;
         min-height: 400px;
-        min-width: 350px;
+        min-width: 320px;
 
-    }
-
+    } */
     .active{
         width: 80%;
         margin: none;

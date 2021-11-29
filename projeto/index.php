@@ -41,7 +41,7 @@ if ($id_professor != 0) {
         $nome_professor = $result['nome'];
     }
 
-    if(mysqli_affected_rows($conexao) == 0){
+    if (mysqli_affected_rows($conexao) == 0) {
         $nome_professor = $instituicao;
         if ($nome_professor == "ETEC Professor Andre Bogasian") {
             $nome_professor = "ETEC Professor André Bogasian";
@@ -139,42 +139,41 @@ mysqli_close($conexao);
     <?php
     }
     ?>
-        <?php
-        if (isset($_SESSION["numLogin"])) {
-        ?>
-            <button class="voltar" id="voltar" onclick="window.open('../projetos/', '_self')">❮ Voltar</button>
-        <?php
-        } else {
-        ?>
-            <button class="voltar" id="voltar" style="width: 150px;" onclick="window.open('../projetos/', '_self')">❮ Outros Projetos</button>
-        <?php
-        }
-        ?>
+    <?php
+    if (isset($_SESSION["numLogin"])) {
+    ?>
+        <button class="voltar" id="voltar" onclick="window.open('../projetos/', '_self')">❮ Voltar</button>
+    <?php
+    } else {
+    ?>
+        <button class="voltar" id="voltar" style="width: 150px;" onclick="window.open('../projetos/', '_self')">❮ Outros Projetos</button>
+    <?php
+    }
+    ?>
 
     <div class="container">
-
         <div class="esquerda">
-            <div class="foto">
+
+            <div class="foto" title="Banner do grupo">
                 <?php
                 echo '<img src="data:image/jpeg;base64,' . base64_encode($foto) . '"/>';
                 ?>
             </div>
-
             <div class="caixa">
 
                 <div class="orientadores">
 
                     <label><b>Prof. Orientador: </b> <br></label><?php echo $prof_orientador; ?><br>
                     <?php
-                        if($prof_corientador != ""){
+                    if ($prof_corientador != "") {
                     ?>
                         <label><b>Prof. Coorientador: </b><br></label> <?php echo $prof_corientador; ?>
                     <?php
-                        }
+                    }
                     ?>
                 </div>
-    
-                    <label><b>Membros: </b></label>
+
+                <label><b>Membros: </b></label>
                 <ul id="list1">
 
                 </ul>
@@ -203,7 +202,7 @@ mysqli_close($conexao);
         </div>
 
         <div class="direita">
-            <div class="info_adicionais" id="info_adicionais">
+            <div class="info_adicionais" id="info_adicionais" title="Dados sobre quando e quem adicionou este trabalho">
                 <p>Adicionado por <?php echo $nome_professor . " em " . $Add_dia . " de " . $Add_mes . " de " . $Add_ano . " às " . $Add_horario; ?> </p>
                 <?php
                 if ($data_att) {
@@ -215,22 +214,22 @@ mysqli_close($conexao);
             </div>
             <h1 style="text-transform:none"><?php echo $nome; ?></h1>
             <h2>Resumo</h2>
-            <div class="abstract">
+            <div class="abstract" title="Breve resumo sobre o que se trata este trabalho">
                 <?php echo $resumo; ?>
             </div>
 
             <h2>Abstract</h2>
-            <div class="abstract">
+            <div class="abstract" title="Breve resumo em inglês sobre o que se trata este trabalho">
                 <?php echo $abstract; ?>
             </div>
 
             <h2>Palavras-chave</h2>
-            <div class="abstract">
+            <div class="abstract" title="Palavras chaves do TCC">
                 <?php echo $pa_ch; ?>
             </div>
 
             <h2>Key Words</h2>
-            <div class="abstract">
+            <div class="abstract" title="Palavras chaves do TCC em inglês">
                 <?php echo $key_words; ?>
             </div>
 
@@ -242,17 +241,17 @@ mysqli_close($conexao);
                     echo "<a download='artigo.pdf' href='data:application/pdf;base64," . base64_encode($pdf) . "'> PDF</a>";
                     ?>
                 </p>
-                <?php 
-                    if($zip != ""){
-                ?>
-                <p>
-                    <label>Projeto Completo(.zip): </label>
-                    <?php
-                    echo "<a download='tcc.rar' href='data:application/zip;base64," . base64_encode($zip) . "'> ZIP</a>";
-                    ?>
-                </p>
                 <?php
-                    }
+                if ($zip != "") {
+                ?>
+                    <p>
+                        <label>Projeto Completo(.zip): </label>
+                        <?php
+                        echo "<a download='tcc.rar' href='data:application/zip;base64," . base64_encode($zip) . "'> ZIP</a>";
+                        ?>
+                    </p>
+                <?php
+                }
                 ?>
 
             </div>
@@ -289,16 +288,16 @@ mysqli_close($conexao);
     </script>
 
     <?php
-        if(isset($_GET['criado'])){
+    if (isset($_GET['criado'])) {
     ?>
-            <script>
-                elementoA = document.getElementById("voltar");
-                elementoB = document.getElementById("info_adicionais");
-                elementoA.style.marginTop = "70px";
-                elementoB.style.marginTop = "70px";
-            </script>
+        <script>
+            elementoA = document.getElementById("voltar");
+            elementoB = document.getElementById("info_adicionais");
+            elementoA.style.marginTop = "70px";
+            elementoB.style.marginTop = "70px";
+        </script>
     <?php
-        }
+    }
     ?>
 </body>
 

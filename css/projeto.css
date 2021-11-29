@@ -16,10 +16,9 @@ body{
     display:flex;
     width:100%;
     justify-content: space-evenly;
-    gap: 50px;
     padding-top: 60px;
     overflow-x: hidden;
-    margin-bottom: 64px;
+    padding-bottom: 64px;
 }
 
 .esquerda{
@@ -34,7 +33,7 @@ body{
 .foto img{
     box-shadow: -3px 3px 5px rgb(0, 0, 0,0.2);
     min-height: 150px;
-    max-height: 150px;
+    max-height: 200px;
     border-radius: 10px;
 }
 .caixa{
@@ -72,10 +71,11 @@ ul li{
 }
 
 .direita h2{
-    margin-top: 40px;
+    margin-top: 20px;
+    font-size: clamp(100%, 1em + 1vw, 1.5em);
 }
 .direita h1{
-    font-size: 2em;
+    font-size: clamp(100%, 2em + 1vw, 3em);
 }
 
 .abstract{
@@ -84,6 +84,7 @@ ul li{
     line-height: 1.7em;
     max-width: 900px;
     text-align: justify;
+    font-size: clamp(100%, .8em + 1vw, 1em);
 }
 
 .downloads{
@@ -126,7 +127,6 @@ ul li{
     top: 0;
     padding: 20px;
     padding-right: 64px;
-    line-height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -146,42 +146,44 @@ ul li{
         justify-content: center;
     }
 }
-@media (max-width: 48em){
-.container{
-    display: block;    
+@media (max-width: 1073px){
+    .container{
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+    .esquerda{
+        width: 100%;
+        height: auto;
+    }
+    .esquerda .foto{
+        display: none;
+    }
+    .direita h2{
+        margin-top: 10px;
+    }
+    .direita{
+        margin-right: 0;
+
+    }
+    .esquerda .caixa{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+    }
+}
+@media (max-width: 823px){
+    .esquerda .caixa{
+        gap: 5px;
+        flex-direction: column;
+        padding: 10px;
+    }
 }
 
-.banner{
-    height: 150px;
-}
-
-.foto{
-    height: 150px;
-    width: 275px;
-    margin-left: 0;
-    margin: 0 auto;
-    margin-top: -75px;
-}
-
-.caixa{
-    width: 255px;
-    margin-left: 0;
-    margin: 0 auto;
-    margin-top: 10px;
-}
-
-.abstract{
-    width: 275px;
-    margin-left: 0;
-    margin: 0 auto;
-}
-
-h2{
-    padding-left: 20px;
-}
-
-.downloads{
-    margin-left: 0;
-}
-
+@media (max-width: 425px){
+    .info_adicionais{
+        padding: 10px;
+    }
 }
