@@ -26,6 +26,7 @@
 .container-acoes{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     /* flex-wrap: wrap; */
     background: rgb(255, 255, 255);
@@ -47,17 +48,17 @@
     color: black;
     font-size: clamp(1rem, .5vw, 2rem);
     transition: all .3s ease-out;
+    border: 1px solid transparent;
     border-bottom: 1px solid var(--fildset);
     background: none;
-    max-width: 330px;
+    width: 330px;
     min-height: min-content;
 }
-
 .container-acoes .acoes:hover{
     background: var(--btn-color);
     color: white;
     border: none;
-    border-bottom: 1px solid var(--btn-color);
+    border: 1px solid var(--btn-color);
     cursor: pointer;
 }
 
@@ -65,10 +66,11 @@
     background:rgb(121, 184, 135);
     color: white;
     border: none;
-    border-bottom: 1px solid rgb(121, 184, 135);
+    border: 1px solid rgb(121, 184, 135);
 }
 
 .container-dados{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,24 +135,33 @@ label b{
     width: 190px;
     min-width: 100px;
     font-size: 1em;
-    border-radius: 10px;
-    background: none;
-    transition: all .3s ease-in-out;
-    letter-spacing: 1px;
+    border-radius: 2px;
+    transition: all .3s ease-in;
     background: #45d765;
     border: none;
     color: white;
     font-weight: bold;
-    text-transform: uppercase;
-    right: 0;
-    bottom: 0;
-    border: 2px solid #45d765;
     cursor: pointer;
+    letter-spacing: 1px;
+    bottom: 0;
+    right: 0;
+    text-transform: uppercase;
 }
-
+/* .alterar::before{
+    content: '';
+    z-index: 1;
+    left: 0;
+    top: 0;
+    position: absolute;
+    height:100%;
+    width: 0;
+    transform-origin:center;
+    background-color: red;
+    transition: .3s;
+    border-radius: 3px;
+} */
 .alterar:hover{
-    background-color: #c0bece;
-    border: 2px solid #c0bece;
+    background-color: var(--btn-color);
 }
 
 .marker{
@@ -221,6 +232,13 @@ label b{
     .container-acoes{
         width: 90%;
     }
+    .container-acoes .acoes{
+        display:inline-block;
+        width: 100%;
+        gap: 5px;
+        border: 1px solid var(--fildset);
+        border-radius: 5px;
+    }
     .container-acoes h1{
         display: none;
     }
@@ -231,7 +249,7 @@ label b{
     
 }
 
-@media (max-width: 768px){
+@media (max-width: 776px){
     .cabecalho{
         height: 131px;
         flex-wrap: wrap-reverse;

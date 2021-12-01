@@ -214,7 +214,10 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
-
+.arquivos label{
+    display: inline-block;
+    width: 100%;
+}
 .arquivos input{
     background-color: #6253f2;
     color: #f4f4f4;
@@ -223,6 +226,8 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 8px;
     cursor: pointer;
     margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
 }
 
 .cadastrar{

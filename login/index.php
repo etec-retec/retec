@@ -48,7 +48,8 @@ if (session_id() != '') {
     }
     ?>
     <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
-
+    
+    <img src="../assets/ilustrations/login.svg" alt="" class="ilus-login">
     <div class="formu">
         <h2>Login</h2>
         <form name="cadastraU" action="../model/login.php" method='POST'>
@@ -80,6 +81,7 @@ if (session_id() != '') {
             <label>Não tem uma conta?</label>
             <a href="../cadastro/index.php">Cadastre-se</a>
         </div>
+        
         <script src="../js/login.js"></script>
         <script src="../js/mostrarSenha.js"></script>
         <script>

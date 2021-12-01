@@ -36,8 +36,8 @@ if (!isset($_SESSION["numLogin"])) {
         <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
         <div class="bts">
             <a id="add">Adicionar </a>
-            <a id="rem" href="../remover/">Remover</a>
             <a id="ed" href="../editar/">Editar</a>
+            <a id="rem" href="../remover/">Remover</a>
         </div>
         <div class="logo">
 

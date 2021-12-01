@@ -12,6 +12,7 @@ body{
     font-family: 'Poppins', sans-serif;
     color: #2a3641;
 }
+
 h1{
     font-size: clamp( 10px, 1em + 3vw, 3em); /*tamanho: mínimo, desejável e máximo*/
     margin-right: 0;
@@ -28,6 +29,7 @@ h1{
     justify-content: center;
     color: #2a3641;
     height: 50%;
+    width: 100%;
 }
 
 .formu h2{
@@ -41,16 +43,14 @@ h1{
 
 .botao{
     text-align: center;
-    font-size:1em;
-    width: 200px;
-    height: 28px;
+    font-size:1.3em;
     background: var(--btn-color);
     color: white;
     border-radius: 4px;
     cursor: pointer;
     transition: .2s;
     margin-top: 1em;
-    margin: 0 auto;
+    padding: 5px 50px;
 }
 
 .botao:hover{
@@ -65,13 +65,10 @@ label{
     font-weight: 700;
     font-size: 1.1em;
 }
-form{
-    position: relative;
-}
+
 .inp_txt{
-    max-width: 350px;
+    width: 350px;
     min-width: 250px;
-    transition: all .25s ease-out;
     letter-spacing: 1px;
     margin-bottom: 15px;
 }
@@ -89,9 +86,20 @@ form{
     color: #709bb3;
 }
 
-@media (min-width: 1150px){
-    .botao{
-        margin-left: 20px;
+.acessosvg{
+    width: 40vw;
+    height: 40vw;
+    position: fixed;
+    right: -100px;
+    bottom: 50px;
+    filter: opacity(45%);
+    display: flex;
+    align-items: center;
+    display: none;
+}
+@media(min-width:765px){
+    .acessosvg{
+        display: block;
     }
 }
 @media (max-width: 570px){

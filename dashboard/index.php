@@ -60,11 +60,16 @@ if (!isset($_SESSION["numLogin"])) {
         <span>
         <div class="opcoes">
             <a id="p" href="../projetos/">Projetos</a>
-            <a id="a" href="adicionar/">Adicionar Projeto</a>
-            <a id="e" href="editar/">Editar Projeto</a>
+            <a id="p" href="editar/">Meus Projetos</a>
+            <!-- <a id="a" href="adicionar/">Adicionar Projeto</a>
+            <a id="e" href="editar/">Editar Projeto</a> -->
             <a id="m" href="perfil/">Meu Perfil</a>
         </div>
         </span>
+    </div>
+
+    <div class="content-grama">
+        <img src="../assets/ilustrations/grama-dash.svg" alt="" class="grama">
     </div>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/voltar.js"></script>

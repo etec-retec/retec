@@ -14,7 +14,15 @@ body{
     align-items: center;
     min-height: 100vh;
     width: 100%;
+    overflow: hidden;
 
+}
+.ilus-login{
+    width: 45vw;
+    height: 45vw;
+    position: fixed;
+    left: 25px;
+    display: none;
 }
 .formu{
     margin: 0 auto;
@@ -176,14 +184,21 @@ img{
     border-top: 2px solid #800;
     border-bottom: 2px solid #800;
 }
-@media (min-width: 1440px){
 
-}
 @media (min-width: 1600px) {
     .formu{
         width: 35%;
     }
 }
+@media (min-width: 1360px){
+    .formu{
+        right: 200px;
+    }
+    .ilus-login{
+        display: block;
+    }
+}
+
 @media (max-width: 1185px){
     .formu{
         width: 50%;
@@ -192,9 +207,15 @@ img{
 }
 @media (max-width: 935px){
 
+    .content{
+        display: block;
+    }
     .formu{
         width: 65%;
         padding: 20px;
+    }
+    .content-ilustration{
+        display: none;
     }
 }
 

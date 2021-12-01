@@ -70,6 +70,19 @@ h1{
     background: rgba(0,0,0,.1);
     backdrop-filter: blur(3px);
 }
+
+.content-grama{
+    position: fixed;
+    bottom: -100px;
+    width: 100%;
+    /* height: 100px; */
+}
+
+.grama{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%) opacity(10%);
+}
 @media (max-width: 48em){
 .cap{
     padding-top: 64px;

@@ -75,7 +75,7 @@ ul li{
     font-size: clamp(100%, 1em + 1vw, 1.5em);
 }
 .direita h1{
-    font-size: clamp(100%, 2em + 1vw, 3em);
+    font-size: clamp(100%, 1em + 1vw, 3em);
 }
 
 .abstract{
@@ -90,23 +90,42 @@ ul li{
 .downloads{
     padding: 10px;
     align-items: center;
+    background-color: var(--card-bg);
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
-.downloads input{
+.downloads label{
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 2px;
+}
+
+.downloads p{
+    padding: 5px;
+}
+.downloads a{
+    display: inline-block ;
     background-color: #6253f2;
-    color: #f4f4f4;
-    border-radius: 10px;
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+    letter-spacing: 2px;
+    border-radius: 2px;
     border: none;
-    padding: 8px;
+    padding: 2px;
     cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    min-width: 200px;
+    text-align: center;
+    transition: all .2s ease-out;
 }
 
-.downloads input:hover{
-    background-color: #b6b2eb;
+.downloads a:hover{
+    background: #6353f28f;
 }
 
-.downloads input:hover{
-    background-color: #b6b2eb;
+.downloads a:hover{
+    background: #6353f28f;
 }
 
 .marker{

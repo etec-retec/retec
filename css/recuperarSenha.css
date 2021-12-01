@@ -1,0 +1,38 @@
+.content{
+    display:flex;
+    align-items:center;
+    height: 100vh;
+}
+
+.content-ilustration{
+    position: fixed;
+    left: 25px;
+    width: 45vw;
+    height: 45vw;
+
+}
+
+.ilustration{
+    width: 100%;
+    height: 100%;
+}
+img{
+    margin: 0;
+}
+.formu{
+    position: absolute;
+    right: 100px;
+}
+.formu h2{
+    margin-bottom: 50px;
+}
+
+@media (min-width: 1600px){
+    .formu{
+
+        width: 35vw;
+        height: 20vw;
+        display: flex;
+        justify-content: center;
+    }
+}

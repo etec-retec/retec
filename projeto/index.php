@@ -236,7 +236,7 @@ mysqli_close($conexao);
             <h2>Downloads</h2>
             <div class="downloads">
                 <p>
-                    <label>Artigo: </label>
+                    <label>Artigo: </label><br>
                     <?php
                     echo "<a download='artigo.pdf' href='data:application/pdf;base64," . base64_encode($pdf) . "'> PDF</a>";
                     ?>
@@ -245,7 +245,7 @@ mysqli_close($conexao);
                 if ($zip != "") {
                 ?>
                     <p>
-                        <label>Projeto Completo(.zip): </label>
+                        <label>Projeto Completo(.zip): </label><br>
                         <?php
                         echo "<a download='tcc.rar' href='data:application/zip;base64," . base64_encode($zip) . "'> ZIP</a>";
                         ?>

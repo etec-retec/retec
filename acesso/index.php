@@ -40,6 +40,7 @@ if ($_SESSION["tipo"] == "0") {
 <div class="preload">
         <span class="load"></span>
     </div>
+    <img src="../assets/ilustrations/acesso.svg" alt="" class="acessosvg">
     <?php
     if (isset($_SESSION['deletada'])) {
         if ($_SESSION['deletada'] == "ETEC Professor Andre Bogasian") {

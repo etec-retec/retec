@@ -186,14 +186,24 @@ h1 label{
     min-width: 150px;
     font-size: 1em;
     padding: 10px 0;
-    background-color: #6253f2;
+    background-color: var(--btn-color);
     color: white;
-    border: 1px #6253f2;
-    border-radius: 15px;
+    border: 1px solid transparent;
+    border-radius: calc(10px + 1em);
     cursor: pointer;
     transition: .3s ease-out;
+    text-transform: uppercase;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
+.btn_filtrar:first-child{
+}
+.btn_filtrar:first-child:hover{
+    background-color: #fff;
+    color: black;
+    font-weight: bold;
+    border: 1px solid #6253f2;
 
+}
 .btn_filtrar:hover{
     background-color: #b6b2eb;
 }

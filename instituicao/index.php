@@ -69,12 +69,14 @@ if ($_SESSION['tipo'] != 0) {
                 <p><b>Matrícula: </b><?php echo $_SESSION["notMatricula"]; ?></p>
                 <p><b>RG: </b><?php echo $_SESSION["notRg"]; ?></p>
                 <p><b>E-mail: </b><?php echo $_SESSION["notEmail"]; ?></p>
+
                 <form action="../model/verificacao.php" method="POST">
                     <input type="text" name="rg" style="display:none" value="<?php echo $_SESSION["notRg"]; ?>" />
                     <input type="text" name="matricula" style="display:none" value="<?php echo $_SESSION["notMatricula"]; ?>" />
                     <input type="text" name="conf" style="display:none;" value="1" />
                     <button class="btnBox" id="ver">Verificar</button>
                 </form>
+
                 <form action="../model/verificacao.php" method="POST">
                     <input type="text" name="rg" style="display:none" value="<?php echo $_SESSION["notRg"]; ?>" />
                     <input type="text" name="matricula" style="display:none" value="<?php echo $_SESSION["notMatricula"]; ?>" />
@@ -115,14 +117,21 @@ if ($_SESSION['tipo'] != 0) {
     </div>
 
     <div class="corpo">
-        <h1 class="cap"><?php echo $_SESSION["instituicao"]; ?></h1>
 
-        <div class="opcoes">
-            <a id="p" href="../projetos/">Projetos</a>
-            <a id="a" href="adicionar/">Adicionar Projeto</a>
-            <a id="e" href="editar/">Editar Projeto</a>
-            <a id="r" href="remover/">Remover Projeto</a>
-            <a id="m" href="lista-de-professores/">Lista de Professores</a>
+        <div class="content">
+            <h1 class="cap"><?php echo $_SESSION["instituicao"]; ?></h1>
+
+            <div class="opcoes">
+                <a id="p" href="../projetos/">Projetos</a>
+                <a href="editar/">Projetos da Instituição</a>
+                <!-- <a id="a" href="adicionar/">Adicionar Projeto</a>
+                <a id="e" href="editar/">Editar Projeto</a>
+                <a id="r" href="remover/">Remover Projeto</a> -->
+                <a id="m" href="lista-de-professores/">Lista de Professores</a>
+            </div>
+        </div>
+        <div class="img">
+            <img src="../assets/ilustrations/dashboard.svg" alt="">
         </div>
     </div>
 
