@@ -195,8 +195,7 @@ h1 label{
     text-transform: uppercase;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
-.btn_filtrar:first-child{
-}
+
 .btn_filtrar:first-child:hover{
     background-color: #fff;
     color: black;

@@ -1,17 +1,41 @@
+.mensagem{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .mensagem h1{
-    padding: 128px 32px 32px 32px !important;
-    display: table;
-    margin: 0 auto;
+    text-transform: uppercase;
+    font-size: clamp(100%, 3em + 1vw, 3em);
 }
 
 .mensagem a{
-    display: table;
-    margin: 0 auto;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 2em;
+    color: rgba(0, 0, 0, 0.568);
+    font-weight: bold;
+    transition: .3s;
 }
-
+.mensagem a:hover{
+    color: #6253f2;
+    letter-spacing: 1px;
+}
 .logo{
     font-size: 32px !important;
     margin-top: -32px;
+}
+img{
+    position: fixed;
+    width: 100vw;
+    height: 90vh;
+    z-index: -99;
+    filter: opacity(40%);
+}
+
+@media (max-width: 765px){
+    .mensagem{
+        zoom: 60%;
+    }
 }

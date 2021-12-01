@@ -22,7 +22,8 @@
         <div class="cabecalho">
             <h1 class="logo" style="padding-top: 32px;">RETEC</h1>
         </div>
-
+        <img src="../assets/ilustrations/401.svg" alt="">
+        
         <div class="mensagem">
             <h1>Acesso Negado!</h1>
             <a href="../">Retornar à Página Inicial</a>

@@ -140,48 +140,51 @@ body{
     color:#6253f2
 }
 
-.boxNot button{
-    display: block;
-    border: none;
-    padding: 12px;
-    margin-left: 12px;
-    margin-right: 12px;
+.content-btnBox{
+    display: flex;
+    width: 100%;
+    padding-top: 10px;
+    justify-content: space-evenly;
 }
-
 .btnBox{
-    float: left;
-    padding: 5px;
-    border-radius: 0px;
-    display: table;
-    margin: 0 auto;
+    /* float: left; */
+    padding: 10px;
+    font-size: .9em;
+    border: none;
+    border-radius: 8px;
+    color: #f4f4f4;
+    letter-spacing: 2px;
+    transition: all .3s ease-out;
+}
+.btnBox:hover{
+    transform: translateY(-2px);
 }
 .opcoes a{
     border-right: 1px solid #6253f2;
 }
 .opcoes a:last-child{
-
     border-right:none;
 }
 #ver{
-    background-color: #008000;
-    color:#f4f4f4;
+    background-color: #38c538;
+    font-weight: bold;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
 }
 
 #ver:hover{
     cursor: pointer;
-    background-color: #a6f19b;
+    background-color: #93d489;
 }
 
 #neg{
-    background-color: #800;
-    color:#f4f4f4;
+    font-weight: bold;
+    background-color: rgb(190, 21, 21);
     box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
 }
 
 #neg:hover{
     cursor: pointer;
-    background-color: #ff6961;
+    background-color: #e96962;
 }
 .swal2-container.swal2-backdrop-show{
     backdrop-filter: blur(3px);
