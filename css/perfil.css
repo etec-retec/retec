@@ -31,7 +31,7 @@
     /* flex-wrap: wrap; */
     background: rgb(255, 255, 255);
     padding: 15px 15px;    
-    border-radius: 10px;
+    border-radius: 5px;
     width: 80%;
     margin-top: 20px;
     box-shadow: rgba(100, 100, 100, 0.24) 0px 4px 8px;
@@ -47,7 +47,7 @@
     padding: 5px 5px;
     color: black;
     font-size: clamp(1rem, .5vw, 2rem);
-    transition: all .3s ease-out;
+    transition: all .2s;
     border: 1px solid transparent;
     border-bottom: 1px solid var(--fildset);
     background: none;
@@ -75,11 +75,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.863);
+    background: var(--info-esq-bg);
     width: 80%;
     padding: 30px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 253, 253, 0.322);
+    border-radius: 5px;
     box-shadow: rgba(59, 59, 59, 0.24) 0px 3px 8px;
 }
 

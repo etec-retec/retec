@@ -54,7 +54,7 @@ h1{
     padding-left: 16px;
     padding-right: 16px;
     text-decoration: none;
-    color: #6253f2;
+    color: var(--font-a);
     font-size: 18px;
     font-weight: 600;
 }
@@ -64,7 +64,7 @@ h1{
 }
 
 #p, #a, #e, #r{
-    border-right: 1px solid #6253f2;
+    border-right: 1px solid var(--font-a);
 }
 .swal2-container.swal2-backdrop-show{
     background: rgba(0,0,0,.1);

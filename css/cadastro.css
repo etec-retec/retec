@@ -38,7 +38,10 @@ body{
     display: table;
     margin: 10px 0 5px 0; 
 } 
-
+/* .inp_txt{
+    box-shadow: none;
+    border: 1px solid var(--fildset);
+} */
 /* Instituição */
 .instituicao{
     margin: 40px 0px;

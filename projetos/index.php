@@ -245,16 +245,14 @@ mysqli_close($conexao);
             </div>
 
 
-
             <div class="info_direita">
                 <form action="?" method="GET">
                     <div class="content-pesquisa">
                         <div class="pesquisa">
                             <input type="text" class="input_pesquisar" name="search" id="btn" title="Procure pelos melhores TCCs do CPS" placeholder="Pesquisar" autocomplete="off" required />
+
                             <button type="reset" class="apagar"><i class="fa fa-times" aria-hidden="true"></i></button>
-                            <button type="submit" class="btn_pesquisar" id="ico">
-                                <i class="fa fa-search" alt="pes" title="Pesquisar"></i>
-                            </button>
+                            <button type="submit" class="btn_pesquisar" id="ico"><i class="fa fa-search" alt="pes" title="Pesquisar"></i></button>
                         </div>
                     </div>
                 </form>

@@ -96,7 +96,7 @@ h1 label{
     margin-left: 20px;
     width: 22%;
     position: absolute;
-    background: #FFFFFFFF;
+    background: var(--info-esq-bg);
     padding: 40px 15px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.10);
@@ -219,27 +219,15 @@ h1 label{
     gap: 35px;
 }
 
-.btn_pesquisar i{
-    padding: 12px;
-    font-size: 2em;
-    color: rgba(165, 157, 157, 0.486);
-    transition: .2s;
-
-}
-
-.btn_pesquisar i:hover{
-    color: rgba(78, 78, 78, 0.486);
-    
-}
-.pesquisa #ico{
-    background: none;
-}
-
 .content-pesquisa{
     position: relative;
     background: transparent;
     width: 100%;
     z-index: 98;
+}
+.pesquisa button{
+    background: none;
+    border: none;
 }
 
 .content-pesquisa .pesquisa{
@@ -253,7 +241,7 @@ h1 label{
     min-width: 430px;
     border-radius: 25px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    background-color: #fff;
+    background-color: var(--info-esq-bg);
     transition: .3s;
     
 }
@@ -265,9 +253,34 @@ h1 label{
  
 }
 
+.btn_pesquisar i{
+    padding: 12px;
+    font-size: 2em;
+    color: var(--icon-color);
+    transition: .2s;
+
+}
+.btn_pesquisar i:hover{
+    color: var(--icon-color-h);
+    
+}
+.apagar{
+    cursor: pointer;
+    text-align: center;
+}
+
+.apagar i{
+    color: var(--icon-color);
+    font-size: 2em;
+    padding: 3.5px;
+}
+.apagar i:hover {
+    color: var(--icon-color-h);
+}
+
 /* Esse #btn é a barra de pesquisa*/
 #btn{
-    color:#709bb3;
+    color:black;
     font-size: 1em;
     width: 80%;
     border: none;
@@ -276,21 +289,6 @@ h1 label{
     outline: none;
 }
 
-.apagar{
-    cursor: pointer;
-    text-align: center;
-    border: none;
-    background: none;
-}
-
-.apagar i{
-    color: rgba(165, 157, 157, 0.486);
-    font-size: 2em;
-    padding: 3.5px;
-}
-.apagar i:hover {
-    color: rgba(78, 78, 78, 0.486);
-}
 /*TCCS*/
 .link{
     text-decoration: none;
@@ -359,14 +357,14 @@ h1 label{
     height: auto; 
     font-size: .9em;
 }
-#ico{
+/* #ico{
     cursor: pointer;
     border: none;
 }
 
 #ico:hover{
     color: #6253f2;
-}
+} */
 
 .topo button{
     background: none;

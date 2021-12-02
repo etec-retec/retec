@@ -30,7 +30,7 @@ body{
     display: flex;
     flex-direction: column;
     padding: 32px;
-    background-color: #fff;
+    background-color: var(--form-bg);
     height: auto;
     border-radius: 6px;
     box-shadow:2px 18px 14px -8px rgb(209 208 208);
@@ -113,9 +113,15 @@ img{
     height: 100%;
     margin-top: 5px;
 }
+
 #eye{
     opacity: 50%;
 }
+#eye:hover{
+    color: var(--icon-color-h);
+    cursor: pointer;
+}
+
 .entrar:hover{
     background-color: #3e2eb4;
     text-transform: uppercase;

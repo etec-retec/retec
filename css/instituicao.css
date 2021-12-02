@@ -31,7 +31,7 @@ body{
 
 .logo h1{
     font-size: clamp(100%, 1.5em + 1vw, 5em);
-    color: #6253f2;
+    color: var(--font-h1);
     margin: 0 auto;
     display: table;
 }
@@ -93,12 +93,6 @@ body{
     padding: 10px;
     z-index: 2;
     padding-left: 130px;
-    /* background-image: url(../assets/ilustrations/dashboard.svg);
-    background-repeat:no-repeat;
-    background-size:contain;
-    background-position:right;  */
-    /* background-color: rgb(255, 255, 255); */
-    /* filter: blur(10px); */
 }
 
 .corpo .content h1{
@@ -115,7 +109,7 @@ body{
     padding-left: 16px;
     padding-right: 16px;
     text-decoration: none;
-    color: #6253f2;
+    color: var(--font-a);
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
@@ -131,7 +125,7 @@ body{
     margin-right: 32px;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
     border-radius: 4px;
-    background-color: #f4f4f4;
+    background: var(--bg-not);
     margin-top: 10px;
     z-index: 10;
 }

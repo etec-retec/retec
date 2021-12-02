@@ -8,28 +8,42 @@
 }
 
 :root{
-    --btn-color:#6253f2;
+    
     --btn-background-color:#f2f6f8;
     --background-color:#dee7ee;
-    --back-login-cad-color: #dee7ee; 
     --background-color2: #f4f4f4;
+
+    --btn-color:#6253f2;
     --fildset: #dfdfdf;
+
     --placeholder: #709bb3;
+
+    /*aba projetos*/
     --card-bg: #FFFFFF;
     --info-esq-bg: #ffffff;
-    --info-esq-span-h:#f4f4f4;
     --info-esq-span-h-f:#e6e6e6;
+    --info-esq-span-h:#f4f4f4;
+    /*aba projetos*/
+
+    --bg-not:#f4f4f4; /*notificações*/
+
+    /*forms como login, cadastrar, contato*/
+    --form-bg: #fff;
+    --form-inpt-bg: #fff; /*input dos form*/
+    --form-inptArea-bg: #fff; /*text-area dos form*/
+
+    --font-h1:#6253f2;
+    --font-h2:;
+    --font-h3:;
+    --font-h4:;
+    --font-p:;
+    --font-b:;
+    --font-a:#6253f2;
+
+    --icon-color: #a59d9d7c;
+    --icon-color-h:#4e4e4e7c;
 }
-.dark-mode:root{
-    
-    --btn-color:#6253f2;
-    --btn-background-color:#f2f6f8;
-    --background-color:#dee7ee;
-    --back-login-cad-color: #dee7ee; 
-    --background-color2: #f4f4f4;
-    --fildset: #dfdfdf;
-    --placeholder: #709bb3;
-}
+
 .actions{
     position: absolute;
     z-index: 1;
@@ -119,7 +133,7 @@ button{
 
 h1{
     font-size: 4em;
-    color: #6253f2;
+    color: var(--font-h1);
     margin-right: 10px;
 }
 
@@ -134,7 +148,7 @@ h1{
 }
 
 .sobre{
-    background-color: rgba(222, 231, 238, 0.705);
+    background-color: var(--background-color);
     box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.18);;
 }
 
@@ -171,7 +185,7 @@ h1{
     text-align: center;
     display: flex;
     justify-content: center;
-    background: #f4f4f4;
+    background: var(--background-color2);
     padding: 10px 0px;
 }
 
@@ -189,7 +203,7 @@ h1{
     width: 50%;
     margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    background: #ffffff;
+    background: var(--info-esq-bg);
     border-radius: 5px;
 }
 
@@ -204,21 +218,24 @@ h1{
 .inp_txt{
     width: 80%;
     max-width: 450px;
+    background: var(--form-inpt-bg);
     font-size: 1em;
     padding: 10px;
     border-radius: 5px;
     border: none;
+    border: 1px solid var(--fildset);
     outline: none;
     margin: 0 auto;
     font-weight: 500;
     letter-spacing: 1px;
-    box-shadow: 1px 3px 10px 1px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 1px 3px 10px 1px rgba(0, 0, 0, 0.1); */
 }
 
 .area_txt{
     margin: 0 auto;
     font-size: .9em;
-    border: none;
+    /* border: none; */
+    border: 1px solid var(--fildset);
     border-radius: 5px 5px 5px 5px;
     padding: 10px;
     font-weight: 500;
@@ -227,7 +244,7 @@ h1{
     min-height: 120px;
     resize: none;
     letter-spacing: 1px;
-    box-shadow: 1px 3px 10px 1px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 1px 3px 10px 1px rgba(0, 0, 0, 0.1); */
     
 }
 .limite-caractere{
@@ -264,13 +281,13 @@ label b{
     box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.308);
     cursor:pointer;  
     text-transform: uppercase;
-    border: 1px solid #6253f2;
+    border: 1px solid var(--btn-color);
     
 }
 .enviar:hover{
     background-color: #f8f9fa;
     color: var(--btn-color);
-    border: 1px solid #6253f2;
+    border: 1px solid var(--btn-color);
     box-shadow: 0px 8px 15px rgba(99, 83, 242, 0.388);
 }
 .av{
@@ -344,7 +361,7 @@ label b{
   border-radius: 16px;
 }
 
-@media (max-width: 768px){
+@media (max-width: 1030px){
 
     .banner{
         justify-content: flex-start;
@@ -356,11 +373,12 @@ label b{
     }
 
     .conteudo{
-    padding:20px;
+    padding-left:20px;
     }
 
     .conteudo img{
-        width: 50px;
+        min-width: 50px;
+        max-width: 90px;
     }
     .actions{
         padding: 20px 0;
