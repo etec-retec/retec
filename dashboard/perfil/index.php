@@ -31,7 +31,7 @@ if (!isset($_SESSION["numLogin"])) {
     </div>
   
     <div class="cabecalho" id="teste">
-        <button class="voltar" onclick="window.history.back()">❮ Voltar</button>
+        <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
 
         <div class="logo">
             <h1 class="logo" id="texto">RETEC</h1>
