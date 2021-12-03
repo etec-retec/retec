@@ -77,7 +77,7 @@ mysqli_close($conexao);
                 <th>E-mail de Recuperação</th>
                 <th>Matrícula</th>
                 <th>RG</th>
-                <th style="padding-left:10px">Desvincular</th>
+                <th>Desvincular</th>
             </tr>
 
             <?php
@@ -104,7 +104,7 @@ mysqli_close($conexao);
                         <div class="item"><?php echo $professor["rg"]; ?></div>
                     </td>
 
-                    <td class="table-column_ex" style="padding-left:10px;">
+                    <td class="table-column_ex">
                         <div class="item" id="center">
                             <form action="../../model/desvincularProfessor.php" method="POST">
                                 <input type="text" name="idProf" value="<?php echo $professor["codigo_u"]; ?>" style="display:none" />

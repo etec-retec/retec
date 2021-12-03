@@ -310,6 +310,8 @@ h1 label{
     display: flex;
     flex-wrap: wrap;
     margin-left: 10px;
+    position: sticky;
+    top: 0;
 }
 
 .bloco{

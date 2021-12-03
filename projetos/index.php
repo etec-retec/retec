@@ -80,6 +80,9 @@ mysqli_close($conexao);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
     <link href="../css/projetos.css" rel="stylesheet">
     <link href="../assets/img/icon.ico" type="image/x-icon" rel="icon" />
 
@@ -279,7 +282,7 @@ mysqli_close($conexao);
                 ?>
 
                 <div class="content-blocos">
-                    <div class="blocos">
+                    <div class="blocos" id="blocos">
                         <?php
                         foreach ($result as $tcc) {
                         ?>
@@ -317,7 +320,8 @@ mysqli_close($conexao);
         </section>
 
         <script src="../js/btn-top-projetos.js"></script>
-        <!-- <script src="../js/mostrarFiltro.js"></script> -->
+        <script src="../js/scroll-mostrar-pesquisa.js"></script>
+
         <script>
             let toggle = document.querySelector(".toggle");
             let filt = document.querySelector(".info_esquerda");

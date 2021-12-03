@@ -1,15 +1,16 @@
 @import url("btnVoltar.css");
+@import url("index.css");
 
 #customers {
   border-collapse: collapse;
-  background-color: #fff;
   margin: 0 auto;
   margin-top: 32px;
+  max-width: 1200px;
 }
 
-.table-column_ex{
+/* .table-column_ex{
     width: 96px;
-}
+} */
 
 #especial{
     background-color: #6253f2 !important;
@@ -22,7 +23,7 @@
 
 #customers td, #customers th {
     border: 1px solid #9392a1;
-    padding: 32px;
+    padding: 20px;
 }
 
 .btn #customers td, .btn #customers th {
@@ -36,7 +37,11 @@
 }
 
 #customers tr:hover {
-    background-color: #ddd;
+    background-color: #f4f4f4;
+}
+
+tbody tr{
+    background-color: #fff;
 }
 
 #customers th {
@@ -51,14 +56,23 @@
 }
 
 .item button{
+    /* margin: 0 auto; */
     color: #f4f4f4;
-    background-color: #b6b2eb;
+    /* background-color: #b6b2eb; */
     border: none;
     border-radius: 0;
     padding: 10px;
     cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: .9em;
+    letter-spacing: .8px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+    transition: all .3s;
 }
-
+.fr{
+  background: #6253f2;  
+}
 a{
     text-decoration: none;
     color: #000;
@@ -71,4 +85,81 @@ a:hover{
 
 .fr:hover{
     opacity: 0.5;
+}
+@media (max-width: 1220px){
+    #customers td, #customers th{
+        padding: 10px;
+    }
+    }
+
+@media (max-width: 974px){
+    
+    #customers{
+        background: none;
+        padding: 20px;
+    }
+    #customers th {
+        padding: 20px;
+        text-align: left;
+        color: white;
+    
+    }
+    #customers td{
+        padding: 10px;
+        border: none;
+        align-items: flex-end ;
+    }
+    #customers tr:nth-child(even){
+    background-color: white;
+}
+    #especial{
+        float: left;
+        display: none;
+    }
+    tbody{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding-left: 20px;
+    }
+    tbody tr{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid var(--fildset);
+        padding: 20px;
+        background-color: white;
+        min-width: 300px;
+        max-width: 300px;
+        min-height: 350px;
+        border-radius: 10px;
+        position: relative;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        transition: .3s ease;
+    }
+    tbody tr:hover, #customers tr:nth-child(even):hover{
+        transform: translateY(-5px);
+        background: #f4f4f4;
+    }
+    .item{
+        width: 100%;
+        word-break: normal;
+    }
+    .item button{
+        width: 100%;
+    }
+}
+
+@media (min-width: 974px){
+
+}
+@media (max-width: 425px){
+    tbody tr{
+        width: 260px;
+        padding: 10px;
+    }
+    tbody{
+        padding-left: 0;
+    }
 }

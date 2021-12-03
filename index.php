@@ -23,7 +23,6 @@ if (isset($_SESSION)) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="loader/loading.css">
     <script type="text/javascript" src="loader/loading.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
     <link href="css/index.css" rel="stylesheet">
     <link href="assets/img/icon.ico" type="image/x-icon" rel="icon" />
     <title>Retec</title>
@@ -125,6 +124,7 @@ if (isset($_SESSION)) {
 
         </form>
     </div>
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
 
 </html>
