@@ -59,6 +59,7 @@ if (!isset($_SESSION["numLogin"])) {
             <input type="submit" value="Deletar" />
         </form>
     </div>
+    
 </body>
 
 </html>

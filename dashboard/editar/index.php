@@ -62,7 +62,7 @@ mysqli_close($conexao);
     </div>
 
     <div class="center">
-        <h2>Editar Projeto</h2>
+        <!-- <h2>Editar Projeto</h2> -->
 
         <table id="customers">
             <tr id="especial">

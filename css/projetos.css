@@ -166,14 +166,13 @@ h1 label{
     width: 50%;
     height: 40px;
     border: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    border: 1px solid var(--fildset);
+    border-radius: 5px;
     transition: .3s;
     transform-origin: center;
 }
-.ano_inp:focus{
-    box-shadow: none;
-    border-bottom: 1px solid black;
-}
+
 .actions-btn{
     display: flex;
     padding: 10px;
@@ -400,7 +399,7 @@ h1 label{
     backdrop-filter: blur( 3px );
     -webkit-backdrop-filter: blur( 3px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    transition: all .3s ease;
+    /* transition: all .3s ease; */
 }
 .topo:hover{
     background: rgba(59, 85, 170, 0.678);

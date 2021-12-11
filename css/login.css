@@ -152,8 +152,7 @@ img{
 }    
 .botao:nth-child(1):hover{
     background-color: #9f9fa1;
-    color: white;
-    border: 1px solid white ;
+    border: 1px solid #9f9fa1;
 }
 .botao:first-child{
     margin-right: 10px; 

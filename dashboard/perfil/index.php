@@ -77,9 +77,9 @@ if (!isset($_SESSION["numLogin"])) {
                 <div class="direita">
 
                     <label><b>RG</b></label><br>
-                    <input type="text" class="txt" minlength="5" maxlength="14" name="rg" value="<?php echo $_SESSION['rg']; ?>" required />
+                    <input type="text" class="txt" minlength="5" maxlength="14" name="rg" value="<?php echo $_SESSION['rg']; ?>" required disabled/>
                     <label><b>Matrícula</b></label><br>
-                    <input type="text" class="txt" minlength="6" maxlength="6" name="matricula" value="<?php echo $_SESSION['matricula']; ?>" required />
+                    <input type="text" class="txt" minlength="6" maxlength="6" name="matricula" value="<?php echo $_SESSION['matricula']; ?>" required disabled/>
 
                     <input type="submit" class="alterar" value="Alterar Dados" />
                 </div>

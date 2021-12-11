@@ -1,15 +1,15 @@
 
 $(document).ready(function(){
     $(window).scroll(function(){
-        if ($(this).scrollTop() > 100) {
-            $('a[href="#top"]').fadeIn();
+        if ($(this).scrollTop() > 150) {
+            $('div[class="topo"]').fadeIn();
         } else {
-            $('a[href="#top"]').fadeOut();
+            $('div[class="topo"]').fadeOut();
         }
     });
 
-    $('a[href="#top"]').click(function(){
-        $('html, body').animate({scrollTop : 0},800);
-        return false;
-    });
+    // $('a[href="#top"]').click(function(){
+    //     $('html, body').animate({scrollTop : 0},800);
+    //     return false;
+    // });
 })

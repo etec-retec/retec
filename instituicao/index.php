@@ -57,7 +57,7 @@ if ($_SESSION['tipo'] != 0) {
     </div>
 
     <div class="cabecalho" id="cent">
-        <button class="voltar" id="certeza" onclick="volt()">❮ Sair</button>
+        <button class="voltar" id="certeza">❮ Sair</button>
         <?php
         if ((isset($_SESSION['not']) && $_SESSION['not'] > 0)) {
         ?>
@@ -139,6 +139,7 @@ if ($_SESSION['tipo'] != 0) {
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/voltar.js"></script>
+    
     <script>
         var img = document.getElementById('notificacao');
         var box = document.getElementById("boxNot");

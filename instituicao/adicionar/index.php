@@ -64,33 +64,33 @@ if (!isset($_SESSION["numLogin"])) {
             <h2 class="center" id="lbl">Adicionar Projeto</h2>
 
             <label for="nome" id="first"><b>Nome (*)</b></label>
-            <input type="text" class="inp_txt" name="nome" placeholder="Nome do TCC" min="3" max="64" required>
+            <input type="text" class="inp_txt ad" name="nome" placeholder="Nome do TCC" min="3" max="64" required>
 
             <label for="prof_orientador"><b>Professor Orientador (*)</b></label>
-            <input type="text" name="prof_orientador" class="inp_txt" min="8" max="64" placeholder="Nome" required />
+            <input type="text" name="prof_orientador" class="inp_txt ad" min="8" max="64" placeholder="Nome" required />
 
             <label for="prof_coorientador"><b>Professor Co-orientador</b></label>
-            <input type="text" name="prof_corientador" class="inp_txt" min="8" max="64" placeholder="Nome" />
+            <input type="text" name="prof_corientador" class="inp_txt ad" min="8" max="64" placeholder="Nome" />
 
             <label for="membros"><b>Membros do Grupo (*)</b></label>
             <p style="font-size:12px; margin-top:0">Separe os integrantes por vírgulas ","</p>
-            <input type="text" name="membros_grupo" class="inp_txt" min="8" max="564" placeholder="Ex: Alexandre Lima, Luiz Henrique, Carlos Alberto" required />
+            <input type="text" name="membros_grupo" class="inp_txt ad" min="8" max="564" placeholder="Ex: Alexandre Lima, Luiz Henrique, Carlos Alberto" required />
 
 
             <label for="membros"><b>Membros da Banca (*)</b></label>
             <p style="font-size:12px; margin-top:0">Separe os integrantes por vírgulas ","</p>
-            <input type="text" name="membros_banca" class="inp_txt" min="8" max="564" placeholder="Ex: Regina Santos, Marcello Zanfra, Thiago" required />
+            <input type="text" name="membros_banca" class="inp_txt ad" min="8" max="564" placeholder="Ex: Regina Santos, Marcello Zanfra, Thiago" required />
 
 
             <label for="curso"><b>Curso (*)</b></label>
-            <select class="inp_txt" name="curso" min="8" max="64" id="slct">
+            <select class="inp_txt ad" name="curso" min="8" max="64" id="slct">
             </select>
 
             <label for="ano"><b>Ano de Conclusão (*)</b></label>
-            <input type="number" class="inp_txt" name="ano" id="ano" placeholder="Ano" required>
+            <input type="number" class="inp_txt ad" name="ano" id="ano" placeholder="Ano" required>
 
             <label for="mencao"><b>Menção (*)</b></label>
-            <select class="inp_txt" name="mencao" id="slct">
+            <select class="inp_txt ad" name="mencao" id="slct">
                 <option value="mb">MB</option>
                 <option value="b">B</option>
                 <option value="r">R</option>
@@ -110,7 +110,7 @@ if (!isset($_SESSION["numLogin"])) {
             <textarea type="text" class="area_txt" name="key_words" placeholder="Trecho do PDF (Key Words)" required></textarea>
 
             <label for="data_ap"><b>Data de Apresentação (*)</b></label>
-            <input type="date" class="inp_txt" name="data_ap" min="1911-09-28" max="2021-12-31" id="dt_ap" required>
+            <input type="date" class="inp_txt ad" name="data_ap" min="1911-09-28" max="2021-12-31" id="dt_ap" required>
 
             <div class="arquivos">
                 <h3>Arquivos</h3>

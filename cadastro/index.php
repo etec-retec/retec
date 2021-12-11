@@ -5,14 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../loader/loading.css">
     <script type="text/javascript" src="../loader/loading.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <link href="../css/cadastro.css" rel="stylesheet">
     <link href="../assets/img/icon.ico" type="image/x-icon" rel="icon" />
+
+    <link rel="stylesheet" href="sweetalert2.min.css">
     <title>RETEC - Cadastro</title>
 </head>
 
@@ -23,9 +29,13 @@
     <button class="voltar" onclick="window.history.back()">❮ Voltar</button>
 
     <div class="formu">
-        <h2>Cadastre-se</h2>
-        <form name="cadastraU" action="../model/usuario.php?create=1" method='POST'>
+
+        <div class="pre-flex">
+            <h2>Pré-Cadastro</h2>
+            <img class="help" src="../assets/svg/help-pre-cadastro.svg" alt="saber mais sobre o pré cadastro" onclick="sabermais()">
+        </div>
         
+        <form name="cadastraU" action="../model/usuario.php?create=1" method='POST'>
             <label id="lbl_aviso" style="display:none;margin:0 auto;"></label>
 
             <div class="name">
@@ -90,6 +100,8 @@
 
     </div>
     <script src="../js/mostrarSenha.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/pre-cadastro.js"></script>
     <script>
         $(function(){
           $("input[name='matricula']").on('input', function (e) {

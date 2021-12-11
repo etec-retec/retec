@@ -107,13 +107,20 @@ body{
     outline: none;
     font-size: 1em;
     border-radius: 5px;
-    border: 1px solid #6253f2 ;
+    border: 2px solid var(--fildset);
     box-shadow: none;
     margin-bottom: 20px;
-    transition: .3s;
+    transition: .2s;
+}
+.inp_txt:focus{
+    border: 2px solid #6253f2;
 }
 .center .form .ad{
     max-width: 565px;
+}
+.center .form .ad:focus{
+border: 1px solid var(--fildset);
+
 }
 .center .form .res{
     min-height: 260px;
@@ -132,7 +139,7 @@ body{
     align-self: left;
     margin-left: 7vw;
     margin-bottom: 10px ;
-    margin-top: 64px;
+    margin-top: 20px;
 }
 
 #first{
@@ -252,6 +259,14 @@ input[type=number]::-webkit-outer-spin-button {
     background: none;
     border: 1px solid black;
     color: black;
+}
+@media (max-width: 1030px){
+    .inp_txt{
+        margin: 0 50px;
+    }
+    .area_txt{
+        margin: 0 50px;
+    }
 }
 
 @media (max-width: 768px){

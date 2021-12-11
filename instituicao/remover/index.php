@@ -35,6 +35,9 @@ mysqli_close($conexao);
     <link href="../../css/remover.css" rel="stylesheet">
     <link href="../../css/table.css" rel="stylesheet">
     <link href="../../assets/img/icon.ico" type="image/x-icon" rel="icon" />
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script text="" src="../../js/remover-projeto.js"></script>
     <title>Retec - Remover</title>
 </head>
 
@@ -46,14 +49,25 @@ mysqli_close($conexao);
     <?php
     if (isset($_GET['deletado'])) {
     ?>
-        <div class="marker">Projeto removido com sucesso!</div>
+        <script>
+                Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Projeto Removido com sucesso',
+                showConfirmButton: false,
+                timer: 2500
+                })
+     
+        </script>
+
     <?php
     }
     ?>
+
     <div class="cabecalho">
-    <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>       
-    
-    <div class="bts" style="padding:10px 6px">
+        <button class="voltar" onclick="window.open('../', '_self')">❮ Voltar</button>
+
+        <div class="bts" style="padding:10px 6px">
             <a id="add" href="../adicionar/">Adicionar </a>
             <a id="ed" href="../editar/">Editar</a>
             <a id="rem">Remover</a>
@@ -95,9 +109,11 @@ mysqli_close($conexao);
 
                     <td class="table-column_ex">
                         <div class="item" id="center">
-                            <form action="../../model/removerRepositorio.php?tcc=<?php echo $tcc["codigo_r"]; ?>" method="POST">
-                                <button type="submit" class="fr" id="red">Remover</button>
+                        <form id="form-remove" action="../../model/removerRepositorio.php?tcc=<?php echo $tcc["codigo_r"]; ?>" method="POST">
+                        
+                                <input type="button" onclick="remover()" class="fr" id="red" value="Remover"></input>
                             </form>
+    
                         </div>
                     </td>
                 </tr>
@@ -106,7 +122,6 @@ mysqli_close($conexao);
             ?>
         </table>
     </div>
-
 </body>
 
 </html>

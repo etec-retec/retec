@@ -78,7 +78,7 @@ if (!isset($_SESSION["numLogin"])) {
             </div>
 
             <label for="curso"><b>Curso (*)</b></label>
-            <select class="inp_txt" name="curso" min="8" max="64" id="slct">
+            <select class="inp_txt ad" name="curso" min="8" max="64" id="slct">
             </select>
             <div class="data">
                 <label for="ano"><b>Ano de Conclusão (*)</b></label>

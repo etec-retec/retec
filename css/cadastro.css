@@ -16,9 +16,19 @@ body{
 
 .formu h2{
     text-align: center;
-    margin-bottom: 20px;
     letter-spacing: 2px;
     color: var(--btn-color);
+}
+.formu .pre-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.formu .help{
+    width: 20px;
+    height: 20px;
+    opacity: 40%;
+    cursor: pointer;
 }
 .formu{
     padding: 32px;
@@ -38,10 +48,7 @@ body{
     display: table;
     margin: 10px 0 5px 0; 
 } 
-/* .inp_txt{
-    box-shadow: none;
-    border: 1px solid var(--fildset);
-} */
+
 /* Instituição */
 .instituicao{
     margin: 40px 0px;
@@ -231,6 +238,12 @@ input[type=number]::-webkit-outer-spin-button {
 @media (max-width:425px){
     #eye{
         right: calc(100% - 33% - 210px);
+    }
+    .inp_txt{
+        width: 250px;
+    }
+    .formu{
+        padding: 10px;
     }
 
 }
