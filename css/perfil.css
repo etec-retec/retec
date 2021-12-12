@@ -115,10 +115,10 @@ label b{
     background: none;
     color: black;
     font-weight: normal;
-    /* box-shadow: inset 1px 4px 9px -6px rgba(255, 255, 255, 0.747); */
-    transition: .2s;
 }
-
+.container-dados .invisible{
+    background-color: rgba(0, 0, 0, 0.060);
+}
 .container-dados .esquerda .txt:last-child{
     margin-bottom: 0;
 }
@@ -126,6 +126,7 @@ label b{
 .container-dados .txt:focus{
     background:rgba(255, 255, 255, 0.692) ;
     font-weight: 600;
+    border: 1px solid var(--btn-color);
 }
 
 .alterar{
@@ -146,19 +147,7 @@ label b{
     right: 0;
     text-transform: uppercase;
 }
-/* .alterar::before{
-    content: '';
-    z-index: 1;
-    left: 0;
-    top: 0;
-    position: absolute;
-    height:100%;
-    width: 0;
-    transform-origin:center;
-    background-color: red;
-    transition: .3s;
-    border-radius: 3px;
-} */
+
 .alterar:hover{
     background-color: var(--btn-color);
 }

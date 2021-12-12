@@ -31,6 +31,10 @@ mysqli_close($conexao);
     <link href="../../css/lista.css" rel="stylesheet">
     <link href="../../css/table.css" rel="stylesheet">
     <link href="../../assets/img/icon.ico" type="image/x-icon" rel="icon" />
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../js/desvincular-prof.js"></script>
+
     <title>Retec - Lista de Professores</title>
 </head>
 
@@ -42,7 +46,15 @@ mysqli_close($conexao);
     <?php
     if (isset($_GET['success'])) {
     ?>
-        <div class="marker">Professor desvinculado com sucesso!</div>
+        <script>
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Professor desvinculado com sucesso',
+                showConfirmButton: false,
+                timer: 2500
+            })
+        </script>
     <?php
     }
     ?>
@@ -68,8 +80,6 @@ mysqli_close($conexao);
     </div>
 
     <div class="center">
-        <h2>Lista de Professores</h2>
-
         <table id="customers">
             <tr id="especial">
                 <th>Nome</th>
@@ -106,9 +116,11 @@ mysqli_close($conexao);
 
                     <td class="table-column_ex">
                         <div class="item" id="center">
-                            <form action="../../model/desvincularProfessor.php" method="POST">
+                            <form id="form-desvin" action="../../model/desvincularProfessor.php" method="POST">
+
                                 <input type="text" name="idProf" value="<?php echo $professor["codigo_u"]; ?>" style="display:none" />
-                                <button type="submit" class="fr" style="background-color:#ff6666;color:#fff">Desvincular</button>
+
+                                <input type="button" onclick="desvincular()" class="fr" style="background-color:#ff6666;color:#fff" value="Desvincular"></input>
                             </form>
                         </div>
                     </td>

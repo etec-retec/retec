@@ -70,22 +70,19 @@ button{
     position: relative;
 }
 #cad{
-    height: 58px;
+    width: 240px;
     background: var(--btn-background-color);
-    z-index: 10;
     border: 1px solid var(--btn-color); 
 }
 #cad span{
     color: var(--btn-color);   
-    line-height: 1.2;
+    line-height: 1;
 }
-
-.btn:hover:last-child::before{
-    background: white;
-    
+.btn:last-child::before{
+    background: var(--btn-color);
 }
-#cad:hover{
-    border: 1px solid var(--btn-color);   
+#cad:hover span{
+    color: var(--btn-background-color);    
 }
 
 .btn span{

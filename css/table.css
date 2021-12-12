@@ -55,8 +55,7 @@ tbody tr{
     cursor: pointer;
 }
 
-.item button{
-    /* margin: 0 auto; */
+.item button, input[type=button]{
     color: #f4f4f4;
     /* background-color: #b6b2eb; */
     border: none;
@@ -86,6 +85,11 @@ a:hover{
 .fr:hover{
     opacity: 0.5;
 }
+
+.swal2-container.swal2-backdrop-show{
+    backdrop-filter: blur(3px);
+}
+
 @media (max-width: 1220px){
     #customers td, #customers th{
         padding: 10px;
