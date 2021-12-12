@@ -6,20 +6,12 @@
         exit;
     }
 
-    echo $_POST['nome'];
-    echo $_POST['email'];
-    echo $_POST['email_rec'];
-    echo $_POST['rg'];
-    echo $_POST['matricula'];
-
     if(isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['email_rec']) && isset($_POST['rg']) && isset($_POST['matricula'])){
         $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $email_rec = filter_input(INPUT_POST, 'email_rec', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $rg = filter_input(INPUT_POST, 'rg', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $matricula = filter_input(INPUT_POST, 'matricula', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
-        echo "Teste";
 
         include "../conexao/conexao.inc";
 
