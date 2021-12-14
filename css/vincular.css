@@ -26,23 +26,22 @@ body{
 }
 
 input[type=submit], #deletar{
-    width: 96px;
-    padding: 8px;
+    padding: 10px 50px;
+    /* padding: 8px; */
     color: #fff;
     background-color: #6253f2;
-    border: 1px solid #6253f2;
     border-radius: 4px;
     cursor: pointer;
+    transition: .3s;
+    border: none;
 }
 
 input[type=submit]:hover{
     background-color: #b6b2eb;
-    border: 1px solid #b6b2eb;
 }
 
 #deletar:hover{
     background-color: #b6b2eb;
-    border: 1px solid #b6b2eb;
 }
 
 .marker{

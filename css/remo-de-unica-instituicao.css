@@ -1,0 +1,107 @@
+@import url("btnVoltar.css");
+@import url("index.css");
+
+.cabecalho{
+    display: none;
+}
+body{
+    background: var(--btn-color);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.center-aviso h1{
+    padding: 10px;
+    margin: 0;
+}
+.center-aviso h2{
+    color: rgba(223, 3, 3, 0.726);
+    width: 60vw;
+    max-width: 800px;
+    min-width: 300px;
+    text-align: center;
+}
+
+.center-aviso h3{
+    padding: 3px;
+    border-bottom: 2px solid red;
+}
+
+.center-aviso{
+    width: 80vw;
+    height: 80vw;
+    max-width: 1000px;
+    max-height: 600px;
+    padding: 15px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.664);
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.center-aviso form{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#delet{
+    flex: 1;
+    background: red;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+}
+#deletar{
+    flex: 1;
+    letter-spacing: 1.3px;
+    font-weight: bold;
+}
+#deletar:hover{
+    background: #362c94;
+}
+#delet:hover{
+    background: rgb(182, 5, 5);
+}
+
+@media (max-width: 630px){
+    .center-aviso{
+        gap: 10px;
+        height: 100vh;
+        border-radius: 0;
+    }
+    .center-aviso h1{
+        font-size: 40px;
+    }
+    .center-aviso h2{
+        font-size: 20px;
+    }
+    .center-aviso h3{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 425px){
+
+    .center-aviso h1{
+        font-size: 30px;
+    }
+    .center-aviso h2{
+        font-size: 18px;
+    }
+    .center-aviso h3{
+        font-size: 15px;
+    }
+}
+@media (max-width: 375px){
+    .center-aviso{
+        width: 90%;
+    }
+    .center-aviso h3{
+        font-size: 14px;
+    }
+}

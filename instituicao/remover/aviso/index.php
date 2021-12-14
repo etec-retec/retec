@@ -21,6 +21,7 @@ if (!isset($_SESSION["numLogin"])) {
     <script type="text/javascript" src="../../../loader/loading.js"></script>
 
     <link href="../../../css/vincular.css" rel="stylesheet">
+    <link href="../../../css/remo-de-unica-instituicao.css" rel="stylesheet">
     <title>Retec - Deletar Conta</title>
 </head>
 
@@ -49,14 +50,17 @@ if (!isset($_SESSION["numLogin"])) {
         </div>
     </div>
 
-    <div class="center">
+    <div class="center center-aviso">
         <h1>ATENÇÃO</h1>
-        <h2 style="width:60%; margin:0 auto;">Caso você desvincule este usuário de sua instituição, a conta dele será automaticamente excluída pois ele não possui vínculo com nenhuma outra instituição.</h2>
+        <h2>Caso você desvincule este usuário de sua instituição, a conta dele será automaticamente excluída pois ele não possui vínculo com nenhuma outra instituição.</h2>
         <h3>Tem certeza que deseja fazer isso?</h3>
+
         <form action="../../../model/deletarContaProfessor.php" method="POST">
             <input type="text" value="<?php echo $_SESSION["idProf"]; ?>" name="idProf" hidden />
+
             <input type="button" id="deletar" value="Cancelar" onclick="window.open('../../lista-de-professores/', '_self')" />
-            <input type="submit" value="Deletar" />
+            <input type="submit" id="delet" value="Deletar" />
+            
         </form>
     </div>
     
