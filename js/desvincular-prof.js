@@ -2,7 +2,7 @@ function desvincular(){
     Swal.fire({
         title: 'Tem certeza que deseja desvincular o professor desta instituição?',
         text: 'Não será possível reverter essa ação!',
-        color: '#7e3131',
+        color: '#ce1f1f',
         icon: 'warning',
         showCancelButton: true,
         cancelButtonText: 'Cancelar',
