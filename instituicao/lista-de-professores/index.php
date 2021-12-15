@@ -116,11 +116,10 @@ mysqli_close($conexao);
 
                     <td class="table-column_ex">
                         <div class="item" id="center">
-                            <form id="form-desvin" action="../../model/desvincularProfessor.php" method="POST">
-
+                            <form id="<?php echo $professor["codigo_u"]; ?>" action="../../model/desvincularProfessor.php" method="POST">
                                 <input type="text" name="idProf" value="<?php echo $professor["codigo_u"]; ?>" style="display:none" />
 
-                                <input type="button" onclick="desvincular()" class="fr" style="background-color:#ff6666;color:#fff" value="Desvincular"></input>
+                                <input type="button" onclick="desvincular(<?php echo $professor["codigo_u"]; ?>)" class="fr" style="background-color:#ff6666;color:#fff" value="Desvincular"></input>
                             </form>
                         </div>
                     </td>

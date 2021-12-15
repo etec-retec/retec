@@ -1,4 +1,4 @@
-function desvincular(){
+function desvincular(id){
     Swal.fire({
         title: 'Tem certeza que deseja desvincular o professor desta instituição?',
         text: 'Não será possível reverter essa ação!',
@@ -11,7 +11,7 @@ function desvincular(){
         confirmButtonText: 'Sim, desvincular'
     }).then((result) => {
         if (result.isConfirmed) {
-            document.getElementById("form-desvin").submit();
+            document.getElementById(id).submit();
         }
     })
 
