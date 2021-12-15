@@ -61,7 +61,6 @@
             $query = "SELECT * FROM solicitacoes WHERE instituicao = '$inst'";
             $result = mysqli_query($conexao, $query);
             $retorno = mysqli_affected_rows($conexao);
-            echo $retorno;
 
             if($retorno == 0){   
                 unset($_SESSION['not']);

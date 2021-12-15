@@ -12,7 +12,6 @@
 
     $nome = $_SESSION['instituicao'];
     $id = $_POST['idProf'];
-    echo $id;
 
     include "../conexao/conexao.inc";
     $query_professor = "SELECT instituicao FROM usuario WHERE codigo_u = '$id'";
