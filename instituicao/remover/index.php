@@ -91,8 +91,6 @@ mysqli_close($conexao);
     </div>
 
     <div class="center">
-        <!-- <h2>Remover Projeto</h2> -->
-
         <table id="customers">
             <tr id="especial">
                 <th id="red">Projeto</th>
@@ -109,9 +107,9 @@ mysqli_close($conexao);
 
                     <td class="table-column_ex">
                         <div class="item" id="center">
-                        <form id="form-remove" action="../../model/removerRepositorio.php?tcc=<?php echo $tcc["codigo_r"]; ?>" method="POST">
+                        <form id="<?php echo $tcc["codigo_r"]; ?>" action="../../model/removerRepositorio.php?tcc=<?php echo $tcc["codigo_r"]; ?>" method="POST">
                         
-                                <input type="button" onclick="remover()" class="fr" id="red" value="Remover"></input>
+                                <input type="button" onclick="remover(<?php echo $tcc["codigo_r"]; ?>)" class="fr" id="red" value="Remover"></input>
                             </form>
     
                         </div>

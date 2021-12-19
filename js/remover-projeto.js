@@ -1,4 +1,4 @@
-function remover(){
+function remover(id){
     Swal.fire({
         title: 'Tem certeza que deseja remover esse projeto?',
         text: "Não será possível reverter essa ação!",
@@ -11,7 +11,7 @@ function remover(){
         confirmButtonText: 'Sim, remover'
     }).then((result) => {
         if (result.isConfirmed) {
-            document.getElementById("form-remove").submit();
+            document.getElementById(id).submit();
         }
     })
 

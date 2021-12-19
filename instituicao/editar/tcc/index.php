@@ -72,7 +72,7 @@ mysqli_close($conexao);
             <input type="text" name="prof_orientador" class="inp_txt" min="8" max="64" value="<?php echo $prof_orientador; ?>" placeholder="Nome" required />
         
             <label for="prof_coorientador"><b>Professor Co-orientador</b></label>
-            <input type="text" name="prof_corientador" class="inp_txt" min="8" max="64" value="<?php echo $prof_corientador; ?>" placeholder="Nome" required />
+            <input type="text" name="prof_corientador" class="inp_txt" min="8" max="64" value="<?php echo $prof_corientador; ?>" placeholder="Nome"/>
         
             <label for="membros"><b>Membros do Grupo</b></label>
             <input type="text" name="membros_grupo" class="inp_txt" value="<?php echo $membros_grupo; ?>" min="8" max="564" placeholder="Ex: Alexandre Lima, Luiz Henrique, Carlos Alberto" required />
